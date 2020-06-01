@@ -28,10 +28,10 @@ router.put(
   (req, res) => {
     const notifyError = errorMessage(updateDetails.error);
     const notifySuccess = successMessage(updateDetails.success);
-    const { name, squadNumber, position, description } = req.body;
+    const { name, squadNumber, position, description, yearJoined } = req.body;
     User.findOneAndUpdate(
       { _id: req.user._id },
-      { name, squadNumber, position, description },
+      { name, squadNumber, position, description, yearJoined },
       { new: true, runValidators: true },
       (err) => {
         if (err) return res.json({ ...notifyError, err: err.message });

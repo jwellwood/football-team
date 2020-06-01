@@ -10,14 +10,17 @@ import SubmitButton from 'components/ui/buttons/SubmitButton';
 import NumberInput from 'components/ui/inputs/NumberInput';
 import TextInput from 'components/ui/inputs/TextInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
-import { positionOptions } from 'components/utils/select-options';
+import { positionOptions, yearOptions } from 'components/utils/select-options';
 
-const EditPlayerForm = ({ onChange, onSubmit, loading, disabled, input }) => {
+const EditPlayerForm = ({ onChange, onSubmit, loading, input }) => {
   const { handleSubmit, errors, register } = useForm();
+
+  const date = new Date().getFullYear();
+
   const playerForm = (
     <form onSubmit={handleSubmit(onSubmit)}>
       <CenteredGrid dir='row'>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={8}>
           <TextInput
             inputName='name'
             defaultValue={input.name}
@@ -52,6 +55,16 @@ const EditPlayerForm = ({ onChange, onSubmit, loading, disabled, input }) => {
             errors={errors.position || null}
           />
         </Grid>
+        <Grid item xs={12} sm={4}>
+          <SelectInput
+            inputName='yearJoined'
+            label='Year Joined'
+            defaultValue={input.yearJoined || ''}
+            onChange={onChange}
+            options={yearOptions(2008, date)}
+            errors={errors.yearJoined || null}
+          />
+        </Grid>
         <Grid item xs={12}>
           <TextInput
             inputName='description'
@@ -64,7 +77,7 @@ const EditPlayerForm = ({ onChange, onSubmit, loading, disabled, input }) => {
           />
         </Grid>
       </CenteredGrid>
-      <SubmitButton disabled={disabled} loading={loading} />
+      <SubmitButton loading={loading} />
     </form>
   );
 

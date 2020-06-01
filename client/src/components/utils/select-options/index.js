@@ -3,7 +3,7 @@ export const matchTypeOptions = [
   { text: 'League', value: 'League' },
   { text: 'Cup', value: 'Cup' },
   { text: 'Tournament', value: 'Tournament' },
-  { text: 'Friendly', value: 'Friendly' }
+  { text: 'Friendly', value: 'Friendly' },
 ];
 
 export const positionOptions = [
@@ -11,7 +11,7 @@ export const positionOptions = [
   { value: 'GK', text: 'Goalkeeper' },
   { value: 'DF', text: 'Defender' },
   { value: 'MF', text: 'Midfielder' },
-  { value: 'FW', text: 'Forward' }
+  { value: 'FW', text: 'Forward' },
 ];
 
 export const getLeaguePositionOptions = () => {
@@ -25,33 +25,41 @@ export const getLeaguePositionOptions = () => {
 export const homeOrAwayOptions = [
   { value: '', text: '' },
   { value: true, text: 'Home' },
-  { value: false, text: 'Away' }
+  { value: false, text: 'Away' },
 ];
 
 export const forfeitOptions = [
   { value: '', text: '' },
   { value: true, text: 'Forfeit by team' },
-  { value: false, text: 'Forfeit by opponent' }
+  { value: false, text: 'Forfeit by opponent' },
 ];
 
 export const trophyWinnerOptions = [
   { value: '', text: '' },
   { value: true, text: 'Winner' },
-  { value: false, text: 'Runner-up' }
+  { value: false, text: 'Runner-up' },
 ];
 
 export const playerOptions = (result, players) => {
   const matchPlayerIds = result.players
-    ? result.players.map(player => player.player_id._id)
+    ? result.players.map((player) => player.player_id._id)
     : [];
   const unselectedPlayers = players.filter(
-    player => !matchPlayerIds.includes(player._id)
+    (player) => !matchPlayerIds.includes(player._id)
   );
 
-  const playerList = unselectedPlayers.map(player => ({
+  const playerList = unselectedPlayers.map((player) => ({
     text: player.name,
-    value: player._id
+    value: player._id,
   }));
 
   return [{ text: '', value: '' }, ...playerList];
+};
+
+export const yearOptions = (minYear = 2005, maxYear = 2050) => {
+  const years = [];
+  for (let i = minYear; i <= maxYear; i++) {
+    years.push(i);
+  }
+  return years.map((year) => ({ text: year.toString(), value: year }));
 };

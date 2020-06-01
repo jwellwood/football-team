@@ -69,6 +69,11 @@ const userSchema = mongoose.Schema(
       type: String,
       maxlength: 150,
     },
+    yearJoined: {
+      type: String,
+      minlength: 4,
+      maxlength: 4,
+    },
     // This is to stop random users joining the squad. Admin has to manually accept users
     isPlayer: {
       type: Boolean,

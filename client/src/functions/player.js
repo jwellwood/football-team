@@ -101,6 +101,8 @@ export const getPerGameStats = (player) => {
 export const getContributions = (player, results) => {
   const matches = player.matchesPlayed;
   const percent = (stat) => getPercentage(stat, results.length);
+  const percentageOfPlayersMatches = (stat) =>
+    getPercentage(stat, matches.length);
   const totalResultGoals = mapReduce(results, 'teamGoals');
   const scoredIn = matches.filter((m) => m.goals > 0).length;
   const assistedIn = matches.filter((m) => m.assists > 0).length;
@@ -109,10 +111,10 @@ export const getContributions = (player, results) => {
   const combinedStats = getTotals(player).goals + getTotals(player).assists;
   return {
     apps: percent(matches.length, results.length, 1),
-    goals: percent(scoredIn),
-    assists: percent(assistedIn),
-    either: percent(either),
-    both: percent(both),
+    goals: percentageOfPlayersMatches(scoredIn),
+    assists: percentageOfPlayersMatches(assistedIn),
+    either: percentageOfPlayersMatches(either),
+    both: percentageOfPlayersMatches(both),
     overall: getPercentage(combinedStats, totalResultGoals),
   };
 };

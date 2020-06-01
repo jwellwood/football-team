@@ -54,6 +54,7 @@ router.get(`${USER}/get_auth`, auth, (req, res) => {
       squadNumber: user.squadNumber,
       position: user.position,
       description: user.description,
+      yearJoined: user.yearJoined,
       isCaptain: user.isCaptain,
       appsTarget: user.appsTarget,
       goalsTarget: user.goalsTarget,

@@ -6,11 +6,12 @@ import CustomText from 'components/ui/text/CustomText';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
 
 const Details = ({ user }) => {
-  const { name, squadNumber, position, description } = user;
+  const { name, squadNumber, position, description, yearJoined } = user;
   const details = [
     { text: 'Name', value: name, noDivider: true },
     { text: 'Number', value: squadNumber || '#' },
     { text: 'Position', value: position },
+    { text: 'Joined', value: yearJoined },
   ];
   return (
     <>

@@ -14,15 +14,19 @@ const SignUpLogic = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState({});
   const [loading, setLoading] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(false);
 
   const onChange = (e) => onInputChange(e, input, setInput);
+  const onAcceptTermsToggle = (e) => {
+    setAcceptTerms(!acceptTerms);
+  };
   const dataToSubmit = { ...input };
   const onSubmit = () =>
     onFormSubmit(setLoading, dispatch(signUp(dataToSubmit)), dispatch, () =>
       history.push(PROFILE)
     );
 
-  const disabled = !input.name || !input.email || !input.password;
+  const disabled = !acceptTerms;
 
   return (
     <SignUpForm
@@ -30,6 +34,8 @@ const SignUpLogic = () => {
       onSubmit={onSubmit}
       loading={loading}
       disabled={disabled}
+      onAcceptTermsToggle={onAcceptTermsToggle}
+      acceptTerms={acceptTerms}
     />
   );
 };

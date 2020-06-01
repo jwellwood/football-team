@@ -10,7 +10,6 @@ import CircularImage from 'components/ui/images/CircularImage';
 
 const useStyles = makeStyles((theme) => ({
   imageContainer: {
-    maxHeight: '30vh',
     marginBottom: theme.spacing(3),
   },
 }));

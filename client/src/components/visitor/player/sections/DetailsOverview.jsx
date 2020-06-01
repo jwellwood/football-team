@@ -6,11 +6,12 @@ import GreyBackground from 'containers/GreyBackground';
 import CircularImage from 'components/ui/images/CircularImage';
 
 const DetailsOverview = ({ player }) => {
-  const { squadNumber, position, image, description } = player;
+  const { squadNumber, position, image, description, yearJoined } = player;
 
   const data = [
     { text: 'Number', value: squadNumber, noDivider: true },
     { text: 'Position', value: position },
+    { text: 'Joined', value: yearJoined },
   ];
 
   return (

@@ -7,7 +7,7 @@ import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
 
-const SignInForm = ({ loading, onChange, onSubmit, disabled }) => {
+const SignInForm = ({ loading, onChange, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm();
 
   return (
@@ -30,9 +30,7 @@ const SignInForm = ({ loading, onChange, onSubmit, disabled }) => {
         validators={register({ required: true })}
       />
 
-      <SubmitButton disabled={disabled} loading={loading}>
-        Sign in
-      </SubmitButton>
+      <SubmitButton loading={loading}>Sign in</SubmitButton>
 
       <CustomLinkButton link={FORGOT_PASSWORD}>
         Forgot password?

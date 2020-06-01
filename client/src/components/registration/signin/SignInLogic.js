@@ -22,15 +22,8 @@ const SignInLogic = () => {
       history.push(PROFILE)
     );
 
-  const disabled = !input.email || !input.password;
-
   return (
-    <SignInForm
-      loading={loading}
-      onChange={onChange}
-      onSubmit={onSubmit}
-      disabled={disabled}
-    />
+    <SignInForm loading={loading} onChange={onChange} onSubmit={onSubmit} />
   );
 };
 
