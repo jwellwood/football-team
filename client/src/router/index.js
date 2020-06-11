@@ -6,9 +6,9 @@ import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
 import { getAllResults } from 'reduxStore/result/result_actions';
 // UI
-import NavBar from 'components/navs/Navbar';
 import Message from 'components/ui/messages/Message';
 import Spinner from 'components/ui/loading/Spinner';
+import NavDrawerLogic from 'components/navs/NavDrawerLogic';
 
 const Routes = lazy(() => import('./Routes'));
 
@@ -41,7 +41,7 @@ const AppRouter = () => {
   return (
     <>
       <React.Suspense fallback={<Spinner />}>
-        <NavBar />
+        <NavDrawerLogic />
         <Routes />
       </React.Suspense>
       <Message />

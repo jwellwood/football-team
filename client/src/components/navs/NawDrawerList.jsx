@@ -1,5 +1,5 @@
-// Links, icons and text for navlink list inside the drawer
-// Contolled by auth status
+// Links, icons and text for nav link list inside the drawer
+// Controlled by auth status
 // ------------------------------------------------------
 import React from 'react';
 import {

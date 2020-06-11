@@ -1,5 +1,9 @@
 export const changeLog = [
   {
+    version: '0.0.4',
+    changes: ['change nav to button'],
+  },
+  {
     version: '0.0.3',
     changes: ['ui enhancements', 'form helper text', 'select option for years'],
   },
