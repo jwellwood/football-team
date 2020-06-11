@@ -5,6 +5,7 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
 import SectionTitle from 'components/ui/headers/SectionTitle';
 import GreyBackground from 'containers/GreyBackground';
+import PlayerResultsLogic from './sections/PlayerResultsLogic';
 // Sections
 const PlayerVersus = lazy(() => import('./sections/PlayerVersusLogic'));
 const StatsOverviewLogic = lazy(() => import('./sections/StatsOverviewLogic'));
@@ -20,6 +21,7 @@ const Player = ({ player, results }) => {
       component: <DetailsOverview player={player} />,
     },
     { title: 'Stats', component: <StatsOverviewLogic player={player} /> },
+    { title: 'Results', component: <PlayerResultsLogic player={player} /> },
     { title: 'Targets', component: <TargetsOverview player={player} /> },
     {
       title: 'Percentages',

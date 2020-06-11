@@ -35,6 +35,8 @@ const PlayerAveragesLogic = ({ player }) => {
   };
 
   const listData = [
+    { title: 'Team goals', value: goals },
+    { title: 'Team conceded', value: goals },
     { title: 'Goals / game', value: goals },
     { title: 'Assists / game', value: assists },
     { title: 'Conceded / game', value: conceded },

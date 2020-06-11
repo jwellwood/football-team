@@ -24,12 +24,16 @@ const mapIcons = (num, type) => {
 const MatchPlayers = ({ result }) => {
   const { players, isForfeit } = result;
 
+  const orderedPlayers = players.sort(
+    (a, b) => b.goals + b.assists - (a.goals + a.assists)
+  );
+
   const forfeitText = isForfeit ? (
     <CustomText type='placeholder' text='Match forfeited' />
   ) : null;
 
   const playersList = players.length ? (
-    players.map((player) => {
+    orderedPlayers.map((player) => {
       const {
         player_id,
         goals,

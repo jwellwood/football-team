@@ -11,7 +11,7 @@ const options = {
     datalabels: {
       color: '#fff',
       align: 'right',
-      anchor: 'end',
+      anchor: 'start',
     },
   },
   scales: {

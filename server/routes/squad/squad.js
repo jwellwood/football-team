@@ -21,6 +21,7 @@ router.get(`${PUBLIC}/get_all_players`, (req, res) => {
       'matchesPlayed.result',
       '-players -matchReport -isForfeit -isOwnForfeit'
     )
+    .sort([['name', 'asc']])
     .exec((err, data) => {
       if (err) return res.json({ ...notifyError, err: err.message });
       return res.json({ ...notifySuccess, data });
@@ -44,7 +45,7 @@ router.get(`${PUBLIC}/get_player_by_id/:id`, (req, res) => {
       return res.json({
         ...notifySuccess,
         data: data,
-        matchesPlayed: data.matchesPlayed
+        matchesPlayed: data.matchesPlayed,
       });
     });
 });

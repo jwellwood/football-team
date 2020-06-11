@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // Functions
 import { showMessage } from 'reduxStore/app/message_actions';
-import { getPlayerById } from 'reduxStore/squad/squad_actions';
+import { getPlayerById, getAllPlayers } from 'reduxStore/squad/squad_actions';
 import {
   getResultById,
   addMatchPlayer,
@@ -28,10 +28,19 @@ const inputFields = {
 };
 
 const AddMatchPlayersLogic = () => {
-  const players = useSelector((state) => state.squad.squadData) || [];
-  const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const [players, setPlayers] = useState([]);
+  useEffect(() => {
+    dispatch(getAllPlayers()).then((res) => {
+      const { success, message, type, data } = res.payload;
+      if (!success) {
+        dispatch(showMessage(true, message, type));
+      }
+      setPlayers(data);
+    });
+  }, [dispatch]);
   const [input, setInput] = useState({ ...inputFields });
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState({});

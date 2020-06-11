@@ -7,15 +7,14 @@ import { theme } from 'assets/theme';
 
 defaults.global.defaultFontFamily = 'Jost';
 defaults.global.defaultFontColor = theme.palette.secondary.light;
-defaults.global.elements.rectangle.backgroundColor =
-  theme.palette.success.light;
+defaults.global.elements.rectangle.backgroundColor = theme.palette.primary.main;
 const options = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     datalabels: {
       color: '#fff',
-      backgroundColor: 'rgba(0,0,0,0.4)',
+      backgroundColor: 'rgba(0,0,0,0.8)',
       align: 'center',
       anchor: 'center',
       borderRadius: 5,

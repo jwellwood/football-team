@@ -1,11 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// Routes
-import { FORGOT_PASSWORD } from 'router/route_names';
+
 // Components
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
 
 const SignInForm = ({ loading, onChange, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm();
@@ -31,10 +29,6 @@ const SignInForm = ({ loading, onChange, onSubmit }) => {
       />
 
       <SubmitButton loading={loading}>Sign in</SubmitButton>
-
-      <CustomLinkButton link={FORGOT_PASSWORD}>
-        Forgot password?
-      </CustomLinkButton>
     </form>
   );
 };

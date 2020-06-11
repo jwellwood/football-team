@@ -5,7 +5,6 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
 import { getAllResults } from 'reduxStore/result/result_actions';
-import { getAllPlayers } from 'reduxStore/squad/squad_actions';
 // UI
 import NavBar from 'components/navs/Navbar';
 import Message from 'components/ui/messages/Message';
@@ -34,9 +33,6 @@ const AppRouter = () => {
   });
   useEffect(() => {
     effects(getTeam, 'team');
-  });
-  useEffect(() => {
-    effects(getAllPlayers, 'players');
   });
   useEffect(() => {
     effects(getAllResults, 'results');

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     top: 'auto',
     bottom: 0,
     alignItems: 'flex-end',
-    background: 'rgba(0,0,0,0.5)',
+    background: 'rgba(0,0,0,0.8)',
   },
 }));
 

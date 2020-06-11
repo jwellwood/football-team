@@ -24,7 +24,9 @@ const SquadList = ({ players, playersByPosition }) => {
             playersByPosition.map((item) => (
               <div key={item.text}>
                 <React.Suspense fallback={<Spinner isButton />}>
-                  <CustomText type='highlight'>{item.text}</CustomText>
+                  <CustomText type='highlight'>
+                    {item.text.toUpperCase()}
+                  </CustomText>
                   <CustomDivider />
                   {item.value.map((player) => (
                     <PlayerListItem key={player._id} player={player} />

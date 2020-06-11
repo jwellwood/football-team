@@ -4,7 +4,7 @@ import {
   getTotals,
   getContributions,
   // getPenaltyTotals,
-} from 'functions/player';
+} from 'functions-/player';
 // Components
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 
@@ -22,9 +22,9 @@ const PlayerPercentages = ({ player, results }) => {
       'Win',
       'Goal in',
       'Assist in',
-      'Goal/Assist in',
+      'Goal / Assist in',
       'Goal & Assist in',
-      'Overall',
+      'Contribution',
     ],
     datasets: [
       {

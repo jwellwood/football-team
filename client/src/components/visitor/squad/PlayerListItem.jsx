@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 // MUITODO
 import ListItemText from '@material-ui/core/ListItemText';
 // Functions
-import { getTotals } from 'functions/player';
+import { getTotals } from 'functions-/player';
 // Routes
 import { SQUAD } from 'router/route_names';
 // assets
@@ -18,7 +18,7 @@ import StatBoxes from './StatBoxes';
 import GreyBackground from 'containers/GreyBackground';
 
 const PlayerListItem = ({ player }) => {
-  const { _id, name, squadNumber, position, image } = player;
+  const { _id, name, squadNumber, position, isCaptain, image } = player;
   const profileImage = image.url === 'default' ? profile_default : image.url;
   const stats = useMemo(() => getTotals(player), [player]);
   const details = [
@@ -41,7 +41,12 @@ const PlayerListItem = ({ player }) => {
 
   const playerName = <ValueText>{name}</ValueText>;
 
-  const playerNumber = <CustomText type='red'>{squadNumber} </CustomText>;
+  const playerNumber = (
+    <CustomText type='red'>
+      {squadNumber}{' '}
+      {isCaptain ? <CustomText type='highlight'>(C)</CustomText> : null}
+    </CustomText>
+  );
 
   return (
     <GreyBackground>

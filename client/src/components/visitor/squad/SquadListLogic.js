@@ -1,11 +1,25 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+// import { useSelector } from 'react-redux';
 
 // Components
 import SquadList from './SquadList';
+import { getAllPlayers } from 'reduxStore/squad/squad_actions';
+import { showMessage } from 'reduxStore/app/message_actions';
+import { useDispatch } from 'react-redux';
+import Spinner from 'components/ui/loading/Spinner';
 
 const SquadListLogic = () => {
-  const players = useSelector((state) => state.squad.squadData) || [];
+  const dispatch = useDispatch();
+  const [players, setPlayers] = useState([]);
+  useEffect(() => {
+    dispatch(getAllPlayers()).then((res) => {
+      const { success, message, type, data } = res.payload;
+      if (!success) {
+        dispatch(showMessage(true, message, type));
+      }
+      setPlayers(data);
+    });
+  }, [dispatch]);
 
   const filterBy = (pos) => players.filter((player) => player.position === pos);
   const playersByPosition = [
@@ -27,7 +41,11 @@ const SquadListLogic = () => {
     },
   ];
 
-  return <SquadList players={players} playersByPosition={playersByPosition} />;
+  return players ? (
+    <SquadList players={players} playersByPosition={playersByPosition} />
+  ) : (
+    <Spinner />
+  );
 };
 
 export default SquadListLogic;

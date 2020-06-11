@@ -10,7 +10,7 @@ import CircularImage from 'components/ui/images/CircularImage';
 
 const useStyles = makeStyles((theme) => ({
   imageContainer: {
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(1),
   },
 }));
 const RegImage = () => {
@@ -18,7 +18,7 @@ const RegImage = () => {
   return (
     <CenteredGrid>
       <Grid item sm={4} align='center' className={classes.imageContainer}>
-        <CircularImage image={teamPhoto} />
+        <CircularImage image={teamPhoto} size='80px' />
       </Grid>
     </CenteredGrid>
   );

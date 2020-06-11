@@ -4,6 +4,7 @@ export const changeLog = [
     changes: [
       'add year joined option',
       'fix bug with player percentages',
+      'make % value more visible',
       'add agree to terms button',
       'fix registration page mobile layout problem',
     ],
