@@ -11,7 +11,7 @@ import EditPlayerForm from './EditPlayerForm';
 
 const EditPlayerLogic = () => {
   const user = useSelector((state) => state.auth.userData);
-  const { name, position, squadNumber, description } = user;
+  const { name, position, squadNumber, yearJoined, description } = user;
   const dispatch = useDispatch();
   const history = useHistory();
   // State
@@ -19,6 +19,7 @@ const EditPlayerLogic = () => {
     name,
     squadNumber,
     position,
+    yearJoined,
     description,
   });
   const [loading, setLoading] = useState(false);

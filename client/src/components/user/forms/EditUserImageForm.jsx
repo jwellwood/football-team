@@ -8,6 +8,8 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import CustomButton from 'components/ui/buttons/CustomButton';
 import CircularImage from 'components/ui/images/CircularImage';
+import FormHelper from 'components/ui/text/FormHelper';
+import { profilePhotoHelper } from 'assets/data/formHelperText';
 
 const EditUserImageForm = ({
   onSubmit,
@@ -22,6 +24,7 @@ const EditUserImageForm = ({
   const submitDisabled = user.image.url === imageUrl;
   const imageForm = (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <FormHelper>{profilePhotoHelper}</FormHelper>
       <CenteredGrid>
         <FileInput
           inputName='image'

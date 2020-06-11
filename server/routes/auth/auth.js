@@ -49,6 +49,7 @@ router.get(`${USER}/get_auth`, auth, (req, res) => {
       name: user.name,
       email: user.email,
       createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
       adminStatus: user.role,
       image: user.image,
       squadNumber: user.squadNumber,

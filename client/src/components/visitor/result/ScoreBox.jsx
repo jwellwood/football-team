@@ -90,7 +90,7 @@ const ScoreBox = ({ result }) => {
 
   const details = (
     <CenteredGrid>
-      <CustomText type='caption'>{type}</CustomText>
+      <CustomText type='highlight'>{type}</CustomText>
       <CustomText type='caption'>{parseDate(date)}</CustomText>
     </CenteredGrid>
   );

@@ -21,6 +21,8 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
 import ValueText from 'components/ui/text/ValueText';
 import CustomButton from 'components/ui/buttons/CustomButton';
+import FormHelper from 'components/ui/text/FormHelper';
+import { setPermissionsHelper } from 'assets/data/adminHelperText';
 
 const UserPermissionForm = ({
   user,
@@ -74,7 +76,8 @@ const UserPermissionForm = ({
   return !loading ? (
     <FormContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <ValueText>{user.name}</ValueText>
+        <FormHelper>{setPermissionsHelper}</FormHelper>
+        <ValueText>Change permissions for {user.name}</ValueText>
         <CustomDivider />
         <CenteredGrid dir='row'>
           <Grid item xs={12}>

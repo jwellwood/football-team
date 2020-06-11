@@ -6,6 +6,8 @@ import NumberInput from 'components/ui/inputs/NumberInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import FormContainer from 'containers/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import FormHelper from 'components/ui/text/FormHelper';
+import { targetsFormHelper } from 'assets/data/formHelperText';
 
 const EditTargetsForm = ({ onChange, onSubmit, loading, input, user }) => {
   const { appsTarget, goalsTarget, assistsTarget } = user;
@@ -38,6 +40,7 @@ const EditTargetsForm = ({ onChange, onSubmit, loading, input, user }) => {
 
   const targetsForm = (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <FormHelper>{targetsFormHelper}</FormHelper>
       <CenteredGrid dir='row'>
         {inputData.map((input) => (
           <NumberInput

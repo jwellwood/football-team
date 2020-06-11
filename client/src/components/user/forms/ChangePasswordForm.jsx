@@ -6,6 +6,11 @@ import FormContainer from 'containers/FormContainer';
 import TextInput from 'components/ui/inputs/TextInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import {
+  currentPasswordHelper,
+  newPasswordHelper,
+} from 'assets/data/formHelperText';
+import FormHelper from 'components/ui/text/FormHelper';
 
 const ChangePasswordForm = ({
   onSubmitCurrent,
@@ -19,6 +24,7 @@ const ChangePasswordForm = ({
 
   const currentPasswordForm = (
     <form onSubmit={handleSubmit(onSubmitCurrent)}>
+      <FormHelper>{currentPasswordHelper}</FormHelper>
       <CenteredGrid container direction='column'>
         <TextInput
           isPassword={true}
@@ -36,6 +42,7 @@ const ChangePasswordForm = ({
   const disabled = input.newPassword !== input.confirmPassword;
   const newPasswordForm = (
     <form onSubmit={handleSubmit(onSubmitNew)}>
+      <FormHelper>{newPasswordHelper}</FormHelper>
       <CenteredGrid dir='row'>
         <TextInput
           isPassword={true}

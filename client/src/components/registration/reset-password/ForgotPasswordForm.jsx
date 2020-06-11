@@ -5,12 +5,15 @@ import Spinner from 'components/ui/loading/Spinner';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
 import FormContainer from 'containers/FormContainer';
+import FormHelper from 'components/ui/text/FormHelper';
+import { passwordFormHelper } from 'assets/data/formHelperText';
 
 const ForgotPasswordForm = ({ loading, onChange, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm();
 
   return !loading ? (
     <FormContainer>
+      <FormHelper>{passwordFormHelper}</FormHelper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextInput
           inputName='email'

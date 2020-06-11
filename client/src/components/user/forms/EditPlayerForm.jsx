@@ -11,6 +11,8 @@ import NumberInput from 'components/ui/inputs/NumberInput';
 import TextInput from 'components/ui/inputs/TextInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
 import { positionOptions, yearOptions } from 'components/utils/select-options';
+import { profileDetailsHelper } from 'assets/data/formHelperText';
+import FormHelper from 'components/ui/text/FormHelper';
 
 const EditPlayerForm = ({ onChange, onSubmit, loading, input }) => {
   const { handleSubmit, errors, register } = useForm();
@@ -19,6 +21,7 @@ const EditPlayerForm = ({ onChange, onSubmit, loading, input }) => {
 
   const playerForm = (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <FormHelper>{profileDetailsHelper}</FormHelper>
       <CenteredGrid dir='row'>
         <Grid item xs={12} sm={8}>
           <TextInput

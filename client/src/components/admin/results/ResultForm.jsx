@@ -23,6 +23,8 @@ import Spinner from 'components/ui/loading/Spinner';
 import AdminMatchPlayersList from '../matchPlayers/AdminMatchPlayersList';
 import DeleteResultLogic from './DeleteResultLogic';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import FormHelper from 'components/ui/text/FormHelper';
+import { addResultHelper } from 'assets/data/adminHelperText';
 const DateInput = lazy(() => import('components/ui/inputs/DateInput'));
 
 const ResultForm = ({
@@ -108,6 +110,7 @@ const ResultForm = ({
   return !loading ? (
     <FormContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <FormHelper>{addResultHelper}</FormHelper>
         <CenteredGrid dir='row'>
           <Grid item xs={12}>
             <TextInput

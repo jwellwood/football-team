@@ -13,10 +13,12 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
 import AdminAwardsList from './awards/AdminAwardsList';
 import DeletePrevSeasonLogic from './DeletePrevSeasLogic';
+import SelectInput from 'components/ui/inputs/SelectInput';
+import { yearOptions } from 'components/utils/select-options';
 
 const PrevSeasonForm = ({ onSubmit, onChange, loading, input, season }) => {
   const { register, handleSubmit, errors } = useForm();
-
+  const date = new Date().getFullYear();
   const inputs = [
     {
       name: 'finalPosition',
@@ -93,13 +95,13 @@ const PrevSeasonForm = ({ onSubmit, onChange, loading, input, season }) => {
             />
           </Grid>
           <Grid item xs={4}>
-            <NumberInput
+            <SelectInput
               inputName='year'
               label='Year'
               defaultValue={input.year}
-              validators={register({ required: true, min: 2000, max: 2100 })}
               onChange={onChange}
               errors={errors.year}
+              options={yearOptions(2008, date)}
             />
           </Grid>
 

@@ -13,6 +13,8 @@ import FormContainer from 'containers/FormContainer';
 import CustomText from 'components/ui/text/CustomText';
 import CustomSwitch from 'components/ui/inputs/CustomSwitch';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import FormHelper from 'components/ui/text/FormHelper';
+import { assignPlayerHelper } from 'assets/data/adminHelperText';
 
 const AddMatchPlayerForm = ({
   loading,
@@ -102,6 +104,7 @@ const AddMatchPlayerForm = ({
       </CustomText>
       {!loading ? (
         <form onSubmit={handleSubmit(onSubmit)}>
+          <FormHelper>{assignPlayerHelper}</FormHelper>
           <CenteredGrid dir='row'>
             <Grid item xs={12} sm={12}>
               <SelectInput

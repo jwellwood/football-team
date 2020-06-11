@@ -17,7 +17,9 @@ const PlayerAveragesLogic = ({ player }) => {
   const averages = useMemo(() => getResultAverages(playerResults), [
     playerResults,
   ]);
+
   const perGame = useMemo(() => getPerGameStats(player), [player]);
+
   const { avgGoals, avgConceded, avgDiff } = averages;
   const { goals, assists, conceded } = perGame;
 
@@ -35,8 +37,6 @@ const PlayerAveragesLogic = ({ player }) => {
   };
 
   const listData = [
-    { title: 'Team goals', value: goals },
-    { title: 'Team conceded', value: goals },
     { title: 'Goals / game', value: goals },
     { title: 'Assists / game', value: assists },
     { title: 'Conceded / game', value: conceded },

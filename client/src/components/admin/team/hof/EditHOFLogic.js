@@ -38,12 +38,7 @@ const EditHOFLogic = () => {
       }
     );
 
-  const disabled =
-    name === input.name &&
-    +yearInducted === +input.yearInducted &&
-    +yearJoined === +input.yearJoined &&
-    +yearLeft === +input.yearLeft &&
-    description === input.description;
+  const disabled = name === input.name;
 
   return (
     <HOFForm

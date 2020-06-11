@@ -4,7 +4,7 @@ import {
   getTotals,
   getContributions,
   // getPenaltyTotals,
-} from 'functions-/player';
+} from 'functions/player';
 // Components
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 

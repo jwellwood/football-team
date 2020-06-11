@@ -8,8 +8,11 @@ const Copyright = () => {
   return (
     <Box mt={5}>
       <Typography variant='body2' color='textSecondary' align='center'>
-        {'Copyright © '}
-        <Link color='inherit' href='https://material-ui.com/'>
+        {' © '}
+        <Link
+          color='inherit'
+          href='https://github.com/jwellwood/football-team-prod'
+        >
           jwellwood
         </Link>{' '}
         {new Date().getFullYear()}

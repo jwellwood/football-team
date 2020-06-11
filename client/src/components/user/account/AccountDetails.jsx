@@ -9,10 +9,12 @@ import GridItem from 'components/ui/grids/GridItem';
 import { parseDate } from 'components/utils';
 
 const AccountDetails = ({ user }) => {
-  const { email, adminStatus, createdAt } = user;
+  const { email, adminStatus, createdAt, updatedAt } = user;
+
   const details = [
     { text: 'Email', value: email },
-    { text: 'Joined', value: parseDate(createdAt) },
+    { text: 'Created', value: parseDate(createdAt) },
+    { text: 'Last updated', value: parseDate(updatedAt) },
     { text: 'Status', value: adminStatus },
   ];
   return (
