@@ -1,5 +1,9 @@
 export const changeLog = [
   {
+    version: '0.0.6',
+    changes: ['fix tab stutter effect', 'fix targets table issue'],
+  },
+  {
     version: '0.0.5',
     changes: ['change to swipeable views'],
   },

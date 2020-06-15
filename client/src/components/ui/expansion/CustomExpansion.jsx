@@ -29,7 +29,13 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.warning.light,
   },
 }));
-const CustomExpansion = ({ title, value, icon, children, secondary }) => {
+const CustomExpansion = ({
+  title,
+  value,
+  icon,
+  children,
+  valueAsComponent,
+}) => {
   const classes = useStyles();
   return (
     <ExpansionPanel key={title} className={classes.root} elevation={0}>
@@ -42,7 +48,7 @@ const CustomExpansion = ({ title, value, icon, children, secondary }) => {
                 {title}
               </Typography>
             </Grid>
-            <ValueText>{value}</ValueText>
+            {value ? <ValueText>{value}</ValueText> : valueAsComponent}
           </CenteredGrid>
         </ExpansionPanelSummary>
       </GreyBackground>

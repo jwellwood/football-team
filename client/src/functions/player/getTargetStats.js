@@ -8,6 +8,6 @@ export const getTargetStats = (player, stat, targetType) => {
     percentage:
       targetType === 0
         ? 0
-        : getPercentage(getTotals(player)[stat], targetType, 0),
+        : getPercentage(getTotals(player)[stat], targetType, 1),
   };
 };

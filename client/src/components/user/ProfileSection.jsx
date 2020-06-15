@@ -5,7 +5,7 @@ import GreyBackground from 'containers/GreyBackground';
 
 const ProfileSection = ({ children, link, title }) => {
   return (
-    <GreyBackground>
+    <GreyBackground placeholder>
       <SectionTitle link={link} title={title} />
       {children}
     </GreyBackground>

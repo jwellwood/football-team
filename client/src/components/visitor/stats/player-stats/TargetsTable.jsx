@@ -1,23 +1,15 @@
 import React from 'react';
-// MUITODO
-import TableRow from '@material-ui/core/TableRow';
 // Internal
-import CustomTable from 'components/ui/tables/CustomTable';
 import ValueText from 'components/ui/text/ValueText';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomText from 'components/ui/text/CustomText';
-import CustomTableCell from 'components/ui/tables/CustomTableCell';
 import ProfileSection from 'components/user/ProfileSection';
+import CustomExpansion from 'components/ui/expansion/CustomExpansion';
+import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import GridItem from 'components/ui/grids/GridItem';
+import GreyBackground from 'containers/GreyBackground';
 
 const TargetsTable = ({ targets }) => {
-  const headCells = [
-    { id: 'name', label: '' },
-    { id: 'apps', label: 'Apps' },
-    { id: 'goals', label: 'Goals' },
-    { id: 'assists', label: 'Assists' },
-    { id: 'overall', label: 'Overall' },
-  ];
-
   const rows = targets.map((player, i) => {
     const { name, apps, goals, assists, total } = player;
 
@@ -32,42 +24,58 @@ const TargetsTable = ({ targets }) => {
     };
 
     return (
-      <TableRow key={i}>
-        <CustomTableCell align='left'>
-          <ValueText>{name}</ValueText>
-        </CustomTableCell>
-        {[
-          { p: +apps.percentage, t: apps.total, tar: apps.target },
-          { p: +goals.percentage, t: goals.total, tar: goals.target },
-          { p: +assists.percentage, t: assists.total, tar: assists.target },
-        ].map((stat, i) => (
-          // p: percentage, t: total(actual number)
-          <CustomTableCell key={i} align='center'>
-            <CustomText type='muted' div color={color(stat.p)}>
-              {stat.p}
-            </CustomText>
-            <CustomText type='caption'>
-              {stat.t} of {stat.tar}
-            </CustomText>
-          </CustomTableCell>
-        ))}
-        <CustomTableCell align='center'>
+      <CustomExpansion
+        key={name + i}
+        title={<ValueText>{name}</ValueText>}
+        valueAsComponent={
           <CustomAvatar shadow={color(+total)}>
             <ValueText>
               {+total}
               <CustomText type='caption'>%</CustomText>
             </ValueText>
           </CustomAvatar>
-        </CustomTableCell>
-      </TableRow>
+        }
+      >
+        <CenteredGrid dir='row'>
+          {[
+            {
+              type: 'Apps',
+              p: +apps.percentage,
+              t: apps.total,
+              tar: apps.target,
+            },
+            {
+              type: 'Goals',
+              p: +goals.percentage,
+              t: goals.total,
+              tar: goals.target,
+            },
+            {
+              type: 'Assists',
+              p: +assists.percentage,
+              t: assists.total,
+              tar: assists.target,
+            },
+          ].map((stat, i) => (
+            // p: percentage, t: total(actual number)
+            <GridItem key={i} xs={4} sm={4}>
+              <GreyBackground>
+                <CustomText>{stat.type}</CustomText>
+                <CustomText type='muted' div color={color(stat.p)}>
+                  {stat.p}%
+                </CustomText>
+                <CustomText type='caption'>
+                  {stat.t} / {stat.tar}
+                </CustomText>
+              </GreyBackground>
+            </GridItem>
+          ))}
+        </CenteredGrid>
+      </CustomExpansion>
     );
   });
 
-  return (
-    <ProfileSection title='Players'>
-      <CustomTable rows={rows} headCells={headCells} />
-    </ProfileSection>
-  );
+  return <ProfileSection title='Players'>{rows}</ProfileSection>;
 };
 
 export default TargetsTable;
