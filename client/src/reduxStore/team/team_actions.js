@@ -1,8 +1,8 @@
 // In this file
 // 1  GET    / GET_TEAM              / getTeam
 // 2  POST   / ADD_TEAM              / addTeam
-// 3  PUT    / UDPATE_TEAM_DETAILS   / updateTeamDetails
-// 4  PUT    / UDPATE_TEAM_PHOTO     / updateTeamPhoto
+// 3  PUT    / UPDATE_TEAM_DETAILS   / updateTeamDetails
+// 4  PUT    / UPDATE_TEAM_PHOTO     / updateTeamPhoto
 // 5  POST   / ADD_HALL_OF_FAMER     / addHallOfFamer
 // 6  PUT    / UPDATE_HALL_OF_FAMER  / updateHallOfFamer
 // 7  DELETE / DELETE_HALL_OF_FAMER  / deleteHallOfFamer
@@ -32,7 +32,7 @@ import {
   DELETE_TROPHY,
   ADD_HALL_OF_FAMER,
   DELETE_HALL_OF_FAMER,
-  UDPATE_HALL_OF_FAMER,
+  UPDATE_HALL_OF_FAMER,
   // Images
   UPLOAD_TEAM_PHOTO,
   REMOVE_ADMIN_IMAGE,
@@ -66,7 +66,7 @@ export function addTeam(dataToSubmit) {
   };
 }
 
-// 3 PUT / UDPATE_TEAM_DETAILS / updateTeamDetails
+// 3 PUT / UPDATE_TEAM_DETAILS / updateTeamDetails
 // Body: id, name, location, league, position,
 export function updateTeamDetails(dataToSubmit) {
   const request = axios
@@ -78,7 +78,7 @@ export function updateTeamDetails(dataToSubmit) {
   };
 }
 
-// 4 PUT / UDPATE_TEAM_PHOTO / updateTeamPhoto
+// 4 PUT / UPDATE_TEAM_PHOTO / updateTeamPhoto
 // body: teamId, url, public_id
 export function updateTeamPhoto(dataToSubmit) {
   const request = axios
@@ -110,7 +110,7 @@ export function updateHallOfFamer(dataToSubmit, id) {
     .put(`${ADMIN_SERVER}/update_hall_of_famer/${id}`, dataToSubmit)
     .then((res) => res.data);
   return {
-    type: UDPATE_HALL_OF_FAMER,
+    type: UPDATE_HALL_OF_FAMER,
     payload: request,
   };
 }

@@ -1,5 +1,9 @@
 export const changeLog = [
   {
+    version: '0.0.5',
+    changes: ['change to swipeable views'],
+  },
+  {
     version: '0.0.4',
     changes: ['change nav to button'],
   },

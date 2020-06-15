@@ -4,7 +4,6 @@ import { EDIT_TARGETS } from 'router/route_names';
 // Components
 import ProfileList from 'components/ui/lists/ProfileList';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import GridItem from 'components/ui/grids/GridItem';
 import ProfileSection from '../ProfileSection';
 
 const TargetDetails = ({ user }) => {
@@ -30,16 +29,14 @@ const TargetDetails = ({ user }) => {
     },
   ];
   return (
-    <GridItem>
-      <ProfileSection
-        title='Targets'
-        link={!canEdit.targets ? 'locked' : EDIT_TARGETS}
-      >
-        <ListWrapper>
-          <ProfileList details={data} />
-        </ListWrapper>
-      </ProfileSection>
-    </GridItem>
+    <ProfileSection
+      title='Targets'
+      link={!canEdit.targets ? 'locked' : EDIT_TARGETS}
+    >
+      <ListWrapper>
+        <ProfileList details={data} />
+      </ListWrapper>
+    </ProfileSection>
   );
 };
 

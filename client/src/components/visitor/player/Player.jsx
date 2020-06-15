@@ -1,11 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
 import Spinner from 'components/ui/loading/Spinner';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
 import SectionTitle from 'components/ui/headers/SectionTitle';
-import GreyBackground from 'containers/GreyBackground';
 import PlayerResultsLogic from './sections/PlayerResultsLogic';
+import CustomTabs from 'components/ui/tabs/CustomTabs';
+import CustomIcon from 'components/ui/icons/CustomIcon';
 // Sections
 const PlayerVersus = lazy(() => import('./sections/PlayerVersusLogic'));
 const StatsOverviewLogic = lazy(() => import('./sections/StatsOverviewLogic'));
@@ -15,34 +14,46 @@ const TargetsOverview = lazy(() => import('./sections/TargetsOverviewLogic'));
 const DetailsOverview = lazy(() => import('./sections/DetailsOverview'));
 
 const Player = ({ player, results }) => {
-  const data = [
+  const tabs = [
     {
-      title: player.name,
+      label: <CustomIcon icon='user' />,
       component: <DetailsOverview player={player} />,
     },
-    { title: 'Stats', component: <StatsOverviewLogic player={player} /> },
-    { title: 'Results', component: <PlayerResultsLogic player={player} /> },
-    { title: 'Targets', component: <TargetsOverview player={player} /> },
     {
-      title: 'Percentages',
-      component: <PlayerPercentages results={results} player={player} />,
+      label: <CustomIcon icon='list-ul' />,
+      component: (
+        <>
+          <StatsOverviewLogic player={player} />
+          <PlayerResultsLogic player={player} />
+        </>
+      ),
     },
-    { title: 'Averages', component: <PlayerAverages player={player} /> },
-    { title: 'Versus', component: <PlayerVersus player={player} /> },
+    {
+      label: <CustomIcon icon='bullseye' />,
+      component: (
+        <>
+          <TargetsOverview player={player} /> <PlayerVersus player={player} />
+        </>
+      ),
+    },
+    {
+      label: <CustomIcon icon='chart-pie' />,
+      component: (
+        <>
+          <PlayerPercentages results={results} player={player} />
+          <PlayerAverages player={player} />
+        </>
+      ),
+    },
   ];
+
   return (
-    <CenteredGrid dir='row' item='flex-start'>
-      {data.map((item, i) => (
-        <GridItem key={i}>
-          <GreyBackground>
-            <Suspense fallback={<Spinner isButton />}>
-              <SectionTitle title={item.title} />
-              {item.component}
-            </Suspense>
-          </GreyBackground>
-        </GridItem>
-      ))}
-    </CenteredGrid>
+    <>
+      <SectionTitle title={player.name} />
+      <Suspense fallback={<Spinner />}>
+        <CustomTabs tabs={tabs} centered />
+      </Suspense>
+    </>
   );
 };
 

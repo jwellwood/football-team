@@ -9,7 +9,7 @@ import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import ValueText from 'components/ui/text/ValueText';
 import CustomText from 'components/ui/text/CustomText';
-import SectionSubtitle from 'components/ui/headers/SectionSubtitle';
+import ProfileSection from 'components/user/ProfileSection';
 
 const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {
   const { warning, success } = theme.palette;
@@ -61,8 +61,7 @@ const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {
   };
 
   return (
-    <>
-      <SectionSubtitle title='Team' />
+    <ProfileSection title='Team'>
       <HorizontalBarGraph data={data} />
       <CenteredGrid dir='row'>
         {tableData.map((item, i) => (
@@ -77,7 +76,7 @@ const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {
           </Grid>
         ))}
       </CenteredGrid>
-    </>
+    </ProfileSection>
   );
 };
 

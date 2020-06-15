@@ -18,17 +18,18 @@ import {
   ADD_MATCH_PLAYER,
   DELETE_MATCH_PLAYER,
   GET_ALL_RESULTS,
-  GET_RESULT_BY_ID
+  GET_RESULT_BY_ID,
+  GET_LATEST_RESULT,
 } from '../types';
 
 // 1 GET / GET_ALL_RESULTS / getAllResults / public
 export function getAllResults() {
   const request = axios
     .get(`${PUBLIC_SERVER}/get_all_results`)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: GET_ALL_RESULTS,
-    payload: request
+    payload: request,
   };
 }
 
@@ -36,10 +37,20 @@ export function getAllResults() {
 export function getResultById(id) {
   const request = axios
     .get(`${PUBLIC_SERVER}/get_result_by_id/${id}`)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: GET_RESULT_BY_ID,
-    payload: request
+    payload: request,
+  };
+}
+// 2 GET / GET_RESULT_BY_ID / getResultById
+export function getLatestResult() {
+  const request = axios
+    .get(`${PUBLIC_SERVER}/get_latest_result`)
+    .then((res) => res.data);
+  return {
+    type: GET_LATEST_RESULT,
+    payload: request,
   };
 }
 
@@ -47,10 +58,10 @@ export function getResultById(id) {
 export function getResultsWithoutForfeits() {
   const request = axios
     .get(`${PUBLIC_SERVER}/get_results_without_forfeits`)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: GET_ALL_RESULTS,
-    payload: request
+    payload: request,
   };
 }
 
@@ -61,10 +72,10 @@ export function getResultsWithoutForfeits() {
 export function addResult(dataToSubmit) {
   const request = axios
     .post(`${ADMIN_SERVER}/add_result`, dataToSubmit)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: ADD_RESULT,
-    payload: request
+    payload: request,
   };
 }
 
@@ -74,10 +85,10 @@ export function addResult(dataToSubmit) {
 export function updateResult(dataToSubmit, id) {
   const request = axios
     .put(`${ADMIN_SERVER}/update_result/${id}`, dataToSubmit)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: UPDATE_RESULT,
-    payload: request
+    payload: request,
   };
 }
 
@@ -87,10 +98,10 @@ export function updateResult(dataToSubmit, id) {
 export function deleteResult(id) {
   const request = axios
     .delete(`${ADMIN_SERVER}/delete_result/${id}`)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: DELETE_RESULT,
-    payload: request
+    payload: request,
   };
 }
 
@@ -100,10 +111,10 @@ export function deleteResult(id) {
 export function addMatchPlayer(dataToSubmit, id) {
   const request = axios
     .post(`${ADMIN_SERVER}/add_match_player/${id}`, dataToSubmit)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: ADD_MATCH_PLAYER,
-    payload: request
+    payload: request,
   };
 }
 
@@ -112,9 +123,9 @@ export function addMatchPlayer(dataToSubmit, id) {
 export function deleteMatchPlayer(result_id, id) {
   const request = axios
     .delete(`${ADMIN_SERVER}/delete_match_player/${result_id}/${id}`)
-    .then(res => res.data);
+    .then((res) => res.data);
   return {
     type: DELETE_MATCH_PLAYER,
-    payload: request
+    payload: request,
   };
 }

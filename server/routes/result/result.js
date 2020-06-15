@@ -54,4 +54,16 @@ router.get(`${PUBLIC}/get_results_without_forfeits`, (req, res) => {
     });
 });
 
+// 4 GET / GET_LATEST_RESULT /getLatestResult / public
+router.get(`${PUBLIC}/get_latest_result`, (req, res) => {
+  const notifyError = errorMessage(getResults.error);
+  const notifySuccess = successMessage(getResults.success);
+  Result.findOne()
+    .sort({ date: -1 })
+    .exec((err, data) => {
+      if (err) return res.json({ ...notifyError, err: err });
+      return res.json({ ...notifySuccess, data });
+    });
+});
+
 module.exports = router;

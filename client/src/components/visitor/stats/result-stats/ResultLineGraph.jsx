@@ -4,6 +4,9 @@ import { theme } from 'assets/theme';
 // Internal
 import LineGraph from 'components/ui/graphs/LineGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
+import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import GridItem from 'components/ui/grids/GridItem';
+import ProfileSection from 'components/user/ProfileSection';
 
 const ResultLineGraph = ({ results }) => {
   const { success, error, secondary } = theme.palette;
@@ -53,7 +56,17 @@ const ResultLineGraph = ({ results }) => {
     ],
   };
 
-  return results.length ? <LineGraph data={data} /> : <PlaceholderText />;
+  return results.length ? (
+    <CenteredGrid dir='row'>
+      <GridItem sm={6}>
+        <ProfileSection title='Game by Game'>
+          <LineGraph data={data} />
+        </ProfileSection>
+      </GridItem>
+    </CenteredGrid>
+  ) : (
+    <PlaceholderText />
+  );
 };
 
 export default ResultLineGraph;

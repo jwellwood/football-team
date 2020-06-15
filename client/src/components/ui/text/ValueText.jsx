@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     color: '#fff',
     fontWeight: 'bold',
+    fontFamily: theme.typography.secondaryFont,
   },
 }));
 

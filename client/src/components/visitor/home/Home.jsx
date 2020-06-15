@@ -9,7 +9,7 @@ const GridButtons = lazy(() => import('./sections/GridButtons'));
 const Title = lazy(() => import('./sections/Title'));
 const HomeData = lazy(() => import('./sections/HomeData'));
 
-const Home = ({ data, team, results }) => {
+const Home = ({ data, team, result }) => {
   const sections = [
     {
       component: (
@@ -18,7 +18,7 @@ const Home = ({ data, team, results }) => {
         // </GreyBackground>
       ),
     },
-    { component: <HomeData team={team} results={results} /> },
+    { component: <HomeData team={team} result={result} /> },
     {
       component: (
         <CenteredGrid dir='row'>

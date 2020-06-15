@@ -6,7 +6,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,8 +41,13 @@ const CustomTabs = ({ tabs, centered }) => {
     setValue(index);
   };
   return (
-    <CenteredGrid>
-      <AppBar position='static' color='transparent' elevation={0}>
+    <>
+      <AppBar
+        position='static'
+        color='transparent'
+        elevation={0}
+        style={{ marginBottom: '10px' }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -51,20 +55,20 @@ const CustomTabs = ({ tabs, centered }) => {
           variant='fullWidth'
           centered={centered}
         >
-          {tabs.map((tab) => (
-            <Tab key={tab.label} label={tab.label} />
+          {tabs.map((tab, i) => (
+            <Tab key={i} label={tab.label} />
           ))}
         </Tabs>
       </AppBar>
 
       <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
         {tabs.map((tab, i) => (
-          <TabPanel key={tab.label + i} value={value} index={i}>
+          <TabPanel key={i} value={value} index={i}>
             {tab.component}
           </TabPanel>
         ))}
       </SwipeableViews>
-    </CenteredGrid>
+    </>
   );
 };
 

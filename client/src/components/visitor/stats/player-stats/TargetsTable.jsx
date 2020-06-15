@@ -6,8 +6,8 @@ import CustomTable from 'components/ui/tables/CustomTable';
 import ValueText from 'components/ui/text/ValueText';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomText from 'components/ui/text/CustomText';
-import SectionSubtitle from 'components/ui/headers/SectionSubtitle';
 import CustomTableCell from 'components/ui/tables/CustomTableCell';
+import ProfileSection from 'components/user/ProfileSection';
 
 const TargetsTable = ({ targets }) => {
   const headCells = [
@@ -64,10 +64,9 @@ const TargetsTable = ({ targets }) => {
   });
 
   return (
-    <>
-      <SectionSubtitle title='Players' />
+    <ProfileSection title='Players'>
       <CustomTable rows={rows} headCells={headCells} />
-    </>
+    </ProfileSection>
   );
 };
 

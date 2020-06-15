@@ -4,11 +4,10 @@ import React from 'react';
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import Fab from '@material-ui/core/Fab';
 // Internal
 import NavDrawerList from './NawDrawerList';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import { Fab } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) => ({
   root: {

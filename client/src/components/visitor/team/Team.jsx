@@ -1,10 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
-import GreyBackground from 'containers/GreyBackground';
-import SectionTitle from 'components/ui/headers/SectionTitle';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
 import Spinner from 'components/ui/loading/Spinner';
+import CustomTabs from 'components/ui/tabs/CustomTabs';
+import CustomIcon from 'components/ui/icons/CustomIcon';
 // Sections
 const TeamPhoto = lazy(() => import('components/ui/images/TeamPhoto'));
 const TrophiesLogic = lazy(() => import('./trophies/TrophiesLogic'));
@@ -14,28 +12,29 @@ const PreviousSeasonsLogic = lazy(() =>
 );
 
 const Team = ({ team }) => {
-  const data = [
-    { title: '', component: <TeamPhoto image={team.teamPhoto.url} /> },
-    { title: 'Trophies', component: <TrophiesLogic team={team} /> },
+  const tabs = [
     {
-      title: 'Previous Seasons',
+      label: <CustomIcon icon='user-friends' />,
+      component: <TeamPhoto image={team.teamPhoto.url} />,
+    },
+    {
+      label: <CustomIcon icon='trophy' />,
+      component: <TrophiesLogic team={team} />,
+    },
+    {
+      label: <CustomIcon icon='monument' />,
       component: <PreviousSeasonsLogic team={team} />,
     },
-    { title: 'Hall of Fame', component: <HallOfFameLogic team={team} /> },
+    {
+      label: <CustomIcon icon='landmark' />,
+      component: <HallOfFameLogic team={team} />,
+    },
   ];
+
   return team ? (
-    <CenteredGrid dir='row' item='flex-start'>
-      {data.map((item) => (
-        <GridItem key={item.title} item xs={12} sm={6}>
-          <GreyBackground placeholder>
-            <Suspense fallback={<Spinner isButton />}>
-              <SectionTitle title={item.title} />
-              {item.component}
-            </Suspense>
-          </GreyBackground>
-        </GridItem>
-      ))}
-    </CenteredGrid>
+    <Suspense fallback={<Spinner />}>
+      <CustomTabs tabs={tabs} />
+    </Suspense>
   ) : (
     <Spinner />
   );

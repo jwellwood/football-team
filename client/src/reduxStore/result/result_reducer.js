@@ -7,6 +7,7 @@ import {
   DELETE_MATCH_PLAYER,
   GET_ALL_RESULTS,
   GET_RESULT_BY_ID,
+  GET_LATEST_RESULT,
 } from '../types';
 
 export const resultReducer = function (state = {}, action) {
@@ -29,6 +30,8 @@ export const resultReducer = function (state = {}, action) {
         data: action.payload.data,
       };
     case GET_RESULT_BY_ID:
+      return { ...state, success: action.payload };
+    case GET_LATEST_RESULT:
       return { ...state, success: action.payload };
     default:
       return state;

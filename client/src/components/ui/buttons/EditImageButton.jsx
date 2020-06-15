@@ -1,22 +1,23 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // MUI
-import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 // Internal
 import CustomIcon from '../icons/CustomIcon';
 
 const EditImageButton = ({ link }) => {
-  const icon = link === 'locked' ? 'lock' : 'camera';
-  const linkTo = link === 'locked' ? null : link;
   return (
-    <IconButton
+    <Button
+      variant='contained'
       aria-label='delete'
       color='primary'
       component={RouterLink}
-      to={linkTo}
+      to={link}
+      disabled={link === 'locked'}
+      startIcon={<CustomIcon size='sm' icon='camera' />}
     >
-      <CustomIcon size='sm' icon={icon} />
-    </IconButton>
+      edit photo
+    </Button>
   );
 };
 

@@ -9,7 +9,7 @@ import CustomText from 'components/ui/text/CustomText';
 import CustomButton from 'components/ui/buttons/CustomButton';
 
 const Changelog = () => {
-  const button = <CustomButton>Changelog</CustomButton>;
+  const button = <CustomButton>View Changelog</CustomButton>;
 
   return (
     <PresentationModal buttonElement={button}>

@@ -9,13 +9,16 @@ import ProfileImage from './ProfileImage';
 import Details from './Details';
 
 const PlayerDetails = ({ user }) => {
-  const { canEdit } = user;
+  const { name, canEdit, image } = user;
 
   return (
-    <ProfileSection link={!canEdit.details ? 'locked' : EDIT_PLAYER}>
+    <ProfileSection
+      title={name}
+      link={!canEdit.details ? 'locked' : EDIT_PLAYER}
+    >
       <CenteredGrid dir='row'>
         <GridItem sm={4}>
-          <ProfileImage user={user} />
+          <ProfileImage image={image} />
         </GridItem>
         <GridItem sm={8}>
           <Details user={user} />

@@ -7,7 +7,7 @@ import {
   ADD_NEW_TROPHY,
   DELETE_TROPHY,
   ADD_HALL_OF_FAMER,
-  UDPATE_HALL_OF_FAMER,
+  UPDATE_HALL_OF_FAMER,
   DELETE_HALL_OF_FAMER,
   UPLOAD_TEAM_PHOTO,
   REMOVE_ADMIN_IMAGE,
@@ -44,7 +44,7 @@ export const teamReducer = function (state = {}, action) {
     // HOF
     case ADD_HALL_OF_FAMER:
       return { ...state, message: action.payload };
-    case UDPATE_HALL_OF_FAMER:
+    case UPDATE_HALL_OF_FAMER:
       return { ...state, message: action.payload };
     case DELETE_HALL_OF_FAMER:
       return { ...state, message: action.payload };

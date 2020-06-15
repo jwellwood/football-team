@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Paper from '@material-ui/core/Paper';
 import { theme } from 'assets/theme';
-import { Zoom } from '@material-ui/core';
+import { Grow } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) => ({
   container: {
@@ -29,9 +29,9 @@ const GreyBackground = ({ children, bordered, placeholder }) => {
     </Paper>
   );
   return !placeholder ? (
-    <Zoom in={true} timeout={200}>
+    <Grow in={true} timeout={200}>
       {paperComponent}
-    </Zoom>
+    </Grow>
   ) : (
     paperComponent
   );

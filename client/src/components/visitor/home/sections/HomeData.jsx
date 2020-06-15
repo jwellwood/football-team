@@ -12,15 +12,14 @@ import PlaceholderText from 'components/ui/text/Placeholder';
 const CurrentPosition = lazy(() => import('./CurrentPosition'));
 const LatestResult = lazy(() => import('./LatestResult'));
 
-const HomeData = ({ team, results }) => {
+const HomeData = ({ team, result }) => {
   const { position, league } = team || {};
 
-  const latestResult =
-    results && results.length ? (
-      <LatestResult result={results[0]} />
-    ) : (
-      <PlaceholderText />
-    );
+  const latestResult = result ? (
+    <LatestResult result={result} />
+  ) : (
+    <PlaceholderText />
+  );
 
   return (
     <Suspense fallback={<Spinner isButton />}>

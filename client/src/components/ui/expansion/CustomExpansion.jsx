@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // Internal
 import ValueText from 'components/ui/text/ValueText';
 import GreyBackground from 'containers/GreyBackground';
-import { Typography, Grid } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';

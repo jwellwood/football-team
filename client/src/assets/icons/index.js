@@ -50,6 +50,7 @@ import {
   faChevronDown,
   faChevronUp,
   faArrowLeft,
+  faBullseye,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -94,11 +95,12 @@ library.add(
   faBookmark, //          - league
   faTrash, //             - delete
   faCheck, //             - true
-  faChevronRight, //      - rioght
+  faChevronRight, //      - right
   faTimes, //             - false
   faLock, //              - locked
   faChevronDown,
   faChevronUp,
-  faArrowLeft
+  faArrowLeft,
+  faBullseye
   // more icons go here
 );

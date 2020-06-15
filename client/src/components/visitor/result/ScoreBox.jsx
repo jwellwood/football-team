@@ -1,6 +1,7 @@
 import React from 'react';
-// MUITODO
-import Grid from '@material-ui/core/Grid';
+// MUI
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Functions
 import { parseDate } from 'components/utils/date';
 import { getResultsColors } from 'components/utils';
@@ -9,11 +10,14 @@ import badge from 'assets/images/badge.jpg';
 // Components
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import TopSectionContainer from 'containers/TopSectionContainer';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
 import ValueText from 'components/ui/text/ValueText';
 import CustomText from 'components/ui/text/CustomText';
+import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import GreyBackground from 'containers/GreyBackground';
+import { theme } from 'assets/theme';
 
 const ScoreBox = ({ result }) => {
   const {
@@ -26,67 +30,44 @@ const ScoreBox = ({ result }) => {
     points,
   } = result;
 
-  const data = {
-    score: [teamGoals, opponentGoals],
-    name: ['Madrid Reds', opponentName],
-  };
+  const data = [
+    {
+      name: 'Madrid Reds',
+      goals: teamGoals,
+      avatar: <CustomImageAvatar image={badge} shadow='secondary' isList />,
+    },
+    {
+      name: opponentName,
+      goals: opponentGoals,
+      avatar: (
+        <CustomAvatar shadow='secondary' isList>
+          <CustomIcon icon='shield-alt' size='sm' />
+        </CustomAvatar>
+      ),
+    },
+  ];
 
-  const GridWrapper = ({ children }) => {
-    return (
-      <Grid item xs={4} align='center'>
-        <CenteredGrid items='flex-start'>{children}</CenteredGrid>
-      </Grid>
-    );
-  };
-
-  const NumberWrapper = ({ children }) => {
-    return (
-      <CustomText type='large' color='inherit'>
-        {children}
-      </CustomText>
-    );
-  };
-
-  const teamBadge = <CustomImageAvatar image={badge} shadow='secondary' />;
-
-  const oppBadge = (
-    <CustomAvatar shadow='secondary'>
-      <CustomIcon icon='shield-alt' size='sm' />
-    </CustomAvatar>
+  const listData = (data) => (
+    <ListItemWrapper>
+      {data.avatar}
+      <ListItemText primary={<ValueText>{data.name}</ValueText>} />
+      <ListItemSecondaryAction>
+        <div
+          style={{
+            color: getResultsColors(points),
+            fontFamily: theme.typography.secondaryFont,
+            fontWeight: 'bold',
+            fontSize: '40px',
+          }}
+        >
+          {data.goals}
+        </div>
+      </ListItemSecondaryAction>
+    </ListItemWrapper>
   );
 
-  const teamName = (team) => (
-    <GridWrapper>
-      <ValueText>{team}</ValueText>
-    </GridWrapper>
-  );
-
-  const score = (
-    <Grid
-      item
-      xs={4}
-      align='center'
-      style={{ color: getResultsColors(points) }}
-    >
-      <NumberWrapper>{data.score[isHome ? 0 : 1]}</NumberWrapper>
-      <span> - </span>
-      <NumberWrapper>{data.score[isHome ? 1 : 0]}</NumberWrapper>
-    </Grid>
-  );
-
-  const homeTeam = (
-    <GridWrapper>
-      {isHome ? teamBadge : oppBadge}
-      {teamName(data.name[isHome ? 0 : 1])}
-    </GridWrapper>
-  );
-
-  const awayTeam = (
-    <GridWrapper>
-      {isHome ? oppBadge : teamBadge}
-      {teamName(data.name[isHome ? 1 : 0])}
-    </GridWrapper>
-  );
+  const topRow = isHome ? listData(data[0]) : listData(data[1]);
+  const bottomRow = isHome ? listData(data[1]) : listData(data[0]);
 
   const details = (
     <CenteredGrid>
@@ -96,14 +77,13 @@ const ScoreBox = ({ result }) => {
   );
 
   return (
-    <TopSectionContainer>
-      <CenteredGrid item='flex-start' dir='row'>
-        {homeTeam}
-        {score}
-        {awayTeam}
-      </CenteredGrid>
+    <GreyBackground>
       {details}
-    </TopSectionContainer>
+      <ListWrapper>
+        {topRow}
+        {bottomRow}
+      </ListWrapper>
+    </GreyBackground>
   );
 };
 

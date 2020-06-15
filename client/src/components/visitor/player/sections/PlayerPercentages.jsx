@@ -7,6 +7,7 @@ import {
 } from 'functions/player';
 // Components
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
+import ProfileSection from 'components/user/ProfileSection';
 
 const PlayerPercentages = ({ player, results }) => {
   const playerTotals = useMemo(() => getTotals(player), [player]);
@@ -45,7 +46,11 @@ const PlayerPercentages = ({ player, results }) => {
   //   // <li>Pens of team taken {penalties.percentOfTeamPensTaken}%</li>
   // }
 
-  return <HorizontalBarGraph data={data} />;
+  return (
+    <ProfileSection title='Percentages'>
+      <HorizontalBarGraph data={data} />
+    </ProfileSection>
+  );
 };
 
 export default PlayerPercentages;
