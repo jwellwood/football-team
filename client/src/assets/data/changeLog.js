@@ -1,5 +1,12 @@
 export const changeLog = [
   {
+    version: '0.0.9',
+    changes: [
+      'change email provider',
+      'standardize fonts and refactor some code',
+    ],
+  },
+  {
     version: '0.0.8',
     changes: ['fix delete account problem', 'improve team pages'],
   },

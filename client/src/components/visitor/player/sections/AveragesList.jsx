@@ -5,7 +5,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AveragesList = ({ listData }) => {
   return (
@@ -14,7 +14,9 @@ const AveragesList = ({ listData }) => {
         <ListItemWrapper key={data.title}>
           <ListItemText primary={data.title} />
           <ListItemSecondaryAction>
-            <ValueText>{data.value}</ValueText>
+            <CustomTypography main bold>
+              {data.value}
+            </CustomTypography>
           </ListItemSecondaryAction>
         </ListItemWrapper>
       ))}

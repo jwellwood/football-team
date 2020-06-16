@@ -46,11 +46,7 @@ const PlayerAveragesLogic = ({ player }) => {
     { title: 'Individual', component: <AveragesList listData={listData} /> },
     {
       title: 'Team',
-      component: (
-        <div>
-          <BarGraph data={data} />
-        </div>
-      ),
+      component: <BarGraph data={data} />,
     },
   ];
 

@@ -2,8 +2,8 @@ import React from 'react';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import SectionSubtitle from 'components/ui/headers/SectionSubtitle';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const PlayerAverages = ({ tables }) => {
   return (
@@ -11,7 +11,9 @@ const PlayerAverages = ({ tables }) => {
       <CenteredGrid dir='row' item='flex-start'>
         {tables.map((table) => (
           <GridItem key={table.title} sm={12}>
-            <SectionSubtitle title={table.title} />
+            <div style={{ marginBottom: '10px' }}>
+              <CustomTypography div>{table.title}</CustomTypography>
+            </div>
             {table.component}
           </GridItem>
         ))}

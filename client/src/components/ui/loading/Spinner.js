@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Typography, CircularProgress } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import CustomTypography from '../text/CustomTypography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +36,7 @@ const Spinner = ({ isButton }) => {
   ) : (
     <div className={classes.root}>
       <FontAwesomeIcon icon='futbol' spin size='3x' className={classes.icon} />
-      <Typography variant='caption'>loading...</Typography>
+      <CustomTypography size='xs'>loading...</CustomTypography>
     </div>
   );
   return spinner;

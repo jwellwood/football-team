@@ -8,8 +8,8 @@ import { EDIT_USER } from 'router/route_names';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import ValueText from 'components/ui/text/ValueText';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AccountDetails = ({ user }) => {
   const { email, adminStatus, createdAt, updatedAt } = user;
@@ -27,7 +27,11 @@ const AccountDetails = ({ user }) => {
           <ListItemWrapper key={item.text}>
             <ListItemText
               primary={item.text}
-              secondary={<ValueText>{item.value}</ValueText>}
+              secondary={
+                <CustomTypography main bold>
+                  {item.value}
+                </CustomTypography>
+              }
             />
           </ListItemWrapper>
         ))}

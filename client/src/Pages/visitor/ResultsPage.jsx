@@ -1,6 +1,6 @@
 import React from 'react';
 import { HOME } from 'router/route_names';
-import PageHeader from 'components/ui/headers/PageHeader';
+import PageHeader from 'components/ui/text/PageHeader';
 import ResultsListLogic from 'components/visitor/results/ResultsListLogic';
 
 const ResultsPage = () => {

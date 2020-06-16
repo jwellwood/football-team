@@ -7,7 +7,7 @@ import CustomIcon from 'components/ui/icons/CustomIcon';
 import GreyBackground from 'containers/GreyBackground';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import GridItem from 'components/ui/grids/GridItem';
-import CustomText from 'components/ui/text/CustomText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const HomeGrid = ({ data }) => {
   return data.map((item, i) => (
@@ -17,7 +17,7 @@ const HomeGrid = ({ data }) => {
           <CustomAvatar bordered>
             <CustomIcon icon={item.icon} color='primary' size='xs' />
           </CustomAvatar>
-          <CustomText type='caption'>{item.text}</CustomText>
+          <CustomTypography size='sm'>{item.text}</CustomTypography>
         </GreyBackground>
       </Link>
     </GridItem>

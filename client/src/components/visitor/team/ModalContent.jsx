@@ -1,11 +1,10 @@
 import React from 'react';
 // Components
 import GreyBackground from 'containers/GreyBackground';
-import CustomText from 'components/ui/text/CustomText';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import GridItem from 'components/ui/grids/GridItem';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ModalContent = ({ data }) => {
   const { title, highlight, icon, iconColor, main, extra, description } = data;
@@ -14,10 +13,10 @@ const ModalContent = ({ data }) => {
     <GreyBackground>
       <CenteredGrid>
         <GridItem>
-          <CustomText type='large'>{title}</CustomText>
-          <CustomText div type='highlight'>
+          <CustomTypography size='lg'>{title}</CustomTypography>
+          <CustomTypography color='warning' div>
             {highlight}
-          </CustomText>
+          </CustomTypography>
         </GridItem>
         <GreyBackground>
           <GridItem>
@@ -25,16 +24,20 @@ const ModalContent = ({ data }) => {
           </GridItem>
         </GreyBackground>
         <GridItem>
-          <ValueText>{main}</ValueText>
+          <CustomTypography main bold>
+            {main}
+          </CustomTypography>
           {extra ? (
-            <CustomText div type='muted'>
+            <CustomTypography size='sm' div>
               {extra}
-            </CustomText>
+            </CustomTypography>
           ) : null}
         </GridItem>
         {description ? (
           <GreyBackground>
-            <CustomText type='highlight'>{description}</CustomText>
+            <CustomTypography color='warning' font='secondary'>
+              {description}
+            </CustomTypography>
           </GreyBackground>
         ) : null}
       </CenteredGrid>

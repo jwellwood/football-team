@@ -5,8 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomText from 'components/ui/text/CustomText';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 export const useStyles = makeStyles((theme) => ({
   number_avatar: {
@@ -26,9 +25,11 @@ const StatBoxes = ({ detailsToShow }) => {
         {detailsToShow.map((item, i) => (
           <Grid item key={i} align='center'>
             <Avatar className={classes.number_avatar}>
-              <ValueText>{item.value}</ValueText>
+              <CustomTypography main bold>
+                {item.value}
+              </CustomTypography>
             </Avatar>
-            <CustomText type='caption'>{item.text}</CustomText>
+            <CustomTypography size='xs'>{item.text}</CustomTypography>
           </Grid>
         ))}
       </CenteredGrid>

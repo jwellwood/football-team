@@ -1,18 +1,17 @@
 import React from 'react';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomText from 'components/ui/text/CustomText';
 import { generateOrdinals } from 'components/utils/generateOrdinals';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const CurrentPosition = ({ position, league }) => {
   return (
     <CenteredGrid>
-      <ValueText>
+      <CustomTypography main bold>
         {position}
         {generateOrdinals(+position)}
-      </ValueText>
+      </CustomTypography>
 
-      <CustomText type='muted'>{league}</CustomText>
+      <CustomTypography size='sm'>{league}</CustomTypography>
     </CenteredGrid>
   );
 };

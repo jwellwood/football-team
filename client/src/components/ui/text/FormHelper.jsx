@@ -1,11 +1,14 @@
 import React from 'react';
-import CustomText from './CustomText';
+// Components
 import GreyBackground from 'containers/GreyBackground';
+import CustomTypography from './CustomTypography';
 
 const FormHelper = ({ children }) => {
   return (
     <GreyBackground placeholder>
-      <CustomText type='caption'>{children}</CustomText>
+      <CustomTypography size='sm' font='secondary'>
+        {children}
+      </CustomTypography>
     </GreyBackground>
   );
 };

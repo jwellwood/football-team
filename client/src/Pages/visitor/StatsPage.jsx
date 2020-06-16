@@ -1,6 +1,6 @@
 import React from 'react';
 import Stats from 'components/visitor/stats/Stats';
-import PageHeader from 'components/ui/headers/PageHeader';
+import PageHeader from 'components/ui/text/PageHeader';
 import { HOME } from 'router/route_names';
 
 const StatsPage = () => {

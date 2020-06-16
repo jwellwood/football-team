@@ -1,12 +1,12 @@
 import React from 'react';
-import CustomText from 'components/ui/text/CustomText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const MatchReport = ({ result }) => {
   const { matchReport } = result;
   return matchReport ? (
-    <CustomText type='muted'>{matchReport}</CustomText>
+    <CustomTypography size='sm'>{matchReport}</CustomTypography>
   ) : (
-    <CustomText type='placeholder' text='No match report' />
+    <CustomTypography>No match report</CustomTypography>
   );
 };
 

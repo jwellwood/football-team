@@ -1,13 +1,11 @@
 import React, { useMemo } from 'react';
 // Functions
-import {
-  getTotals,
-  getContributions,
-  // getPenaltyTotals,
-} from 'functions/player';
+import { getTotals, getContributions } from 'functions/player';
 // Components
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 import SectionContainer from 'containers/SectionContainer';
+import TargetProgress from 'components/ui/progress/TargetProgress';
+import CenteredGrid from 'components/ui/grids/CenteredGrid';
 
 const PlayerPercentages = ({ player, results }) => {
   const playerTotals = useMemo(() => getTotals(player), [player]);
@@ -15,40 +13,35 @@ const PlayerPercentages = ({ player, results }) => {
     player,
     results,
   ]);
-  // const penalties = getPenaltyTotals(player, results);
 
-  const data = {
-    labels: [
-      'Played',
-      'Win',
-      'Goal in',
-      'Assist in',
-      'Goal / Assist in',
-      'Goal & Assist in',
-      'Contribution',
-    ],
+  const graphData = {
+    labels: ['Goal in', 'Assist in', 'Goal / Assist in', 'Goal & Assist in'],
     datasets: [
       {
         data: [
-          contributions.apps,
-          playerTotals.winPercentage,
           contributions.goals,
           contributions.assists,
           contributions.either,
           contributions.both,
-          contributions.overall,
         ],
       },
     ],
   };
-  // { TODO
-  //   // <li>Pen %: {penalties.penScoredPercent}%</li>
-  //   // <li>Pens of team taken {penalties.percentOfTeamPensTaken}%</li>
-  // }
+
+  const data = [
+    { title: 'Played', percent: contributions.apps },
+    { title: 'Won', percent: playerTotals.winPercentage },
+    { title: 'Contribution', percent: contributions.overall },
+  ];
 
   return (
     <SectionContainer title='Percentages'>
-      <HorizontalBarGraph data={data} />
+      <CenteredGrid dir='row' item='flex-start'>
+        {data.map((item, i) => (
+          <TargetProgress key={i} percentage={item.percent} type={item.title} />
+        ))}
+      </CenteredGrid>
+      <HorizontalBarGraph data={graphData} />
     </SectionContainer>
   );
 };

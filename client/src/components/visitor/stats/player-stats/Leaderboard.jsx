@@ -7,10 +7,10 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import GreyBackground from 'containers/GreyBackground';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import ValueText from 'components/ui/text/ValueText';
 import StatIcon from 'components/ui/icons/StatIcon';
 import LeaderboardList from './LeaderboardList';
 import PresentationModal from 'components/ui/modals/PresentationModal';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const Leaderboard = ({ data }) => {
   return (
@@ -28,11 +28,17 @@ const Leaderboard = ({ data }) => {
                     <StatIcon type={item.icon} size='lg' />
                   </ListItemIcon>
                   <ListItemText
-                    primary={<ValueText>{topName}</ValueText>}
+                    primary={
+                      <CustomTypography main bold>
+                        {topName}
+                      </CustomTypography>
+                    }
                     secondary={item.title}
                   />
                   <ListItemSecondaryAction>
-                    <ValueText>{topValue}</ValueText>
+                    <CustomTypography main bold>
+                      {topValue}
+                    </CustomTypography>
                   </ListItemSecondaryAction>
                 </ListItemWrapper>
               </GreyBackground>

@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 // Internal
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomExpansion from 'components/ui/expansion/CustomExpansion';
-import CustomText from '../text/CustomText';
+import CustomTypography from '../text/CustomTypography';
 
 const VersusWrapper = ({ data }) => {
   return data.map((item, i) => (
@@ -18,14 +18,16 @@ const VersusWrapper = ({ data }) => {
         {item.secondaryList.map((match, i) => (
           <CenteredGrid key={i} dir='row' just='space-between'>
             <Grid item align='left'>
-              <CustomText type='highlight'>{match.name}</CustomText>
-              <CustomText type='caption' div>
+              <CustomTypography bold main>
+                {match.name}
+              </CustomTypography>
+              <CustomTypography color='warning' size='sm' div>
                 {match.date}
-              </CustomText>
+              </CustomTypography>
             </Grid>
-            <CustomText type='muted'>
+            <CustomTypography bold>
               {match.scored} - {match.conceded}
-            </CustomText>
+            </CustomTypography>
           </CenteredGrid>
         ))}
       </CenteredGrid>

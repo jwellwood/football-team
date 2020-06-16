@@ -2,8 +2,8 @@ import React from 'react';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ProfileList from 'components/ui/lists/ProfileList';
-import CustomText from 'components/ui/text/CustomText';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const Details = ({ user }) => {
   const { squadNumber, position, description, yearJoined } = user;
@@ -18,7 +18,9 @@ const Details = ({ user }) => {
         <ProfileList details={details} />
       </ListWrapper>
       <CustomDivider />
-      <CustomText type='muted'>{description}</CustomText>
+      <CustomTypography color='warning' font='secondary'>
+        {description}
+      </CustomTypography>
     </>
   );
 };

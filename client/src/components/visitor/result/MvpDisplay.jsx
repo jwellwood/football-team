@@ -4,10 +4,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Components
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import StatIcon from 'components/ui/icons/StatIcon';
-import CustomText from 'components/ui/text/CustomText';
 import GreyBackground from 'containers/GreyBackground';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const MvpDisplay = ({ mvp }) => {
   return mvp.length ? (
@@ -19,16 +19,16 @@ const MvpDisplay = ({ mvp }) => {
           </CustomAvatar>
           <ListItemText
             primary={mvp.map((pl, i) => (
-              <CustomText key={pl.player_id._id} div>
+              <CustomTypography bold key={pl.player_id._id} div>
                 {pl.player_id.name}
-              </CustomText>
+              </CustomTypography>
             ))}
           />
         </ListItemWrapper>
       </ListWrapper>
     </GreyBackground>
   ) : (
-    <CustomText type='placeholder' text='No mvp' />
+    <CustomTypography>No mvp</CustomTypography>
   );
 };
 

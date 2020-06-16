@@ -4,13 +4,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import ValueText from 'components/ui/text/ValueText';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import ModalContent from '../ModalContent';
-import CustomText from 'components/ui/text/CustomText';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const HallOfFame = ({ hallOfFamer }) => {
   const { name, yearInducted, yearJoined, yearLeft, description } = hallOfFamer;
@@ -32,9 +31,15 @@ const HallOfFame = ({ hallOfFamer }) => {
             <CustomAvatar isList background='transparent' shadow='error'>
               <CustomIcon icon='landmark' size='sm' color='primary' />
             </CustomAvatar>
-            <ListItemText primary={<ValueText>{name}</ValueText>} />
+            <ListItemText
+              primary={
+                <CustomTypography main bold>
+                  {name}
+                </CustomTypography>
+              }
+            />
             <ListItemSecondaryAction>
-              <CustomText type='highlight'>{yearInducted}</CustomText>
+              <CustomTypography>{yearInducted}</CustomTypography>
             </ListItemSecondaryAction>
           </ListItemWrapper>
         }

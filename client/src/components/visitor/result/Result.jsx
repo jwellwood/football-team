@@ -4,7 +4,7 @@ import Spinner from 'components/ui/loading/Spinner';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GreyBackground from 'containers/GreyBackground';
 import GridItem from 'components/ui/grids/GridItem';
-import SectionTitle from 'components/ui/headers/SectionTitle';
+import SectionTitle from 'components/ui/text/SectionTitle';
 // Components
 const ScoreBox = lazy(() => import('./ScoreBox'));
 const MatchPlayers = lazy(() => import('./MatchPlayers'));

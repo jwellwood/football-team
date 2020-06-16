@@ -31,13 +31,15 @@ const options = {
 
 const HorizontalBarGraph = ({ data }) => {
   return (
-    <HorizontalBar
-      plugins={[ChartDataLabels]}
-      legend={{ display: false }}
-      data={data}
-      options={options}
-      height={200}
-    />
+    <div>
+      <HorizontalBar
+        plugins={[ChartDataLabels]}
+        legend={{ display: false }}
+        data={data}
+        options={options}
+        height={200}
+      />
+    </div>
   );
 };
 

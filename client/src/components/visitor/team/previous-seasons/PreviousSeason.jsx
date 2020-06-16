@@ -7,8 +7,8 @@ import CustomIcon from 'components/ui/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import PreviousSeasonContent from './PreviousSeasonContent';
-import CustomText from 'components/ui/text/CustomText';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const PreviousSeasons = ({ season }) => {
   const { seasonName } = season;
@@ -22,7 +22,7 @@ const PreviousSeasons = ({ season }) => {
               <CustomIcon icon='monument' size='sm' color='secondary' />
             </CustomAvatar>
             <ListItemSecondaryAction>
-              <CustomText type='highlight'>{seasonName}</CustomText>
+              <CustomTypography>{seasonName}</CustomTypography>
             </ListItemSecondaryAction>
           </ListItemWrapper>
         }

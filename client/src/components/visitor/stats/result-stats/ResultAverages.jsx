@@ -8,7 +8,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ResultAverages = ({ results }) => {
   const stats = useMemo(() => getResultAverages(results), [results]);
@@ -31,7 +31,9 @@ const ResultAverages = ({ results }) => {
           ) : null}
           <ListItemText primary={item.text} secondary={item.secondary} />
           <ListItemSecondaryAction>
-            <ValueText>{item.value}</ValueText>
+            <CustomTypography main bold>
+              {item.value}
+            </CustomTypography>
           </ListItemSecondaryAction>
         </ListItemWrapper>
       ))}

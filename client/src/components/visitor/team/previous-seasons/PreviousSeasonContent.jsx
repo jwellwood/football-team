@@ -10,10 +10,10 @@ import { theme } from 'assets/theme';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import ResultsTotals from 'components/visitor/results/ResultsTotals';
 import DonutGraph from 'components/ui/graphs/DonutGraph';
-import SectionTitle from 'components/ui/headers/SectionTitle';
-import CustomText from 'components/ui/text/CustomText';
+import SectionTitle from 'components/ui/text/SectionTitle';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import AwardList from './AwardList';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const PreviousSeasonContent = ({ season }) => {
   const {
@@ -66,12 +66,12 @@ const PreviousSeasonContent = ({ season }) => {
   return (
     <>
       <Grid container justify='space-between'>
-        <CustomText type='large'>{year}</CustomText>
+        <CustomTypography size='lg'>{year}</CustomTypography>
         <CustomAvatar shadow='secondary'>
           {finalPosition}
-          <CustomText type='caption'>
+          <CustomTypography size='xs'>
             {generateOrdinals(finalPosition)}
-          </CustomText>
+          </CustomTypography>
         </CustomAvatar>
       </Grid>
       <SectionTitle title='Results' />

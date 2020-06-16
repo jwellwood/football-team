@@ -1,12 +1,8 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import CustomTypography from './CustomTypography';
 
 const PlaceholderText = () => {
-  return (
-    <Typography variant='body2' color='secondary'>
-      No matches played yet
-    </Typography>
-  );
+  return <CustomTypography size='sm'>No matches played yet</CustomTypography>;
 };
 
 export default PlaceholderText;

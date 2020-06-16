@@ -45,13 +45,15 @@ const options = {
 
 const BarGraph = ({ data }) => {
   return (
-    <Bar
-      // plugins={[ChartDataLabels]}
-      legend={{ display: false }}
-      data={data}
-      height={200}
-      options={options}
-    />
+    <div>
+      <Bar
+        // plugins={[ChartDataLabels]}
+        legend={{ display: false }}
+        data={data}
+        height={200}
+        options={options}
+      />
+    </div>
   );
 };
 

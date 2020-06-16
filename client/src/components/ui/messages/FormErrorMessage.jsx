@@ -1,6 +1,5 @@
 import React from 'react';
-// MUI
-import Typography from '@material-ui/core/Typography';
+import CustomTypography from '../text/CustomTypography';
 
 const FormErrorMessage = ({ type, error }) => {
   let message = null;
@@ -27,9 +26,9 @@ const FormErrorMessage = ({ type, error }) => {
       return message;
   }
   return (
-    <Typography variant='caption' color='error'>
+    <CustomTypography size='xs' color='error'>
       {`${type} is ${message}`}
-    </Typography>
+    </CustomTypography>
   );
 };
 

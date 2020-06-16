@@ -1,6 +1,6 @@
 import React from 'react';
 import { ADMIN_RESULTS } from 'router/route_names';
-import PageHeader from 'components/ui/headers/PageHeader';
+import PageHeader from 'components/ui/text/PageHeader';
 import EditResultLogic from 'components/admin/results/EditResultLogic';
 
 const EditResultPage = () => {

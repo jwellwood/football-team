@@ -10,8 +10,7 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import GreyBackground from 'containers/GreyBackground';
-
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AdminResultsList = ({ results }) => {
   return (
@@ -47,9 +46,9 @@ const AdminResultsList = ({ results }) => {
                     color='primary'
                   />
                 )}
-                <ValueText color='secondary'>
+                <CustomTypography bold>
                   {teamGoals} - {opponentGoals}
-                </ValueText>
+                </CustomTypography>
               </ListItemSecondaryAction>
             </ListItemWrapper>
           );

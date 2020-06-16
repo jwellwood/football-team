@@ -2,12 +2,12 @@ const authMessages = {
   getAuth: { error: 'get user', success: 'Fetched user' },
   signUp: {
     error: 'register user',
-    success: 'Check your email for a verifcation link. Registered',
+    success: 'Check your email for a verification link. Registered',
   },
   signIn: { error: 'sign in', success: 'Signed in' },
   signOut: { error: 'sign out', success: 'Signed out' },
   checkPassword: { error: 'match password', success: 'Password matched' }, // TODO needs custom?
-  udpatePassword: { error: 'change password', success: 'Password changed' },
+  updatePassword: { error: 'change password', success: 'Password changed' },
   updateAccount: { error: 'update account', success: 'Account updated' },
   deleteAccount: { error: 'delete account', success: 'Account deleted' },
   forgotPassword: {

@@ -8,10 +8,9 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import TopSectionContainer from 'containers/TopSectionContainer';
 import GreyBackground from 'containers/GreyBackground';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
-import CustomText from 'components/ui/text/CustomText';
-import ValueText from 'components/ui/text/ValueText';
 import FormIndicator from './FormIndicator';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ResultsTotals = ({ data, showStatsButton }) => {
   return (
@@ -21,16 +20,16 @@ const ResultsTotals = ({ data, showStatsButton }) => {
           {data.map((item, i) => (
             <Fragment key={item.title + i}>
               <Grid align='center'>
-                <CustomText type='caption' div>
+                <CustomTypography size='xs' div>
                   {item.title}
-                </CustomText>
-                <ValueText>
+                </CustomTypography>
+                <CustomTypography main bold>
                   {item.title === 'Form' ? (
                     <FormIndicator data={item.value} />
                   ) : (
                     item.value
                   )}
-                </ValueText>
+                </CustomTypography>
               </Grid>
               {item.divider ? <CustomDivider isVertical /> : null}
             </Fragment>

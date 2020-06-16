@@ -1,6 +1,6 @@
 import React from 'react';
 import { SQUAD } from 'router/route_names';
-import PageHeader from 'components/ui/headers/PageHeader';
+import PageHeader from 'components/ui/text/PageHeader';
 import PlayerLogic from 'components/visitor/player/PlayerLogic';
 
 const PlayerPage = () => {

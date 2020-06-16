@@ -5,7 +5,7 @@
 // 4 / GET    / SIGN_OUT                / signOut
 // 5 / POST   / CHECK_CURRENT_PASSWORD  / checkCurrentPassword
 // 6 / PUT    / UPDATE_PASSWORD         / updatePassword
-// 7 / PUT    / UDPATE_USER_ACCOUNT     / updateUserAccount
+// 7 / PUT    / UPDATE_USER_ACCOUNT     / updateUserAccount
 // 8 / DELETE / DELETE USER             / deleteUser
 // 9 / POST   / FORGOT_PASSWORD          / forgotPassword
 // 10 / POST   / RESET_PASSWORD          / resetPassword
@@ -28,7 +28,7 @@ const {
   signIn,
   signOut,
   checkPassword,
-  udpatePassword,
+  updatePassword,
   updateAccount,
   deleteAccount,
   forgotPassword,
@@ -168,8 +168,8 @@ router.post(`${USER}/check_current_password`, auth, (req, res) => {
 // body: newPassword
 
 router.put(`${USER}/update_password`, auth, (req, res) => {
-  const notifyError = errorMessage(udpatePassword.error);
-  const notifySuccess = successMessage(udpatePassword.success);
+  const notifyError = errorMessage(updatePassword.error);
+  const notifySuccess = successMessage(updatePassword.success);
   const id = req.user._id;
   User.findById(id, 'password', (err, user) => {
     if (err) return res.json({ ...notifyError, err: err.message });
@@ -181,7 +181,7 @@ router.put(`${USER}/update_password`, auth, (req, res) => {
   });
 });
 
-// 7 PUT / UDPATE_USER_ACCOUNT
+// 7 PUT / UPDATE_USER_ACCOUNT
 // body: email
 router.put(`${USER}/update_user_account`, auth, (req, res) => {
   const notifyError = errorMessage(updateAccount.error);

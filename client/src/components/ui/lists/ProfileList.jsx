@@ -2,11 +2,11 @@ import React from 'react';
 // MUI
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 // Internal
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from '../icons/CustomIcon';
-import { ListItemIcon } from '@material-ui/core';
-import ValueText from '../text/ValueText';
+import CustomTypography from '../text/CustomTypography';
 
 const ProfileList = ({ details }) =>
   details.map((item) => (
@@ -18,7 +18,9 @@ const ProfileList = ({ details }) =>
       ) : null}
       <ListItemText primary={item.text} secondary={item.secondary} />
       <ListItemSecondaryAction>
-        <ValueText>{item.value}</ValueText>
+        <CustomTypography main bold>
+          {item.value}
+        </CustomTypography>
       </ListItemSecondaryAction>
     </ListItemWrapper>
   ));

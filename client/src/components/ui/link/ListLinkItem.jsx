@@ -6,7 +6,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import CustomIcon from '../icons/CustomIcon';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ValueText from '../text/ValueText';
+import CustomTypography from '../text/CustomTypography';
 
 const ListItemLink = (props) => {
   const { icon, avatar, secondary, text, to, onClick, color } = props;
@@ -32,7 +32,11 @@ const ListItemLink = (props) => {
       {listAvatar}
       {listIcon}
       <ListItemText
-        primary={<ValueText>{text}</ValueText>}
+        primary={
+          <CustomTypography main bold>
+            {text}
+          </CustomTypography>
+        }
         secondary={secondary}
       />
     </ListItem>

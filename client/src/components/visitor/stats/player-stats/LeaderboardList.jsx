@@ -5,8 +5,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Internal
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import ValueText from 'components/ui/text/ValueText';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const LeaderboardList = ({ value }) => {
   return (
@@ -34,9 +34,17 @@ const LeaderboardList = ({ value }) => {
               {i + 1}
             </CustomAvatar>
 
-            <ListItemText primary={player.name} />
+            <ListItemText
+              primary={
+                <CustomTypography main bold>
+                  {player.name}
+                </CustomTypography>
+              }
+            />
             <ListItemSecondaryAction>
-              <ValueText>{player.stat}</ValueText>
+              <CustomTypography main bold>
+                {player.stat}
+              </CustomTypography>
             </ListItemSecondaryAction>
           </ListItemWrapper>
         );

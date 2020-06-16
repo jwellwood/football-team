@@ -6,6 +6,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 // Functions
 import { positionOptions } from 'components/utils/select-options';
+// Data
+import { setPermissionsHelper } from 'assets/data/adminHelperText';
 // Inputs
 import NumberInput from 'components/ui/inputs/NumberInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
@@ -19,10 +21,9 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
-import ValueText from 'components/ui/text/ValueText';
 import CustomButton from 'components/ui/buttons/CustomButton';
 import FormHelper from 'components/ui/text/FormHelper';
-import { setPermissionsHelper } from 'assets/data/adminHelperText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const UserPermissionForm = ({
   user,
@@ -77,7 +78,9 @@ const UserPermissionForm = ({
     <FormContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormHelper>{setPermissionsHelper}</FormHelper>
-        <ValueText>Change permissions for {user.name}</ValueText>
+        <CustomTypography bold>
+          Change permissions for {user.name}
+        </CustomTypography>
         <CustomDivider />
         <CenteredGrid dir='row'>
           <Grid item xs={12}>

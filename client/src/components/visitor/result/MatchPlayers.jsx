@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 // Components
 import StatIcon from 'components/ui/icons/StatIcon';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomText from 'components/ui/text/CustomText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const mapIcons = (num, type) => {
   const statArr = [];
@@ -29,7 +29,7 @@ const MatchPlayers = ({ result }) => {
   );
 
   const forfeitText = isForfeit ? (
-    <CustomText type='placeholder' text='Match forfeited' />
+    <CustomTypography>Match forfeited</CustomTypography>
   ) : null;
 
   const playersList = players.length ? (
@@ -69,7 +69,7 @@ const MatchPlayers = ({ result }) => {
       return (
         <CenteredGrid key={player._id} dir='row' just='space-between'>
           <Grid item xs={4} sm={3}>
-            <CustomText type='secondary'>{player_id.name}</CustomText>
+            <CustomTypography>{player_id.name}</CustomTypography>
           </Grid>
           <Grid item xs={8} sm={9}>
             {iconArr}
@@ -78,7 +78,7 @@ const MatchPlayers = ({ result }) => {
       );
     })
   ) : (
-    <CustomText type='placeholder' text='No players yet' />
+    <CustomTypography>No players yet</CustomTypography>
   );
 
   return isForfeit ? forfeitText : playersList;

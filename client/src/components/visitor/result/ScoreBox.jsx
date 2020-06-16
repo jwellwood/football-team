@@ -12,11 +12,10 @@ import CustomIcon from 'components/ui/icons/CustomIcon';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
-import ValueText from 'components/ui/text/ValueText';
-import CustomText from 'components/ui/text/CustomText';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import { theme } from 'assets/theme';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ScoreBox = ({ result }) => {
   const {
@@ -49,7 +48,13 @@ const ScoreBox = ({ result }) => {
   const listData = (data) => (
     <ListItemWrapper>
       {data.avatar}
-      <ListItemText primary={<ValueText>{data.name}</ValueText>} />
+      <ListItemText
+        primary={
+          <CustomTypography main bold size='md'>
+            {data.name}
+          </CustomTypography>
+        }
+      />
       <ListItemSecondaryAction>
         <div
           style={{
@@ -70,8 +75,10 @@ const ScoreBox = ({ result }) => {
 
   const details = (
     <CenteredGrid>
-      <CustomText type='highlight'>{type}</CustomText>
-      <CustomText type='caption'>{parseDate(date)}</CustomText>
+      <CustomTypography size='xs' color='warning' font='secondary'>
+        {parseDate(date)}
+      </CustomTypography>
+      <CustomTypography size='sm'> {type}</CustomTypography>
     </CenteredGrid>
   );
 

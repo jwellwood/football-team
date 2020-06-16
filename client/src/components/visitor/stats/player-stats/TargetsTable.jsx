@@ -1,12 +1,12 @@
 import React from 'react';
 // Internal
-import ValueText from 'components/ui/text/ValueText';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
-import CustomText from 'components/ui/text/CustomText';
 import CustomExpansion from 'components/ui/expansion/CustomExpansion';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
+import GreyBackground from 'containers/GreyBackground';
 
 const TargetsTable = ({ targets }) => {
   const rows = targets.map((player, i) => {
@@ -25,13 +25,17 @@ const TargetsTable = ({ targets }) => {
     return (
       <CustomExpansion
         key={name + i}
-        title={<ValueText>{name}</ValueText>}
+        title={
+          <CustomTypography main bold>
+            {name}
+          </CustomTypography>
+        }
         valueAsComponent={
           <CustomAvatar shadow={color(+total)}>
-            <ValueText>
+            <CustomTypography main bold>
               {+total}
-              <CustomText type='caption'>%</CustomText>
-            </ValueText>
+              <CustomTypography size='xs'>%</CustomTypography>
+            </CustomTypography>
           </CustomAvatar>
         }
       >
@@ -57,16 +61,16 @@ const TargetsTable = ({ targets }) => {
             },
           ].map((stat, i) => (
             // p: percentage, t: total(actual number)
-            <GridItem key={i} xs={4} sm={4}>
-              <>
-                <CustomText>{stat.type}</CustomText>
-                <CustomText type='muted' div color={color(stat.p)}>
+            <GridItem key={i} xs={4} sm={4} md={4} lg={4}>
+              <GreyBackground>
+                <CustomTypography size='sm'>{stat.type}</CustomTypography>
+                <CustomTypography div bold color={color(stat.p)}>
                   {stat.p}%
-                </CustomText>
-                <CustomText type='caption'>
+                </CustomTypography>
+                <CustomTypography size='sm'>
                   {stat.t} / {stat.tar}
-                </CustomText>
-              </>
+                </CustomTypography>
+              </GreyBackground>
             </GridItem>
           ))}
         </CenteredGrid>
@@ -74,7 +78,7 @@ const TargetsTable = ({ targets }) => {
     );
   });
 
-  return <SectionContainer title='Players'>{rows}</SectionContainer>;
+  return <SectionContainer title='Targets'>{rows}</SectionContainer>;
 };
 
 export default TargetsTable;

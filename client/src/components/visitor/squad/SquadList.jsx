@@ -6,9 +6,9 @@ import GreyBackground from 'containers/GreyBackground';
 import CustomContainer from 'containers/CustomContainer';
 import Spinner from 'components/ui/loading/Spinner';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import CustomText from 'components/ui/text/CustomText';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
 // Lazy
 const PlayerListItem = lazy(() => import('./PlayerListItem'));
 
@@ -33,7 +33,7 @@ const SquadList = ({ players, playersByPosition }) => {
               </div>
             ))
           ) : (
-            <CustomText type='placeholder' text='no players' />
+            <CustomTypography>No players</CustomTypography>
           )}
         </ListWrapper>
       </GreyBackground>

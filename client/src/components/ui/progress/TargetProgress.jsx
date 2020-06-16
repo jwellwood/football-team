@@ -1,39 +1,49 @@
 import React from 'react';
-import { theme } from 'assets/theme';
 import {
   CircularProgressbarWithChildren,
   buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+// Internal
+import { theme } from 'assets/theme';
+import GreyBackground from 'containers/GreyBackground';
+import GridItem from '../grids/GridItem';
+import CustomTypography from '../text/CustomTypography';
 
-const TargetProgress = ({ percentage, children }) => {
+const TargetProgress = ({ percentage, total, target, type }) => {
   return (
-    <CircularProgressbarWithChildren
-      value={percentage}
-      strokeWidth={10}
-      // text={`${percentage}%`}
-      styles={buildStyles({
-        // Rotation of path and trail, in number of turns (0-1)
-        rotation: 1,
-        // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-        strokeLinecap: 'round',
-        // Text size
-        // textSize: '16px',
-
-        // How long animation takes to go from one percentage to another, in seconds
-        pathTransitionDuration: 3,
-
-        // Can specify path transition in more detail, or remove it entirely
-        // pathTransition: 'none',
-
-        // Colors
-        pathColor: theme.palette.success.light,
-        // textColor: '#333',
-        trailColor: theme.palette.warning.light,
-      })}
-    >
-      {children}
-    </CircularProgressbarWithChildren>
+    <GridItem xs={4} sm={4} md={3} lg={2} xl={2}>
+      <GreyBackground>
+        <CircularProgressbarWithChildren
+          value={percentage}
+          strokeWidth={10}
+          // text={`${percentage}%`}
+          styles={buildStyles({
+            rotation: 1,
+            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+            strokeLinecap: 'round',
+            pathTransitionDuration: 10,
+            pathColor: theme.palette.success.light,
+            trailColor: theme.palette.warning.light,
+          })}
+        >
+          <CustomTypography main bold>
+            {percentage} <CustomTypography size='sm'>%</CustomTypography>
+          </CustomTypography>
+        </CircularProgressbarWithChildren>
+        {total || target ? (
+          <>
+            <CustomTypography main>{total}</CustomTypography>
+            <CustomTypography> / {target}</CustomTypography>
+          </>
+        ) : null}
+        {type ? (
+          <CustomTypography size='sm' div>
+            {type}
+          </CustomTypography>
+        ) : null}
+      </GreyBackground>
+    </GridItem>
   );
 };
 

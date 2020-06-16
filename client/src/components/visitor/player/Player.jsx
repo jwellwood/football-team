@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
 import Spinner from 'components/ui/loading/Spinner';
-import SectionTitle from 'components/ui/headers/SectionTitle';
+import SectionTitle from 'components/ui/text/SectionTitle';
 import PlayerResultsLogic from './sections/PlayerResultsLogic';
 import CustomTabs from 'components/ui/tabs/CustomTabs';
 import CustomIcon from 'components/ui/icons/CustomIcon';
@@ -23,8 +23,8 @@ const Player = ({ player, results }) => {
       label: <CustomIcon icon='list-ul' />,
       component: (
         <>
-          <StatsOverviewLogic player={player} />
           <PlayerResultsLogic player={player} />
+          <StatsOverviewLogic player={player} />
         </>
       ),
     },

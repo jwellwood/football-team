@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from 'components/ui/headers/PageHeader';
+import PageHeader from 'components/ui/text/PageHeader';
 import ValidatedEmailLogic from 'components/registration/signup/ValidatedEmailLogic';
 
 const ValidatedEmailPage = () => {

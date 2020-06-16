@@ -5,6 +5,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AwardList = ({ awards }) => {
   return awards.map((award, i) => {
@@ -14,7 +15,13 @@ const AwardList = ({ awards }) => {
       <ListWrapper key={_id} dense>
         <ListItemWrapper noDivider>
           <ListItemText primary={awardWinner} secondary={awardName} />
-          <ListItemSecondaryAction>{awardValue}</ListItemSecondaryAction>
+          <ListItemSecondaryAction>
+            {
+              <CustomTypography main bold>
+                {awardValue}
+              </CustomTypography>
+            }
+          </ListItemSecondaryAction>
         </ListItemWrapper>
       </ListWrapper>
     );

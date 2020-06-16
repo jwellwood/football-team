@@ -4,23 +4,23 @@ import { version } from 'assets/data';
 // MUI
 import Link from '@material-ui/core/Link';
 // Components
-import CustomText from 'components/ui/text/CustomText';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Changelog from './Changelog';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const Footer = () => {
   return (
     <div style={{ marginTop: '20px' }}>
       <CenteredGrid>
-        <CustomText type='muted'>
+        <CustomTypography size='sm'>
           {'Copyright © '}
           <Link color='inherit' href='https://github.com/jwellwood'>
             jwellwood
           </Link>{' '}
           {new Date().getFullYear()}
-        </CustomText>
+        </CustomTypography>
         <Changelog />
-        <CustomText type='caption'>version {version}</CustomText>
+        <CustomTypography size='sm'>version {version}</CustomTypography>
       </CenteredGrid>
     </div>
   );

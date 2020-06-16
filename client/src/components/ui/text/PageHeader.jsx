@@ -1,9 +1,11 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import BackButton from '../buttons/BackButton';
-import Divider from '@material-ui/core/Divider';
-import CenteredGrid from '../grids/CenteredGrid';
+// MUI
 import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
+// Components
+import BackButton from '../buttons/BackButton';
+import CenteredGrid from '../grids/CenteredGrid';
+import CustomTypography from './CustomTypography';
 
 export const useStyles = makeStyles((theme) => ({
   divider: {
@@ -17,13 +19,9 @@ const PageHeader = ({ title, backTo }) => {
       <Divider className={classes.divider} />
       <CenteredGrid just='flex-start' dir='row'>
         <BackButton backTo={backTo} disabled={backTo === 'disabled'} />
-        <Typography
-          variant='h5'
-          color='textSecondary'
-          style={{ fontWeight: 'bold' }}
-        >
+        <CustomTypography bold main size='lg'>
           {title}
-        </Typography>
+        </CustomTypography>
       </CenteredGrid>
       <Divider className={classes.divider} style={{ marginBottom: '10px' }} />
     </>

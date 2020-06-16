@@ -2,10 +2,11 @@ import React, { lazy, Suspense } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // MUI
 import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
+// Routes
+import { RESULTS } from 'router/route_names';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import Link from '@material-ui/core/Link';
-import { RESULTS } from 'router/route_names';
 import Spinner from 'components/ui/loading/Spinner';
 import PlaceholderText from 'components/ui/text/Placeholder';
 

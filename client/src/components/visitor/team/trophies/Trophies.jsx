@@ -8,7 +8,7 @@ import CustomTable from 'components/ui/tables/CustomTable';
 import CustomTableCell from 'components/ui/tables/CustomTableCell';
 import Trophy from './Trophy';
 import SectionContainer from 'containers/SectionContainer';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const Trophies = ({ trophies }) => {
   const headCells = [
@@ -33,7 +33,9 @@ const Trophies = ({ trophies }) => {
     );
 
     const cellData = [
-      <ValueText>{year}</ValueText>,
+      <CustomTypography main bold>
+        {year}
+      </CustomTypography>,
       trophy.isWinner ? iconModal : null,
       !trophy.isWinner ? iconModal : null,
     ];

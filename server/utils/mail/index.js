@@ -9,7 +9,7 @@ const getEmailData = (to, name, token, template, actionData) => {
   switch (template) {
     case 'welcome':
       data = {
-        from: 'mrstatsmailer <mr.stats.mailer@gmail.com>',
+        from: 'mrstatsmailer <mr-stats@outlook.com>',
         to: to,
         subject: 'Welcome to MR',
         html: welcome(actionData),
@@ -17,7 +17,7 @@ const getEmailData = (to, name, token, template, actionData) => {
       break;
     case 'reset_password':
       data = {
-        from: 'mrstatsmailer <mr.stats.mailer@gmail.com>',
+        from: 'mrstatsmailer <mr-stats@outlook.com>',
         to: to,
         subject: 'Reset password',
         html: resetPassword(actionData),
@@ -33,9 +33,9 @@ const getEmailData = (to, name, token, template, actionData) => {
 
 const sendEmail = (to, name, token, template, actionData = null) => {
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'hotmail',
     auth: {
-      user: 'mr.stats.mailer@gmail.com',
+      user: 'mr-stats@outlook.com',
       pass: process.env.EMAIL_PASSWORD,
     },
   });

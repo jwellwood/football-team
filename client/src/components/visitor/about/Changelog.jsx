@@ -1,12 +1,15 @@
 import React from 'react';
-import PresentationModal from 'components/ui/modals/PresentationModal';
+// MUI
+import ListItemText from '@material-ui/core/ListItemText';
+// data
 import { version, changeLog } from 'assets/data';
+// Components
+import PresentationModal from 'components/ui/modals/PresentationModal';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import ListItemText from '@material-ui/core/ListItemText';
-import SectionTitle from 'components/ui/headers/SectionTitle';
-import CustomText from 'components/ui/text/CustomText';
 import CustomButton from 'components/ui/buttons/CustomButton';
+import CustomTypography from 'components/ui/text/CustomTypography';
+import SectionContainer from 'containers/SectionContainer';
 
 const Changelog = () => {
   const button = <CustomButton>View Changelog</CustomButton>;
@@ -16,15 +19,16 @@ const Changelog = () => {
       <>
         {changeLog.map((change, i) => (
           <ListWrapper key={i}>
-            <SectionTitle title={`v${change.version}`} />
-            {change.changes.map((text, idx) => (
-              <ListItemWrapper key={idx}>
-                <ListItemText primary={text} />
-              </ListItemWrapper>
-            ))}
+            <SectionContainer title={`v${change.version}`}>
+              {change.changes.map((text, idx) => (
+                <ListItemWrapper key={idx}>
+                  <ListItemText primary={text} />
+                </ListItemWrapper>
+              ))}
+            </SectionContainer>
           </ListWrapper>
         ))}
-        <CustomText type='caption'>current version {version}</CustomText>
+        <CustomTypography size='sm'>current version {version}</CustomTypography>
       </>
     </PresentationModal>
   );

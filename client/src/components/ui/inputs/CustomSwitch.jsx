@@ -1,7 +1,7 @@
 import React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import CustomText from '../text/CustomText';
+import CustomTypography from '../text/CustomTypography';
 
 const CustomSwitch = ({
   name,
@@ -29,7 +29,7 @@ const CustomSwitch = ({
   ) : (
     <FormControlLabel
       control={customSwitch}
-      label={<CustomText type='caption'>{label}</CustomText>}
+      label={<CustomTypography size='sm'>{label}</CustomTypography>}
       labelPlacement={placement || 'top'}
     />
   );

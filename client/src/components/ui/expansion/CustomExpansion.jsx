@@ -1,17 +1,17 @@
 import React from 'react';
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
-
-// Internal
-import ValueText from 'components/ui/text/ValueText';
-import GreyBackground from 'containers/GreyBackground';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+// Internal
+import GreyBackground from 'containers/GreyBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import StatIcon from '../icons/StatIcon';
+import CustomTypography from '../text/CustomTypography';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -48,7 +48,13 @@ const CustomExpansion = ({
                 {title}
               </Typography>
             </Grid>
-            {value ? <ValueText>{value}</ValueText> : valueAsComponent}
+            {value ? (
+              <CustomTypography main bold>
+                {value}
+              </CustomTypography>
+            ) : (
+              valueAsComponent
+            )}
           </CenteredGrid>
         </ExpansionPanelSummary>
       </GreyBackground>

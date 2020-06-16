@@ -12,9 +12,8 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
-import CustomText from 'components/ui/text/CustomText';
-import ValueText from 'components/ui/text/ValueText';
 import StatBoxes from './StatBoxes';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const PlayerListItem = ({ player }) => {
   const { _id, name, squadNumber, position, isCaptain, image } = player;
@@ -38,13 +37,19 @@ const PlayerListItem = ({ player }) => {
 
   const detailsToShow = position === 'GK' ? gkDetails : details;
 
-  const playerName = <ValueText>{name}</ValueText>;
+  const playerName = (
+    <CustomTypography main bold>
+      {name}
+    </CustomTypography>
+  );
 
   const playerNumber = (
-    <CustomText type='red'>
+    <CustomTypography color='warning' bold>
       {squadNumber}{' '}
-      {isCaptain ? <CustomText type='highlight'>(C)</CustomText> : null}
-    </CustomText>
+      {isCaptain ? (
+        <CustomTypography color='error'>(C)</CustomTypography>
+      ) : null}
+    </CustomTypography>
   );
 
   return (

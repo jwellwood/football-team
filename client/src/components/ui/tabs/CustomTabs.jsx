@@ -52,6 +52,7 @@ const CustomTabs = ({ tabs, centered }) => {
           value={value}
           onChange={handleChange}
           indicatorColor='primary'
+          textColor='primary'
           variant='fullWidth'
           centered={centered}
         >

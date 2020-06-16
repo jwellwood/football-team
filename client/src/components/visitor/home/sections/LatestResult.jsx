@@ -2,8 +2,7 @@ import React from 'react';
 // Functions
 import { parseDate, getResultsColors } from 'components/utils';
 // Components
-import CustomText from 'components/ui/text/CustomText';
-import ValueText from 'components/ui/text/ValueText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const LatestResult = ({ result }) => {
   const {
@@ -17,7 +16,7 @@ const LatestResult = ({ result }) => {
 
   return (
     <>
-      <CustomText type='muted'>Latest Result</CustomText>
+      <CustomTypography>Latest Result</CustomTypography>
 
       <div
         style={{
@@ -28,10 +27,12 @@ const LatestResult = ({ result }) => {
       >
         {teamGoals} - {opponentGoals}
       </div>
-      <CustomText type='caption'>vs</CustomText>
-      <ValueText>{isForfeit ? 'Forfeit' : opponentName}</ValueText>
+      <CustomTypography size='sm'>vs</CustomTypography>
+      <CustomTypography size='md' bold main>
+        {isForfeit ? 'Forfeit' : opponentName}
+      </CustomTypography>
 
-      <CustomText type='caption'>{parseDate(date)}</CustomText>
+      <CustomTypography size='sm'>{parseDate(date)}</CustomTypography>
     </>
   );
 };

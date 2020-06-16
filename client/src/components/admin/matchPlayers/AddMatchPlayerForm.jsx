@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 // MUI
 import Grid from '@material-ui/core/Grid';
+// Data
+import { assignPlayerHelper } from 'assets/data/adminHelperText';
 // Functions
 import { playerOptions } from 'components/utils/select-options';
 // Components
@@ -10,11 +12,10 @@ import NumberInput from 'components/ui/inputs/NumberInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import Spinner from 'components/ui/loading/Spinner';
 import FormContainer from 'containers/FormContainer';
-import CustomText from 'components/ui/text/CustomText';
 import CustomSwitch from 'components/ui/inputs/CustomSwitch';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import FormHelper from 'components/ui/text/FormHelper';
-import { assignPlayerHelper } from 'assets/data/adminHelperText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AddMatchPlayerForm = ({
   loading,
@@ -99,9 +100,9 @@ const AddMatchPlayerForm = ({
 
   return (
     <FormContainer>
-      <CustomText type='highlight'>
+      <CustomTypography bold>
         {opponentName}, {teamGoals} - {opponentGoals}
-      </CustomText>
+      </CustomTypography>
       {!loading ? (
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormHelper>{assignPlayerHelper}</FormHelper>
@@ -124,7 +125,9 @@ const AddMatchPlayerForm = ({
                     defaultValue={input.defaultValue}
                     onCheck={onCheck}
                     label={
-                      <CustomText type='caption'>{input.label}</CustomText>
+                      <CustomTypography size='sm'>
+                        {input.label}
+                      </CustomTypography>
                     }
                     placement='top'
                   />

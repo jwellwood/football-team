@@ -10,9 +10,8 @@ import { RESULTS } from 'router/route_names';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
-import CustomText from 'components/ui/text/CustomText';
-import ValueText from 'components/ui/text/ValueText';
 import GreyBackground from 'containers/GreyBackground';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ResultCard = ({ result }) => {
   let background = null;
@@ -34,12 +33,18 @@ const ResultCard = ({ result }) => {
 
   const resultDateAndType = (
     <>
-      <CustomText type='muted'>{parseDate(date)}</CustomText>
-      <CustomText type='highlight'> {type}</CustomText>
+      <CustomTypography size='xs' color='warning' font='secondary'>
+        {parseDate(date)}
+      </CustomTypography>
+      <CustomTypography size='sm'> {type}</CustomTypography>
     </>
   );
 
-  const opponent = <ValueText>{opponentName}</ValueText>;
+  const opponent = (
+    <CustomTypography main bold>
+      {opponentName}
+    </CustomTypography>
+  );
   return (
     <GreyBackground>
       <ListItemWrapper noDivider button linkTo={`${RESULTS}/${result._id}`}>
@@ -48,9 +53,9 @@ const ResultCard = ({ result }) => {
         </CustomAvatar>
         <ListItemText primary={opponent} secondary={resultDateAndType} />
         <ListItemSecondaryAction>
-          <ValueText>
+          <CustomTypography main bold>
             {teamGoals} - {opponentGoals}
-          </ValueText>
+          </CustomTypography>
         </ListItemSecondaryAction>
       </ListItemWrapper>
     </GreyBackground>

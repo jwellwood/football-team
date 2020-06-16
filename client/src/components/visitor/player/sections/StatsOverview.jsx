@@ -7,8 +7,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import StatIcon from 'components/ui/icons/StatIcon';
-import ValueText from 'components/ui/text/ValueText';
 import SectionContainer from 'containers/SectionContainer';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const StatsOverview = ({ data }) => {
   return (
@@ -23,7 +23,9 @@ const StatsOverview = ({ data }) => {
             ) : null}
             <ListItemText primary={item.text} secondary={item.secondary} />
             <ListItemSecondaryAction>
-              <ValueText>{item.value}</ValueText>
+              <CustomTypography main bold>
+                {item.value}
+              </CustomTypography>
             </ListItemSecondaryAction>
           </ListItemWrapper>
         ))}

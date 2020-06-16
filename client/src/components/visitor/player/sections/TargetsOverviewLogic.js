@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { getTotals } from 'functions/player';
 // Components
 import TargetsOverview from './TargetsOverview';
-import CustomText from 'components/ui/text/CustomText';
+import CustomTypography from 'components/ui/text/CustomTypography';
 
 const TargetsOverviewLogic = ({ player }) => {
   const { appsTarget, goalsTarget, assistsTarget } = player;
@@ -32,7 +32,7 @@ const TargetsOverviewLogic = ({ player }) => {
   return appsTarget ? (
     <TargetsOverview data={data} />
   ) : (
-    <CustomText type='placeholder' text='No targets set' />
+    <CustomTypography>No targets set</CustomTypography>
   );
 };
 
