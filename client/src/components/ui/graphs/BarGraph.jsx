@@ -2,7 +2,6 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { defaults } from 'react-chartjs-2';
 // Internal
-import GreyBackground from 'containers/GreyBackground';
 import { theme } from 'assets/theme';
 
 defaults.global.defaultFontFamily = 'Jost';
@@ -46,16 +45,13 @@ const options = {
 
 const BarGraph = ({ data }) => {
   return (
-    <GreyBackground>
-      <Bar
-        // plugins={[ChartDataLabels]}
-        legend={{ display: false }}
-        data={data}
-        height={200}
-        // width={100}
-        options={options}
-      />
-    </GreyBackground>
+    <Bar
+      // plugins={[ChartDataLabels]}
+      legend={{ display: false }}
+      data={data}
+      height={200}
+      options={options}
+    />
   );
 };
 

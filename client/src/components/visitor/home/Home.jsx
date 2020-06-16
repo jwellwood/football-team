@@ -12,11 +12,7 @@ const HomeData = lazy(() => import('./sections/HomeData'));
 const Home = ({ data, team, result }) => {
   const sections = [
     {
-      component: (
-        // <GreyBackground placeholder>
-        <Title team={team} />
-        // </GreyBackground>
-      ),
+      component: <Title team={team} />,
     },
     { component: <HomeData team={team} result={result} /> },
     {
@@ -30,13 +26,13 @@ const Home = ({ data, team, result }) => {
 
   return (
     <Suspense fallback={<Spinner isButton />}>
-      {sections.map((section, i) => (
-        <GreyBackground key={i} placeholder>
-          <GreyBackground placeholder>
+      <GreyBackground>
+        {sections.map((section, i) => (
+          <GreyBackground key={i} placeholder>
             <CustomContainer>{section.component}</CustomContainer>
           </GreyBackground>
-        </GreyBackground>
-      ))}
+        ))}
+      </GreyBackground>
     </Suspense>
   );
 };

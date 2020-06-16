@@ -10,11 +10,11 @@ import TargetProgress from 'components/ui/progress/TargetProgress';
 import ValueText from 'components/ui/text/ValueText';
 import SectionSubtitle from 'components/ui/headers/SectionSubtitle';
 import CustomText from 'components/ui/text/CustomText';
-import ProfileSection from 'components/user/ProfileSection';
+import SectionContainer from 'containers/SectionContainer';
 
 const TargetsOverview = ({ data }) => {
   return (
-    <ProfileSection title='Targets'>
+    <SectionContainer title='Targets'>
       <CenteredGrid dir='row'>
         {data.map((item) => {
           const percentage = getPercentage(item.value, item.secondary, 0);
@@ -37,7 +37,7 @@ const TargetsOverview = ({ data }) => {
           );
         })}
       </CenteredGrid>
-    </ProfileSection>
+    </SectionContainer>
   );
 };
 

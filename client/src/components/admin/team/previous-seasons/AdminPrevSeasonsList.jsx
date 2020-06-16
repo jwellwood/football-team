@@ -9,13 +9,11 @@ import {
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import GreyBackground from 'containers/GreyBackground';
-import SectionTitle from 'components/ui/headers/SectionTitle';
+import SectionContainer from 'containers/SectionContainer';
 
 const AdminPrevSeasonsList = ({ seasons }) => {
   return (
-    <GreyBackground>
-      <SectionTitle title='' link={ADMIN_PREVIOUS_SEASON_ADD} text='Add' />
+    <SectionContainer link={ADMIN_PREVIOUS_SEASON_ADD} text='Add'>
       <ListWrapper>
         {seasons.map((season, i) => (
           <ListItemWrapper
@@ -27,7 +25,7 @@ const AdminPrevSeasonsList = ({ seasons }) => {
           </ListItemWrapper>
         ))}
       </ListWrapper>
-    </GreyBackground>
+    </SectionContainer>
   );
 };
 

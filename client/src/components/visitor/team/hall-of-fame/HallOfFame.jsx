@@ -10,7 +10,7 @@ import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import ModalContent from '../ModalContent';
 import CustomText from 'components/ui/text/CustomText';
-import GreyBackground from 'containers/GreyBackground';
+import SectionContainer from 'containers/SectionContainer';
 
 const HallOfFame = ({ hallOfFamer }) => {
   const { name, yearInducted, yearJoined, yearLeft, description } = hallOfFamer;
@@ -25,9 +25,9 @@ const HallOfFame = ({ hallOfFamer }) => {
   };
 
   return (
-    <PresentationModal
-      buttonElement={
-        <GreyBackground>
+    <SectionContainer title='Hall of Fame'>
+      <PresentationModal
+        buttonElement={
           <ListItemWrapper button>
             <CustomAvatar isList background='transparent' shadow='error'>
               <CustomIcon icon='landmark' size='sm' color='primary' />
@@ -37,11 +37,11 @@ const HallOfFame = ({ hallOfFamer }) => {
               <CustomText type='highlight'>{yearInducted}</CustomText>
             </ListItemSecondaryAction>
           </ListItemWrapper>
-        </GreyBackground>
-      }
-    >
-      <ModalContent data={data} />
-    </PresentationModal>
+        }
+      >
+        <ModalContent data={data} />
+      </PresentationModal>
+    </SectionContainer>
   );
 };
 

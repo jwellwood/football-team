@@ -3,6 +3,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import defaultImage from 'assets/images/default_team.png';
 import { makeStyles } from '@material-ui/core/styles';
+import SectionContainer from 'containers/SectionContainer';
 
 export const useStyles = makeStyles((theme) => ({
   teamContainer: {
@@ -26,11 +27,13 @@ const TeamPhoto = ({ image }) => {
   const classes = useStyles();
   const imageSrc = image && image !== 'default' ? image : defaultImage;
   return (
-    <Container maxWidth='sm'>
-      <div className={classes.teamContainer}>
-        <img src={imageSrc} alt='team' className={classes.teamPhoto} />
-      </div>
-    </Container>
+    <SectionContainer title='Team Photo'>
+      <Container maxWidth='sm'>
+        <div className={classes.teamContainer}>
+          <img src={imageSrc} alt='team' className={classes.teamPhoto} />
+        </div>
+      </Container>
+    </SectionContainer>
   );
 };
 

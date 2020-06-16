@@ -7,7 +7,8 @@ import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomTable from 'components/ui/tables/CustomTable';
 import CustomTableCell from 'components/ui/tables/CustomTableCell';
 import Trophy from './Trophy';
-import GreyBackground from 'containers/GreyBackground';
+import SectionContainer from 'containers/SectionContainer';
+import ValueText from 'components/ui/text/ValueText';
 
 const Trophies = ({ trophies }) => {
   const headCells = [
@@ -23,7 +24,7 @@ const Trophies = ({ trophies }) => {
           <CustomIcon
             icon={isWinner ? 'trophy' : 'medal'}
             color={isWinner ? 'warning' : 'secondary'}
-            size='lg'
+            size='2x'
           />
         }
       >
@@ -32,7 +33,7 @@ const Trophies = ({ trophies }) => {
     );
 
     const cellData = [
-      year,
+      <ValueText>{year}</ValueText>,
       trophy.isWinner ? iconModal : null,
       !trophy.isWinner ? iconModal : null,
     ];
@@ -48,9 +49,9 @@ const Trophies = ({ trophies }) => {
   });
 
   return (
-    <GreyBackground>
+    <SectionContainer title='Trophies'>
       <CustomTable headCells={headCells} rows={rows} />
-    </GreyBackground>
+    </SectionContainer>
   );
 };
 

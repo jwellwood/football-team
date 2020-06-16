@@ -9,7 +9,7 @@ import DonutGraph from 'components/ui/graphs/DonutGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import ProfileSection from 'components/user/ProfileSection';
+import SectionContainer from 'containers/SectionContainer';
 
 const ResultPercentages = ({ results }) => {
   const { success, warning, primary, secondary } = theme.palette;
@@ -34,14 +34,14 @@ const ResultPercentages = ({ results }) => {
   return results.length ? (
     <CenteredGrid dir='row' item='stretch'>
       <GridItem sm={6}>
-        <ProfileSection title='Overview'>
+        <SectionContainer title='Overview'>
           <DonutGraph data={data} />
-        </ProfileSection>
+        </SectionContainer>
       </GridItem>
       <GridItem sm={6}>
-        <ProfileSection title='Averages'>
+        <SectionContainer title='Averages'>
           <ResultAverages results={results} />
-        </ProfileSection>
+        </SectionContainer>
       </GridItem>
     </CenteredGrid>
   ) : (

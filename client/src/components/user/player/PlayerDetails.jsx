@@ -4,15 +4,15 @@ import { EDIT_PLAYER } from 'router/route_names';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import ProfileSection from '../ProfileSection';
 import ProfileImage from './ProfileImage';
 import Details from './Details';
+import SectionContainer from 'containers/SectionContainer';
 
 const PlayerDetails = ({ user }) => {
   const { name, canEdit, image } = user;
 
   return (
-    <ProfileSection
+    <SectionContainer
       title={name}
       link={!canEdit.details ? 'locked' : EDIT_PLAYER}
     >
@@ -24,7 +24,7 @@ const PlayerDetails = ({ user }) => {
           <Details user={user} />
         </GridItem>
       </CenteredGrid>
-    </ProfileSection>
+    </SectionContainer>
   );
 };
 

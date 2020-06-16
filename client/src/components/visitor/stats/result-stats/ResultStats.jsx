@@ -3,6 +3,7 @@ import React, { lazy, Suspense } from 'react';
 import ToggleSwitch from 'components/ui/buttons/ToggleSwitch';
 import Spinner from 'components/ui/loading/Spinner';
 import CustomTabs from 'components/ui/tabs/CustomTabs';
+import CustomIcon from 'components/ui/icons/CustomIcon';
 const ResultPercentages = lazy(() => import('./ResultPercentages'));
 const ResultVersus = lazy(() => import('./ResultVersus'));
 const ResultVersusNegative = lazy(() => import('./ResultVersusNegative'));
@@ -15,16 +16,15 @@ const ResultStats = ({ results, toggleForfeits, includeForfeits }) => {
 
   const tabs = [
     {
-      label: 'Overview',
-      component: (
-        <>
-          <ResultPercentages results={results} />
-          <ResultLineGraph results={results} />
-        </>
-      ),
+      label: <CustomIcon icon='chart-pie'></CustomIcon>,
+      component: <ResultPercentages results={results} />,
     },
     {
-      label: 'Versus',
+      label: <CustomIcon icon='chart-line'></CustomIcon>,
+      component: <ResultLineGraph results={results} />,
+    },
+    {
+      label: 'Vs',
       component: (
         <>
           <ResultVersus results={results} />

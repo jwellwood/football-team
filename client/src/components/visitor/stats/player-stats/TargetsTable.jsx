@@ -3,11 +3,10 @@ import React from 'react';
 import ValueText from 'components/ui/text/ValueText';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomText from 'components/ui/text/CustomText';
-import ProfileSection from 'components/user/ProfileSection';
 import CustomExpansion from 'components/ui/expansion/CustomExpansion';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import GreyBackground from 'containers/GreyBackground';
+import SectionContainer from 'containers/SectionContainer';
 
 const TargetsTable = ({ targets }) => {
   const rows = targets.map((player, i) => {
@@ -59,7 +58,7 @@ const TargetsTable = ({ targets }) => {
           ].map((stat, i) => (
             // p: percentage, t: total(actual number)
             <GridItem key={i} xs={4} sm={4}>
-              <GreyBackground>
+              <>
                 <CustomText>{stat.type}</CustomText>
                 <CustomText type='muted' div color={color(stat.p)}>
                   {stat.p}%
@@ -67,7 +66,7 @@ const TargetsTable = ({ targets }) => {
                 <CustomText type='caption'>
                   {stat.t} / {stat.tar}
                 </CustomText>
-              </GreyBackground>
+              </>
             </GridItem>
           ))}
         </CenteredGrid>
@@ -75,7 +74,7 @@ const TargetsTable = ({ targets }) => {
     );
   });
 
-  return <ProfileSection title='Players'>{rows}</ProfileSection>;
+  return <SectionContainer title='Players'>{rows}</SectionContainer>;
 };
 
 export default TargetsTable;

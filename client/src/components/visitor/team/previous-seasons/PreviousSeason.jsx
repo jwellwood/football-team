@@ -8,15 +8,15 @@ import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import PreviousSeasonContent from './PreviousSeasonContent';
 import CustomText from 'components/ui/text/CustomText';
-import GreyBackground from 'containers/GreyBackground';
+import SectionContainer from 'containers/SectionContainer';
 
 const PreviousSeasons = ({ season }) => {
   const { seasonName } = season;
 
   return (
-    <PresentationModal
-      buttonElement={
-        <GreyBackground>
+    <SectionContainer title='Previous Seasons'>
+      <PresentationModal
+        buttonElement={
           <ListItemWrapper button noDivider>
             <CustomAvatar isList shadow='secondary'>
               <CustomIcon icon='monument' size='sm' color='secondary' />
@@ -25,11 +25,11 @@ const PreviousSeasons = ({ season }) => {
               <CustomText type='highlight'>{seasonName}</CustomText>
             </ListItemSecondaryAction>
           </ListItemWrapper>
-        </GreyBackground>
-      }
-    >
-      <PreviousSeasonContent season={season} />
-    </PresentationModal>
+        }
+      >
+        <PreviousSeasonContent season={season} />
+      </PresentationModal>
+    </SectionContainer>
   );
 };
 

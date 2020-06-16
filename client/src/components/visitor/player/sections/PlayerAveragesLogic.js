@@ -44,7 +44,14 @@ const PlayerAveragesLogic = ({ player }) => {
 
   const tables = [
     { title: 'Individual', component: <AveragesList listData={listData} /> },
-    { title: 'Team', component: <BarGraph data={data} /> },
+    {
+      title: 'Team',
+      component: (
+        <div>
+          <BarGraph data={data} />
+        </div>
+      ),
+    },
   ];
 
   return matchesPlayed.length ? (

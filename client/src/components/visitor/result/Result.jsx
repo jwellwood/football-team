@@ -30,7 +30,7 @@ const Result = ({ result }) => {
     },
   ];
 
-  const layout = (
+  return (
     <GreyBackground placeholder>
       <CenteredGrid dir='row' item='flex-start'>
         {sections.map((section, i) => (
@@ -46,8 +46,6 @@ const Result = ({ result }) => {
       </CenteredGrid>
     </GreyBackground>
   );
-
-  return layout;
 };
 
 export default Result;

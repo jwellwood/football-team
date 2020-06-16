@@ -3,11 +3,11 @@ import React from 'react';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
 import SectionSubtitle from 'components/ui/headers/SectionSubtitle';
-import ProfileSection from 'components/user/ProfileSection';
+import SectionContainer from 'containers/SectionContainer';
 
 const PlayerAverages = ({ tables }) => {
   return (
-    <ProfileSection title='Averages'>
+    <SectionContainer title='Averages'>
       <CenteredGrid dir='row' item='flex-start'>
         {tables.map((table) => (
           <GridItem key={table.title} sm={12}>
@@ -16,7 +16,7 @@ const PlayerAverages = ({ tables }) => {
           </GridItem>
         ))}
       </CenteredGrid>
-    </ProfileSection>
+    </SectionContainer>
   );
 };
 

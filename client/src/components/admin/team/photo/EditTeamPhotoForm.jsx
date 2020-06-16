@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 // Internal
 import Spinner from 'components/ui/loading/Spinner';
-import TeamPhoto from 'components/ui/images/TeamPhoto';
+import TeamPhoto from 'components/visitor/team/team-photo/TeamPhoto';
 import FileInput from 'components/ui/inputs/FileInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import FormContainer from 'containers/FormContainer';

@@ -1,5 +1,13 @@
 export const changeLog = [
   {
+    version: '0.0.8',
+    changes: ['fix delete account problem', 'improve team pages'],
+  },
+  {
+    version: '0.0.7',
+    changes: ['fix result stats scroll problem', 'improve trophy page'],
+  },
+  {
     version: '0.0.6',
     changes: ['fix tab stutter effect', 'fix targets table issue'],
   },

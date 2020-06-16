@@ -9,7 +9,6 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import ValueText from 'components/ui/text/ValueText';
-import GreyBackground from 'containers/GreyBackground';
 
 const ResultAverages = ({ results }) => {
   const stats = useMemo(() => getResultAverages(results), [results]);
@@ -22,23 +21,21 @@ const ResultAverages = ({ results }) => {
     { text: 'Av goal difference', icon: '', value: avgDiff },
   ];
   return (
-    <GreyBackground>
-      <ListWrapper dense>
-        {data.map((item) => (
-          <ListItemWrapper key={item.text} noDivider={item.noDivider}>
-            {item.icon ? (
-              <ListItemIcon>
-                <CustomIcon icon={item.icon} size='sm' />
-              </ListItemIcon>
-            ) : null}
-            <ListItemText primary={item.text} secondary={item.secondary} />
-            <ListItemSecondaryAction>
-              <ValueText>{item.value}</ValueText>
-            </ListItemSecondaryAction>
-          </ListItemWrapper>
-        ))}
-      </ListWrapper>
-    </GreyBackground>
+    <ListWrapper dense>
+      {data.map((item) => (
+        <ListItemWrapper key={item.text} noDivider={item.noDivider}>
+          {item.icon ? (
+            <ListItemIcon>
+              <CustomIcon icon={item.icon} size='sm' />
+            </ListItemIcon>
+          ) : null}
+          <ListItemText primary={item.text} secondary={item.secondary} />
+          <ListItemSecondaryAction>
+            <ValueText>{item.value}</ValueText>
+          </ListItemSecondaryAction>
+        </ListItemWrapper>
+      ))}
+    </ListWrapper>
   );
 };
 

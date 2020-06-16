@@ -8,7 +8,7 @@ import Spinner from 'components/ui/loading/Spinner';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import CustomText from 'components/ui/text/CustomText';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
-import CustomDivider from 'components/ui/dividers/CustomDivider';
+import SectionContainer from 'containers/SectionContainer';
 // Lazy
 const PlayerListItem = lazy(() => import('./PlayerListItem'));
 
@@ -24,13 +24,11 @@ const SquadList = ({ players, playersByPosition }) => {
             playersByPosition.map((item) => (
               <div key={item.text}>
                 <React.Suspense fallback={<Spinner isButton />}>
-                  <CustomText type='highlight'>
-                    {item.text.toUpperCase()}
-                  </CustomText>
-                  <CustomDivider />
-                  {item.value.map((player) => (
-                    <PlayerListItem key={player._id} player={player} />
-                  ))}
+                  <SectionContainer title={item.text.toUpperCase()}>
+                    {item.value.map((player) => (
+                      <PlayerListItem key={player._id} player={player} />
+                    ))}
+                  </SectionContainer>
                 </React.Suspense>
               </div>
             ))

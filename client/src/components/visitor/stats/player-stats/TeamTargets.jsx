@@ -4,12 +4,11 @@ import Grid from '@material-ui/core/Grid';
 // assets
 import { theme } from 'assets/theme';
 // Components
-import GreyBackground from 'containers/GreyBackground';
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import ValueText from 'components/ui/text/ValueText';
 import CustomText from 'components/ui/text/CustomText';
-import ProfileSection from 'components/user/ProfileSection';
+import SectionContainer from 'containers/SectionContainer';
 
 const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {
   const { warning, success } = theme.palette;
@@ -61,22 +60,24 @@ const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {
   };
 
   return (
-    <ProfileSection title='Team'>
-      <HorizontalBarGraph data={data} />
+    <SectionContainer title='Team'>
+      <div>
+        <HorizontalBarGraph data={data} />
+      </div>
       <CenteredGrid dir='row'>
         {tableData.map((item, i) => (
           <Grid key={i} item xs={3} align='center'>
-            <GreyBackground>
+            <>
               <ValueText>{item.total}</ValueText>
               <CustomText type='muted'> /{item.target}</CustomText>
               <CustomText type='caption' div>
                 {item.title}
               </CustomText>
-            </GreyBackground>
+            </>
           </Grid>
         ))}
       </CenteredGrid>
-    </ProfileSection>
+    </SectionContainer>
   );
 };
 

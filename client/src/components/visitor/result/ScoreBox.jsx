@@ -16,7 +16,6 @@ import ValueText from 'components/ui/text/ValueText';
 import CustomText from 'components/ui/text/CustomText';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import GreyBackground from 'containers/GreyBackground';
 import { theme } from 'assets/theme';
 
 const ScoreBox = ({ result }) => {
@@ -77,13 +76,13 @@ const ScoreBox = ({ result }) => {
   );
 
   return (
-    <GreyBackground>
+    <>
       {details}
       <ListWrapper>
         {topRow}
         {bottomRow}
       </ListWrapper>
-    </GreyBackground>
+    </>
   );
 };
 

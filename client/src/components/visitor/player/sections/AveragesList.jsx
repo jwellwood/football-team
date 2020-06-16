@@ -1,26 +1,24 @@
 import React from 'react';
 // MUITODO
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+// Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import { ListItemText, ListItemSecondaryAction } from '@material-ui/core';
-// Components
 import ValueText from 'components/ui/text/ValueText';
-import GreyBackground from 'containers/GreyBackground';
 
 const AveragesList = ({ listData }) => {
   return (
-    <GreyBackground>
-      <ListWrapper dense>
-        {listData.map((data) => (
-          <ListItemWrapper key={data.title}>
-            <ListItemText primary={data.title} />
-            <ListItemSecondaryAction>
-              <ValueText>{data.value}</ValueText>
-            </ListItemSecondaryAction>
-          </ListItemWrapper>
-        ))}
-      </ListWrapper>
-    </GreyBackground>
+    <ListWrapper dense>
+      {listData.map((data) => (
+        <ListItemWrapper key={data.title}>
+          <ListItemText primary={data.title} />
+          <ListItemSecondaryAction>
+            <ValueText>{data.value}</ValueText>
+          </ListItemSecondaryAction>
+        </ListItemWrapper>
+      ))}
+    </ListWrapper>
   );
 };
 

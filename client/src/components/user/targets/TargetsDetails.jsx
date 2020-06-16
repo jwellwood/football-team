@@ -4,7 +4,7 @@ import { EDIT_TARGETS } from 'router/route_names';
 // Components
 import ProfileList from 'components/ui/lists/ProfileList';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import ProfileSection from '../ProfileSection';
+import SectionContainer from 'containers/SectionContainer';
 
 const TargetDetails = ({ user }) => {
   const {
@@ -29,14 +29,14 @@ const TargetDetails = ({ user }) => {
     },
   ];
   return (
-    <ProfileSection
+    <SectionContainer
       title='Targets'
       link={!canEdit.targets ? 'locked' : EDIT_TARGETS}
     >
       <ListWrapper>
         <ProfileList details={data} />
       </ListWrapper>
-    </ProfileSection>
+    </SectionContainer>
   );
 };
 

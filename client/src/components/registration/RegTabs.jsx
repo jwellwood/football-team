@@ -16,9 +16,7 @@ const RegTabs = () => {
       label: 'Sign in',
       component: (
         <>
-          <GreyBackground placeholder>
-            <SignInLogic />
-          </GreyBackground>
+          <SignInLogic />
 
           <CustomLinkButton link={FORGOT_PASSWORD}>
             Forgot password?
@@ -28,19 +26,13 @@ const RegTabs = () => {
     },
     {
       label: 'Sign up',
-      component: (
-        <GreyBackground placeholder>
-          <SignUpLogic />
-        </GreyBackground>
-      ),
+      component: <SignUpLogic />,
     },
   ];
   return (
     <Container maxWidth='sm'>
       <GreyBackground placeholder>
-        <GreyBackground>
-          <CustomTabs tabs={tabs} centered />
-        </GreyBackground>
+        <CustomTabs tabs={tabs} centered />
       </GreyBackground>
     </Container>
   );

@@ -15,7 +15,6 @@ import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
 import CustomText from 'components/ui/text/CustomText';
 import ValueText from 'components/ui/text/ValueText';
 import StatBoxes from './StatBoxes';
-import GreyBackground from 'containers/GreyBackground';
 
 const PlayerListItem = ({ player }) => {
   const { _id, name, squadNumber, position, isCaptain, image } = player;
@@ -49,22 +48,20 @@ const PlayerListItem = ({ player }) => {
   );
 
   return (
-    <GreyBackground>
-      <CenteredGrid dir='row' just='space-between'>
-        <GridItem xs={6} sm={9} md={9}>
-          <ListItemWrapper button linkTo={`${SQUAD}/${_id}`}>
-            <CustomImageAvatar
-              image={profileImage}
-              alt={`${name} profile`}
-              bordered
-              isList
-            />
-            <ListItemText primary={playerName} secondary={playerNumber} />
-          </ListItemWrapper>
-        </GridItem>
-        <StatBoxes detailsToShow={detailsToShow} />
-      </CenteredGrid>
-    </GreyBackground>
+    <CenteredGrid dir='row' just='space-between'>
+      <GridItem xs={6} sm={9} md={9}>
+        <ListItemWrapper button linkTo={`${SQUAD}/${_id}`}>
+          <CustomImageAvatar
+            image={profileImage}
+            alt={`${name} profile`}
+            bordered
+            isList
+          />
+          <ListItemText primary={playerName} secondary={playerNumber} />
+        </ListItemWrapper>
+      </GridItem>
+      <StatBoxes detailsToShow={detailsToShow} />
+    </CenteredGrid>
   );
 };
 

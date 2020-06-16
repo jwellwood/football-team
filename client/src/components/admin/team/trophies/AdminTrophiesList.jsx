@@ -9,16 +9,14 @@ import { ADMIN_TROPHIES_ADD } from 'router/route_names';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import DeleteTrophyLogic from './DeleteTrophyLogic';
-import SectionTitle from 'components/ui/headers/SectionTitle';
-import GreyBackground from 'containers/GreyBackground';
+import SectionContainer from 'containers/SectionContainer';
 
 const AdminTrophiesList = () => {
   const trophies = useSelector((state) => state.team.teamData.trophies);
   const displayTrophies = trophies.sort((a, b) => (a.year > b.year ? -1 : 1));
 
   return (
-    <GreyBackground>
-      <SectionTitle title='' link={ADMIN_TROPHIES_ADD} text='Add' />
+    <SectionContainer link={ADMIN_TROPHIES_ADD} text='Add'>
       <ListWrapper dense>
         {displayTrophies.map((trophy) => {
           const { name, year, opponent, isWinner, isFinal } = trophy;
@@ -35,7 +33,7 @@ const AdminTrophiesList = () => {
           );
         })}
       </ListWrapper>
-    </GreyBackground>
+    </SectionContainer>
   );
 };
 

@@ -4,7 +4,9 @@ import Spinner from 'components/ui/loading/Spinner';
 import CustomTabs from 'components/ui/tabs/CustomTabs';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 // Sections
-const TeamPhoto = lazy(() => import('components/ui/images/TeamPhoto'));
+const TeamPhoto = lazy(() =>
+  import('components/visitor/team/team-photo/TeamPhoto')
+);
 const TrophiesLogic = lazy(() => import('./trophies/TrophiesLogic'));
 const HallOfFameLogic = lazy(() => import('./hall-of-fame/HallOfFameLogic'));
 const PreviousSeasonsLogic = lazy(() =>

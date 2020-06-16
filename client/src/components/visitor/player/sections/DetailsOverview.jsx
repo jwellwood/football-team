@@ -20,16 +20,12 @@ const DetailsOverview = ({ player }) => {
     <GreyBackground>
       <CenteredGrid dir='row'>
         <GridItem sm={6}>
-          <GreyBackground>
-            <CircularImage image={image.url} isPlayer />
-          </GreyBackground>
+          <CircularImage image={image.url} isPlayer />
         </GridItem>
         <GridItem sm={6}>
-          <GreyBackground>
-            <ListWrapper>
-              <ProfileList details={data} />
-            </ListWrapper>
-          </GreyBackground>
+          <ListWrapper>
+            <ProfileList details={data} />
+          </ListWrapper>
         </GridItem>
       </CenteredGrid>
       {description ? <GreyBackground>{description}</GreyBackground> : null}

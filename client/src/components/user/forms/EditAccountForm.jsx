@@ -42,7 +42,9 @@ const EditAccountForm = ({ onChange, onSubmit, loading, input, user }) => {
       <CustomLinkButton link={CHANGE_PASSWORD} fullWidth={false}>
         Change Password
       </CustomLinkButton>
-      <DeleteAccountLogic user={user} />
+      {!user.matchesPlayed.length ? (
+        <DeleteAccountLogic user={user} disabled={user.matchesPlayed.length} />
+      ) : null}
     </CenteredGrid>
   );
 

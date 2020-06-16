@@ -1,8 +1,6 @@
 import React from 'react';
 import { HorizontalBar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-// Internal
-import GreyBackground from 'containers/GreyBackground';
 
 const options = {
   responsive: true,
@@ -33,15 +31,13 @@ const options = {
 
 const HorizontalBarGraph = ({ data }) => {
   return (
-    <GreyBackground>
-      <HorizontalBar
-        plugins={[ChartDataLabels]}
-        legend={{ display: false }}
-        data={data}
-        options={options}
-        height={200}
-      />
-    </GreyBackground>
+    <HorizontalBar
+      plugins={[ChartDataLabels]}
+      legend={{ display: false }}
+      data={data}
+      options={options}
+      height={200}
+    />
   );
 };
 
