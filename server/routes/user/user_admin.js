@@ -1,4 +1,5 @@
 // 1 / GET / GET_ALL_USERS  / getAllUsers
+// 2 / GET / GET_USER_BY_ID / getUserById
 
 const express = require('express');
 const router = express.Router();
@@ -47,6 +48,7 @@ router.put(`${ADMIN}/set_permissions/:id`, auth, admin, (req, res) => {
     canEditPhoto,
     canEditDetails,
     canEditTargets,
+    isVerified,
   } = req.body;
   User.findByIdAndUpdate(
     { _id: req.params.id },
@@ -65,10 +67,11 @@ router.put(`${ADMIN}/set_permissions/:id`, auth, admin, (req, res) => {
         details: canEditDetails,
         targets: canEditTargets,
       },
+      isVerified,
     },
     { new: true, runValidators: true },
     (err, data) => {
-      if (err) return res.json({ ...notifyError, err: err.messsage });
+      if (err) return res.json({ ...notifyError, err: err.message });
       return res.status(200).send({ ...notifySuccess, data: data });
     }
   );
@@ -85,7 +88,7 @@ router.put(`${ADMIN}/reset_image/:id`, auth, admin, (req, res) => {
     },
     { new: true, runValidators: true },
     (err, data) => {
-      if (err) return res.json({ ...notifyError, err: err.messsage });
+      if (err) return res.json({ ...notifyError, err: err.message });
       return res.status(200).send({ ...notifySuccess, data: data });
     }
   );

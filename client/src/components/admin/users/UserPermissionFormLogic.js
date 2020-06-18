@@ -55,6 +55,7 @@ const UserPermissionFormLogic = () => {
         canEditPhoto: canEdit ? canEdit.photo : null,
         canEditDetails: canEdit ? canEdit.details : null,
         canEditTargets: canEdit ? canEdit.targets : null,
+        isVerified: user.isVerified,
       };
       setInput({ ...initState });
     }

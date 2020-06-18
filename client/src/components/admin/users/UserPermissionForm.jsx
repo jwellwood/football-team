@@ -51,6 +51,11 @@ const UserPermissionForm = ({
       name: 'canEditTargets',
       checked: input.canEditTargets,
     },
+    {
+      title: 'Verified',
+      name: 'isVerified',
+      checked: input.isVerified,
+    },
   ];
 
   const targetInputs = [
