@@ -48,6 +48,7 @@ router.get(`${USER}/get_auth`, auth, (req, res) => {
       id: user._id,
       name: user.name,
       email: user.email,
+      isVerified: user.isVerified,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
       adminStatus: user.role,
