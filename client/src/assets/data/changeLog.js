@@ -1,5 +1,9 @@
 export const changeLog = [
   {
+    version: '0.0.10',
+    changes: ['fix previous season list'],
+  },
+  {
     version: '0.0.9',
     changes: [
       'change email provider',

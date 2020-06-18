@@ -7,6 +7,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import PreviousSeason from './PreviousSeason';
 import Spinner from 'components/ui/loading/Spinner';
+import SectionContainer from 'containers/SectionContainer';
 
 const PreviousSeasonsLogic = () => {
   const [seasons, setSeasons] = useState([]);
@@ -25,11 +26,13 @@ const PreviousSeasonsLogic = () => {
   }, [dispatch]);
 
   return !loading ? (
-    <ListWrapper>
-      {seasons.map((season, i) => {
-        return <PreviousSeason key={i} season={season} />;
-      })}
-    </ListWrapper>
+    <SectionContainer title='Previous Seasons'>
+      <ListWrapper>
+        {seasons.map((season, i) => {
+          return <PreviousSeason key={i} season={season} />;
+        })}
+      </ListWrapper>
+    </SectionContainer>
   ) : (
     <Spinner isButton />
   );
