@@ -1,5 +1,9 @@
 export const changeLog = [
   {
+    version: '0.0.11',
+    changes: ['Improved loading speed'],
+  },
+  {
     version: '0.0.10',
     changes: ['fix previous season list'],
   },
