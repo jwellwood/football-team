@@ -1,9 +1,9 @@
 import React from 'react';
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // Internal
@@ -38,9 +38,9 @@ const CustomExpansion = ({
 }) => {
   const classes = useStyles();
   return (
-    <ExpansionPanel key={title} className={classes.root} elevation={0}>
+    <Accordion key={title} className={classes.root} elevation={0}>
       <GreyBackground>
-        <ExpansionPanelSummary className={classes.summary}>
+        <AccordionSummary className={classes.summary}>
           <CenteredGrid dir='row' just='space-between'>
             <Grid item>
               {icon ? <StatIcon type={icon} size='lg' /> : null}
@@ -56,10 +56,10 @@ const CustomExpansion = ({
               valueAsComponent
             )}
           </CenteredGrid>
-        </ExpansionPanelSummary>
+        </AccordionSummary>
       </GreyBackground>
-      <ExpansionPanelDetails>{children}</ExpansionPanelDetails>
-    </ExpansionPanel>
+      <AccordionDetails>{children}</AccordionDetails>
+    </Accordion>
   );
 };
 
