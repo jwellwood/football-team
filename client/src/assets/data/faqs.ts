@@ -1,4 +1,9 @@
-export const faqs = [
+export interface IFaqs {
+  title: string;
+  text: string;
+}
+
+export const faqs: Array<IFaqs> = [
   {
     title: 'What is it?',
     text:

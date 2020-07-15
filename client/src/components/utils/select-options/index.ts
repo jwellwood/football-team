@@ -1,4 +1,18 @@
-export const matchTypeOptions = [
+export interface IStringValueOptions {
+  text: string;
+  value: string;
+}
+
+export interface INumberValueOptions {
+  text: number;
+  value: number;
+}
+export interface IMixedValueOptions {
+  text: string | boolean;
+  value: string | boolean;
+}
+
+export const matchTypeOptions: Array<IStringValueOptions> = [
   { text: '', value: '' },
   { text: 'League', value: 'League' },
   { text: 'Cup', value: 'Cup' },
@@ -6,7 +20,7 @@ export const matchTypeOptions = [
   { text: 'Friendly', value: 'Friendly' },
 ];
 
-export const positionOptions = [
+export const positionOptions: Array<IStringValueOptions> = [
   { value: '', text: '' },
   { value: 'GK', text: 'Goalkeeper' },
   { value: 'DF', text: 'Defender' },
@@ -14,33 +28,35 @@ export const positionOptions = [
   { value: 'FW', text: 'Forward' },
 ];
 
-export const getLeaguePositionOptions = () => {
-  let options = [{ text: '', value: '' }];
+export const getLeaguePositionOptions: Function = (): Array<
+  INumberValueOptions
+> => {
+  let options: Array<INumberValueOptions> = [{ text: null, value: null }];
   for (let i = 1; i < 21; i++) {
     options.push({ text: i, value: i });
   }
   return options;
 };
 
-export const homeOrAwayOptions = [
+export const homeOrAwayOptions: Array<IMixedValueOptions> = [
   { value: '', text: '' },
   { value: true, text: 'Home' },
   { value: false, text: 'Away' },
 ];
 
-export const forfeitOptions = [
+export const forfeitOptions: Array<IMixedValueOptions> = [
   { value: '', text: '' },
   { value: true, text: 'Forfeit by team' },
   { value: false, text: 'Forfeit by opponent' },
 ];
 
-export const trophyWinnerOptions = [
+export const trophyWinnerOptions: Array<IMixedValueOptions> = [
   { value: '', text: '' },
   { value: true, text: 'Winner' },
   { value: false, text: 'Runner-up' },
 ];
 
-export const playerOptions = (result, players) => {
+export const playerOptions: Function = (result, players) => {
   const matchPlayerIds = result.players
     ? result.players.map((player) => player.player_id._id)
     : [];
@@ -56,9 +72,12 @@ export const playerOptions = (result, players) => {
   return [{ text: '', value: '' }, ...playerList];
 };
 
-export const yearOptions = (minYear = 2005, maxYear = 2050) => {
+export const yearOptions: Function = (
+  minYear: number = 2005,
+  maxYear: number = 2050
+): Array<INumberValueOptions> => {
   const years = [];
-  for (let i = minYear; i <= maxYear; i++) {
+  for (let i: number = minYear; i <= maxYear; i++) {
     years.push(i);
   }
   return years.map((year) => ({ text: year.toString(), value: year }));

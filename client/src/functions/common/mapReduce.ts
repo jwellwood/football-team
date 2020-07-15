@@ -1,4 +1,4 @@
 import { getSum } from './getSum';
 
-export const mapReduce = (arr, stat) =>
+export const mapReduce: Function = (arr: Array<{}>, stat: string): number =>
   arr.map((elem) => +elem[stat]).reduce(getSum, 0);
