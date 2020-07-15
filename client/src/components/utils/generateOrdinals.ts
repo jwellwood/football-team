@@ -1,5 +1,5 @@
-export const generateOrdinals = (num) => {
-  if (num < 50) {
+export const generateOrdinals: Function = (num: number): string => {
+  if (num < 50 && num > 0) {
     switch (num) {
       case 1:
       case 21:
@@ -19,7 +19,5 @@ export const generateOrdinals = (num) => {
       default:
         return 'th';
     }
-  } else {
-    return;
   }
 };

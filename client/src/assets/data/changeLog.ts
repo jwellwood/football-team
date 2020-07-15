@@ -1,4 +1,9 @@
-export const changeLog = [
+export interface IChangeLog {
+  version: string;
+  changes: Array<string>;
+}
+
+export const changeLog: Array<IChangeLog> = [
   {
     version: '0.0.11',
     changes: ['Improved loading speed'],
