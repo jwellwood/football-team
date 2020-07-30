@@ -5,6 +5,10 @@ export interface IChangeLog {
 
 export const changeLog: Array<IChangeLog> = [
   {
+    version: '0.1.0',
+    changes: ['Improved loading speed'],
+  },
+  {
     version: '0.0.11',
     changes: [
       'Improved loading speed',

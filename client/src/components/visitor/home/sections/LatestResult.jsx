@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 // Functions
 import { parseDate, getResultsColors } from 'components/utils';
 // Components
 import CustomTypography from 'components/ui/text/CustomTypography';
+import Spinner from 'components/ui/loading/Spinner';
+import { getLatestResult } from 'reduxStore/result/result_actions';
+import { showMessage } from 'reduxStore/app/message_actions';
 
-const LatestResult = ({ result }) => {
+const LatestResult = () => {
+  const dispatch = useDispatch();
+  const [result, setResult] = useState({});
+
+  useEffect(() => {
+    dispatch(getLatestResult()).then((res) => {
+      const { success, message, type, data } = res.payload;
+      if (!success) {
+        dispatch(showMessage(true, message, type));
+      }
+      setResult(data);
+    });
+  }, [dispatch]);
+
   const {
     date,
     teamGoals,
@@ -14,7 +31,7 @@ const LatestResult = ({ result }) => {
     points,
   } = result;
 
-  return (
+  return result ? (
     <>
       <CustomTypography>Latest Result</CustomTypography>
 
@@ -34,6 +51,8 @@ const LatestResult = ({ result }) => {
 
       <CustomTypography size='sm'>{parseDate(date)}</CustomTypography>
     </>
+  ) : (
+    <Spinner />
   );
 };
 

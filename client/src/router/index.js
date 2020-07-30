@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
-import { getAllResults } from 'reduxStore/result/result_actions';
 // UI
 import Message from 'components/ui/messages/Message';
 import Spinner from 'components/ui/loading/Spinner';
@@ -33,9 +32,6 @@ const AppRouter = () => {
   });
   useEffect(() => {
     effects(getTeam, 'team');
-  });
-  useEffect(() => {
-    effects(getAllResults, 'results');
   });
 
   return (

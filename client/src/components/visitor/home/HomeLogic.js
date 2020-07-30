@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 // Routes
 import {
   SQUAD,
@@ -11,24 +11,9 @@ import {
 } from 'router/route_names';
 // Components
 import Home from './Home';
-import { getLatestResult } from 'reduxStore/result/result_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
 
 const HomeLogic = () => {
-  const dispatch = useDispatch();
-
   const team = useSelector((state) => state.team.teamData);
-  const [latestResult, setLatestResult] = useState({});
-
-  useEffect(() => {
-    dispatch(getLatestResult()).then((res) => {
-      const { success, message, type, data } = res.payload;
-      if (!success) {
-        dispatch(showMessage(true, message, type));
-      }
-      setLatestResult(data);
-    });
-  }, [dispatch]);
 
   const data = [
     {
@@ -63,7 +48,7 @@ const HomeLogic = () => {
     },
   ];
 
-  return <Home data={data} team={team} result={latestResult} />;
+  return <Home data={data} team={team} />;
 };
 
 export default HomeLogic;
