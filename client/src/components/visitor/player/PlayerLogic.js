@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
+import { getAllResults } from 'reduxStore/result/result_actions';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // Functions
 import { showMessage } from 'reduxStore/app/message_actions';
 import { getPlayerById } from 'reduxStore/squad/squad_actions';
@@ -11,11 +13,20 @@ import Player from './Player';
 const PlayerLogic = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const allResults = useSelector((state) => state.result.data) || [];
-  const results = allResults.filter((res) => !res.isForfeit);
   // State
   const [player, setPlayer] = useState({});
+  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    dispatch(getAllResults()).then((res) => {
+      const { success, message, type, data } = res.payload;
+      if (!success) {
+        dispatch(showMessage(true, message, type));
+      }
+      setResults(data);
+    });
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getPlayerById(id)).then((res) => {
@@ -29,8 +40,14 @@ const PlayerLogic = () => {
     });
   }, [dispatch, id]);
 
-  return !loading ? (
-    <Player player={player} results={results} loading={loading} />
+  const resultsWithoutForfeits = results.filter((res) => !res.isForfeit);
+
+  return !loading && player && results ? (
+    <Player
+      player={player}
+      results={resultsWithoutForfeits}
+      loading={loading}
+    />
   ) : (
     <Spinner />
   );

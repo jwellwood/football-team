@@ -8,19 +8,14 @@ import { RESULTS } from 'router/route_names';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
-import PlaceholderText from 'components/ui/text/Placeholder';
 
 const CurrentPosition = lazy(() => import('./CurrentPosition'));
 const LatestResult = lazy(() => import('./LatestResult'));
 
-const HomeData = ({ team, result }) => {
+const HomeData = ({ team }) => {
   const { position, league } = team || {};
 
-  const latestResult = result ? (
-    <LatestResult result={result} />
-  ) : (
-    <PlaceholderText />
-  );
+  const latestResult = <LatestResult />;
 
   return (
     <Suspense fallback={<Spinner isButton />}>
