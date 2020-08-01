@@ -1,6 +1,6 @@
 import React from 'react';
 // Routes
-import { EDIT_PLAYER } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
@@ -14,7 +14,7 @@ const PlayerDetails = ({ user }) => {
   return (
     <SectionContainer
       title={name}
-      link={!canEdit.details ? 'locked' : EDIT_PLAYER}
+      link={!canEdit.details ? 'locked' : user_routes.EDIT_PLAYER}
     >
       <CenteredGrid dir='row'>
         <GridItem sm={4}>

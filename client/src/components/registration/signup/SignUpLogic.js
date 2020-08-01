@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { signUp } from 'reduxStore/auth/auth_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import SignUpForm from './SignUpForm';
 
@@ -23,7 +23,7 @@ const SignUpLogic = () => {
   const dataToSubmit = { ...input };
   const onSubmit = () =>
     onFormSubmit(setLoading, dispatch(signUp(dataToSubmit)), dispatch, () =>
-      history.push(PROFILE)
+      history.push(user_routes.PROFILE)
     );
 
   const disabled = !acceptTerms;

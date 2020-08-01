@@ -16,7 +16,17 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const GreyBackground = ({ children, bordered, placeholder }) => {
+interface Props {
+  children: any;
+  bordered?: boolean;
+  placeholder?: boolean;
+}
+
+const SectionBackground: React.FC<Props> = ({
+  children,
+  bordered,
+  placeholder,
+}) => {
   const classes = useStyles();
   const paperComponent = (
     <Paper
@@ -37,4 +47,4 @@ const GreyBackground = ({ children, bordered, placeholder }) => {
   );
 };
 
-export default GreyBackground;
+export default SectionBackground;

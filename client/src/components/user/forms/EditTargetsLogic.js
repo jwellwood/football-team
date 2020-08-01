@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updatePlayerTargets } from 'reduxStore/user/user_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import EditTargetsForm from './EditTargetsForm';
 
@@ -26,7 +26,7 @@ const EditTargetsLogic = () => {
       setLoading,
       dispatch(updatePlayerTargets(dataToSubmit)),
       dispatch,
-      () => history.push(PROFILE)
+      () => history.push(user_routes.PROFILE)
     );
 
   return (

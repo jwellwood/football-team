@@ -7,7 +7,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // Internal
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import StatIcon from '../icons/StatIcon';
 import CustomTypography from '../text/CustomTypography';
@@ -39,7 +39,7 @@ const CustomExpansion = ({
   const classes = useStyles();
   return (
     <Accordion key={title} className={classes.root} elevation={0}>
-      <GreyBackground>
+      <SectionBackground>
         <AccordionSummary className={classes.summary}>
           <CenteredGrid dir='row' just='space-between'>
             <Grid item>
@@ -57,7 +57,7 @@ const CustomExpansion = ({
             )}
           </CenteredGrid>
         </AccordionSummary>
-      </GreyBackground>
+      </SectionBackground>
       <AccordionDetails>{children}</AccordionDetails>
     </Accordion>
   );

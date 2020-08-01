@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { verifyEmail } from 'reduxStore/auth/auth_actions';
 import { onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { SIGN_IN } from 'router/route_names';
+import { reg_routes } from 'router';
 // Components
 import ValidatedEmail from './ValidatedEmail';
 
@@ -21,7 +21,7 @@ const ValidatedEmailLogic = () => {
       setLoading,
       dispatch(verifyEmail(dataToSubmit)),
       dispatch,
-      () => history.push(SIGN_IN)
+      () => history.push(reg_routes.SIGN_IN)
     );
 
   return <ValidatedEmail onClick={onClick} loading={loading} />;

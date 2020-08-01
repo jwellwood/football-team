@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 // Routes
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 // Functions
 import { deletePreviousAward } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'components/utils/form-controls';
@@ -20,7 +20,7 @@ const DeleteAwardLogic = ({ awardId }) => {
       setLoading,
       dispatch(deletePreviousAward(id, awardId)),
       dispatch,
-      () => history.push(ADMIN_PREVIOUS_SEASON)
+      () => history.push(admin_routes.ADMIN_PREVIOUS_SEASON)
     );
 
   return <DeleteAward loading={loading} onDeleteAward={onDeleteAward} />;

@@ -4,7 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Functions
 import { parseDate } from 'components/utils';
 // Routes
-import { EDIT_USER } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
@@ -21,7 +21,7 @@ const AccountDetails = ({ user }) => {
     { text: 'Status', value: adminStatus },
   ];
   return (
-    <SectionContainer title='Account' link={EDIT_USER}>
+    <SectionContainer title='Account' link={user_routes.EDIT_USER}>
       <ListWrapper>
         {details.map((item) => (
           <ListItemWrapper key={item.text}>

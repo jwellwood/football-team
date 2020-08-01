@@ -8,17 +8,16 @@ import { getTeam } from 'reduxStore/team/team_actions';
 import Message from 'components/ui/messages/Message';
 import Spinner from 'components/ui/loading/Spinner';
 import NavDrawerLogic from 'components/navs/NavDrawerLogic';
+import PageContainer from 'containers/PageContainer';
 
 const Routes = lazy(() => import('./Routes'));
 
-const AppRouter = () => {
+export default () => {
   const dispatch = useDispatch();
 
-  const effects = (action, name) => {
-    console.log(`${name} init`);
-    dispatch(action()).then(
+  useEffect(() => {
+    dispatch(getTeam()).then(
       (res) => {
-        console.log(`${name} loaded`);
         const { success, message, type } = res.payload;
         if (!success) {
           dispatch(showMessage(true, message, type));
@@ -26,23 +25,18 @@ const AppRouter = () => {
       },
       [dispatch]
     );
-  };
+  });
   useEffect(() => {
     dispatch(getAuth());
-  });
-  useEffect(() => {
-    effects(getTeam, 'team');
-  });
+  }, [dispatch]);
 
   return (
-    <>
+    <PageContainer admin={false}>
       <React.Suspense fallback={<Spinner />}>
         <NavDrawerLogic />
         <Routes />
       </React.Suspense>
       <Message />
-    </>
+    </PageContainer>
   );
 };
-
-export default AppRouter;

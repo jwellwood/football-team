@@ -6,7 +6,7 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
 import SectionContainer from 'containers/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 
 const TargetsTable = ({ targets }) => {
   const rows = targets.map((player, i) => {
@@ -62,7 +62,7 @@ const TargetsTable = ({ targets }) => {
           ].map((stat, i) => (
             // p: percentage, t: total(actual number)
             <GridItem key={i} xs={4} sm={4} md={4} lg={4}>
-              <GreyBackground>
+              <SectionBackground>
                 <CustomTypography size='sm'>{stat.type}</CustomTypography>
                 <CustomTypography div bold color={color(stat.p)}>
                   {stat.p}%
@@ -70,7 +70,7 @@ const TargetsTable = ({ targets }) => {
                 <CustomTypography size='sm'>
                   {stat.t} / {stat.tar}
                 </CustomTypography>
-              </GreyBackground>
+              </SectionBackground>
             </GridItem>
           ))}
         </CenteredGrid>

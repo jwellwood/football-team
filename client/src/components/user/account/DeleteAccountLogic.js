@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAuth, deleteUser } from 'reduxStore/auth/auth_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { HOME } from 'router/route_names';
+import { visitor_routes } from 'router';
 // Components
 import DeleteAccountForm from './DeleteAccountForm';
 
@@ -24,7 +24,7 @@ const DeleteAccountLogic = () => {
   const onSubmit = () =>
     onFormSubmit(setLoading, dispatch(deleteUser(user.id)), dispatch, () => {
       dispatch(getAuth());
-      history.push(HOME);
+      history.push(visitor_routes.HOME);
     });
 
   return (

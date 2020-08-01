@@ -1,12 +1,12 @@
 import React from 'react';
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 import PageHeader from 'components/ui/text/PageHeader';
 import EditPlayerLogic from 'components/user/forms/EditPlayerLogic';
 
 const EditPlayerPage = () => {
   return (
     <div>
-      <PageHeader title='Edit Details' backTo={PROFILE} />
+      <PageHeader title='Edit Details' backTo={user_routes.PROFILE} />
       <EditPlayerLogic />
     </div>
   );

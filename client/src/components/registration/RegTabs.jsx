@@ -2,10 +2,10 @@ import React from 'react';
 // MUI
 import Container from '@material-ui/core/Container';
 // Routes
-import { FORGOT_PASSWORD } from 'router/route_names';
+import { reg_routes } from 'router';
 // Components
 import CustomTabs from 'components/ui/tabs/CustomTabs';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import SignInLogic from './signin/SignInLogic';
 import SignUpLogic from './signup/SignUpLogic';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
@@ -18,7 +18,7 @@ const RegTabs = () => {
         <>
           <SignInLogic />
 
-          <CustomLinkButton link={FORGOT_PASSWORD}>
+          <CustomLinkButton link={reg_routes.FORGOT_PASSWORD}>
             Forgot password?
           </CustomLinkButton>
         </>
@@ -31,9 +31,9 @@ const RegTabs = () => {
   ];
   return (
     <Container maxWidth='sm'>
-      <GreyBackground placeholder>
+      <SectionBackground placeholder>
         <CustomTabs tabs={tabs} centered />
-      </GreyBackground>
+      </SectionBackground>
     </Container>
   );
 };

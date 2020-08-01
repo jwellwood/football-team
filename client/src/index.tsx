@@ -14,7 +14,7 @@ import 'assets/icons';
 // Error handling
 import ErrorBoundary from 'containers/ErrorBoundary';
 // Routes
-import Routes from 'router/index';
+import { AppRouter } from 'router';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -22,7 +22,7 @@ ReactDOM.render(
       <CssBaseline />
       <ErrorBoundary>
         <Router>
-          <Routes />
+          <AppRouter />
         </Router>
       </ErrorBoundary>
     </MuiThemeProvider>

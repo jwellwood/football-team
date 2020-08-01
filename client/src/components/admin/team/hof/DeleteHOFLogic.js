@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // Functions
 import { getTeam, deleteHallOfFamer } from 'reduxStore/team/team_actions';
 // Routes
-import { ADMIN_HOF } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import DeleteHOF from './DeleteHOF';
 import { onFormSubmit } from 'components/utils/form-controls';
@@ -23,7 +23,7 @@ const DeleteHOFLogic = ({ hof }) => {
       dispatch,
       () => {
         dispatch(getTeam());
-        history.push(ADMIN_HOF);
+        history.push(admin_routes.ADMIN_HOF);
       }
     );
 

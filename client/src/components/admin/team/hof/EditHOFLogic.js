@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateHallOfFamer, getTeam } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_HOF } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import HOFForm from './HOFForm';
 
@@ -34,7 +34,7 @@ const EditHOFLogic = () => {
       dispatch,
       () => {
         dispatch(getTeam());
-        history.push(ADMIN_HOF);
+        history.push(admin_routes.ADMIN_HOF);
       }
     );
 

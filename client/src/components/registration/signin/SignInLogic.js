@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { signIn } from 'reduxStore/auth/auth_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 // Internal
 import SignInForm from './SignInForm';
 
@@ -19,7 +19,7 @@ const SignInLogic = () => {
   const dataToSubmit = { ...input };
   const onSubmit = () =>
     onFormSubmit(setLoading, dispatch(signIn(dataToSubmit)), dispatch, () =>
-      history.push(PROFILE)
+      history.push(user_routes.PROFILE)
     );
 
   return (

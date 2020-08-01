@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 import CustomIcon from '../icons/CustomIcon';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const BackButton = ({ backTo, disabled }) => {
   const classes = useStyles();
 
-  let link = backTo || PROFILE;
+  let link = backTo || user_routes.PROFILE;
 
   return (
     <IconButton

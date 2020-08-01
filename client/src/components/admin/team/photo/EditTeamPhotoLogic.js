@@ -10,7 +10,7 @@ import {
 } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Routes
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import EditTeamPhotoForm from './EditTeamPhotoForm';
 
@@ -44,7 +44,7 @@ const EditTeamPhotoLogic = () => {
     if (teamPhoto.url === 'default') {
       dispatch(showMessage(true, 'Default image selected', 'info'));
       getTeam();
-      history.push(ADMIN);
+      history.push(admin_routes.ADMIN);
     } else {
       dispatch(removeAdminImage(teamPhoto.public_id)).then((res) => {
         const { success, message, type } = res.payload;
@@ -65,7 +65,7 @@ const EditTeamPhotoLogic = () => {
         setLoading(false);
         dispatch(showMessage(true, message, type));
         getTeam();
-        history.push(ADMIN);
+        history.push(admin_routes.ADMIN);
       } else {
         setLoading(false);
         dispatch(showMessage(true, message, type));

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ADMIN_RESULTS } from 'router/route_names';
+import { admin_routes } from 'router';
 // MUI
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -9,12 +9,12 @@ import { parseDate } from 'components/utils/date';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AdminResultsList = ({ results }) => {
   return (
-    <GreyBackground>
+    <SectionBackground>
       <ListWrapper>
         {results.map((result) => {
           const {
@@ -31,7 +31,7 @@ const AdminResultsList = ({ results }) => {
             <ListItemWrapper
               key={_id}
               button
-              linkTo={`${ADMIN_RESULTS}/edit/${_id}`}
+              linkTo={`${admin_routes.ADMIN_RESULTS}/edit/${_id}`}
             >
               <ListItemText
                 primary={opponentName}
@@ -54,7 +54,7 @@ const AdminResultsList = ({ results }) => {
           );
         })}
       </ListWrapper>
-    </GreyBackground>
+    </SectionBackground>
   );
 };
 

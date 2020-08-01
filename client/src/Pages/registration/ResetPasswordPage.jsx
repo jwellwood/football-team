@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { SIGN_IN } from 'router/route_names';
+import { reg_routes } from 'router';
 import ResetPasswordLogic from 'components/registration/reset-password/ResetPasswordLogic';
 
 const ResetPasswordPage = () => {
   return (
     <div>
-      <PageHeader title='Reset Password' backTo={SIGN_IN} />
+      <PageHeader title='Reset Password' backTo={reg_routes.SIGN_IN} />
       <ResetPasswordLogic />
     </div>
   );

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTeam, deleteTrophy } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_TROPHIES } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import DeleteTrophy from './DeleteTrophy';
 
@@ -23,7 +23,7 @@ const DeleteTrophyLogic = ({ trophy }) => {
       dispatch,
       () => {
         dispatch(getTeam());
-        history.push(ADMIN_TROPHIES);
+        history.push(admin_routes.ADMIN_TROPHIES);
       }
     );
 

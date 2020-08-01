@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import GridItem from 'components/ui/grids/GridItem';
@@ -10,7 +10,7 @@ const ModalContent = ({ data }) => {
   const { title, highlight, icon, iconColor, main, extra, description } = data;
 
   return (
-    <GreyBackground>
+    <SectionBackground>
       <CenteredGrid>
         <GridItem>
           <CustomTypography size='lg'>{title}</CustomTypography>
@@ -18,11 +18,11 @@ const ModalContent = ({ data }) => {
             {highlight}
           </CustomTypography>
         </GridItem>
-        <GreyBackground>
+        <SectionBackground>
           <GridItem>
             <CustomIcon icon={icon} size='6x' color={iconColor} />
           </GridItem>
-        </GreyBackground>
+        </SectionBackground>
         <GridItem>
           <CustomTypography main bold>
             {main}
@@ -34,14 +34,14 @@ const ModalContent = ({ data }) => {
           ) : null}
         </GridItem>
         {description ? (
-          <GreyBackground>
+          <SectionBackground>
             <CustomTypography color='warning' font='secondary'>
               {description}
             </CustomTypography>
-          </GreyBackground>
+          </SectionBackground>
         ) : null}
       </CenteredGrid>
-    </GreyBackground>
+    </SectionBackground>
   );
 };
 

@@ -1,11 +1,9 @@
-// Nav links, open state of drawer, logout function
-// ------------------------------------------------------
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { getAuth, signOut } from 'reduxStore/auth/auth_actions';
-import { HOME } from 'router/route_names';
+import { visitor_routes } from 'router';
 import NavDrawer from './NavDrawer';
 
 const NavDrawerLogic = () => {
@@ -34,7 +32,7 @@ const NavDrawerLogic = () => {
         dispatch(showMessage(true, message, type));
         setOpen(false);
         dispatch(getAuth()); // To reset the auth status
-        history.push(HOME);
+        history.push(visitor_routes.HOME);
       } else {
         dispatch(showMessage(true, message, type));
       }

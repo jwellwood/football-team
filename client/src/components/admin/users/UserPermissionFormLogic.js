@@ -10,7 +10,7 @@ import {
 import { removeAdminImage } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Route
-import { ADMIN_USERS } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import UserPermissionForm from './UserPermissionForm';
 import {
@@ -71,7 +71,7 @@ const UserPermissionFormLogic = () => {
       dispatch,
       () => {
         dispatch(getAllPlayers());
-        history.push(ADMIN_USERS);
+        history.push(admin_routes.ADMIN_USERS);
       }
     );
 
@@ -83,7 +83,7 @@ const UserPermissionFormLogic = () => {
           const { success, message, type } = res.payload;
           if (success) {
             dispatch(showMessage(true, message, type));
-            history.push(ADMIN_USERS);
+            history.push(admin_routes.ADMIN_USERS);
           } else {
             dispatch(showMessage(true, message, type));
           }

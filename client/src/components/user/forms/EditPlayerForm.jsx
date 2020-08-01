@@ -14,7 +14,7 @@ import { positionOptions, yearOptions } from 'components/utils/select-options';
 import { profileDetailsHelper } from 'assets/data/formHelperText';
 import FormHelper from 'components/ui/text/FormHelper';
 import EditImageButton from 'components/ui/buttons/EditImageButton';
-import { EDIT_PROFILE_IMAGE } from 'router/route_names';
+import { user_routes } from 'router';
 
 const EditPlayerForm = ({ onChange, onSubmit, loading, input, user }) => {
   const { handleSubmit, errors, register } = useForm();
@@ -27,7 +27,7 @@ const EditPlayerForm = ({ onChange, onSubmit, loading, input, user }) => {
       <CenteredGrid dir='row'>
         <Grid item xs={6} sm={4}>
           <EditImageButton
-            link={!canEdit.photo ? 'locked' : EDIT_PROFILE_IMAGE}
+            link={!canEdit.photo ? 'locked' : user_routes.EDIT_PROFILE_IMAGE}
           />
         </Grid>
         <Grid item xs={12} sm={8}>

@@ -10,7 +10,7 @@ import {
 import { showMessage } from 'reduxStore/app/message_actions';
 import { getAllPlayers } from 'reduxStore/squad/squad_actions';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import EditUserImageForm from './EditUserImageForm';
 
@@ -47,7 +47,7 @@ const EditUserImageLogic = () => {
       if (success) {
         setLoading(false);
         dispatch(showMessage(true, message, type));
-        history.push(PROFILE);
+        history.push(user_routes.PROFILE);
       } else {
         setLoading(false);
         dispatch(showMessage(true, message, type));
@@ -58,7 +58,7 @@ const EditUserImageLogic = () => {
   const onUseDefault = () => {
     if (user.image.url === 'default') {
       dispatch(showMessage(true, 'Default image selected', 'info'));
-      history.push(PROFILE);
+      history.push(user_routes.PROFILE);
     } else {
       dispatch(removeUserImage(user.image.public_id)).then((res) => {
         const { success, message, type } = res.payload;

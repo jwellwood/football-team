@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 // Routes
-import { RESULTS } from 'router/route_names';
+import { visitor_routes } from 'router';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
@@ -19,7 +19,7 @@ const HomeData = ({ team }) => {
 
   return (
     <Suspense fallback={<Spinner isButton />}>
-      <Link underline='none' component={RouterLink} to={RESULTS}>
+      <Link underline='none' component={RouterLink} to={visitor_routes.RESULTS}>
         <CenteredGrid dir='row'>
           <Grid item xs={6}>
             <CenteredGrid>{latestResult}</CenteredGrid>

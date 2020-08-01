@@ -9,7 +9,7 @@ import {
   forfeitOptions,
 } from 'components/utils/select-options';
 // Routes
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 // Inputs
 import SelectInput from 'components/ui/inputs/SelectInput';
 import TextInput from 'components/ui/inputs/TextInput';
@@ -97,7 +97,7 @@ const ResultForm = ({
       {input.isForfeit || !result ? null : (
         <CustomLinkButton
           type='contained'
-          link={`${ADMIN}/results/${result._id}/players/add`}
+          link={`${admin_routes.ADMIN}/results/${result._id}/players/add`}
         >
           Assign Players
         </CustomLinkButton>

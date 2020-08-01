@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 //MUI
 import Grid from '@material-ui/core/Grid';
 // Routes
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
@@ -65,7 +65,7 @@ const PrevSeasonForm = ({ onSubmit, onChange, loading, input, season }) => {
     <>
       <CustomLinkButton
         type='contained'
-        link={`${ADMIN_PREVIOUS_SEASON}/${season._id}/awards/add`}
+        link={`${admin_routes.ADMIN_PREVIOUS_SEASON}/${season._id}/awards/add`}
       >
         Add a new award
       </CustomLinkButton>

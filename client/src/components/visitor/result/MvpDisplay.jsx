@@ -4,14 +4,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Components
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import StatIcon from 'components/ui/icons/StatIcon';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const MvpDisplay = ({ mvp }) => {
   return mvp.length ? (
-    <GreyBackground>
+    <SectionBackground>
       <ListWrapper>
         <ListItemWrapper>
           <CustomAvatar shadow='warning' isList>
@@ -26,7 +26,7 @@ const MvpDisplay = ({ mvp }) => {
           />
         </ListItemWrapper>
       </ListWrapper>
-    </GreyBackground>
+    </SectionBackground>
   ) : (
     <CustomTypography>No mvp</CustomTypography>
   );

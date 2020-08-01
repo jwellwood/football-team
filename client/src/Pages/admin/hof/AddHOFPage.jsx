@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { ADMIN_HOF } from 'router/route_names';
+import { admin_routes } from 'router';
 import AddHOFLogic from 'components/admin/team/hof/AddHOFLogic';
 
 const AddHOFPage = () => {
   return (
     <div>
-      <PageHeader title='Add Hall of Famer' backTo={ADMIN_HOF} />
+      <PageHeader title='Add Hall of Famer' backTo={admin_routes.ADMIN_HOF} />
       <AddHOFLogic />
     </div>
   );

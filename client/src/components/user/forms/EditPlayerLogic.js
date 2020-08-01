@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updatePlayerDetails } from 'reduxStore/user/user_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 // Internal
 import EditPlayerForm from './EditPlayerForm';
 
@@ -31,7 +31,7 @@ const EditPlayerLogic = () => {
       setLoading,
       dispatch(updatePlayerDetails(dataToSubmit)),
       dispatch,
-      () => history.push(PROFILE)
+      () => history.push(user_routes.PROFILE)
     );
 
   const disabled =

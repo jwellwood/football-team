@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Routes
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 // Functions
 import { deletePreviousSeason } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'components/utils/form-controls';
@@ -19,7 +19,7 @@ const DeletePrevSeasonLogic = ({ season }) => {
       setLoading,
       dispatch(deletePreviousSeason(season._id)),
       dispatch,
-      () => history.push(ADMIN_PREVIOUS_SEASON)
+      () => history.push(admin_routes.ADMIN_PREVIOUS_SEASON)
     );
 
   return <DeletePrevSeason loading={loading} onDeleteSeason={onDeleteSeason} />;

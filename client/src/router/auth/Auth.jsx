@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 // Internal
 import Spinner from 'components/ui/loading/Spinner';
 import { getAuth } from 'reduxStore/auth/auth_actions';
-import { SIGN_IN, PROFILE } from 'router/route_names';
+import { reg_routes, user_routes } from 'router';
 // The three arguments come from the routes page
 export default function (ComposedClass, protectedRoute, adminRoute = null) {
   const AuthenticationCheck = (props) => {
@@ -17,18 +17,18 @@ export default function (ComposedClass, protectedRoute, adminRoute = null) {
         if (!res.payload.isAuth) {
           if (protectedRoute) {
             // if user is not authenticated, they can only see home/login/sign up
-            history.push(SIGN_IN);
+            history.push(reg_routes.SIGN_IN);
           }
           // Else we can move forward
           // Now check admin routes
         } else {
           if (adminRoute && !res.payload.isAdmin) {
             // If not admin but wants an admin route, back to user dashboard
-            history.push(PROFILE);
+            history.push(user_routes.PROFILE);
           } else {
             // This will stop logged in user visiting login or signup
             if (protectedRoute === false) {
-              history.push(PROFILE);
+              history.push(user_routes.PROFILE);
             }
           }
         }
