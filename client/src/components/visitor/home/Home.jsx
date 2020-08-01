@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 // Components
 import CustomContainer from 'containers/CustomContainer';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
 
@@ -26,13 +26,13 @@ const Home = ({ data, team, result }) => {
 
   return (
     <Suspense fallback={<Spinner isButton />}>
-      <GreyBackground>
+      <SectionBackground>
         {sections.map((section, i) => (
-          <GreyBackground key={i} placeholder>
+          <SectionBackground key={i} placeholder>
             <CustomContainer>{section.component}</CustomContainer>
-          </GreyBackground>
+          </SectionBackground>
         ))}
-      </GreyBackground>
+      </SectionBackground>
     </Suspense>
   );
 };

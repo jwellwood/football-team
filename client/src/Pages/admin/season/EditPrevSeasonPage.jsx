@@ -1,12 +1,15 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 import EditPrevSeasonLogic from 'components/admin/team/previous-seasons/EditPrevSeasonLogic';
 
 const EditPrevSeasonPage = () => {
   return (
     <div>
-      <PageHeader title='Edit Season' backTo={ADMIN_PREVIOUS_SEASON} />
+      <PageHeader
+        title='Edit Season'
+        backTo={admin_routes.ADMIN_PREVIOUS_SEASON}
+      />
       <EditPrevSeasonLogic />
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Routes
-import { ADMIN_RESULTS } from 'router/route_names';
+import { admin_routes } from 'router';
 // Functions
 import { deleteResult, getAllResults } from 'reduxStore/result/result_actions';
 // Components
@@ -21,7 +21,7 @@ const DeleteResultLogic = ({ result }) => {
       dispatch,
       () => {
         dispatch(getAllResults());
-        history.push(ADMIN_RESULTS);
+        history.push(admin_routes.ADMIN_RESULTS);
       }
     );
 

@@ -5,12 +5,12 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Functions
 import { parseDate } from 'components/utils';
 // Routes
-import { RESULTS } from 'router/route_names';
+import { visitor_routes } from 'router';
 // Components
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ResultCard = ({ result }) => {
@@ -46,8 +46,12 @@ const ResultCard = ({ result }) => {
     </CustomTypography>
   );
   return (
-    <GreyBackground>
-      <ListItemWrapper noDivider button linkTo={`${RESULTS}/${result._id}`}>
+    <SectionBackground>
+      <ListItemWrapper
+        noDivider
+        button
+        linkTo={`${visitor_routes.RESULTS}/${result._id}`}
+      >
         <CustomAvatar bordered background={background} isList>
           <CustomIcon icon='chevron-right' size='xs' />
         </CustomAvatar>
@@ -58,7 +62,7 @@ const ResultCard = ({ result }) => {
           </CustomTypography>
         </ListItemSecondaryAction>
       </ListItemWrapper>
-    </GreyBackground>
+    </SectionBackground>
   );
 };
 

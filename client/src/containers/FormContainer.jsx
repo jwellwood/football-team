@@ -1,15 +1,15 @@
 import React from 'react';
 // Components
-import GreyBackground from './GreyBackground';
+import SectionBackground from './SectionBackground';
 // assets
 import CustomContainer from './CustomContainer';
 
 const FormContainer = ({ children }) => {
   return (
     <CustomContainer>
-      <GreyBackground bordered placeholder>
+      <SectionBackground bordered placeholder>
         {children}
-      </GreyBackground>
+      </SectionBackground>
     </CustomContainer>
   );
 };

@@ -1,26 +1,6 @@
 import { lazy } from 'react';
-
-import {
-  ADMIN,
-  ADMIN_USERS,
-  ADMIN_RESULTS,
-  ADMIN_TROPHIES,
-  ADMIN_HOF,
-  ADMIN_RESULTS_ADD,
-  ADMIN_TROPHIES_ADD,
-  ADMIN_HOF_ADD,
-  ADMIN_RESULTS_EDIT,
-  ADMIN_TEAM_EDIT,
-  ADMIN_TEAM_EDIT_PHOTO,
-  ADMIN_HOF_EDIT,
-  ADMIN_MATCH_PLAYERS_ADD,
-  ADMIN_USER_PERMISSIONS_EDIT,
-  ADMIN_PREVIOUS_SEASON,
-  ADMIN_PREVIOUS_SEASON_ADD,
-  ADMIN_PREVIOUS_SEASON_EDIT,
-  ADMIN_PREVIOUS_AWARD_ADD,
-  ADMIN_TEAM_ADD,
-} from 'router/route_names';
+import { admin_routes as routes } from './paths';
+import { IRoute } from 'shared/types';
 
 // Results
 const AdminResultsPage = lazy(() =>
@@ -67,32 +47,47 @@ const AddSeasonAwardPage = lazy(() =>
 // ADMIN
 const AdminPage = lazy(() => import('Pages/admin/AdminPage'));
 
-export const adminRoutes = [
+export const adminRoutes: IRoute[] = [
   // Users
-  { path: ADMIN_USERS, component: AdminUsersPage },
+  { path: routes.ADMIN_USERS, component: AdminUsersPage },
   // Trophy
-  { path: ADMIN_TROPHIES, component: AdminTrophiesPage },
-  { path: ADMIN_TROPHIES_ADD, component: AddTrophyPage },
+  { path: routes.ADMIN_TROPHIES, component: AdminTrophiesPage },
+  { path: routes.ADMIN_TROPHIES_ADD, component: AddTrophyPage },
   // HOF
-  { path: ADMIN_HOF_EDIT, component: EditHOFPage },
-  { path: ADMIN_HOF_ADD, component: AddHOFPage },
-  { path: ADMIN_HOF, component: AdminHOFPage },
+  { path: routes.ADMIN_HOF_EDIT, component: EditHOFPage },
+  { path: routes.ADMIN_HOF_ADD, component: AddHOFPage },
+  { path: routes.ADMIN_HOF, component: AdminHOFPage },
   // Seasons
-  { path: ADMIN_PREVIOUS_SEASON, component: AdminPreviousSeasonsPage },
-  { path: ADMIN_PREVIOUS_SEASON_ADD, component: AddPreviousSeasonPage },
-  { path: ADMIN_PREVIOUS_SEASON_EDIT, component: EditPrevSeasonPage },
-  { path: ADMIN_PREVIOUS_AWARD_ADD, component: AddSeasonAwardPage },
+  {
+    path: routes.ADMIN_PREVIOUS_SEASON,
+    component: AdminPreviousSeasonsPage,
+  },
+  {
+    path: routes.ADMIN_PREVIOUS_SEASON_ADD,
+    component: AddPreviousSeasonPage,
+  },
+  {
+    path: routes.ADMIN_PREVIOUS_SEASON_EDIT,
+    component: EditPrevSeasonPage,
+  },
+  {
+    path: routes.ADMIN_PREVIOUS_AWARD_ADD,
+    component: AddSeasonAwardPage,
+  },
   // Edit
-  { path: ADMIN_USER_PERMISSIONS_EDIT, component: EditUserPermissionsPage },
-  { path: ADMIN_TEAM_EDIT_PHOTO, component: EditTeamPhotoPage },
-  { path: ADMIN_TEAM_EDIT, component: EditTeamPage },
-  { path: ADMIN_RESULTS_EDIT, component: EditResultPage },
+  {
+    path: routes.ADMIN_USER_PERMISSIONS_EDIT,
+    component: EditUserPermissionsPage,
+  },
+  { path: routes.ADMIN_TEAM_EDIT_PHOTO, component: EditTeamPhotoPage },
+  { path: routes.ADMIN_TEAM_EDIT, component: EditTeamPage },
+  { path: routes.ADMIN_RESULTS_EDIT, component: EditResultPage },
   // Add
-  { path: ADMIN_RESULTS_ADD, component: AddResultPage },
-  { path: ADMIN_MATCH_PLAYERS_ADD, component: AddMatchPlayerPage },
-  { path: ADMIN_TEAM_ADD, component: AddTeamPage },
+  { path: routes.ADMIN_RESULTS_ADD, component: AddResultPage },
+  { path: routes.ADMIN_MATCH_PLAYERS_ADD, component: AddMatchPlayerPage },
+  { path: routes.ADMIN_TEAM_ADD, component: AddTeamPage },
   // Views
-  { path: ADMIN_RESULTS, component: AdminResultsPage },
+  { path: routes.ADMIN_RESULTS, component: AdminResultsPage },
   // Links
-  { path: ADMIN, component: AdminPage },
+  { path: routes.ADMIN, component: AdminPage },
 ];

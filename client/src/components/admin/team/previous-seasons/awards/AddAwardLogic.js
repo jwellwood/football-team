@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addPreviousAward } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import AddAwardForm from './AddAwardForm';
 
@@ -25,7 +25,7 @@ const AddAwardLogic = () => {
       setLoading,
       dispatch(addPreviousAward(dataToSubmit, id)),
       dispatch,
-      () => history.push(ADMIN_PREVIOUS_SEASON)
+      () => history.push(admin_routes.ADMIN_PREVIOUS_SEASON)
     );
 
   return (

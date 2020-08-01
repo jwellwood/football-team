@@ -8,6 +8,26 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import cyan from '@material-ui/core/colors/cyan';
 import orange from '@material-ui/core/colors/orange';
 
+import { ThemeOptions } from '@material-ui/core';
+
+declare module '@material-ui/core' {
+  interface Theme {
+    colors: {
+      dark: {
+        main: string;
+      };
+    };
+
+    secondaryFont: string;
+  }
+}
+
+declare module '@material-ui/core/styles/createTypography' {
+  interface FontStyle {
+    secondaryFont: string;
+  }
+}
+
 export const theme = createMuiTheme({
   palette: {
     primary: { main: red['A700'] },
@@ -15,9 +35,7 @@ export const theme = createMuiTheme({
       main: blueGrey[300],
       contrastText: '#fff',
     },
-    dark: {
-      main: blueGrey[900],
-    },
+    dark: { main: blueGrey[900] },
     success: {
       main: green['A400'],
     },
@@ -79,4 +97,4 @@ export const theme = createMuiTheme({
       },
     },
   },
-});
+} as ThemeOptions);

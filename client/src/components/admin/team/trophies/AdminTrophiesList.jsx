@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Routes
-import { ADMIN_TROPHIES_ADD } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
@@ -16,7 +16,7 @@ const AdminTrophiesList = () => {
   const displayTrophies = trophies.sort((a, b) => (a.year > b.year ? -1 : 1));
 
   return (
-    <SectionContainer link={ADMIN_TROPHIES_ADD} text='Add'>
+    <SectionContainer link={admin_routes.ADMIN_TROPHIES_ADD} text='Add'>
       <ListWrapper dense>
         {displayTrophies.map((trophy) => {
           const { name, year, opponent, isWinner, isFinal } = trophy;

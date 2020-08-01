@@ -1,6 +1,6 @@
 import React from 'react';
 // Routes
-import { EDIT_TARGETS } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import ProfileList from 'components/ui/lists/ProfileList';
 import ListWrapper from 'components/ui/lists/ListWrapper';
@@ -31,7 +31,7 @@ const TargetDetails = ({ user }) => {
   return (
     <SectionContainer
       title='Targets'
-      link={!canEdit.targets ? 'locked' : EDIT_TARGETS}
+      link={!canEdit.targets ? 'locked' : user_routes.EDIT_TARGETS}
     >
       <ListWrapper>
         <ProfileList details={data} />

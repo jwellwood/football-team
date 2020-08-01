@@ -2,7 +2,25 @@ import React from 'react';
 import { Typography } from '@material-ui/core';
 import { theme } from 'assets/theme';
 
-const CustomTypography = ({ children, color, size, font, bold, div, main }) => {
+interface Props {
+  children: React.ReactNode;
+  color?: string;
+  size?: string;
+  font?: string;
+  bold?: boolean;
+  div?: boolean;
+  main?: boolean;
+}
+
+const CustomTypography: React.FC<Props> = ({
+  children,
+  color,
+  size,
+  font,
+  bold,
+  div,
+  main,
+}) => {
   let textColor = main ? '#fff' : theme.palette.secondary.main;
   let fontFamily =
     font === 'secondary'

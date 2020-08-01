@@ -9,7 +9,7 @@ import {
 import { showMessage } from 'reduxStore/app/message_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import Spinner from 'components/ui/loading/Spinner';
 import PrevSeasonForm from './PrevSeasonForm';
@@ -58,7 +58,7 @@ const EditPrevSeasonLogic = () => {
       setLoading,
       dispatch(updatePreviousSeason(dataToSubmit, id)),
       dispatch,
-      () => history.push(ADMIN_PREVIOUS_SEASON)
+      () => history.push(admin_routes.ADMIN_PREVIOUS_SEASON)
     );
 
   return !loading ? (

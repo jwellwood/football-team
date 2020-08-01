@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 import EditTeamPhotoLogic from 'components/admin/team/photo/EditTeamPhotoLogic';
 
 const EditTeamPhotoPage = () => {
   return (
     <div>
-      <PageHeader title='Edit Team Photo' backTo={ADMIN} />
+      <PageHeader title='Edit Team Photo' backTo={admin_routes.ADMIN} />
       <EditTeamPhotoLogic />
     </div>
   );

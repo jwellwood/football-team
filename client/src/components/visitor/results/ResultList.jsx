@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CustomContainer from 'containers/CustomContainer';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import Spinner from 'components/ui/loading/Spinner';
@@ -11,7 +11,7 @@ const ResultCard = lazy(() => import('./ResultCard'));
 const ResultList = ({ results }) => {
   return (
     <CustomContainer>
-      <GreyBackground placeholder>
+      <SectionBackground placeholder>
         <Suspense fallback={<Spinner />}>
           <ListWrapper dense>
             {results.length ? (
@@ -23,7 +23,7 @@ const ResultList = ({ results }) => {
             )}
           </ListWrapper>
         </Suspense>
-      </GreyBackground>
+      </SectionBackground>
     </CustomContainer>
   );
 };

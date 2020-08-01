@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 import AddResultLogic from 'components/admin/results/AddResultLogic';
 
 const AddResultPage = () => {
   return (
     <div>
-      <PageHeader title='Add Result' backTo={ADMIN} />
+      <PageHeader title='Add Result' backTo={admin_routes.ADMIN} />
       <AddResultLogic />
     </div>
   );

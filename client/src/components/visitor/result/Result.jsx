@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 // Layout
 import Spinner from 'components/ui/loading/Spinner';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import GridItem from 'components/ui/grids/GridItem';
 import SectionTitle from 'components/ui/text/SectionTitle';
 // Components
@@ -31,20 +31,20 @@ const Result = ({ result }) => {
   ];
 
   return (
-    <GreyBackground placeholder>
+    <SectionBackground placeholder>
       <CenteredGrid dir='row' item='flex-start'>
         {sections.map((section, i) => (
           <GridItem key={section.title + i} align={section.align}>
-            <GreyBackground>
+            <SectionBackground>
               <Suspense fallback={<Spinner isButton />}>
                 <SectionTitle title={section.title} />
                 {section.component}
               </Suspense>
-            </GreyBackground>
+            </SectionBackground>
           </GridItem>
         ))}
       </CenteredGrid>
-    </GreyBackground>
+    </SectionBackground>
   );
 };
 

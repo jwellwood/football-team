@@ -6,14 +6,14 @@ import {
 import 'react-circular-progressbar/dist/styles.css';
 // Internal
 import { theme } from 'assets/theme';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import GridItem from '../grids/GridItem';
 import CustomTypography from '../text/CustomTypography';
 
 const TargetProgress = ({ percentage, total, target, type }) => {
   return (
     <GridItem xs={4} sm={4} md={3} lg={2} xl={2}>
-      <GreyBackground>
+      <SectionBackground>
         <CircularProgressbarWithChildren
           value={percentage}
           strokeWidth={10}
@@ -42,7 +42,7 @@ const TargetProgress = ({ percentage, total, target, type }) => {
             {type}
           </CustomTypography>
         ) : null}
-      </GreyBackground>
+      </SectionBackground>
     </GridItem>
   );
 };

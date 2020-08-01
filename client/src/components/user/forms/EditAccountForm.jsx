@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 // Routes
-import { CHANGE_PASSWORD } from 'router/route_names';
+import { user_routes } from 'router';
 // Layout
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
@@ -39,7 +39,7 @@ const EditAccountForm = ({ onChange, onSubmit, loading, input, user }) => {
 
   const passwordAndDeleteLinks = (
     <CenteredGrid dir='row' just='space-between'>
-      <CustomLinkButton link={CHANGE_PASSWORD} fullWidth={false}>
+      <CustomLinkButton link={user_routes.CHANGE_PASSWORD} fullWidth={false}>
         Change Password
       </CustomLinkButton>
       {!user.matchesPlayed.length ? (

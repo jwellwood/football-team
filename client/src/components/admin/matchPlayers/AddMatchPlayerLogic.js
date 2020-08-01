@@ -9,7 +9,7 @@ import {
   addMatchPlayer,
 } from 'reduxStore/result/result_actions';
 // Routes
-import { ADMIN_RESULTS } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import AddMatchPlayerForm from './AddMatchPlayerForm';
 import { onInputChange, onInputCheck } from 'components/utils/form-controls';
@@ -70,7 +70,7 @@ const AddMatchPlayersLogic = () => {
           if (success) {
             setLoading(false);
             dispatch(showMessage(true, message, type));
-            history.push(`${ADMIN_RESULTS}/edit/${id}`);
+            history.push(`${admin_routes.ADMIN_RESULTS}/edit/${id}`);
           } else {
             dispatch(showMessage(true, message, type));
             setLoading(false);

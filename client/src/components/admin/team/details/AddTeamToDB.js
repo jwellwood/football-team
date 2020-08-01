@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getTeam, addTeam } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 import EditTeamDetailsForm from './EditTeamDetailsForm';
 
 const AddTeamToDB = () => {
@@ -19,7 +19,7 @@ const AddTeamToDB = () => {
   const onSubmit = () =>
     onFormSubmit(setLoading, dispatch(addTeam(dataToSubmit)), dispatch, () => {
       dispatch(getTeam());
-      history.push(ADMIN);
+      history.push(admin_routes.ADMIN);
     });
 
   return (

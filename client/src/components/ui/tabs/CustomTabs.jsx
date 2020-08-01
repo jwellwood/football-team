@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -65,7 +65,7 @@ const CustomTabs = ({ tabs, centered }) => {
       <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
         {tabs.map((tab, i) => (
           <TabPanel key={i} value={value} index={i}>
-            <GreyBackground>{tab.component}</GreyBackground>
+            <SectionBackground>{tab.component}</SectionBackground>
           </TabPanel>
         ))}
       </SwipeableViews>

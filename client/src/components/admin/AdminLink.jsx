@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 
 const AdminLink = ({ item }) => {
   const [open, setOpen] = useState(false);
@@ -17,7 +17,7 @@ const AdminLink = ({ item }) => {
   };
 
   return (
-    <GreyBackground>
+    <SectionBackground>
       <ListItemWrapper button onClick={handleClick}>
         <ListItemIcon>
           <CustomIcon icon={item.icon} color='secondary' />
@@ -43,7 +43,7 @@ const AdminLink = ({ item }) => {
           ))}
         </ListWrapper>
       </Collapse>
-    </GreyBackground>
+    </SectionBackground>
   );
 };
 

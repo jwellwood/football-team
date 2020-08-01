@@ -9,7 +9,7 @@ import {
   onFormSubmit,
 } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_RESULTS } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import ResultForm from './ResultForm';
 
@@ -30,7 +30,7 @@ const AddResultLogic = () => {
       dispatch,
       () => {
         dispatch(getAllResults());
-        history.push(ADMIN_RESULTS);
+        history.push(admin_routes.ADMIN_RESULTS);
       }
     );
 

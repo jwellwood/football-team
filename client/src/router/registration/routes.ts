@@ -1,10 +1,6 @@
 import { lazy } from 'react';
-import {
-  SIGN_IN,
-  RESET_PASSWORD,
-  FORGOT_PASSWORD,
-  EMAIL_VALIDATED,
-} from 'router/route_names';
+import { reg_routes as routes } from './paths';
+import { IRoute } from 'shared/types';
 
 const RegistrationPage = lazy(() =>
   import('Pages/registration/RegistrationPage')
@@ -19,9 +15,9 @@ const ResetPasswordPage = lazy(() =>
   import('Pages/registration/ResetPasswordPage')
 );
 
-export const registrationRoutes = [
-  { path: SIGN_IN, component: RegistrationPage },
-  { path: EMAIL_VALIDATED, component: ValidatedEmailPage },
-  { path: FORGOT_PASSWORD, component: ForgotPasswordPage },
-  { path: RESET_PASSWORD, component: ResetPasswordPage },
+export const registrationRoutes: IRoute[] = [
+  { path: routes.SIGN_IN, component: RegistrationPage },
+  { path: routes.EMAIL_VALIDATED, component: ValidatedEmailPage },
+  { path: routes.FORGOT_PASSWORD, component: ForgotPasswordPage },
+  { path: routes.RESET_PASSWORD, component: ResetPasswordPage },
 ];

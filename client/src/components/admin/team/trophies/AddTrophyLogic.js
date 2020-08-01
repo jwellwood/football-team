@@ -9,7 +9,7 @@ import {
   onFormSubmit,
 } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_TROPHIES } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import AddTrophyForm from './AddTrophyForm';
 
@@ -30,7 +30,7 @@ const AddTrophyLogic = () => {
       dispatch,
       () => {
         dispatch(getTeam());
-        history.push(ADMIN_TROPHIES);
+        history.push(admin_routes.ADMIN_TROPHIES);
       }
     );
 

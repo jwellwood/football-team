@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 import AdminUsersLogic from 'components/admin/users/AdminUsersLogic';
 
 const AdminUsersPage = () => {
   return (
     <div>
-      <PageHeader title='User Details' backTo={ADMIN} />
+      <PageHeader title='User Details' backTo={admin_routes.ADMIN} />
       <AdminUsersLogic />
     </div>
   );

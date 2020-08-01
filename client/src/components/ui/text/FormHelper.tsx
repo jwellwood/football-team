@@ -1,15 +1,19 @@
 import React from 'react';
 // Components
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CustomTypography from './CustomTypography';
 
-const FormHelper = ({ children }) => {
+interface Props {
+  children: string;
+}
+
+const FormHelper: React.FC<Props> = ({ children }) => {
   return (
-    <GreyBackground placeholder>
+    <SectionBackground placeholder>
       <CustomTypography size='sm' font='secondary'>
         {children}
       </CustomTypography>
-    </GreyBackground>
+    </SectionBackground>
   );
 };
 

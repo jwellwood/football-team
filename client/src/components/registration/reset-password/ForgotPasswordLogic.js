@@ -6,7 +6,7 @@ import { forgotPassword } from 'reduxStore/auth/auth_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { onInputChange } from 'components/utils/form-controls';
 // Routes
-import { SIGN_IN } from 'router/route_names';
+import { reg_routes } from 'router';
 // Components
 import ForgotPasswordForm from './ForgotPasswordForm';
 
@@ -29,7 +29,7 @@ const ForgotPasswordLogic = () => {
           'success'
         )
       );
-      history.push(SIGN_IN);
+      history.push(reg_routes.SIGN_IN);
     });
     setLoading(false);
   };

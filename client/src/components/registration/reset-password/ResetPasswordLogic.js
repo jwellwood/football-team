@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 // Functions
 import { resetPassword } from 'reduxStore/auth/auth_actions';
 // Routes
-import { SIGN_IN } from 'router/route_names';
+import { reg_routes } from 'router';
 // Components
 import ResetPasswordForm from './ResetPasswordForm';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
@@ -24,7 +24,7 @@ const ResetPasswordLogic = () => {
       setLoading,
       dispatch(resetPassword(dataToSubmit)),
       dispatch,
-      () => history.push(SIGN_IN)
+      () => history.push(reg_routes.SIGN_IN)
     );
 
   return (

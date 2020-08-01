@@ -1,14 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 // Routes
-import {
-  SQUAD,
-  RESULTS,
-  TEAM,
-  PLAYERS_STATS,
-  RESULTS_STATS,
-  ABOUT,
-} from 'router/route_names';
+import { visitor_routes } from 'router';
 // Components
 import Home from './Home';
 
@@ -19,32 +12,32 @@ const HomeLogic = () => {
     {
       icon: 'list-ul',
       text: 'results',
-      link: RESULTS,
+      link: visitor_routes.RESULTS,
     },
     {
       icon: 'chart-pie',
       text: 'results stats',
-      link: RESULTS_STATS,
+      link: visitor_routes.RESULTS_STATS,
     },
     {
       icon: 'user-friends',
       text: 'squad',
-      link: SQUAD,
+      link: visitor_routes.SQUAD,
     },
     {
       icon: 'chart-line',
       text: 'player stats',
-      link: PLAYERS_STATS,
+      link: visitor_routes.PLAYERS_STATS,
     },
     {
       icon: 'shield-alt',
       text: 'team',
-      link: TEAM,
+      link: visitor_routes.TEAM,
     },
     {
       icon: 'question-circle',
       text: 'about',
-      link: ABOUT,
+      link: visitor_routes.ABOUT,
     },
   ];
 

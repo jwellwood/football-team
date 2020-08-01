@@ -4,7 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Functions
 import { getTotals } from 'functions/player';
 // Routes
-import { SQUAD } from 'router/route_names';
+import { visitor_routes } from 'router';
 // assets
 import profile_default from 'assets/images/default_profile.png';
 // Components
@@ -55,7 +55,7 @@ const PlayerListItem = ({ player }) => {
   return (
     <CenteredGrid dir='row' just='space-between'>
       <GridItem xs={6} sm={9} md={9}>
-        <ListItemWrapper button linkTo={`${SQUAD}/${_id}`}>
+        <ListItemWrapper button linkTo={`${visitor_routes.SQUAD}/${_id}`}>
           <CustomImageAvatar
             image={profileImage}
             alt={`${name} profile`}

@@ -8,7 +8,7 @@ import {
 } from 'reduxStore/auth/auth_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { PROFILE } from 'router/route_names';
+import { user_routes } from 'router';
 // Components
 import ChangePasswordForm from './ChangePasswordForm';
 
@@ -34,7 +34,7 @@ const ChangePasswordLogic = () => {
   const newData = { ...input, user };
   const onSubmitNew = () =>
     onFormSubmit(setLoading, dispatch(updatePassword(newData)), dispatch, () =>
-      history.push(PROFILE)
+      history.push(user_routes.PROFILE)
     );
 
   return (

@@ -1,19 +1,5 @@
-// Links, icons and text for nav link list inside the drawer
-// Controlled by auth status
-// ------------------------------------------------------
 import React from 'react';
-import {
-  HOME,
-  RESULTS,
-  SQUAD,
-  TEAM,
-  ABOUT,
-  PROFILE,
-  SIGN_IN,
-  ADMIN,
-  PLAYERS_STATS,
-  RESULTS_STATS,
-} from 'router/route_names';
+import { visitor_routes, admin_routes, reg_routes, user_routes } from 'router';
 // Internal
 import ListItemLink from 'components/ui/link/ListLinkItem';
 import LogoutButton from 'components/ui/buttons/LogoutButton';
@@ -23,26 +9,34 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 
 const NavDrawerList = ({ onSelect, onLogout, auth, admin, user }) => {
   const nav_items = [
-    { text: 'Home', icon: 'home', link: HOME },
-    { text: 'Results', icon: 'list-ul', link: RESULTS },
-    { text: 'Squad', icon: 'user-friends', link: SQUAD },
-    { text: 'Team', icon: 'shield-alt', link: TEAM },
-    { text: 'Result Stats', icon: 'chart-pie', link: RESULTS_STATS },
-    { text: 'Player Stats', icon: 'chart-line', link: PLAYERS_STATS },
-    { text: 'About', icon: 'question-circle', link: ABOUT },
+    { text: 'Home', icon: 'home', link: visitor_routes.HOME },
+    { text: 'Results', icon: 'list-ul', link: visitor_routes.RESULTS },
+    { text: 'Squad', icon: 'user-friends', link: visitor_routes.SQUAD },
+    { text: 'Team', icon: 'shield-alt', link: visitor_routes.TEAM },
+    {
+      text: 'Result Stats',
+      icon: 'chart-pie',
+      link: visitor_routes.RESULTS_STATS,
+    },
+    {
+      text: 'Player Stats',
+      icon: 'chart-line',
+      link: visitor_routes.PLAYERS_STATS,
+    },
+    { text: 'About', icon: 'question-circle', link: visitor_routes.ABOUT },
   ];
 
   const auth_items = [
     {
       text: 'Sign In',
       icon: 'sign-in-alt',
-      link: SIGN_IN,
+      link: reg_routes.SIGN_IN,
       guard: !auth,
     },
     {
       text: 'Admin',
       icon: 'user-cog',
-      link: ADMIN,
+      link: admin_routes.ADMIN,
       guard: auth && admin,
     },
   ];
@@ -54,7 +48,7 @@ const NavDrawerList = ({ onSelect, onLogout, auth, admin, user }) => {
           avatar={<CustomImageAvatar image={user.image.url} />}
           text={user.name}
           secondary={user.email}
-          to={PROFILE}
+          to={user_routes.PROFILE}
           onClick={onSelect}
         />
         <CustomDivider />

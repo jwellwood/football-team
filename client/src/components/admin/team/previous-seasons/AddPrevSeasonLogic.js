@@ -9,7 +9,7 @@ import {
   onFormSubmit,
 } from 'components/utils/form-controls';
 // Routes
-import { ADMIN_PREVIOUS_SEASON } from 'router/route_names';
+import { admin_routes } from 'router';
 // Components
 import PrevSeasonForm from './PrevSeasonForm';
 
@@ -29,7 +29,7 @@ const AddPrevSeasonLogic = () => {
       setLoading,
       dispatch(addPreviousSeason(dataToSubmit)),
       dispatch,
-      () => history.push(ADMIN_PREVIOUS_SEASON)
+      () => history.push(admin_routes.ADMIN_PREVIOUS_SEASON)
     );
 
   return (

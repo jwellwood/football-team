@@ -1,17 +1,6 @@
 import { lazy } from 'react';
-
-import {
-  NOT_FOUND,
-  HOME,
-  ABOUT,
-  TEAM,
-  SQUAD,
-  PLAYER,
-  RESULTS,
-  RESULT,
-  RESULTS_STATS,
-  PLAYERS_STATS,
-} from 'router/route_names';
+import { IRoute } from 'shared/types';
+import { visitor_routes as routes } from './paths';
 
 const NotFoundPage = lazy(() => import('Pages/visitor/NotFoundPage'));
 const HomePage = lazy(() => import('Pages/visitor/HomePage'));
@@ -24,15 +13,15 @@ const ResultPage = lazy(() => import('Pages/visitor/ResultPage'));
 const ResultsStatsPage = lazy(() => import('Pages/visitor/ResultsStatsPage'));
 const PlayersStatsPage = lazy(() => import('Pages/visitor/PlayersStatsPage'));
 
-export const visitorRoutes = [
-  { path: HOME, component: HomePage },
-  { path: ABOUT, component: AboutPage },
-  { path: TEAM, component: TeamPage },
-  { path: SQUAD, component: SquadPage },
-  { path: PLAYER, component: PlayerPage },
-  { path: RESULTS, component: ResultsPage },
-  { path: RESULT, component: ResultPage },
-  { path: RESULTS_STATS, component: ResultsStatsPage },
-  { path: PLAYERS_STATS, component: PlayersStatsPage },
-  { path: NOT_FOUND, component: NotFoundPage },
+export const visitorRoutes: IRoute[] = [
+  { path: routes.HOME, component: HomePage },
+  { path: routes.ABOUT, component: AboutPage },
+  { path: routes.TEAM, component: TeamPage },
+  { path: routes.SQUAD, component: SquadPage },
+  { path: routes.PLAYER, component: PlayerPage },
+  { path: routes.RESULTS, component: ResultsPage },
+  { path: routes.RESULT, component: ResultPage },
+  { path: routes.RESULTS_STATS, component: ResultsStatsPage },
+  { path: routes.PLAYERS_STATS, component: PlayersStatsPage },
+  { path: routes.NOT_FOUND, component: NotFoundPage },
 ];

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
     margin: 'auto',
-    background: theme.palette.dark.main,
+    // background: theme.palette.dark.main,
   },
   circle: {
     display: 'flex',
@@ -27,7 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Spinner = ({ isButton }) => {
+interface Props {
+  isButton?: boolean;
+}
+
+const Spinner: React.FC<Props> = ({ isButton = false }) => {
   const classes = useStyles();
   const spinner = isButton ? (
     <div className={classes.circle}>

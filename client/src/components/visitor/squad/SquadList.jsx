@@ -1,8 +1,8 @@
 import React, { lazy } from 'react';
 // Routes
-import { PLAYERS_STATS } from 'router/route_names';
+import { visitor_routes } from 'router';
 // Components
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import CustomContainer from 'containers/CustomContainer';
 import Spinner from 'components/ui/loading/Spinner';
 import ListWrapper from 'components/ui/lists/ListWrapper';
@@ -15,8 +15,8 @@ const PlayerListItem = lazy(() => import('./PlayerListItem'));
 const SquadList = ({ players, playersByPosition }) => {
   return (
     <CustomContainer>
-      <GreyBackground placeholder>
-        <CustomLinkButton link={PLAYERS_STATS} type='contained'>
+      <SectionBackground placeholder>
+        <CustomLinkButton link={visitor_routes.PLAYERS_STATS} type='contained'>
           Stats
         </CustomLinkButton>
         <ListWrapper>
@@ -36,7 +36,7 @@ const SquadList = ({ players, playersByPosition }) => {
             <CustomTypography>No players</CustomTypography>
           )}
         </ListWrapper>
-      </GreyBackground>
+      </SectionBackground>
     </CustomContainer>
   );
 };

@@ -53,20 +53,6 @@ const NavDrawer = ({ user, auth, toggleDrawer, open, onLogout, admin }) => {
       )}
     </Fab>
   );
-  // const button = (
-  //   <CustomAvatar onClick={toggleDrawer} background='error'>
-  //     {auth ? (
-  //       user.name.charAt(0)
-  //     ) : (
-  //       <CustomIcon
-  //         onClick={toggleDrawer}
-  //         icon='bars'
-  //         color='white'
-  //         size='xs'
-  //       />
-  //     )}
-  //   </CustomAvatar>
-  // );
 
   return (
     <div className={classes.root}>

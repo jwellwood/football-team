@@ -4,7 +4,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Internal
-import GreyBackground from 'containers/GreyBackground';
+import SectionBackground from 'containers/SectionBackground';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import StatIcon from 'components/ui/icons/StatIcon';
@@ -22,7 +22,7 @@ const Leaderboard = ({ data }) => {
           <PresentationModal
             key={i}
             buttonElement={
-              <GreyBackground key={item.title + i}>
+              <SectionBackground key={item.title + i}>
                 <ListItemWrapper noDivider button>
                   <ListItemIcon>
                     <StatIcon type={item.icon} size='lg' />
@@ -41,13 +41,13 @@ const Leaderboard = ({ data }) => {
                     </CustomTypography>
                   </ListItemSecondaryAction>
                 </ListItemWrapper>
-              </GreyBackground>
+              </SectionBackground>
             }
             title={item.title}
           >
-            <GreyBackground>
+            <SectionBackground>
               <LeaderboardList value={item.value} />
-            </GreyBackground>
+            </SectionBackground>
           </PresentationModal>
         );
       })}

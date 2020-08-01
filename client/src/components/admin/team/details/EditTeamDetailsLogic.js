@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTeam, updateTeamDetails } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
 // Routes
-import { ADMIN } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import EditTeamDetailsForm from './EditTeamDetailsForm';
 
@@ -26,7 +26,7 @@ const EditTeamDetailsLogic = () => {
       dispatch,
       () => {
         dispatch(getTeam());
-        history.push(ADMIN);
+        history.push(admin_routes.ADMIN);
       }
     );
 

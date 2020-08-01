@@ -1,12 +1,12 @@
 import React from 'react';
-import { SQUAD } from 'router/route_names';
+import { visitor_routes } from 'router';
 import PageHeader from 'components/ui/text/PageHeader';
 import PlayerLogic from 'components/visitor/player/PlayerLogic';
 
 const PlayerPage = () => {
   return (
     <div>
-      <PageHeader backTo={SQUAD} />
+      <PageHeader backTo={visitor_routes.SQUAD} />
       <PlayerLogic />
     </div>
   );

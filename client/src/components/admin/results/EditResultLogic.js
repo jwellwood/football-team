@@ -9,7 +9,7 @@ import {
   getAllResults,
 } from 'reduxStore/result/result_actions';
 // Routes
-import { ADMIN_RESULTS } from 'router/route_names';
+import { admin_routes } from 'router';
 // Internal
 import Spinner from 'components/ui/loading/Spinner';
 import ResultForm from './ResultForm';
@@ -68,7 +68,7 @@ const EditResultLogic = () => {
       dispatch,
       () => {
         dispatch(getAllResults());
-        history.push(ADMIN_RESULTS);
+        history.push(admin_routes.ADMIN_RESULTS);
       }
     );
 

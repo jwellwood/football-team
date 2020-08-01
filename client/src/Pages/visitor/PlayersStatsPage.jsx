@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from 'components/ui/text/PageHeader';
-import { HOME } from 'router/route_names';
+import { visitor_routes } from 'router';
 import PlayerStatsLogic from 'components/visitor/stats/player-stats/PlayerStatsLogic';
 
 const PlayersStatsPage = () => {
   return (
     <div>
-      <PageHeader title='Player Stats' backTo={HOME} />
+      <PageHeader title='Player Stats' backTo={visitor_routes.HOME} />
       <PlayerStatsLogic />
     </div>
   );
