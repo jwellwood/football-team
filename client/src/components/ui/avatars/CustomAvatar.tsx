@@ -15,7 +15,17 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomAvatar = ({
+interface Props {
+  children?: React.ReactNode;
+  onClick?: () => void;
+  bordered?: boolean;
+  isList?: boolean;
+  shadow?: string;
+  background?: string;
+  centered?: boolean;
+}
+
+const CustomAvatar: React.FC<Props> = ({
   children,
   onClick,
   bordered,

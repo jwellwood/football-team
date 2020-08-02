@@ -7,7 +7,17 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
-const PresentationModal = ({ children, title, buttonElement }) => {
+interface Props {
+  children: React.ReactNode;
+  title?: string;
+  buttonElement: React.ReactElement;
+}
+
+const PresentationModal: React.FC<Props> = ({
+  children,
+  title,
+  buttonElement,
+}) => {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));

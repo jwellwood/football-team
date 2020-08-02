@@ -17,7 +17,7 @@ const RegImage = () => {
   const classes = useStyles();
   return (
     <CenteredGrid>
-      <Grid item sm={4} align='center' className={classes.imageContainer}>
+      <Grid item sm={4} className={classes.imageContainer}>
         <CircularImage image={teamPhoto} size='80px' />
       </Grid>
     </CenteredGrid>

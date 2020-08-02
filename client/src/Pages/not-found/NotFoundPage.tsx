@@ -1,14 +1,14 @@
 import React from 'react';
-import NotFound from 'components/visitor/not-found/NotFound';
 import { visitor_routes } from 'router';
 import PageHeader from 'components/ui/text/PageHeader';
+import NotFound from './NotFound.component';
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
-    <div>
+    <>
       <PageHeader title='Not Found' backTo={visitor_routes.HOME} />
       <NotFound />
-    </div>
+    </>
   );
 };
 

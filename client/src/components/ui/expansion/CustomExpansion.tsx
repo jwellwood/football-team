@@ -29,7 +29,16 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.warning.light,
   },
 }));
-const CustomExpansion = ({
+
+interface Props {
+  title?: string;
+  value?: number | string;
+  icon?: string;
+  children: React.ReactNode;
+  valueAsComponent?: React.FC;
+}
+
+const CustomExpansion: React.FC<Props> = ({
   title,
   value,
   icon,

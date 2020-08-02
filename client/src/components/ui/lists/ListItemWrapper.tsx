@@ -4,7 +4,21 @@ import { Link as RouterLink } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 
-const ListItemWrapper = ({ children, button, linkTo, onClick, noDivider }) => {
+interface Props {
+  children: React.ReactNode;
+  button?: true;
+  linkTo?: string;
+  onClick?: () => void;
+  noDivider?: boolean;
+}
+
+const ListItemWrapper: React.FC<Props> = ({
+  children,
+  button,
+  linkTo,
+  onClick,
+  noDivider,
+}) => {
   return (
     <>
       {noDivider ? null : <Divider />}
