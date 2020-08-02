@@ -1,7 +1,11 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 
-const CustomContainer = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const CustomContainer: React.FC<Props> = ({ children }) => {
   return (
     <Container maxWidth='sm' disableGutters>
       {children}

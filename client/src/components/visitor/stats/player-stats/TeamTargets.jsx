@@ -6,10 +6,10 @@ import {
   ListItemSecondaryAction,
 } from '@material-ui/core';
 // assets
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Components
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import StatIcon from 'components/ui/icons/StatIcon';

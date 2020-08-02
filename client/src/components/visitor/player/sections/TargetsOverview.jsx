@@ -5,7 +5,7 @@ import { getPercentage } from 'functions';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 // Components
 import TargetProgress from 'components/ui/progress/TargetProgress';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const TargetsOverview = ({ data }) => {
   return (

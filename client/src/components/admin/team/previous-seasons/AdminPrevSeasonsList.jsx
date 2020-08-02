@@ -6,7 +6,7 @@ import { admin_routes } from 'router';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const AdminPrevSeasonsList = ({ seasons }) => {
   return (

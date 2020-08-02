@@ -17,7 +17,7 @@ import {
   onInputChange,
   onInputCheck,
   onFormSubmit,
-} from 'components/utils/form-controls';
+} from 'shared/utils/form-controls';
 import { getAllPlayers } from 'reduxStore/squad/squad_actions';
 
 const UserPermissionFormLogic = () => {

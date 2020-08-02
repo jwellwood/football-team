@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 // MUI
 import Grid from '@material-ui/core/Grid';
 // Components
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import NumberInput from 'components/ui/inputs/NumberInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';

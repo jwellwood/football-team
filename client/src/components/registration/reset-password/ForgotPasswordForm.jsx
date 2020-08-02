@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form';
 import Spinner from 'components/ui/loading/Spinner';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import FormHelper from 'components/ui/text/FormHelper';
-import { passwordFormHelper } from 'assets/data/formHelperText';
+import { passwordFormHelper } from 'shared/data/formHelperText';
 
 const ForgotPasswordForm = ({ loading, onChange, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm();

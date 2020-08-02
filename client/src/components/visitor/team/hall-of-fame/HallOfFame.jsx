@@ -8,7 +8,7 @@ import CustomIcon from 'components/ui/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import ModalContent from '../ModalContent';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const HallOfFame = ({ hallOfFamer }) => {

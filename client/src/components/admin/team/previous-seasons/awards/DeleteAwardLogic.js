@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { admin_routes } from 'router';
 // Functions
 import { deletePreviousAward } from 'reduxStore/team/team_actions';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 // Components
 import DeleteAward from './DeleteAward';
 

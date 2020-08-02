@@ -7,7 +7,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import StatIcon from 'components/ui/icons/StatIcon';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const StatsOverview = ({ data }) => {

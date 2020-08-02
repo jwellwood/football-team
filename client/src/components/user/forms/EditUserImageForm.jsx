@@ -3,13 +3,13 @@ import { useForm } from 'react-hook-form';
 // Internal
 import Spinner from 'components/ui/loading/Spinner';
 import FileInput from 'components/ui/inputs/FileInput';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import CustomButton from 'components/ui/buttons/CustomButton';
 import CircularImage from 'components/ui/images/CircularImage';
 import FormHelper from 'components/ui/text/FormHelper';
-import { profilePhotoHelper } from 'assets/data/formHelperText';
+import { profilePhotoHelper } from 'shared/data/formHelperText';
 
 const EditUserImageForm = ({
   onSubmit,

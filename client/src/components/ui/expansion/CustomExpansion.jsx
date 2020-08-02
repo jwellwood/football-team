@@ -7,7 +7,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // Internal
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import StatIcon from '../icons/StatIcon';
 import CustomTypography from '../text/CustomTypography';

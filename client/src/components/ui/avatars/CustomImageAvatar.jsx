@@ -3,9 +3,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 // Internal
-import defaultImage from 'assets/images/default_profile.png';
+import defaultImage from 'shared/assets/images/default_profile.png';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 
 export const useStyles = makeStyles((theme) => ({
   border: {

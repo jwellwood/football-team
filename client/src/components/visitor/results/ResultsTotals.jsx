@@ -5,8 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import { visitor_routes } from 'router';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import TopSectionContainer from 'containers/TopSectionContainer';
-import SectionBackground from 'containers/SectionBackground';
+import TopSectionContainer from 'shared/layout/TopSectionContainer';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
 import FormIndicator from './FormIndicator';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';

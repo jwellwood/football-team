@@ -1,6 +1,6 @@
 import React from 'react';
 // data
-import { faqs } from 'assets/data/faqs';
+import { faqs } from 'shared/data/faqs';
 // Components
 import CustomExpansion from 'components/ui/expansion/CustomExpansion';
 import CustomTypography from 'components/ui/text/CustomTypography';

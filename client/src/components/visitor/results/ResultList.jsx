@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import SectionBackground from 'containers/SectionBackground';
-import CustomContainer from 'containers/CustomContainer';
+import SectionBackground from 'shared/layout/SectionBackground';
+import CustomContainer from 'shared/layout/CustomContainer';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import Spinner from 'components/ui/loading/Spinner';
 

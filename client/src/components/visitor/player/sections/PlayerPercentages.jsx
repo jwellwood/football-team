@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { getTotals, getContributions } from 'functions/player';
 // Components
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import TargetProgress from 'components/ui/progress/TargetProgress';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 

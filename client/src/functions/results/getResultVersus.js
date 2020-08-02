@@ -1,5 +1,5 @@
 import { mapper, getMost, getFewest } from '../index';
-import { parseDate } from 'components/utils/date';
+import { parseDate } from 'shared/utils/date';
 
 export const getResultVersus = (results) => {
   // Get all of the stats

@@ -5,7 +5,7 @@ import Spinner from 'components/ui/loading/Spinner';
 import TeamPhoto from 'components/visitor/team/team-photo/TeamPhoto';
 import FileInput from 'components/ui/inputs/FileInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomButton from 'components/ui/buttons/CustomButton';
 

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // functions
 import { signIn } from 'reduxStore/auth/auth_actions';
-import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { user_routes } from 'router';
 // Internal

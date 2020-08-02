@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 // MUI
 import Grid from '@material-ui/core/Grid';
 // Funtions
-import { getLeaguePositionOptions } from 'components/utils/select-options';
+import { getLeaguePositionOptions } from 'shared/utils/select-options';
 // Internal
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 
 const EditTeamDetailsForm = ({ onSubmit, onChange, input, loading, team }) => {
   const { register, handleSubmit, errors } = useForm();

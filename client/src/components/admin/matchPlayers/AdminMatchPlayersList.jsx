@@ -2,7 +2,7 @@ import React from 'react';
 // MUI
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Components
 import CustomTable from 'components/ui/tables/CustomTable';
 import DeleteMatchPlayerLogic from './DeleteMatchPlayerLogic';

@@ -12,7 +12,7 @@ import {
 import { admin_routes } from 'router';
 // Components
 import AddMatchPlayerForm from './AddMatchPlayerForm';
-import { onInputChange, onInputCheck } from 'components/utils/form-controls';
+import { onInputChange, onInputCheck } from 'shared/utils/form-controls';
 
 const inputFields = {
   player_id: '',

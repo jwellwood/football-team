@@ -3,9 +3,9 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 // Functions
 import { getPercentage } from 'functions';
-import { generateOrdinals } from 'components/utils/generateOrdinals';
+import { generateOrdinals } from 'shared/utils/generateOrdinals';
 // Assets
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Components
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import ResultsTotals from 'components/visitor/results/ResultsTotals';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 // Functions
-import { parseDate, getResultsColors } from 'components/utils';
+import { parseDate, getResultsColors } from 'shared/utils';
 // Components
 import CustomTypography from 'components/ui/text/CustomTypography';
 import Spinner from 'components/ui/loading/Spinner';

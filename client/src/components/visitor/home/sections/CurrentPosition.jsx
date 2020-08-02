@@ -1,6 +1,6 @@
 import React from 'react';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import { generateOrdinals } from 'components/utils/generateOrdinals';
+import { generateOrdinals } from 'shared/utils/generateOrdinals';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const CurrentPosition = ({ position, league }) => {

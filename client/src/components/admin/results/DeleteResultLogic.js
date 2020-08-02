@@ -7,7 +7,7 @@ import { admin_routes } from 'router';
 import { deleteResult, getAllResults } from 'reduxStore/result/result_actions';
 // Components
 import DeleteResult from './DeleteResult';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 
 const DeleteResultLogic = ({ result }) => {
   const dispatch = useDispatch();

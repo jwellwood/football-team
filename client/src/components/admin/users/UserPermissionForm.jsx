@@ -5,9 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 // Functions
-import { positionOptions } from 'components/utils/select-options';
+import { positionOptions } from 'shared/utils/select-options';
 // Data
-import { setPermissionsHelper } from 'assets/data/adminHelperText';
+import { setPermissionsHelper } from 'shared/data/adminHelperText';
 // Inputs
 import NumberInput from 'components/ui/inputs/NumberInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
@@ -16,7 +16,7 @@ import CustomSwitch from 'components/ui/inputs/CustomSwitch';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 // Components
 import Spinner from 'components/ui/loading/Spinner';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 // Components
-import CustomContainer from 'containers/CustomContainer';
-import SectionBackground from 'containers/SectionBackground';
+import CustomContainer from 'shared/layout/CustomContainer';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
 

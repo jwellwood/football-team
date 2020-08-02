@@ -2,13 +2,13 @@ import React from 'react';
 // MUI
 import ListItemText from '@material-ui/core/ListItemText';
 // Functions
-import { parseDate } from 'components/utils';
+import { parseDate } from 'shared/utils';
 // Routes
 import { user_routes } from 'router';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AccountDetails = ({ user }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CustomTypography from './CustomTypography';
 
 interface Props {

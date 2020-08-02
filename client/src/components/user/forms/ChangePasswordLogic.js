@@ -6,7 +6,7 @@ import {
   checkCurrentPassword,
   updatePassword,
 } from 'reduxStore/auth/auth_actions';
-import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { user_routes } from 'router';
 // Components

@@ -7,7 +7,7 @@ import { admin_routes } from 'router';
 // Internal
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const AdminHOFList = () => {
   const hallOfFame = useSelector((state) => state.team.teamData.hallOfFame);

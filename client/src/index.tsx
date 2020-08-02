@@ -9,10 +9,10 @@ import { store } from 'reduxStore';
 // Styling
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import { theme } from 'assets/theme';
-import 'assets/icons';
+import { theme } from 'shared/theme';
+import 'shared/assets/icons';
 // Error handling
-import ErrorBoundary from 'containers/ErrorBoundary';
+import ErrorBoundary from 'shared/layout/ErrorBoundary';
 // Routes
 import { AppRouter } from 'router';
 

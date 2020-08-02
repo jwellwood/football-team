@@ -4,9 +4,9 @@ import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomExpansion from 'components/ui/expansion/CustomExpansion';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 
 const TargetsTable = ({ targets }) => {
   const rows = targets.map((player, i) => {

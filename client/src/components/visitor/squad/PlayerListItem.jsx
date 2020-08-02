@@ -6,7 +6,7 @@ import { getTotals } from 'functions/player';
 // Routes
 import { visitor_routes } from 'router';
 // assets
-import profile_default from 'assets/images/default_profile.png';
+import profile_default from 'shared/assets/images/default_profile.png';
 // Components
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';

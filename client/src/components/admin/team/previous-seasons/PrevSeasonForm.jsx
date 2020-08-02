@@ -8,13 +8,13 @@ import { admin_routes } from 'router';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
 import NumberInput from 'components/ui/inputs/NumberInput';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
 import AdminAwardsList from './awards/AdminAwardsList';
 import DeletePrevSeasonLogic from './DeletePrevSeasLogic';
 import SelectInput from 'components/ui/inputs/SelectInput';
-import { yearOptions } from 'components/utils/select-options';
+import { yearOptions } from 'shared/utils/select-options';
 
 const PrevSeasonForm = ({ onSubmit, onChange, loading, input, season }) => {
   const { register, handleSubmit, errors } = useForm();
