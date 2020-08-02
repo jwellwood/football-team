@@ -5,9 +5,9 @@ import SectionTitle from 'components/ui/text/SectionTitle';
 
 interface Props {
   title: string;
-  link: string;
+  link?: string;
   children: React.ReactNode;
-  text: string;
+  text?: string;
 }
 
 const SectionContainer: React.FC<Props> = ({ title, link, children, text }) => {

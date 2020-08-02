@@ -2,7 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import defaultProfile from 'shared/assets/images/default_profile.png';
 
-const CircularImage = ({ image, size, alt, isPlayer }) => {
+interface Props {
+  image: string;
+  size?: string;
+  alt?: string;
+  isPlayer?: boolean;
+}
+
+const CircularImage: React.FC<Props> = ({ image, size, alt, isPlayer }) => {
   if (isPlayer && image === 'default') {
     image = defaultProfile;
   }

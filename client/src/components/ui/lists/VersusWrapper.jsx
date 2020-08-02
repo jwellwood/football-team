@@ -17,7 +17,7 @@ const VersusWrapper = ({ data }) => {
       <CenteredGrid>
         {item.secondaryList.map((match, i) => (
           <CenteredGrid key={i} dir='row' just='space-between'>
-            <Grid item align='left'>
+            <Grid item>
               <CustomTypography bold main>
                 {match.name}
               </CustomTypography>

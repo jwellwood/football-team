@@ -5,10 +5,10 @@ import ForgotPasswordLogic from 'components/registration/reset-password/ForgotPa
 
 const ForgotPasswordPage = () => {
   return (
-    <div>
+    <>
       <PageHeader title='Forgot Password' link={reg_routes.SIGN_IN} />
       <ForgotPasswordLogic />
-    </div>
+    </>
   );
 };
 

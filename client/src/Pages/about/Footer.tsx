@@ -1,23 +1,22 @@
 import React from 'react';
-// Data
-import { version } from 'shared/data';
-// MUI
 import Link from '@material-ui/core/Link';
-// Components
+import { footer_data } from 'shared/data';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import Changelog from './Changelog';
 import CustomTypography from 'components/ui/text/CustomTypography';
+import Changelog from './Changelog';
 
-const Footer = () => {
+const { name, date, version, link } = footer_data;
+
+const Footer: React.FC = () => {
   return (
     <div style={{ marginTop: '20px' }}>
       <CenteredGrid>
         <CustomTypography size='sm'>
           {'Copyright © '}
-          <Link color='inherit' href='https://github.com/jwellwood'>
-            jwellwood
+          <Link color='inherit' href={link}>
+            {name}
           </Link>{' '}
-          {new Date().getFullYear()}
+          {date}
         </CustomTypography>
         <Changelog />
         <CustomTypography size='sm'>version {version}</CustomTypography>

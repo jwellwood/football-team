@@ -1,4 +1,3 @@
-import { version } from './version';
-import { changeLog } from './changeLog';
-
-export { version, changeLog };
+export { version } from './version';
+export { changeLog } from './changeLog';
+export { footer_data } from './footer';

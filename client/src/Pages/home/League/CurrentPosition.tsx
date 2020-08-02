@@ -1,9 +1,14 @@
 import React from 'react';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import { generateOrdinals } from 'shared/utils/generateOrdinals';
+import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
-const CurrentPosition = ({ position, league }) => {
+interface Props {
+  position: string;
+  league: string;
+}
+
+const CurrentPosition: React.FC<Props> = ({ position, league }) => {
   return (
     <CenteredGrid>
       <CustomTypography main bold>

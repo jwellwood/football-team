@@ -1,12 +1,11 @@
 import React from 'react';
-// MUI
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-// Internal
+import badge from 'shared/assets/images/badge.jpg';
+import { ITeam } from 'shared/types';
 import CircularImage from 'components/ui/images/CircularImage';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import badge from 'shared/assets/images/badge.jpg';
 
 export const useStyles = makeStyles((theme) => ({
   main: {
@@ -15,13 +14,17 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Title = ({ team }) => {
+interface Props {
+  team: ITeam;
+}
+
+const Title: React.FC<Props> = ({ team }) => {
   const name = team ? team.name.split(' ') : [];
   const [first, ...rest] = name;
   const classes = useStyles();
 
   const title = (
-    <GridItem align='left'>
+    <GridItem>
       <Typography variant='h1' className={classes.main}>
         {first}
       </Typography>
