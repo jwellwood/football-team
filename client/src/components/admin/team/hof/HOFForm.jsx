@@ -3,13 +3,13 @@ import { useForm } from 'react-hook-form';
 //MUI
 import Grid from '@material-ui/core/Grid';
 // Components
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
 import DeleteHOFLogic from './DeleteHOFLogic';
 import SelectInput from 'components/ui/inputs/SelectInput';
-import { yearOptions } from 'components/utils/select-options';
+import { yearOptions } from 'shared/utils/select-options';
 
 const HOFForm = ({ onSubmit, onChange, input, loading, hof, disabled }) => {
   const { register, handleSubmit, errors } = useForm();

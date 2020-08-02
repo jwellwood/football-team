@@ -2,14 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 // Components
 import Spinner from 'components/ui/loading/Spinner';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import TextInput from 'components/ui/inputs/TextInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import {
   currentPasswordHelper,
   newPasswordHelper,
-} from 'assets/data/formHelperText';
+} from 'shared/data/formHelperText';
 import FormHelper from 'components/ui/text/FormHelper';
 
 const ChangePasswordForm = ({

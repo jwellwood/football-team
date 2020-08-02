@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, ErrorInfo } from 'react';
 import PageContainer from './PageContainer';
 import CustomButton from 'components/ui/buttons/CustomButton';
 
-class ErrorBoundary extends Component {
-  state = {
+interface State {
+  errorMessage: string;
+}
+
+class ErrorBoundary extends Component<{}, State> {
+  state: State = {
     errorMessage: '',
   };
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error) {
     return { errorMessage: error.toString() };
   }
-  componentDidCatch(error, info) {
+  componentDidCatch(error: Error, info: ErrorInfo) {
     this.logErrorToServices(error.toString(), info.componentStack);
   }
   // A fake logging service 😬

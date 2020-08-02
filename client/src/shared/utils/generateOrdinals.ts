@@ -20,4 +20,5 @@ export const generateOrdinals: Function = (num: number): string => {
         return 'th';
     }
   }
+  return '';
 };

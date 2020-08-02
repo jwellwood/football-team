@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // Functions
 import { verifyEmail } from 'reduxStore/auth/auth_actions';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { reg_routes } from 'router';
 // Components

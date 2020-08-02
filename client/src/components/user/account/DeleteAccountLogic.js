@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 // Functions
 import { getAuth, deleteUser } from 'reduxStore/auth/auth_actions';
-import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { visitor_routes } from 'router';
 // Components

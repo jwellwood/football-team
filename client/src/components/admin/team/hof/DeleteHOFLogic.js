@@ -7,7 +7,7 @@ import { getTeam, deleteHallOfFamer } from 'reduxStore/team/team_actions';
 import { admin_routes } from 'router';
 // Internal
 import DeleteHOF from './DeleteHOF';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 
 const DeleteHOFLogic = ({ hof }) => {
   const dispatch = useDispatch();

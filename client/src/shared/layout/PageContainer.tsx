@@ -20,14 +20,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PageContainer = ({ children, admin }) => {
+interface Props {
+  children: React.ReactNode;
+  admin?: boolean;
+}
+
+const PageContainer: React.FC<Props> = ({ children, admin }) => {
   const classes = useStyles();
   return (
     <div className={classes.background}>
-      <Container
-        maxWidth='lg'
-        className={admin ? classes.admin : classes.container}
-      >
+      <Container maxWidth='lg' className={admin ? classes.admin : null}>
         <div className={classes.top}></div>
         <div>{children}</div>
         <div className={classes.offset}></div>

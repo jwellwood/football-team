@@ -1,4 +1,7 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, PaletteColorOptions } from '@material-ui/core/styles';
+import { ThemeOptions } from '@material-ui/core';
+// import { PaletteColor, Palette } from '@material-ui/core/styles/createPalette';
+// import * as createPalette from '@material-ui/core/styles/createPalette';
 // colors
 import red from '@material-ui/core/colors/red';
 import green from '@material-ui/core/colors/green';
@@ -8,14 +11,10 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import cyan from '@material-ui/core/colors/cyan';
 import orange from '@material-ui/core/colors/orange';
 
-import { ThemeOptions } from '@material-ui/core';
-
 declare module '@material-ui/core' {
-  interface Theme {
-    colors: {
-      dark: {
-        main: string;
-      };
+  interface Palette {
+    dark: {
+      main: string;
     };
 
     secondaryFont: string;
@@ -25,6 +24,17 @@ declare module '@material-ui/core' {
 declare module '@material-ui/core/styles/createTypography' {
   interface FontStyle {
     secondaryFont: string;
+  }
+}
+
+declare module '@material-ui/core/styles/createPalette' {
+  interface PaletteOptions {
+    dark?: PaletteColorOptions;
+  }
+}
+declare module '@material-ui/core/styles/createPalette' {
+  interface Palette {
+    dark: PaletteColor;
   }
 }
 

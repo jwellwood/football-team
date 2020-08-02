@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 // Functions
 import { getTeam, deleteTrophy } from 'reduxStore/team/team_actions';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { admin_routes } from 'router';
 // Components

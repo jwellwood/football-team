@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // Functions
 import { deleteMatchPlayer } from 'reduxStore/result/result_actions';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { admin_routes } from 'router';
 // Components

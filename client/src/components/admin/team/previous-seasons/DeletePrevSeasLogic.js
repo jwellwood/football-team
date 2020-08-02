@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { admin_routes } from 'router';
 // Functions
 import { deletePreviousSeason } from 'reduxStore/team/team_actions';
-import { onFormSubmit } from 'components/utils/form-controls';
+import { onFormSubmit } from 'shared/utils/form-controls';
 // Components
 import DeletePrevSeason from './DeletePrevSeason';
 

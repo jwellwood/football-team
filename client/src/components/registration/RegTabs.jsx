@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import { reg_routes } from 'router';
 // Components
 import CustomTabs from 'components/ui/tabs/CustomTabs';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import SignInLogic from './signin/SignInLogic';
 import SignUpLogic from './signup/SignUpLogic';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';

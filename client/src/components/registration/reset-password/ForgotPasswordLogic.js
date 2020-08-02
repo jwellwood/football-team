@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 // Functions
 import { forgotPassword } from 'reduxStore/auth/auth_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-import { onInputChange } from 'components/utils/form-controls';
+import { onInputChange } from 'shared/utils/form-controls';
 // Routes
 import { reg_routes } from 'router';
 // Components

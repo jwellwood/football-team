@@ -1,5 +1,5 @@
 import { mapper, getMost } from '../index';
-import { parseDate } from 'components/utils/date';
+import { parseDate } from 'shared/utils/date';
 
 export const getVersusStats = (player) => {
   const matches = player.matchesPlayed;

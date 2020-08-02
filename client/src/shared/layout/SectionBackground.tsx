@@ -1,11 +1,7 @@
 import React from 'react';
-// MUI
 import { makeStyles } from '@material-ui/core/styles';
-// TODO
-// import { useTheme } from '@material-ui/core/styles';
-// import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Paper from '@material-ui/core/Paper';
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 import { Grow } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) => ({

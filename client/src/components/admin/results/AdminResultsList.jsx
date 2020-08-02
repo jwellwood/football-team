@@ -4,12 +4,12 @@ import { admin_routes } from 'router';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 // Functions
-import { parseDate } from 'components/utils/date';
+import { parseDate } from 'shared/utils/date';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const AdminResultsList = ({ results }) => {

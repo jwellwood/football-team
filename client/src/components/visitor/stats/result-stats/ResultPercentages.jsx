@@ -2,14 +2,14 @@ import React, { useMemo } from 'react';
 // Functions
 import { getResultPercentages } from 'functions/results';
 // Assets
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Components
 import ResultAverages from './ResultAverages';
 import DonutGraph from 'components/ui/graphs/DonutGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const ResultPercentages = ({ results }) => {
   const { success, warning, primary, secondary } = theme.palette;

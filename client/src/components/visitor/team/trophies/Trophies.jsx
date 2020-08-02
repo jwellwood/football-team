@@ -7,7 +7,7 @@ import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomTable from 'components/ui/tables/CustomTable';
 import CustomTableCell from 'components/ui/tables/CustomTableCell';
 import Trophy from './Trophy';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const Trophies = ({ trophies }) => {

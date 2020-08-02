@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import CircularImage from 'components/ui/images/CircularImage';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
-import badge from 'assets/images/badge.jpg';
+import badge from 'shared/assets/images/badge.jpg';
 
 export const useStyles = makeStyles((theme) => ({
   main: {

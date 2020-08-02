@@ -6,7 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 // Styling
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Internal
 import Spinner from 'components/ui/loading/Spinner';
 import CustomIcon from '../icons/CustomIcon';

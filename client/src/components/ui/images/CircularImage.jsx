@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import defaultProfile from 'assets/images/default_profile.png';
+import defaultProfile from 'shared/assets/images/default_profile.png';
 
 const CircularImage = ({ image, size, alt, isPlayer }) => {
   if (isPlayer && image === 'default') {

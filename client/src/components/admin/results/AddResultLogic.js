@@ -7,7 +7,7 @@ import {
   onInputChange,
   onInputCheck,
   onFormSubmit,
-} from 'components/utils/form-controls';
+} from 'shared/utils/form-controls';
 // Routes
 import { admin_routes } from 'router';
 // Components

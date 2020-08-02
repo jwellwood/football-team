@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 
 const StatIcon = ({ type, size }) => {
   const { palette } = theme;

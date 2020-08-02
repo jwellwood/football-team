@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form';
 import Spinner from 'components/ui/loading/Spinner';
 import NumberInput from 'components/ui/inputs/NumberInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import FormHelper from 'components/ui/text/FormHelper';
-import { targetsFormHelper } from 'assets/data/formHelperText';
+import { targetsFormHelper } from 'shared/data/formHelperText';
 
 const EditTargetsForm = ({ onChange, onSubmit, loading, input, user }) => {
   const { appsTarget, goalsTarget, assistsTarget } = user;

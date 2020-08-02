@@ -3,15 +3,15 @@ import { useForm } from 'react-hook-form';
 // MUI
 import Grid from '@material-ui/core/Grid';
 // Data
-import { assignPlayerHelper } from 'assets/data/adminHelperText';
+import { assignPlayerHelper } from 'shared/data/adminHelperText';
 // Functions
-import { playerOptions } from 'components/utils/select-options';
+import { playerOptions } from 'shared/utils/select-options';
 // Components
 import SelectInput from 'components/ui/inputs/SelectInput';
 import NumberInput from 'components/ui/inputs/NumberInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import Spinner from 'components/ui/loading/Spinner';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CustomSwitch from 'components/ui/inputs/CustomSwitch';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import FormHelper from 'components/ui/text/FormHelper';

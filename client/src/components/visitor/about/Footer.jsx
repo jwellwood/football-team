@@ -1,6 +1,6 @@
 import React from 'react';
 // Data
-import { version } from 'assets/data';
+import { version } from 'shared/data';
 // MUI
 import Link from '@material-ui/core/Link';
 // Components

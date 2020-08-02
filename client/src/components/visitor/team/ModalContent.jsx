@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import GridItem from 'components/ui/grids/GridItem';

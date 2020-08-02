@@ -1,9 +1,9 @@
 import React from 'react';
 // MUI
 import Container from '@material-ui/core/Container';
-import defaultImage from 'assets/images/default_team.png';
+import defaultImage from 'shared/assets/images/default_team.png';
 import { makeStyles } from '@material-ui/core/styles';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 export const useStyles = makeStyles((theme) => ({
   teamContainer: {

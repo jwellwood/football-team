@@ -3,13 +3,13 @@ import { useForm } from 'react-hook-form';
 //MUI
 import Grid from '@material-ui/core/Grid';
 // Options
-import { trophyWinnerOptions } from 'components/utils/select-options';
+import { trophyWinnerOptions } from 'shared/utils/select-options';
 // Internal
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import TextInput from 'components/ui/inputs/TextInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
 import NumberInput from 'components/ui/inputs/NumberInput';
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CustomSwitch from 'components/ui/inputs/CustomSwitch';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 

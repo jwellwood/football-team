@@ -31,7 +31,7 @@ export const positionOptions: Array<IStringValueOptions> = [
 export const getLeaguePositionOptions: Function = (): Array<
   INumberValueOptions
 > => {
-  let options: Array<INumberValueOptions> = [{ text: null, value: null }];
+  let options: Array<INumberValueOptions> = [{ text: 0, value: 0 }];
   for (let i = 1; i < 21; i++) {
     options.push({ text: i, value: i });
   }

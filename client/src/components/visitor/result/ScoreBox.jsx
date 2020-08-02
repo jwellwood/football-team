@@ -3,10 +3,10 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Functions
-import { parseDate } from 'components/utils/date';
-import { getResultsColors } from 'components/utils';
+import { parseDate } from 'shared/utils/date';
+import { getResultsColors } from 'shared/utils';
 // assets
-import badge from 'assets/images/badge.jpg';
+import badge from 'shared/assets/images/badge.jpg';
 // Components
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
@@ -14,7 +14,7 @@ import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ScoreBox = ({ result }) => {

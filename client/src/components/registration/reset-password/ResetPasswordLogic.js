@@ -7,7 +7,7 @@ import { resetPassword } from 'reduxStore/auth/auth_actions';
 import { reg_routes } from 'router';
 // Components
 import ResetPasswordForm from './ResetPasswordForm';
-import { onInputChange, onFormSubmit } from 'components/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
 
 const ResetPasswordLogic = () => {
   const { token } = useParams();

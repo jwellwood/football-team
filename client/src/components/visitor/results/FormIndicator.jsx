@@ -3,7 +3,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 // Functions
 import { getResultSymbol } from 'functions/results';
-import { getResultsColors } from 'components/utils/colors';
+import { getResultsColors } from 'shared/utils/colors';
 
 const FormIndicator = ({ data }) => {
   return data.map((res, i) => (

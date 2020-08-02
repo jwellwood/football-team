@@ -3,14 +3,14 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Functions
-import { parseDate } from 'components/utils';
+import { parseDate } from 'shared/utils';
 // Routes
 import { visitor_routes } from 'router';
 // Components
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ResultCard = ({ result }) => {

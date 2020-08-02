@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { getPerGameStats } from 'functions/player';
 import { getResultAverages } from 'functions/results';
 // assets
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Components
 import BarGraph from 'components/ui/graphs/BarGraph';
 import AveragesList from './AveragesList';

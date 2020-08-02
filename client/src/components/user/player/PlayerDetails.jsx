@@ -6,7 +6,7 @@ import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';
 import ProfileImage from './ProfileImage';
 import Details from './Details';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const PlayerDetails = ({ user }) => {
   const { name, canEdit, image } = user;

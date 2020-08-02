@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 
 const AdminLink = ({ item }) => {
   const [open, setOpen] = useState(false);

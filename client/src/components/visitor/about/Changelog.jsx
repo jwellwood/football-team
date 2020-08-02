@@ -2,14 +2,14 @@ import React from 'react';
 // MUI
 import ListItemText from '@material-ui/core/ListItemText';
 // data
-import { version, changeLog } from 'assets/data';
+import { version, changeLog } from 'shared/data';
 // Components
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomButton from 'components/ui/buttons/CustomButton';
 import CustomTypography from 'components/ui/text/CustomTypography';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const Changelog = () => {
   const button = <CustomButton>View Changelog</CustomButton>;

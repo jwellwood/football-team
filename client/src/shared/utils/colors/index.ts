@@ -1,4 +1,4 @@
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 
 export const getResultsColors: Function = (points: number): string => {
   const { success, warning, error, secondary } = theme.palette;

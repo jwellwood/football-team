@@ -7,7 +7,7 @@ import {
   matchTypeOptions,
   homeOrAwayOptions,
   forfeitOptions,
-} from 'components/utils/select-options';
+} from 'shared/utils/select-options';
 // Routes
 import { admin_routes } from 'router';
 // Inputs
@@ -17,14 +17,14 @@ import NumberInput from 'components/ui/inputs/NumberInput';
 import SubmitButton from 'components/ui/buttons/SubmitButton';
 import CustomSwitch from 'components/ui/inputs/CustomSwitch';
 // Components
-import FormContainer from 'containers/FormContainer';
+import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
 import AdminMatchPlayersList from '../matchPlayers/AdminMatchPlayersList';
 import DeleteResultLogic from './DeleteResultLogic';
 import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
 import FormHelper from 'components/ui/text/FormHelper';
-import { addResultHelper } from 'assets/data/adminHelperText';
+import { addResultHelper } from 'shared/data/adminHelperText';
 const DateInput = lazy(() => import('components/ui/inputs/DateInput'));
 
 const ResultForm = ({

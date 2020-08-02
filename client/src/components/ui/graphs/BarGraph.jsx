@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { defaults } from 'react-chartjs-2';
 // Internal
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 
 defaults.global.defaultFontFamily = 'Jost';
 defaults.global.defaultFontColor = theme.palette.secondary.light;

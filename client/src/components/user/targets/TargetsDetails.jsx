@@ -4,7 +4,7 @@ import { user_routes } from 'router';
 // Components
 import ProfileList from 'components/ui/lists/ProfileList';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const TargetDetails = ({ user }) => {
   const {

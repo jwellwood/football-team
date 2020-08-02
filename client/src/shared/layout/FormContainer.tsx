@@ -4,7 +4,11 @@ import SectionBackground from './SectionBackground';
 // assets
 import CustomContainer from './CustomContainer';
 
-const FormContainer = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const FormContainer: React.FC<Props> = ({ children }) => {
   return (
     <CustomContainer>
       <SectionBackground bordered placeholder>

@@ -1,28 +1,28 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-export interface ICustomButton {
+interface Props {
   children?: string;
   onClick?: () => void;
-  type?: string;
+  type?: any;
   disabled?: boolean;
-  color?: string;
+  color?: any;
 }
 
-const CustomButton = ({
+const CustomButton: React.FC<Props> = ({
   children,
   onClick,
   type,
   disabled,
-  color,
-}): ICustomButton => {
+  color = 'secondary',
+}) => {
   return (
     <Button
       variant='outlined'
       onClick={onClick}
       type={type}
       disabled={disabled}
-      color={color || 'secondary'}
+      color={color}
     >
       {children}
     </Button>

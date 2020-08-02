@@ -2,7 +2,7 @@ import React from 'react';
 // Components
 import ProfileList from 'components/ui/lists/ProfileList';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CircularImage from 'components/ui/images/CircularImage';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import GridItem from 'components/ui/grids/GridItem';

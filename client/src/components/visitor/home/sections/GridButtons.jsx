@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 //
 import CustomIcon from 'components/ui/icons/CustomIcon';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import CustomAvatar from 'components/ui/avatars/CustomAvatar';
 import GridItem from 'components/ui/grids/GridItem';
 import CustomTypography from 'components/ui/text/CustomTypography';

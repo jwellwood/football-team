@@ -8,7 +8,7 @@ import { getTeam } from 'reduxStore/team/team_actions';
 import Message from 'components/ui/messages/Message';
 import Spinner from 'components/ui/loading/Spinner';
 import NavDrawerLogic from 'components/navs/NavDrawerLogic';
-import PageContainer from 'containers/PageContainer';
+import PageContainer from 'shared/layout/PageContainer';
 
 const Routes = lazy(() => import('./Routes'));
 

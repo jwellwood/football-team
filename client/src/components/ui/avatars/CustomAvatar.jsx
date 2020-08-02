@@ -2,7 +2,7 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import { makeStyles } from '@material-ui/core/styles';
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 
 export const useStyles = makeStyles((theme) => ({
   avatar: {

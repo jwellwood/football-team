@@ -1,10 +1,10 @@
 import React from 'react';
 // Assets
-import { theme } from 'assets/theme';
+import { theme } from 'shared/theme';
 // Internal
 import LineGraph from 'components/ui/graphs/LineGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
-import SectionContainer from 'containers/SectionContainer';
+import SectionContainer from 'shared/layout/SectionContainer';
 
 const ResultLineGraph = ({ results }) => {
   const { success, error, secondary } = theme.palette;

@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 // Layout
 import Spinner from 'components/ui/loading/Spinner';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import SectionBackground from 'containers/SectionBackground';
+import SectionBackground from 'shared/layout/SectionBackground';
 import GridItem from 'components/ui/grids/GridItem';
 import SectionTitle from 'components/ui/text/SectionTitle';
 // Components

@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultBadge from 'assets/images/badge.jpg';
+import defaultBadge from 'shared/assets/images/badge.jpg';
 import { useStyles } from './styles'; // styles
 
 const TeamBadge = () => {
