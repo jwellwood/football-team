@@ -12,17 +12,17 @@ import {
 import { admin_routes } from 'router';
 // Inputs
 import SelectInput from 'components/ui/inputs/SelectInput';
-import TextInput from 'components/ui/inputs/TextInput';
+import TextInput from 'lib/components/inputs/TextInput';
 import NumberInput from 'components/ui/inputs/NumberInput';
-import SubmitButton from 'components/ui/buttons/SubmitButton';
-import CustomSwitch from 'components/ui/inputs/CustomSwitch';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
+import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 // Components
 import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
 import AdminMatchPlayersList from '../matchPlayers/AdminMatchPlayersList';
 import DeleteResultLogic from './DeleteResultLogic';
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import FormHelper from 'components/ui/text/FormHelper';
 import { addResultHelper } from 'shared/data/adminHelperText';
 const DateInput = lazy(() => import('components/ui/inputs/DateInput'));

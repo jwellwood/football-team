@@ -6,7 +6,7 @@ import SectionBackground from 'shared/layout/SectionBackground';
 import CustomContainer from 'shared/layout/CustomContainer';
 import Spinner from 'components/ui/loading/Spinner';
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 // Lazy

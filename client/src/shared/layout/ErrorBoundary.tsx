@@ -1,6 +1,6 @@
 import React, { Component, ErrorInfo } from 'react';
 import PageContainer from './PageContainer';
-import CustomButton from 'components/ui/buttons/CustomButton';
+import CustomButton from 'lib/components/buttons/CustomButton';
 
 interface State {
   errorMessage: string;

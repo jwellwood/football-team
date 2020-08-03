@@ -6,9 +6,9 @@ import Grid from '@material-ui/core/Grid';
 import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import NumberInput from 'components/ui/inputs/NumberInput';
-import SubmitButton from 'components/ui/buttons/SubmitButton';
-import CustomSwitch from 'components/ui/inputs/CustomSwitch';
-import TextInput from 'components/ui/inputs/TextInput';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
+import CustomSwitch from 'lib/components/inputs/CustomSwitch';
+import TextInput from 'lib/components/inputs/TextInput';
 
 const AddAwardForm = ({
   loading,

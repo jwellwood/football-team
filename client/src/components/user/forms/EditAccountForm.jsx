@@ -5,10 +5,10 @@ import { user_routes } from 'router';
 // Layout
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import Spinner from 'components/ui/loading/Spinner';
-import TextInput from 'components/ui/inputs/TextInput';
-import SubmitButton from 'components/ui/buttons/SubmitButton';
+import TextInput from 'lib/components/inputs/TextInput';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
 // Components
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import DeleteAccountLogic from '../account/DeleteAccountLogic';
 import FormContainer from 'shared/layout/FormContainer';
 import FormHelper from 'components/ui/text/FormHelper';

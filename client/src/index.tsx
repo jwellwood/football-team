@@ -10,7 +10,7 @@ import { store } from 'reduxStore';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import { theme } from 'shared/theme';
-import 'shared/assets/icons';
+import 'lib/icons';
 // Error handling
 import ErrorBoundary from 'shared/layout/ErrorBoundary';
 // Routes

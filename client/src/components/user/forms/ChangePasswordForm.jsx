@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 // Components
 import Spinner from 'components/ui/loading/Spinner';
 import FormContainer from 'shared/layout/FormContainer';
-import TextInput from 'components/ui/inputs/TextInput';
-import SubmitButton from 'components/ui/buttons/SubmitButton';
+import TextInput from 'lib/components/inputs/TextInput';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import {
   currentPasswordHelper,

@@ -5,12 +5,12 @@ import Grid from '@material-ui/core/Grid';
 // Routes
 import { admin_routes } from 'router';
 // Components
-import SubmitButton from 'components/ui/buttons/SubmitButton';
-import TextInput from 'components/ui/inputs/TextInput';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
+import TextInput from 'lib/components/inputs/TextInput';
 import NumberInput from 'components/ui/inputs/NumberInput';
 import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import AdminAwardsList from './awards/AdminAwardsList';
 import DeletePrevSeasonLogic from './DeletePrevSeasLogic';
 import SelectInput from 'components/ui/inputs/SelectInput';

@@ -9,7 +9,7 @@ import TopSectionContainer from 'shared/layout/TopSectionContainer';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
 import FormIndicator from './FormIndicator';
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ResultsTotals = ({ data, showStatsButton }) => {
