@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 // Internal
 import { theme } from 'shared/theme';
 import SectionBackground from 'shared/layout/SectionBackground';
-import GridItem from '../grids/GridItem';
+import GridItem from '../../../lib/components/grids/GridItem';
 import CustomTypography from '../text/CustomTypography';
 
 const TargetProgress = ({ percentage, total, target, type }) => {

@@ -8,8 +8,8 @@ import Button from '@material-ui/core/Button';
 // Styling
 import { theme } from 'shared/theme';
 // Internal
-import Spinner from 'components/ui/loading/Spinner';
-import CustomIcon from '../icons/CustomIcon';
+import Spinner from 'lib/components/loading/Spinner';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 
 const DeleteModal = ({ children, title, loading, onDelete, disabled }) => {
   const [open, setOpen] = React.useState(false);

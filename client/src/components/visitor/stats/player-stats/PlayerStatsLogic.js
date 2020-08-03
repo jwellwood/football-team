@@ -3,7 +3,7 @@ import { getAllPlayers } from 'reduxStore/squad/squad_actions';
 import { getAllResults } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { useDispatch } from 'react-redux';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 
 // Components
 import PlayerStats from './PlayerStats';

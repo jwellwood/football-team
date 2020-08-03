@@ -30,11 +30,13 @@ declare module '@material-ui/core/styles/createTypography' {
 declare module '@material-ui/core/styles/createPalette' {
   interface PaletteOptions {
     dark?: PaletteColorOptions;
+    assist?: PaletteColorOptions;
   }
 }
 declare module '@material-ui/core/styles/createPalette' {
   interface Palette {
     dark: PaletteColor;
+    assist: PaletteColor;
   }
 }
 

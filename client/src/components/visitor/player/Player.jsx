@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import SectionTitle from 'components/ui/text/SectionTitle';
 import PlayerResultsLogic from './sections/PlayerResultsLogic';
-import CustomTabs from 'components/ui/tabs/CustomTabs';
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import CustomTabs from 'lib/components/tabs/CustomTabs';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 // Sections
 const PlayerVersus = lazy(() => import('./sections/PlayerVersusLogic'));
 const StatsOverviewLogic = lazy(() => import('./sections/StatsOverviewLogic'));

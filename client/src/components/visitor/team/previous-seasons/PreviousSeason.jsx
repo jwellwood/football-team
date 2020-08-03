@@ -3,9 +3,9 @@ import React from 'react';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import PreviousSeasonContent from './PreviousSeasonContent';
 import CustomTypography from 'components/ui/text/CustomTypography';
 

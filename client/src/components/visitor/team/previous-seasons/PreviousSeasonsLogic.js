@@ -6,7 +6,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import PreviousSeason from './PreviousSeason';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import SectionContainer from 'shared/layout/SectionContainer';
 
 const PreviousSeasonsLogic = () => {

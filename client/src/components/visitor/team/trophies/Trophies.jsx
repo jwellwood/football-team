@@ -2,7 +2,7 @@ import React from 'react';
 // MUI
 import TableRow from '@material-ui/core/TableRow';
 // Components
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomTable from 'components/ui/tables/CustomTable';
 import CustomTableCell from 'components/ui/tables/CustomTableCell';

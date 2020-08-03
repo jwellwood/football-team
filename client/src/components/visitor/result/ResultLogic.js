@@ -6,7 +6,7 @@ import { getResultById } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Components
 import Result from './Result';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 
 const ResultLogic = () => {
   const { id } = useParams();

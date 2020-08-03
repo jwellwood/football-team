@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 // Functions
 import { getResultTotals } from 'functions/results';
 // Components
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 import ResultsTotals from './ResultsTotals';
 
 const ResultsTotalsLogic = ({ results }) => {

@@ -7,8 +7,8 @@ import { theme } from 'shared/theme';
 import ResultAverages from './ResultAverages';
 import DonutGraph from 'components/ui/graphs/DonutGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import GridItem from 'lib/components/grids/GridItem';
 import SectionContainer from 'shared/layout/SectionContainer';
 
 const ResultPercentages = ({ results }) => {

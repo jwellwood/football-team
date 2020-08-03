@@ -1,12 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 // Internal
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import TeamPhoto from 'components/visitor/team/team-photo/TeamPhoto';
-import FileInput from 'components/ui/inputs/FileInput';
+import FileInput from 'lib/components/inputs/FileInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import FormContainer from 'shared/layout/FormContainer';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomButton from 'lib/components/buttons/CustomButton';
 
 const EditTeamPhotoForm = ({

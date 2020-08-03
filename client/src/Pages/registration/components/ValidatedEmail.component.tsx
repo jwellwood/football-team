@@ -1,7 +1,7 @@
 import React from 'react';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import CustomButton from 'lib/components/buttons/CustomButton';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import StatIcon from 'components/ui/icons/StatIcon';
 
 interface Props {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@material-ui/core/Link';
 import { footer_data } from 'shared/data';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomTypography from 'components/ui/text/CustomTypography';
 import Changelog from './Changelog';
 

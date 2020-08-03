@@ -5,7 +5,7 @@ import { getPreviousSeasons } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Components
 import AdminPrevSeasonsList from './AdminPrevSeasonsList';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 
 const AdminPrevListLogic = () => {
   const dispatch = useDispatch();

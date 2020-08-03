@@ -6,8 +6,8 @@ import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
 // UI
 import Message from 'components/ui/messages/Message';
-import Spinner from 'components/ui/loading/Spinner';
-import NavDrawerLogic from 'components/navs/NavDrawerLogic';
+import Spinner from 'lib/components/loading/Spinner';
+import Navigation from 'lib/navigation/Navigation.container';
 import PageContainer from 'shared/layout/PageContainer';
 
 const Routes = lazy(() => import('./Routes'));
@@ -33,7 +33,7 @@ export default () => {
   return (
     <PageContainer admin={false}>
       <React.Suspense fallback={<Spinner />}>
-        <NavDrawerLogic />
+        <Navigation />
         <Routes />
       </React.Suspense>
       <Message />

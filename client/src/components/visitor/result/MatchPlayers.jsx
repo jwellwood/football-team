@@ -3,7 +3,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 // Components
 import StatIcon from 'components/ui/icons/StatIcon';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const mapIcons = (num, type) => {

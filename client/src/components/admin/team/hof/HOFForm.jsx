@@ -4,11 +4,11 @@ import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 // Components
 import FormContainer from 'shared/layout/FormContainer';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
 import DeleteHOFLogic from './DeleteHOFLogic';
-import SelectInput from 'components/ui/inputs/SelectInput';
+import SelectInput from 'lib/components/inputs/SelectInput';
 import { yearOptions } from 'shared/utils/select-options';
 
 const HOFForm = ({ onSubmit, onChange, input, loading, hof, disabled }) => {

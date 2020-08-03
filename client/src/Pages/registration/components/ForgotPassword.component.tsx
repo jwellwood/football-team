@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import FormContainer from 'shared/layout/FormContainer';
 import { passwordFormHelper } from 'shared/data/formHelperText';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
 import FormHelper from 'components/ui/text/FormHelper';

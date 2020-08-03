@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import CustomIcon from '../icons/CustomIcon';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import CustomTypography from '../text/CustomTypography';
 

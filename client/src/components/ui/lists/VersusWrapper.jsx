@@ -2,8 +2,8 @@ import React from 'react';
 // MUI
 import Grid from '@material-ui/core/Grid';
 // Internal
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomExpansion from 'components/ui/expansion/CustomExpansion';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import CustomExpansion from 'lib/components/expansion/CustomExpansion';
 import CustomTypography from '../text/CustomTypography';
 
 const VersusWrapper = ({ data }) => {

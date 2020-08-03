@@ -8,10 +8,10 @@ import { getResultsColors } from 'shared/utils';
 // assets
 import badge from 'shared/assets/images/badge.jpg';
 // Components
-import CustomIcon from 'components/ui/icons/CustomIcon';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
-import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
+import CustomIcon from 'lib/components/icons/CustomIcon';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
+import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import { theme } from 'shared/theme';
