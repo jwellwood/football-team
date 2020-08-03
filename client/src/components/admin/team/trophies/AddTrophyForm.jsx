@@ -5,12 +5,12 @@ import Grid from '@material-ui/core/Grid';
 // Options
 import { trophyWinnerOptions } from 'shared/utils/select-options';
 // Internal
-import SubmitButton from 'components/ui/buttons/SubmitButton';
-import TextInput from 'components/ui/inputs/TextInput';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
+import TextInput from 'lib/components/inputs/TextInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
 import NumberInput from 'components/ui/inputs/NumberInput';
 import FormContainer from 'shared/layout/FormContainer';
-import CustomSwitch from 'components/ui/inputs/CustomSwitch';
+import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 
 const AddTrophyForm = ({ onSubmit, onChange, input, loading, onCheck }) => {

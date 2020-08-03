@@ -1,6 +1,6 @@
 import React from 'react';
 import { user_routes } from 'router';
-import PageHeader from 'components/ui/text/PageHeader';
+import PageHeader from 'lib/components/typography/PageHeader';
 import EditPlayerLogic from 'components/user/forms/EditPlayerLogic';
 
 const EditPlayerPage = () => {

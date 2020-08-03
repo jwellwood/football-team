@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import TextInput from 'components/ui/inputs/TextInput';
+import TextInput from 'lib/components/inputs/TextInput';
 import DeleteModal from 'components/ui/modals/DeleteModal';
 import CustomModalText from 'components/ui/modals/CustomModalText';
 

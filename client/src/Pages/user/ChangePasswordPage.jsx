@@ -1,6 +1,6 @@
 import React from 'react';
 import { user_routes } from 'router';
-import PageHeader from 'components/ui/text/PageHeader';
+import PageHeader from 'lib/components/typography/PageHeader';
 import ChangePasswordLogic from 'components/user/forms/ChangePasswordLogic';
 
 const ChangePasswordPage = () => {

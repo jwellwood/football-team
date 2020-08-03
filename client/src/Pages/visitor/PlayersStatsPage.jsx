@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from 'components/ui/text/PageHeader';
+import PageHeader from 'lib/components/typography/PageHeader';
 import { visitor_routes } from 'router';
 import PlayerStatsLogic from 'components/visitor/stats/player-stats/PlayerStatsLogic';
 

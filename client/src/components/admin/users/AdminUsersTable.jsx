@@ -7,7 +7,7 @@ import CustomIcon from 'components/ui/icons/CustomIcon';
 import Spinner from 'components/ui/loading/Spinner';
 import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
 import CustomTable from 'components/ui/tables/CustomTable';
-import CustomLinkButton from 'components/ui/buttons/CustomLinkButton';
+import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 
 const AdminUsersTable = ({ users, loading }) => {
   const headCells = [

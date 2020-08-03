@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from 'components/ui/text/PageHeader';
+import PageHeader from 'lib/components/typography/PageHeader';
 import { admin_routes } from 'router';
 import AddResultLogic from 'components/admin/results/AddResultLogic';
 

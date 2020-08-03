@@ -2,9 +2,9 @@ import { lazy } from 'react';
 import { IRoute } from 'shared/types';
 import { visitor_routes as routes } from './paths';
 
-const NotFoundPage = lazy(() => import('Pages/not-found/NotFoundPage'));
-const HomePage = lazy(() => import('Pages/home/Home.container'));
-const AboutPage = lazy(() => import('Pages/about/AboutPage'));
+const NotFoundPage = lazy(() => import('Pages/not-found/pages/NotFound.page'));
+const HomePage = lazy(() => import('Pages/home/pages/HomePage'));
+const AboutPage = lazy(() => import('Pages/about/pages/AboutPage'));
 const TeamPage = lazy(() => import('Pages/visitor/TeamPage'));
 const SquadPage = lazy(() => import('Pages/visitor/SquadPage'));
 const PlayerPage = lazy(() => import('Pages/visitor/PlayerPage'));

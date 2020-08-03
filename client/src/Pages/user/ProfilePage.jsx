@@ -1,6 +1,6 @@
 import React from 'react';
 import { visitor_routes } from 'router';
-import PageHeader from 'components/ui/text/PageHeader';
+import PageHeader from 'lib/components/typography/PageHeader';
 import Profile from 'components/user/Profile';
 
 const ProfilePage = () => {

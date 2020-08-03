@@ -11,9 +11,9 @@ import { setPermissionsHelper } from 'shared/data/adminHelperText';
 // Inputs
 import NumberInput from 'components/ui/inputs/NumberInput';
 import SelectInput from 'components/ui/inputs/SelectInput';
-import TextInput from 'components/ui/inputs/TextInput';
-import CustomSwitch from 'components/ui/inputs/CustomSwitch';
-import SubmitButton from 'components/ui/buttons/SubmitButton';
+import TextInput from 'lib/components/inputs/TextInput';
+import CustomSwitch from 'lib/components/inputs/CustomSwitch';
+import SubmitButton from 'lib/components/buttons/SubmitButton';
 // Components
 import Spinner from 'components/ui/loading/Spinner';
 import FormContainer from 'shared/layout/FormContainer';
@@ -21,7 +21,7 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CenteredGrid from 'components/ui/grids/CenteredGrid';
 import CustomDivider from 'components/ui/dividers/CustomDivider';
-import CustomButton from 'components/ui/buttons/CustomButton';
+import CustomButton from 'lib/components/buttons/CustomButton';
 import FormHelper from 'components/ui/text/FormHelper';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
