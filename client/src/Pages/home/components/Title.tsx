@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import badge from 'shared/assets/images/badge.jpg';
 import { ITeam } from 'shared/types';
 import CircularImage from 'components/ui/images/CircularImage';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import GridItem from 'lib/components/grids/GridItem';
 
 export const useStyles = makeStyles((theme) => ({
   main: {

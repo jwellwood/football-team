@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
-import Spinner from 'components/ui/loading/Spinner';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import Spinner from 'lib/components/loading/Spinner';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import SectionBackground from 'shared/layout/SectionBackground';
-import GridItem from 'components/ui/grids/GridItem';
+import GridItem from 'lib/components/grids/GridItem';
 import SectionTitle from 'components/ui/text/SectionTitle';
 // Components
 const ScoreBox = lazy(() => import('./ScoreBox'));

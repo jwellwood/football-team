@@ -4,8 +4,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Internal
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomIcon from 'components/ui/icons/CustomIcon';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomIcon from 'lib/components/icons/CustomIcon';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 
 const TeamInfo = ({ team }) => {
   const { location, league, position } = team;

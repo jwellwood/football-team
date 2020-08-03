@@ -8,8 +8,8 @@ import { parseDate } from 'shared/utils';
 import { visitor_routes } from 'router';
 // Components
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomIcon from 'components/ui/icons/CustomIcon';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomIcon from 'lib/components/icons/CustomIcon';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CustomTypography from 'components/ui/text/CustomTypography';
 

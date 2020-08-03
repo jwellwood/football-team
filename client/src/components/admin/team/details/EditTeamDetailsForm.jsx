@@ -7,7 +7,7 @@ import { getLeaguePositionOptions } from 'shared/utils/select-options';
 // Internal
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
-import SelectInput from 'components/ui/inputs/SelectInput';
+import SelectInput from 'lib/components/inputs/SelectInput';
 import FormContainer from 'shared/layout/FormContainer';
 
 const EditTeamDetailsForm = ({ onSubmit, onChange, input, loading, team }) => {

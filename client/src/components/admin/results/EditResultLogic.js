@@ -11,7 +11,7 @@ import {
 // Routes
 import { admin_routes } from 'router';
 // Internal
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import ResultForm from './ResultForm';
 import {
   onInputChange,

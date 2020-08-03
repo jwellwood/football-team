@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Internal
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import { getAuth } from 'reduxStore/auth/auth_actions';
 import { reg_routes, user_routes } from 'router';
 // The three arguments come from the routes page

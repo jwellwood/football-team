@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 // Components
 import CustomContainer from 'shared/layout/CustomContainer';
 import SectionBackground from 'shared/layout/SectionBackground';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import { ITeam } from 'shared/types';
 
 const HomeMenu = lazy(() => import('./HomeMenu'));

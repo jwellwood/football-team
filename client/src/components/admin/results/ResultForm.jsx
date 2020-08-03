@@ -11,15 +11,15 @@ import {
 // Routes
 import { admin_routes } from 'router';
 // Inputs
-import SelectInput from 'components/ui/inputs/SelectInput';
+import SelectInput from 'lib/components/inputs/SelectInput';
 import TextInput from 'lib/components/inputs/TextInput';
-import NumberInput from 'components/ui/inputs/NumberInput';
+import NumberInput from 'lib/components/inputs/NumberInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 // Components
 import FormContainer from 'shared/layout/FormContainer';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import Spinner from 'components/ui/loading/Spinner';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import Spinner from 'lib/components/loading/Spinner';
 import AdminMatchPlayersList from '../matchPlayers/AdminMatchPlayersList';
 import DeleteResultLogic from './DeleteResultLogic';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';

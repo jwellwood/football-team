@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
-import Spinner from 'components/ui/loading/Spinner';
-import CustomTabs from 'components/ui/tabs/CustomTabs';
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import Spinner from 'lib/components/loading/Spinner';
+import CustomTabs from 'lib/components/tabs/CustomTabs';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 // Sections
 const TeamPhoto = lazy(() =>
   import('components/visitor/team/team-photo/TeamPhoto')

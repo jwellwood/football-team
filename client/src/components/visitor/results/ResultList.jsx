@@ -4,7 +4,7 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CustomContainer from 'shared/layout/CustomContainer';
 import PlaceholderText from 'components/ui/text/Placeholder';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 
 const ResultCard = lazy(() => import('./ResultCard'));
 

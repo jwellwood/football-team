@@ -3,7 +3,7 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import CustomIcon from '../icons/CustomIcon';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 
 const LogoutButton = ({ onClick }) => {
   return (

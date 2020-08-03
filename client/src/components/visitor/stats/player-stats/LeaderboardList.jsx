@@ -5,7 +5,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Internal
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const LeaderboardList = ({ value }) => {

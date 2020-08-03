@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { getPlayerById } from 'reduxStore/squad/squad_actions';
 // Components
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import Player from './Player';
 
 const PlayerLogic = () => {

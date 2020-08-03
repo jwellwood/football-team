@@ -2,7 +2,7 @@ import React from 'react';
 // Functions
 import { getPercentage } from 'functions';
 // Layout
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 // Components
 import TargetProgress from 'components/ui/progress/TargetProgress';
 import SectionContainer from 'shared/layout/SectionContainer';

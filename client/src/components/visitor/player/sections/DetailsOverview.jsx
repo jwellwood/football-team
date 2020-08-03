@@ -4,8 +4,8 @@ import ProfileList from 'components/ui/lists/ProfileList';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CircularImage from 'components/ui/images/CircularImage';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import GridItem from 'lib/components/grids/GridItem';
 
 const DetailsOverview = ({ player }) => {
   const { squadNumber, position, image, description, yearJoined } = player;

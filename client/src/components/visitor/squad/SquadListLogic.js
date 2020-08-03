@@ -6,7 +6,7 @@ import SquadList from './SquadList';
 import { getAllPlayers } from 'reduxStore/squad/squad_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { useDispatch } from 'react-redux';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 
 const SquadListLogic = () => {
   const dispatch = useDispatch();

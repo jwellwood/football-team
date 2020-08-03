@@ -3,9 +3,9 @@ import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 // Components
-import CustomIcon from 'components/ui/icons/CustomIcon';
-import Spinner from 'components/ui/loading/Spinner';
-import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
+import CustomIcon from 'lib/components/icons/CustomIcon';
+import Spinner from 'lib/components/loading/Spinner';
+import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import CustomTable from 'components/ui/tables/CustomTable';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 

@@ -3,16 +3,16 @@ import { reg_routes as routes } from './paths';
 import { IRoute } from 'shared/types';
 
 const RegistrationPage = lazy(() =>
-  import('Pages/registration/pages/RegistrationPage')
+  import('Pages/registration/pages/Registration.page')
 );
 const ValidatedEmailPage = lazy(() =>
-  import('Pages/registration/pages/ValidatedEmailPage')
+  import('Pages/registration/pages/ValidatedEmail.page')
 );
 const ForgotPasswordPage = lazy(() =>
-  import('Pages/registration/pages/ForgotPasswordPage')
+  import('Pages/registration/pages/ForgotPassword.page')
 );
 const ResetPasswordPage = lazy(() =>
-  import('Pages/registration/pages/ResetPasswordPage')
+  import('Pages/registration/pages/ResetPassword.page')
 );
 
 export const registrationRoutes: IRoute[] = [

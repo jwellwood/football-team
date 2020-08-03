@@ -2,7 +2,7 @@ import React from 'react';
 // MUI
 import ListItemText from '@material-ui/core/ListItemText';
 // Components
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import StatIcon from 'components/ui/icons/StatIcon';
 import SectionBackground from 'shared/layout/SectionBackground';
 import ListWrapper from 'components/ui/lists/ListWrapper';

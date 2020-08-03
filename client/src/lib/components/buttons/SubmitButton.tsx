@@ -2,10 +2,10 @@ import React from 'react';
 //MUI
 import Button from '@material-ui/core/Button';
 import { useStyles } from '../../../components/ui/buttons/styles'; // Styles
-import Spinner from '../../../components/ui/loading/Spinner';
+import Spinner from '../loading/Spinner';
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   disabled?: boolean;
   loading?: boolean;
 }

@@ -8,10 +8,10 @@ import { visitor_routes } from 'router';
 // assets
 import profile_default from 'shared/assets/images/default_profile.png';
 // Components
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import GridItem from 'lib/components/grids/GridItem';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomImageAvatar from 'components/ui/avatars/CustomImageAvatar';
+import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import StatBoxes from './StatBoxes';
 import CustomTypography from 'components/ui/text/CustomTypography';
 

@@ -11,7 +11,7 @@ import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
 // Routes
 import { admin_routes } from 'router';
 // Components
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import PrevSeasonForm from './PrevSeasonForm';
 
 const EditPrevSeasonLogic = () => {

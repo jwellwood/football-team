@@ -9,9 +9,10 @@ interface Props {
   defaultValue?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
-  validators;
-  errors?: object;
+  validators?; // TODO
+  errors?: object; // TODO
   isPassword?: boolean;
+  isEmail?: boolean;
   multiline?: boolean;
 }
 
@@ -23,6 +24,7 @@ const TextInput: React.FC<Props> = ({
   validators,
   errors,
   isPassword,
+  isEmail,
   multiline,
 }) => {
   return (

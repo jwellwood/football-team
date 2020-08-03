@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import { visitor_routes } from 'router';
 import { ITeam } from 'shared/types';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import Spinner from 'components/ui/loading/Spinner';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import Spinner from 'lib/components/loading/Spinner';
 
 const CurrentPosition = lazy(() => import('./CurrentPosition'));
 const LatestResult = lazy(() => import('../containers/LatestResult.container'));

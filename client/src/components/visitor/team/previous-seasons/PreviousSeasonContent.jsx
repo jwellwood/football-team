@@ -7,11 +7,11 @@ import { generateOrdinals } from 'shared/utils/generateOrdinals';
 // Assets
 import { theme } from 'shared/theme';
 // Components
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 import ResultsTotals from 'components/visitor/results/ResultsTotals';
 import DonutGraph from 'components/ui/graphs/DonutGraph';
 import SectionTitle from 'components/ui/text/SectionTitle';
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import AwardList from './AwardList';
 import CustomTypography from 'components/ui/text/CustomTypography';
 

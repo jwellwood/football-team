@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 // Components
 import BackButton from '../../../components/ui/buttons/BackButton';
-import CenteredGrid from '../../../components/ui/grids/CenteredGrid';
+import CenteredGrid from '../grids/CenteredGrid';
 import CustomTypography from '../../../components/ui/text/CustomTypography';
 
 export const useStyles = makeStyles((theme) => ({

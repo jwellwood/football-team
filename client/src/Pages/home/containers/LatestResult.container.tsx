@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { IResult, IResultState } from 'shared/types';
 import { getLatestResult } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import LatestResult from '../components/LatestResult.component';
 
 export default () => {

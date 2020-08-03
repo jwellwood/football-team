@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import GridItem from 'lib/components/grids/GridItem';
 import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 

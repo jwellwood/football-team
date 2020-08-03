@@ -1,9 +1,9 @@
 import React from 'react';
 // Components
 import SectionBackground from 'shared/layout/SectionBackground';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import CustomIcon from 'components/ui/icons/CustomIcon';
-import GridItem from 'components/ui/grids/GridItem';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import CustomIcon from 'lib/components/icons/CustomIcon';
+import GridItem from 'lib/components/grids/GridItem';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 const ModalContent = ({ data }) => {

@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 // Components
 import FormContainer from 'shared/layout/FormContainer';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import NumberInput from 'components/ui/inputs/NumberInput';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import NumberInput from 'lib/components/inputs/NumberInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import TextInput from 'lib/components/inputs/TextInput';

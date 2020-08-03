@@ -1,6 +1,6 @@
 import React from 'react';
 import { generateOrdinals } from 'shared/utils/generateOrdinals';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomTypography from 'components/ui/text/CustomTypography';
 
 interface Props {

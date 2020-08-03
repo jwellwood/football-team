@@ -4,7 +4,7 @@ import { visitor_routes } from 'router';
 // Components
 import SectionBackground from 'shared/layout/SectionBackground';
 import CustomContainer from 'shared/layout/CustomContainer';
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import SectionContainer from 'shared/layout/SectionContainer';

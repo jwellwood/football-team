@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 // Functions
 import { getTargetStats, targetsTotal } from 'functions/player';
 // Components
-import Spinner from 'components/ui/loading/Spinner';
+import Spinner from 'lib/components/loading/Spinner';
 const TargetsTable = lazy(() => import('./TargetsTable'));
 
 const TargetTableLogic = ({ players }) => {

@@ -5,7 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 // Internal
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomIcon from '../icons/CustomIcon';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 import CustomTypography from '../text/CustomTypography';
 
 const ProfileList = ({ details }) =>

@@ -1,9 +1,9 @@
 import React from 'react';
 // Internal
-import CustomAvatar from 'components/ui/avatars/CustomAvatar';
-import CustomExpansion from 'components/ui/expansion/CustomExpansion';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
-import GridItem from 'components/ui/grids/GridItem';
+import CustomAvatar from 'lib/components/avatars/CustomAvatar';
+import CustomExpansion from 'lib/components/expansion/CustomExpansion';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import GridItem from 'lib/components/grids/GridItem';
 import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'components/ui/text/CustomTypography';
 import SectionBackground from 'shared/layout/SectionBackground';

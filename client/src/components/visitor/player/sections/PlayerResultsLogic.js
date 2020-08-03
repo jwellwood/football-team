@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import ResultsTotals from 'components/visitor/results/ResultsTotals';
 import { getResultTotals } from 'functions/results';
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 
 const PlayerResultsLogic = ({ player }) => {
   const results = player.matchesPlayed.map((res) => res.result);

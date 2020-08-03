@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // MUI
 import Button from '@material-ui/core/Button';
 // Internal
-import CustomIcon from '../icons/CustomIcon';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 
 const EditImageButton = ({ link }) => {
   return (

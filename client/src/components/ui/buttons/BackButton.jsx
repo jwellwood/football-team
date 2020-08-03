@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 // Routes
 import { user_routes } from 'router';
-import CustomIcon from '../icons/CustomIcon';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 
 const useStyles = makeStyles((theme) => ({
   button: {

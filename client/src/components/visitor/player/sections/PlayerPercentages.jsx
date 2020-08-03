@@ -5,7 +5,7 @@ import { getTotals, getContributions } from 'functions/player';
 import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 import SectionContainer from 'shared/layout/SectionContainer';
 import TargetProgress from 'components/ui/progress/TargetProgress';
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 
 const PlayerPercentages = ({ player, results }) => {
   const playerTotals = useMemo(() => getTotals(player), [player]);

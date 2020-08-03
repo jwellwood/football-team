@@ -4,10 +4,10 @@ import Grid from '@material-ui/core/Grid';
 // Routes
 import { visitor_routes } from 'router';
 // Components
-import CenteredGrid from 'components/ui/grids/CenteredGrid';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import TopSectionContainer from 'shared/layout/TopSectionContainer';
 import SectionBackground from 'shared/layout/SectionBackground';
-import CustomDivider from 'components/ui/dividers/CustomDivider';
+import CustomDivider from 'lib/components/dividers/CustomDivider';
 import FormIndicator from './FormIndicator';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import CustomTypography from 'components/ui/text/CustomTypography';

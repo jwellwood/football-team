@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 // Components
 import ToggleSwitch from 'components/ui/buttons/ToggleSwitch';
-import Spinner from 'components/ui/loading/Spinner';
-import CustomTabs from 'components/ui/tabs/CustomTabs';
-import CustomIcon from 'components/ui/icons/CustomIcon';
+import Spinner from 'lib/components/loading/Spinner';
+import CustomTabs from 'lib/components/tabs/CustomTabs';
+import CustomIcon from 'lib/components/icons/CustomIcon';
 const ResultPercentages = lazy(() => import('./ResultPercentages'));
 const ResultVersus = lazy(() => import('./ResultVersus'));
 const ResultVersusNegative = lazy(() => import('./ResultVersusNegative'));
