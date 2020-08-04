@@ -16,7 +16,18 @@ declare module '@material-ui/core' {
     dark: {
       main: string;
     };
-
+    assist: {
+      main: string;
+    };
+    goal: {
+      main: string;
+    };
+    conceded: {
+      main: string;
+    };
+    miss: {
+      main: string;
+    };
     secondaryFont: string;
   }
 }
@@ -28,15 +39,19 @@ declare module '@material-ui/core/styles/createTypography' {
 }
 
 declare module '@material-ui/core/styles/createPalette' {
-  interface PaletteOptions {
-    dark?: PaletteColorOptions;
-    assist?: PaletteColorOptions;
-  }
-}
-declare module '@material-ui/core/styles/createPalette' {
   interface Palette {
     dark: PaletteColor;
     assist: PaletteColor;
+    goal: PaletteColor;
+    conceded: PaletteColor;
+    miss: PaletteColor;
+  }
+  interface PaletteOptions {
+    dark: PaletteColorOptions;
+    assist: PaletteColorOptions;
+    goal: PaletteColorOptions;
+    conceded: PaletteColorOptions;
+    miss: PaletteColorOptions;
   }
 }
 

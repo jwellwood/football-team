@@ -1,8 +1,12 @@
 import React from 'react';
+import { IResult } from 'shared/types';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
-const MatchReport = ({ result }) => {
-  const { matchReport } = result;
+interface Props {
+  result: IResult;
+}
+
+const MatchReport: React.FC<Props> = ({ result: { matchReport } }) => {
   return matchReport ? (
     <CustomTypography size='sm'>{matchReport}</CustomTypography>
   ) : (

@@ -9,7 +9,7 @@ const TeamPage = lazy(() => import('Pages/team/pages/Team.page'));
 const SquadPage = lazy(() => import('Pages/visitor/SquadPage'));
 const PlayerPage = lazy(() => import('Pages/visitor/PlayerPage'));
 const ResultsPage = lazy(() => import('Pages/results/pages/Results.page'));
-const ResultPage = lazy(() => import('Pages/visitor/ResultPage'));
+const ResultPage = lazy(() => import('Pages/result/pages/Result.page'));
 const ResultsStatsPage = lazy(() =>
   import('Pages/results/pages/ResultsStats.page')
 );

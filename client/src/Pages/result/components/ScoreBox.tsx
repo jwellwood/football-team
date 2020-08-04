@@ -1,24 +1,31 @@
-import React from 'react';
-// MUI
+import React, { ReactElement } from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-// Functions
 import { parseDate } from 'shared/utils/date';
 import { getResultsColors } from 'shared/utils';
-// assets
 import badge from 'shared/assets/images/badge.jpg';
-// Components
+import { theme } from 'shared/theme';
+import { IResult } from 'shared/types';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import { theme } from 'shared/theme';
-import CustomTypography from 'lib/components/typography/CustomTypography';
 
-const ScoreBox = ({ result }) => {
-  const {
+interface Props {
+  result: IResult;
+}
+
+interface IScoreBoxData {
+  name: string;
+  goals: number;
+  avatar: ReactElement;
+}
+
+const ScoreBox: React.FC<Props> = ({
+  result: {
     opponentName,
     teamGoals,
     opponentGoals,
@@ -26,13 +33,13 @@ const ScoreBox = ({ result }) => {
     date,
     type,
     points,
-  } = result;
-
-  const data = [
+  },
+}) => {
+  const data: IScoreBoxData[] = [
     {
       name: 'Madrid Reds',
       goals: teamGoals,
-      avatar: <CustomImageAvatar image={badge} shadow='secondary' isList />,
+      avatar: <CustomImageAvatar imageUrl={badge} shadow='secondary' isList />,
     },
     {
       name: opponentName,
@@ -45,7 +52,7 @@ const ScoreBox = ({ result }) => {
     },
   ];
 
-  const listData = (data) => (
+  const listData = (data: IScoreBoxData) => (
     <ListItemWrapper>
       {data.avatar}
       <ListItemText
@@ -70,10 +77,14 @@ const ScoreBox = ({ result }) => {
     </ListItemWrapper>
   );
 
-  const topRow = isHome ? listData(data[0]) : listData(data[1]);
-  const bottomRow = isHome ? listData(data[1]) : listData(data[0]);
+  const topRow: ReactElement<IScoreBoxData> = isHome
+    ? listData(data[0])
+    : listData(data[1]);
+  const bottomRow: ReactElement<IScoreBoxData> = isHome
+    ? listData(data[1])
+    : listData(data[0]);
 
-  const details = (
+  const details: ReactElement = (
     <CenteredGrid>
       <CustomTypography size='xs' color='warning' font='secondary'>
         {parseDate(date)}

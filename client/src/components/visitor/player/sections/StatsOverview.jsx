@@ -6,7 +6,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Internal
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import StatIcon from 'components/ui/icons/StatIcon';
+import StatIcon from 'lib/components/icons/StatIcon';
 import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
