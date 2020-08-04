@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllResults } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
+import { IResult } from 'shared/types';
 // Components
-import ResultStats from './ResultStats';
+const ResultsTotals = lazy(() => import('../components/ResultsTotalsTable'));
+const ResultList = lazy(() => import('../components/ResultList'));
 
-const ResultStatsLogic = () => {
+export default () => {
   const dispatch = useDispatch();
-
-  const [includeForfeits, setIncludeForfeits] = useState(true);
-
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<IResult[]>([]);
 
   useEffect(() => {
     dispatch(getAllResults()).then((res) => {
@@ -22,17 +21,10 @@ const ResultStatsLogic = () => {
     });
   }, [dispatch]);
 
-  const toggleForfeits = () => {
-    setIncludeForfeits(!includeForfeits);
-  };
-
   return (
-    <ResultStats
-      results={results}
-      toggleForfeits={toggleForfeits}
-      includeForfeits={includeForfeits}
-    />
+    <>
+      <ResultsTotals results={results} />
+      <ResultList results={results} />
+    </>
   );
 };
-
-export default ResultStatsLogic;

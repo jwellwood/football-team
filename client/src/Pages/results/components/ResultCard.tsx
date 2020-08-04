@@ -1,37 +1,23 @@
-import React from 'react';
-// MUITODO
+import React, { ReactElement } from 'react';
+import { IResult } from 'shared/types';
+import { parseDate, getBackground } from 'shared/utils';
+import { visitor_routes } from 'router';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-// Functions
-import { parseDate } from 'shared/utils';
-// Routes
-import { visitor_routes } from 'router';
-// Components
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
-const ResultCard = ({ result }) => {
-  let background = null;
-  switch (result.points) {
-    case 3:
-      background = 'success';
-      break;
-    case 1:
-      background = 'warning';
-      break;
-    case 0:
-      background = 'error';
-      break;
+interface Props {
+  result: IResult;
+}
 
-    default:
-      break;
-  }
-  const { date, type, opponentName, teamGoals, opponentGoals } = result;
-
-  const resultDateAndType = (
+const ResultCard: React.FC<Props> = ({
+  result: { _id, date, type, opponentName, teamGoals, opponentGoals, points },
+}) => {
+  const resultDateAndType: ReactElement = (
     <>
       <CustomTypography size='xs' color='warning' font='secondary'>
         {parseDate(date)}
@@ -40,7 +26,7 @@ const ResultCard = ({ result }) => {
     </>
   );
 
-  const opponent = (
+  const opponent: ReactElement = (
     <CustomTypography main bold>
       {opponentName}
     </CustomTypography>
@@ -50,9 +36,9 @@ const ResultCard = ({ result }) => {
       <ListItemWrapper
         noDivider
         button
-        linkTo={`${visitor_routes.RESULTS}/${result._id}`}
+        linkTo={`${visitor_routes.RESULTS}/${_id}`}
       >
-        <CustomAvatar bordered background={background} isList>
+        <CustomAvatar bordered background={getBackground(points)} isList>
           <CustomIcon icon='chevron-right' size='xs' />
         </CustomAvatar>
         <ListItemText primary={opponent} secondary={resultDateAndType} />

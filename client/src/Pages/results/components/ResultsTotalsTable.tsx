@@ -1,22 +1,37 @@
 import React, { useMemo } from 'react';
-// Functions
 import { getResultTotals } from 'functions/results';
-// Components
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import ResultsTotals from './ResultsTotals.component';
+import { IResultTotalsData } from '../shared/types';
+import { IResult } from 'shared/types';
 
-//TODO make this a stateful component
+interface Props {
+  results: IResult[];
+}
 
-export default ({ results }) => {
-  const resultTotals = useMemo(() => getResultTotals(results), [results]);
-  const goalDifference = resultTotals.goals - resultTotals.conceded;
+interface IResultTotalsValuesData {
+  conceded: number;
+  draws: number;
+  goals: number;
+  losses: number;
+  played: number;
+  points: number;
+  wins: number;
+}
 
-  const latestResults = results
+const ResultsTotalTable: React.FC<Props> = ({ results }) => {
+  const resultTotals: IResultTotalsValuesData = useMemo(
+    () => getResultTotals(results),
+    [results]
+  );
+  const goalDifference: number = resultTotals.goals - resultTotals.conceded;
+
+  const latestResultPoints: number[] = results
     .slice(0, 5)
     .map((result) => result.points)
     .reverse();
 
-  const data = [
+  const data: IResultTotalsData[] = [
     { title: 'Pl', value: resultTotals.played, divider: true },
     { title: 'W', value: resultTotals.wins },
     { title: 'D', value: resultTotals.draws },
@@ -36,9 +51,11 @@ export default ({ results }) => {
     },
     {
       title: 'Form',
-      value: latestResults,
+      value: latestResultPoints,
     },
   ];
 
-  return <ResultsTotals data={data} showStatsButton={true} />;
+  return <ResultsTotals resultsTotals={data} showStatsButton={true} />;
 };
+
+export default ResultsTotalTable;

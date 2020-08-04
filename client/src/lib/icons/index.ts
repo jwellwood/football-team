@@ -51,6 +51,7 @@ import {
   faChevronUp,
   faArrowLeft,
   faBullseye,
+  faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -101,6 +102,7 @@ library.add(
   faChevronDown,
   faChevronUp,
   faArrowLeft,
-  faBullseye
+  faBullseye,
+  faPlay
   // more icons go here
 );

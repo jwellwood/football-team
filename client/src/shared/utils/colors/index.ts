@@ -13,3 +13,22 @@ export const getResultsColors: Function = (points: number): string => {
       return secondary.main;
   }
 };
+
+export const getBackground = (points: number) => {
+  let background = null;
+  switch (points) {
+    case 3:
+      background = 'success';
+      break;
+    case 1:
+      background = 'warning';
+      break;
+    case 0:
+      background = 'error';
+      break;
+
+    default:
+      break;
+  }
+  return background;
+};

@@ -1,4 +1,6 @@
 export interface IResult {
+  _id?: string;
+  type?: string;
   date: string;
   teamGoals: number;
   opponentGoals: number;

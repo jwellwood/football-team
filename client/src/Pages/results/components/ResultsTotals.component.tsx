@@ -7,27 +7,28 @@ import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import CustomTypography from 'lib/components/typography/CustomTypography';
-import FormIndicator from '../../components/visitor/results/FormIndicator';
+import FormIndicator from './FormIndicator';
+import { IResultTotalsData } from '../shared/types';
 
 interface Props {
-  data: any; // TODO
+  resultsTotals: IResultTotalsData[];
   showStatsButton?: boolean;
 }
 
-const ResultsTotals: React.FC<Props> = ({ data, showStatsButton }) => {
+const ResultsTotals: React.FC<Props> = ({ resultsTotals, showStatsButton }) => {
   return (
     <SectionBackground placeholder>
       <TopSectionContainer>
         <CenteredGrid dir='row' just='space-evenly'>
-          {data.map((item, i) => (
-            <Fragment key={item.title + i}>
+          {resultsTotals.map((item: IResultTotalsData, i) => (
+            <Fragment key={i}>
               <Grid style={{ textAlign: 'center' }}>
                 <CustomTypography size='xs' div>
                   {item.title}
                 </CustomTypography>
                 <CustomTypography main bold>
                   {item.title === 'Form' ? (
-                    <FormIndicator data={item.value} />
+                    <FormIndicator pointsArray={item.value} />
                   ) : (
                     item.value
                   )}

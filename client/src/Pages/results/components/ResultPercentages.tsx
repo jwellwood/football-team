@@ -1,23 +1,33 @@
 import React, { useMemo } from 'react';
-// Functions
 import { getResultPercentages } from 'functions/results';
-// Assets
 import { theme } from 'shared/theme';
-// Components
-import ResultAverages from './ResultAverages';
-import DonutGraph from 'components/ui/graphs/DonutGraph';
+import { IResult } from 'shared/types';
+import SectionContainer from 'shared/layout/SectionContainer';
+import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
-import SectionContainer from 'shared/layout/SectionContainer';
+import ResultAverages from './ResultAverages';
 
-const ResultPercentages = ({ results }) => {
+interface Props {
+  results: IResult[];
+}
+
+interface IResultPercentages {
+  drawPercentage: string;
+  lossPercentage: string;
+  winPercentage: string;
+}
+
+const ResultPercentages: React.FC<Props> = ({ results }) => {
   const { success, warning, primary, secondary } = theme.palette;
-  const percentages = useMemo(() => getResultPercentages(results), [results]);
+  const percentages: IResultPercentages = useMemo(
+    () => getResultPercentages(results),
+    [results]
+  );
 
-  const data = {
+  const data: IDonutData = {
     labels: ['Win', 'Draw', 'Lose'],
-
     datasets: [
       {
         data: [

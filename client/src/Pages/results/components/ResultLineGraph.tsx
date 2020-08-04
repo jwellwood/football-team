@@ -2,15 +2,28 @@ import React from 'react';
 // Assets
 import { theme } from 'shared/theme';
 // Internal
-import LineGraph from 'components/ui/graphs/LineGraph';
+import LineGraph, { ILineGraphData } from 'lib/components/graphs/LineGraph';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import SectionContainer from 'shared/layout/SectionContainer';
+import { IResult } from 'shared/types';
 
-const ResultLineGraph = ({ results }) => {
+interface Props {
+  results: IResult[];
+}
+
+interface IResultLineGraphData {
+  index: number;
+  opponentName: string; // TODO include this as a tooltip?
+  goalsFor: number;
+  goalsAgainst: number;
+  points: number;
+}
+
+const ResultLineGraph: React.FC<Props> = ({ results }) => {
   const { success, error, secondary } = theme.palette;
-  const resultData = [];
+  const resultData: Array<IResultLineGraphData> = [];
   results.forEach((result, i) => {
-    const data = {
+    const data: IResultLineGraphData = {
       index: i + 1,
       opponentName: result.opponentName, // TODO include this as a tooltip?
       goalsFor: result.teamGoals,
@@ -20,11 +33,13 @@ const ResultLineGraph = ({ results }) => {
     resultData.unshift(data);
   });
 
-  const labels = resultData.map((res, i) => i + 1);
-  const goalsFor = resultData.map((res) => res.goalsFor);
-  const goalsAgainst = resultData.map((res) => res.goalsAgainst);
-  const goalDiff = resultData.map((res) => res.goalsFor - res.goalsAgainst);
-  const data = {
+  const labels: number[] = resultData.map((res, i) => i + 1);
+  const goalsFor: number[] = resultData.map((res) => res.goalsFor);
+  const goalsAgainst: number[] = resultData.map((res) => res.goalsAgainst);
+  const goalDiff: number[] = resultData.map(
+    (res) => res.goalsFor - res.goalsAgainst
+  );
+  const data: ILineGraphData = {
     labels: [...labels],
     datasets: [
       {
@@ -48,7 +63,6 @@ const ResultLineGraph = ({ results }) => {
         data: [...goalDiff],
         backgroundColor: secondary.dark,
         borderColor: secondary.dark,
-        lineTension: 0,
         borderWidth: 1,
       },
     ],

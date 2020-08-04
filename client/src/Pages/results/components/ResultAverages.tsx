@@ -1,35 +1,52 @@
 import React, { useMemo } from 'react';
 import { getResultAverages } from 'functions/results';
-// MUITODO
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-// Components
+import { IResult } from 'shared/types';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
-const ResultAverages = ({ results }) => {
-  const stats = useMemo(() => getResultAverages(results), [results]);
+interface Props {
+  results: IResult[];
+}
+
+interface IResultAverageData {
+  text: string;
+  value: string;
+  noDivider?: boolean;
+}
+
+interface IResultAverageStats {
+  avgConceded: string;
+  avgDiff: string;
+  avgGoals: string;
+  pointsPerGame: string;
+}
+
+const ResultAverages: React.FC<Props> = ({ results }) => {
+  const stats: IResultAverageStats = useMemo(() => getResultAverages(results), [
+    results,
+  ]);
+
   const { avgGoals, avgConceded, avgDiff, pointsPerGame } = stats;
 
-  const data = [
-    { text: 'Points / game', icon: '', value: pointsPerGame, noDivider: true },
-    { text: 'Goals / game', icon: '', value: avgGoals },
-    { text: 'Conceded / game', icon: '', value: avgConceded },
-    { text: 'Av goal difference', icon: '', value: avgDiff },
+  const data: IResultAverageData[] = [
+    { text: 'Points / game', value: pointsPerGame, noDivider: true },
+    { text: 'Goals / game', value: avgGoals },
+    { text: 'Conceded / game', value: avgConceded },
+    { text: 'Av goal difference', value: avgDiff },
   ];
   return (
     <ListWrapper dense>
       {data.map((item) => (
         <ListItemWrapper key={item.text} noDivider={item.noDivider}>
-          {item.icon ? (
-            <ListItemIcon>
-              <CustomIcon icon={item.icon} size='sm' />
-            </ListItemIcon>
-          ) : null}
-          <ListItemText primary={item.text} secondary={item.secondary} />
+          <ListItemIcon>
+            <CustomIcon icon='chevron-right' color='secondary' size='sm' />
+          </ListItemIcon>
+          <ListItemText primary={item.text} />
           <ListItemSecondaryAction>
             <CustomTypography main bold>
               {item.value}

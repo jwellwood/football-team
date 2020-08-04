@@ -5,10 +5,15 @@ import SectionBackground from 'shared/layout/SectionBackground';
 import CustomContainer from 'shared/layout/CustomContainer';
 import PlaceholderText from 'components/ui/text/Placeholder';
 import Spinner from 'lib/components/loading/Spinner';
+import { IResult } from 'shared/types';
 
 const ResultCard = lazy(() => import('./ResultCard'));
 
-const ResultList = ({ results }) => {
+interface Props {
+  results: IResult[];
+}
+
+const ResultList: React.FC<Props> = ({ results }) => {
   return (
     <CustomContainer>
       <SectionBackground placeholder>

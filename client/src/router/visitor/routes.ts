@@ -8,9 +8,11 @@ const AboutPage = lazy(() => import('Pages/about/pages/About.page'));
 const TeamPage = lazy(() => import('Pages/team/pages/Team.page'));
 const SquadPage = lazy(() => import('Pages/visitor/SquadPage'));
 const PlayerPage = lazy(() => import('Pages/visitor/PlayerPage'));
-const ResultsPage = lazy(() => import('Pages/visitor/ResultsPage'));
+const ResultsPage = lazy(() => import('Pages/results/pages/Results.page'));
 const ResultPage = lazy(() => import('Pages/visitor/ResultPage'));
-const ResultsStatsPage = lazy(() => import('Pages/visitor/ResultsStatsPage'));
+const ResultsStatsPage = lazy(() =>
+  import('Pages/results/pages/ResultsStats.page')
+);
 const PlayersStatsPage = lazy(() => import('Pages/visitor/PlayersStatsPage'));
 
 export const visitorRoutes: IRoute[] = [
