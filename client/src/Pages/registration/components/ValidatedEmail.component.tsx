@@ -2,7 +2,7 @@ import React from 'react';
 import Spinner from 'lib/components/loading/Spinner';
 import CustomButton from 'lib/components/buttons/CustomButton';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import StatIcon from 'components/ui/icons/StatIcon';
+import StatIcon from 'lib/components/icons/StatIcon';
 
 interface Props {
   onClick: () => void;

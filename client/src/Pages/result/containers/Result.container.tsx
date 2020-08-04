@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// Functions
 import { getResultById } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-// Components
-import Result from './Result';
+import { IResult } from 'shared/types';
 import Spinner from 'lib/components/loading/Spinner';
+import Result from '../components/Result.component';
 
-const ResultLogic = () => {
+export default () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const [result, setResult] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [result, setResult] = useState<IResult>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     dispatch(getResultById(id)).then((res) => {
       const { success, data, message, type } = res.payload;
@@ -27,5 +26,3 @@ const ResultLogic = () => {
 
   return !loading ? <Result result={result} /> : <Spinner />;
 };
-
-export default ResultLogic;

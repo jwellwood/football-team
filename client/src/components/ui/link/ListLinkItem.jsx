@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-// MUI
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import CustomIcon from '../../../lib/components/icons/CustomIcon';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import CustomIcon from '../../../lib/components/icons/CustomIcon';
 import CustomTypography from '../../../lib/components/typography/CustomTypography';
 
 const ListItemLink = (props) => {

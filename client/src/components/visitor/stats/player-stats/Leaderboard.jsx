@@ -7,7 +7,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import SectionBackground from 'shared/layout/SectionBackground';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import StatIcon from 'components/ui/icons/StatIcon';
+import StatIcon from 'lib/components/icons/StatIcon';
 import LeaderboardList from './LeaderboardList';
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomTypography from 'lib/components/typography/CustomTypography';

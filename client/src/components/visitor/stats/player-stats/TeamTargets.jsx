@@ -12,7 +12,7 @@ import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
 import SectionContainer from 'shared/layout/SectionContainer';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import StatIcon from 'components/ui/icons/StatIcon';
+import StatIcon from 'lib/components/icons/StatIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {

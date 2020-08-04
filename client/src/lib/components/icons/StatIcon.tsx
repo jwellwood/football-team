@@ -1,62 +1,80 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from 'shared/theme';
+import {
+  IconName,
+  SizeProp,
+  IconPrefix,
+} from '@fortawesome/fontawesome-svg-core';
 
-const StatIcon = ({ type, size }) => {
-  const { palette } = theme;
-  const p = palette;
-  let icon = '';
-  let color = p.secondary.main;
+interface Props {
+  type: string;
+  size?: SizeProp;
+}
+
+const StatIcon: React.FC<Props> = ({ type, size = 'sm' }) => {
+  const {
+    success,
+    secondary,
+    goal,
+    assist,
+    conceded,
+    miss,
+    error,
+    warning,
+  } = theme.palette;
+  let icon: IconName | [IconPrefix, IconName] = 'question';
+  let color = secondary.main;
   switch (type) {
     case 'app':
       icon = ['far', 'check-circle'];
-      color = p.success.main;
+      color = success.main;
       break;
     case 'goal':
       icon = 'futbol';
-      color = p.goal.main;
+      color = goal.main;
       break;
     case 'assist':
       icon = 'arrow-alt-circle-up';
-      color = p.assist.main;
+      color = assist.main;
       break;
     case 'conceded':
       icon = 'arrow-alt-circle-down';
-      color = p.conceded.main;
+      color = conceded.main;
       break;
     case 'ownGoal':
       icon = 'arrow-down';
-      color = p.miss.main;
+      color = miss.main;
       break;
     case 'yellowCard':
       icon = 'sticky-note';
-      color = p.warning.light;
+      color = warning.light;
       break;
     case 'redCard':
       icon = 'sticky-note';
-      color = p.error.main;
+      color = error.main;
       break;
     case 'penScored':
       icon = 'adjust';
-      color = p.goal.main;
+      color = goal.main;
       break;
     case 'penMissed':
       icon = 'times';
-      color = p.secondary.main;
+      color = secondary.main;
       break;
     case 'mvp':
       icon = ['fas', 'star'];
-      color = p.warning.main;
+      color = warning.main;
       break;
     case 'percentage':
       icon = 'percent';
-      color = p.success.main;
+      color = success.main;
       break;
 
     default:
       break;
   }
-  return <FontAwesomeIcon icon={icon} color={color} size={size || 'sm'} />;
+  return <FontAwesomeIcon icon={icon} color={color} size={size} />;
 };
 
 export default StatIcon;
