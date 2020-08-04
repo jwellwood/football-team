@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { getTotals } from 'functions/player';
 // Components
 import TargetsOverview from './TargetsOverview';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const TargetsOverviewLogic = ({ player }) => {
   const { appsTarget, goalsTarget, assistsTarget } = player;

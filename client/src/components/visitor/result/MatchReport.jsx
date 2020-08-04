@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const MatchReport = ({ result }) => {
   const { matchReport } = result;

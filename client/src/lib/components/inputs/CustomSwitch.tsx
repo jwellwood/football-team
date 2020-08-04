@@ -1,7 +1,7 @@
 import React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import CustomTypography from '../../../components/ui/text/CustomTypography';
+import CustomTypography from '../typography/CustomTypography';
 
 interface Props {
   name: string;

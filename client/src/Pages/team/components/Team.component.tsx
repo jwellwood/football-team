@@ -1,35 +1,43 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, ReactElement } from 'react';
 // Layout
 import Spinner from 'lib/components/loading/Spinner';
 import CustomTabs from 'lib/components/tabs/CustomTabs';
 import CustomIcon from 'lib/components/icons/CustomIcon';
+import { ITeamData } from 'shared/types';
 // Sections
-const TeamPhoto = lazy(() =>
-  import('components/visitor/team/team-photo/TeamPhoto')
-);
-const TrophiesLogic = lazy(() => import('./trophies/TrophiesLogic'));
-const HallOfFameLogic = lazy(() => import('./hall-of-fame/HallOfFameLogic'));
+const TeamPhoto = lazy(() => import('./TeamPhoto'));
+const TrophiesList = lazy(() => import('./TrophiesList'));
+const HallOfFame = lazy(() => import('../containers/HallOfFame.container'));
 const PreviousSeasonsLogic = lazy(() =>
-  import('./previous-seasons/PreviousSeasonsLogic')
+  import('../containers/PreviousSeasons.container')
 );
 
-const Team = ({ team }) => {
-  const tabs = [
+interface Props {
+  team: ITeamData;
+}
+
+interface ITeamTabs {
+  label: ReactElement;
+  component: ReactElement;
+}
+
+const Team: React.FC<Props> = ({ team }) => {
+  const tabs: ITeamTabs[] = [
     {
       label: <CustomIcon icon='user-friends' />,
       component: <TeamPhoto image={team.teamPhoto.url} />,
     },
     {
       label: <CustomIcon icon='trophy' />,
-      component: <TrophiesLogic team={team} />,
+      component: <TrophiesList team={team} />,
     },
     {
       label: <CustomIcon icon='monument' />,
-      component: <PreviousSeasonsLogic team={team} />,
+      component: <PreviousSeasonsLogic />,
     },
     {
       label: <CustomIcon icon='landmark' />,
-      component: <HallOfFameLogic team={team} />,
+      component: <HallOfFame team={team} />,
     },
   ];
 

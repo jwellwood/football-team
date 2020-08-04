@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import { getAllResults } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Components
-const ResultsTotalsLogic = lazy(() => import('./ResultsTotalsLogic'));
+const ResultsTotals = lazy(() =>
+  import('../../../Pages/results/ResultsTotals.container')
+);
 const ResultList = lazy(() => import('./ResultList'));
 
 const ResultsListLogic = () => {
@@ -22,7 +24,7 @@ const ResultsListLogic = () => {
 
   return (
     <>
-      <ResultsTotalsLogic results={results} />
+      <ResultsTotals results={results} />
       <ResultList results={results} />
     </>
   );

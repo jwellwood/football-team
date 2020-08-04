@@ -1,22 +1,40 @@
 import React from 'react';
-// MUI
 import Grid from '@material-ui/core/Grid';
-// Functions
 import { getPercentage } from 'functions';
 import { generateOrdinals } from 'shared/utils/generateOrdinals';
-// Assets
 import { theme } from 'shared/theme';
-// Components
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import ResultsTotals from 'components/visitor/results/ResultsTotals';
-import DonutGraph from 'components/ui/graphs/DonutGraph';
-import SectionTitle from 'components/ui/text/SectionTitle';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
+import ResultsTotals from 'Pages/results/ResultsTotals.component';
+import DonutGraph from 'components/ui/graphs/DonutGraph';
+import SectionTitle from 'lib/components/typography/SectionTitle';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 import AwardList from './AwardList';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import { IPreviousSeasonData } from 'shared/types';
 
-const PreviousSeasonContent = ({ season }) => {
-  const {
+interface Props {
+  season: IPreviousSeasonData;
+}
+
+interface IPreviousSeasonList {
+  title: string | React.ReactElement;
+  value: number;
+  divider?: boolean;
+}
+
+interface IDonutData {
+  labels: string[];
+  datasets: IDonutDataset[];
+}
+
+interface IDonutDataset {
+  data: Array<[number]>;
+  backgroundColor: string[];
+  borderColor: string;
+}
+
+const PreviousSeasonContent: React.FC<Props> = ({
+  season: {
     year,
     win,
     draw,
@@ -25,10 +43,11 @@ const PreviousSeasonContent = ({ season }) => {
     goalsAgainst,
     awards,
     finalPosition,
-  } = season;
+  },
+}) => {
   const { success, warning, primary, secondary } = theme.palette;
-  const played = win + draw + lose;
-  const data = [
+  const played: number = win + draw + lose;
+  const data: IPreviousSeasonList[] = [
     { title: 'Pl', value: played, divider: true },
     { title: 'W', value: win },
     { title: 'D', value: draw },
@@ -47,7 +66,7 @@ const PreviousSeasonContent = ({ season }) => {
     },
   ];
 
-  const donutData = {
+  const donutData: IDonutData = {
     labels: ['Win', 'Draw', 'Lose'],
 
     datasets: [

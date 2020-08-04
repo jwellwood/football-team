@@ -5,7 +5,7 @@ import Divider from '@material-ui/core/Divider';
 // Components
 import BackButton from '../../../components/ui/buttons/BackButton';
 import CenteredGrid from '../grids/CenteredGrid';
-import CustomTypography from '../../../components/ui/text/CustomTypography';
+import CustomTypography from './CustomTypography';
 
 export const useStyles = makeStyles((theme) => ({
   divider: {

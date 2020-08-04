@@ -5,7 +5,7 @@ import { visitor_routes as routes } from './paths';
 const NotFoundPage = lazy(() => import('Pages/not-found/pages/NotFound.page'));
 const HomePage = lazy(() => import('Pages/home/pages/Home.page'));
 const AboutPage = lazy(() => import('Pages/about/pages/About.page'));
-const TeamPage = lazy(() => import('Pages/visitor/TeamPage'));
+const TeamPage = lazy(() => import('Pages/team/pages/Team.page'));
 const SquadPage = lazy(() => import('Pages/visitor/SquadPage'));
 const PlayerPage = lazy(() => import('Pages/visitor/PlayerPage'));
 const ResultsPage = lazy(() => import('Pages/visitor/ResultsPage'));

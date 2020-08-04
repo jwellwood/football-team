@@ -6,7 +6,7 @@ import { IUserData } from 'shared/types';
 import SectionContainer from 'shared/layout/SectionContainer';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 interface Props {
   user: IUserData;

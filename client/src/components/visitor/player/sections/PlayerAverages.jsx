@@ -3,7 +3,7 @@ import React from 'react';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
 import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const PlayerAverages = ({ tables }) => {
   return (

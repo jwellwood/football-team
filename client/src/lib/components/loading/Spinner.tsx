@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import CustomTypography from '../../../components/ui/text/CustomTypography';
+import CustomTypography from '../typography/CustomTypography';
 
 const useStyles = makeStyles((theme) => ({
   root: {

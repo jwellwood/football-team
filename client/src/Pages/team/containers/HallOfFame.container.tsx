@@ -1,9 +1,9 @@
 import React from 'react';
 // Internal
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import HallOfFame from './HallOfFame';
-
-const HallOfFameLogic = ({ team }) => {
+import HallOfFame from '../components/HallOfFame.component';
+// TODO move this to stateful instead of props
+export default ({ team }) => {
   const hallOfFame = team.hallOfFame;
 
   return (
@@ -14,5 +14,3 @@ const HallOfFameLogic = ({ team }) => {
     </ListWrapper>
   );
 };
-
-export default HallOfFameLogic;

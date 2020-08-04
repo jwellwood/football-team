@@ -1,14 +1,14 @@
 import React from 'react';
 import { visitor_routes } from 'router';
 import PageHeader from 'lib/components/typography/PageHeader';
-import TeamLogic from 'components/visitor/team/TeamLogic';
+import Team from '../containers/Team.container';
 
-const TeamPage = () => {
+const TeamPage: React.FC = () => {
   return (
-    <div>
+    <>
       <PageHeader title='The Team' backTo={visitor_routes.HOME} />
-      <TeamLogic />
-    </div>
+      <Team />
+    </>
   );
 };
 

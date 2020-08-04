@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 // Components
 import StatIcon from 'components/ui/icons/StatIcon';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const mapIcons = (num, type) => {
   const statArr = [];

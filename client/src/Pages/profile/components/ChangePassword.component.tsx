@@ -10,7 +10,7 @@ import TextInput from 'lib/components/inputs/TextInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import { IChangePasswordForm } from '../containers/ChangePassword.container';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 
 interface Props {
   onSubmitCurrent: () => void;

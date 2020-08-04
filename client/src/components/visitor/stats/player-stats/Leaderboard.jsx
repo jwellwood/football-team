@@ -10,7 +10,7 @@ import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import StatIcon from 'components/ui/icons/StatIcon';
 import LeaderboardList from './LeaderboardList';
 import PresentationModal from 'components/ui/modals/PresentationModal';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const Leaderboard = ({ data }) => {
   return (

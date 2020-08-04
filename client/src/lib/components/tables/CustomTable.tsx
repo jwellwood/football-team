@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
@@ -18,7 +18,19 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomTable = ({ headCells, rows, footer, noLines }) => {
+interface Props {
+  headCells: ITableHeadCell[];
+  rows: ReactElement[];
+  footer?: React.ReactNode;
+  noLines?: boolean;
+}
+
+export interface ITableHeadCell {
+  id: string;
+  label: string;
+}
+
+const CustomTable: React.FC<Props> = ({ headCells, rows, footer, noLines }) => {
   const classes = useStyles();
   // *********************************************************************
   // ************* FOR FUTURE IMPLEMENTATION OF SORTING FUNCTIONALITY ********
@@ -67,7 +79,7 @@ const CustomTable = ({ headCells, rows, footer, noLines }) => {
       <Table size='small' className={noLines ? classes.root : null}>
         <TableHead className={classes.header}>
           <TableRow>
-            {headCells.map((headCell, i) => (
+            {headCells.map((headCell: ITableHeadCell, i) => (
               <TableCell
                 key={headCell.id}
                 align='center'

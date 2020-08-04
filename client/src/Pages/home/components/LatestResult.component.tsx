@@ -1,6 +1,6 @@
 import React from 'react';
 import { parseDate, getResultsColors } from 'shared/utils';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 interface Props {
   date: string;

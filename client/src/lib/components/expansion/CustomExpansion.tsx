@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import StatIcon from '../../../components/ui/icons/StatIcon';
-import CustomTypography from '../../../components/ui/text/CustomTypography';
+import CustomTypography from '../typography/CustomTypography';
 
 const useStyles = makeStyles((theme) => ({
   root: {

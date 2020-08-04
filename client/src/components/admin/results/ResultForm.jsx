@@ -23,7 +23,7 @@ import Spinner from 'lib/components/loading/Spinner';
 import AdminMatchPlayersList from '../matchPlayers/AdminMatchPlayersList';
 import DeleteResultLogic from './DeleteResultLogic';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 import { addResultHelper } from 'shared/data/adminHelperText';
 const DateInput = lazy(() => import('components/ui/inputs/DateInput'));
 

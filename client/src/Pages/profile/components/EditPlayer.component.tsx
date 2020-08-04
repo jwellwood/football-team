@@ -14,7 +14,7 @@ import TextInput from 'lib/components/inputs/TextInput';
 import SelectInput from 'lib/components/inputs/SelectInput';
 import { IEditPlayerForm } from '../containers/EditPlayer.container';
 import EditImageButton from 'components/ui/buttons/EditImageButton';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 
 interface Props {
   onChange: (e) => void;

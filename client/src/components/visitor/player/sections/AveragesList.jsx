@@ -5,7 +5,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const AveragesList = ({ listData }) => {
   return (

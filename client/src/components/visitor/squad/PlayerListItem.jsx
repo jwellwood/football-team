@@ -13,7 +13,7 @@ import GridItem from 'lib/components/grids/GridItem';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import StatBoxes from './StatBoxes';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const PlayerListItem = ({ player }) => {
   const { _id, name, squadNumber, position, isCaptain, image } = player;

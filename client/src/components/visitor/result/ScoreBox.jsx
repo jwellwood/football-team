@@ -15,7 +15,7 @@ import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import { theme } from 'shared/theme';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const ScoreBox = ({ result }) => {
   const {

@@ -4,7 +4,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { theme } from 'shared/theme';
 // Components
-import CustomTable from 'components/ui/tables/CustomTable';
+import CustomTable from 'lib/components/tables/CustomTable';
 import DeleteMatchPlayerLogic from './DeleteMatchPlayerLogic';
 
 const AdminMatchPlayersList = ({ players, result }) => {

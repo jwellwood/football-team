@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-// MUI
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import CustomTypography from './CustomTypography';
 
-const SectionTitle = ({ title, link, text }) => {
+interface Props {
+  title: string;
+  link?: string;
+  text?: string;
+}
+
+const SectionTitle: React.FC<Props> = ({ title, link, text = 'edit' }) => {
   const editLink = link ? (
     <Button
       variant='contained'
@@ -14,7 +19,7 @@ const SectionTitle = ({ title, link, text }) => {
       disabled={link === 'locked'}
       color='primary'
     >
-      {text || 'edit'}
+      {text}
     </Button>
   ) : null;
 

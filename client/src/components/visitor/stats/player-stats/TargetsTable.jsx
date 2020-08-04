@@ -5,7 +5,7 @@ import CustomExpansion from 'lib/components/expansion/CustomExpansion';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
 import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 import SectionBackground from 'shared/layout/SectionBackground';
 
 const TargetsTable = ({ targets }) => {

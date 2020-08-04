@@ -1,9 +1,14 @@
 import React from 'react';
-import ModalContent from '../ModalContent';
+import ModalContent, { IModalData } from '../shared/ModalContent';
+import { ITrophyData } from 'shared/types';
 
-const Trophy = ({ trophy }) => {
+interface Props {
+  trophy: ITrophyData;
+}
+
+const Trophy: React.FC<Props> = ({ trophy }) => {
   const { name, year, isWinner, opponent, description } = trophy;
-  const data = {
+  const data: IModalData = {
     title: name,
     highlight: year,
     icon: isWinner ? 'trophy' : 'medal',

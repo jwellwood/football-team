@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
 import SectionBackground from './SectionBackground';
-import SectionTitle from 'components/ui/text/SectionTitle';
+import SectionTitle from 'lib/components/typography/SectionTitle';
 
 interface Props {
   title: string;

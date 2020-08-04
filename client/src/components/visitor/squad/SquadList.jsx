@@ -8,7 +8,7 @@ import Spinner from 'lib/components/loading/Spinner';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 // Lazy
 const PlayerListItem = lazy(() => import('./PlayerListItem'));
 

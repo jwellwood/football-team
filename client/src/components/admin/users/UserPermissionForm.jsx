@@ -22,8 +22,8 @@ import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
 import CustomButton from 'lib/components/buttons/CustomButton';
-import FormHelper from 'components/ui/text/FormHelper';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import FormHelper from 'lib/components/typography/FormHelper';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const UserPermissionForm = ({
   user,
