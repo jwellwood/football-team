@@ -1,4 +1,2 @@
-import { parseDate } from './date';
-import { getResultsColors } from './colors';
-
-export { parseDate, getResultsColors };
+export { parseDate } from './date';
+export { getResultsColors, getBackground } from './colors';

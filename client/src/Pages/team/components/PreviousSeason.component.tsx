@@ -5,8 +5,8 @@ import { generateOrdinals } from 'shared/utils/generateOrdinals';
 import { theme } from 'shared/theme';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import ResultsTotals from 'Pages/results/ResultsTotals.component';
-import DonutGraph from 'components/ui/graphs/DonutGraph';
+import ResultsTotals from 'Pages/results/components/ResultsTotals.component';
+import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';
 import SectionTitle from 'lib/components/typography/SectionTitle';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 import AwardList from './AwardList';
@@ -20,17 +20,6 @@ interface IPreviousSeasonList {
   title: string | React.ReactElement;
   value: number;
   divider?: boolean;
-}
-
-interface IDonutData {
-  labels: string[];
-  datasets: IDonutDataset[];
-}
-
-interface IDonutDataset {
-  data: Array<[number]>;
-  backgroundColor: string[];
-  borderColor: string;
 }
 
 const PreviousSeasonContent: React.FC<Props> = ({
@@ -94,7 +83,7 @@ const PreviousSeasonContent: React.FC<Props> = ({
         </CustomAvatar>
       </Grid>
       <SectionTitle title='Results' />
-      <ResultsTotals data={data} />
+      <ResultsTotals resultsTotals={data} />
       <DonutGraph data={donutData} />
       <SectionTitle title='Awards' />
       <AwardList awards={awards} />

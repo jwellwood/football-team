@@ -1,12 +1,27 @@
-import React, { useMemo } from 'react';
-// Functions
+import React, { useMemo, ReactElement } from 'react';
 import { getResultVersus } from 'functions/results';
-// Components
+import { IResult } from 'shared/types';
+import { IResultVersusData, IVersusGame } from '../shared/types';
 import VersusWrapper from 'components/ui/lists/VersusWrapper';
 import PlaceholderText from 'components/ui/text/Placeholder';
 
-const ResultVersus = ({ results }) => {
-  const stats = useMemo(() => getResultVersus(results), [results]);
+interface Props {
+  results: IResult[];
+}
+
+interface IVersusStatsData {
+  mostScoredDetails: IVersusGame[];
+  mostGoals: number;
+  biggestWinDiff: number;
+  biggestWinResults: IVersusGame[];
+  cleanSheets: number;
+  cleanSheetsDetails: IVersusGame[];
+}
+
+const ResultVersus: React.FC<Props> = ({ results }) => {
+  const stats: IVersusStatsData = useMemo(() => getResultVersus(results), [
+    results,
+  ]);
   const {
     mostGoals,
     mostScoredDetails,
@@ -15,7 +30,8 @@ const ResultVersus = ({ results }) => {
     biggestWinDiff,
     biggestWinResults,
   } = stats;
-  const data = [
+
+  const data: IResultVersusData[] = [
     {
       title: 'Most Scored',
       icon: 'goal',
@@ -36,7 +52,7 @@ const ResultVersus = ({ results }) => {
     },
   ];
 
-  const dataToDisplay = results.length ? (
+  const dataToDisplay: ReactElement = results.length ? (
     <VersusWrapper data={data} />
   ) : (
     <PlaceholderText />

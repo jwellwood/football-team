@@ -1,14 +1,14 @@
 import React from 'react';
 import PageHeader from 'lib/components/typography/PageHeader';
 import { visitor_routes } from 'router';
-import ResultStatsLogic from 'components/visitor/stats/result-stats/ResultStatsLogic';
+import ResultStats from '../containers/ResultStats.container';
 
-const ResultsStatsPage = () => {
+const ResultsStatsPage: React.FC = () => {
   return (
-    <div>
+    <>
       <PageHeader title='Results Stats' backTo={visitor_routes.HOME} />
-      <ResultStatsLogic />
-    </div>
+      <ResultStats />
+    </>
   );
 };
 
