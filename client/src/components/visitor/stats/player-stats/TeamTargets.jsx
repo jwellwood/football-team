@@ -13,7 +13,7 @@ import SectionContainer from 'shared/layout/SectionContainer';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import StatIcon from 'components/ui/icons/StatIcon';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const TeamTargets = ({ teamTargets, teamTotals, percentages }) => {
   const { warning, success } = theme.palette;

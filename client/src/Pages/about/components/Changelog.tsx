@@ -9,7 +9,7 @@ import PresentationModal from 'components/ui/modals/PresentationModal';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomButton from 'lib/components/buttons/CustomButton';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const Changelog: React.FC = () => {
   const button = <CustomButton>View Changelog</CustomButton>;

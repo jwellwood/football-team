@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 // MUI
 import TableRow from '@material-ui/core/TableRow';
 // Components
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
-import CustomTable from 'components/ui/tables/CustomTable';
-import CustomTableCell from 'components/ui/tables/CustomTableCell';
-import Trophy from './Trophy';
+import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
+import CustomTableCell from 'lib/components/tables/CustomTableCell';
+import Trophy from './Trophy.component';
 import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
+import { ITrophyData } from 'shared/types';
 
-const Trophies = ({ trophies }) => {
-  const headCells = [
+interface Props {
+  trophies: ITrophyData[];
+}
+
+const Trophies: React.FC<Props> = ({ trophies }) => {
+  const headCells: ITableHeadCell[] = [
     { id: 'year', label: '' },
     { id: 'winner', label: 'Winner' },
     { id: 'runner-up', label: 'Runner-up' },
   ];
-  const rows = trophies.map((trophy) => {
+  const rows = trophies.map((trophy: ITrophyData) => {
     const { _id, isWinner, year } = trophy;
     const iconModal = (
       <PresentationModal
@@ -32,7 +37,7 @@ const Trophies = ({ trophies }) => {
       </PresentationModal>
     );
 
-    const cellData = [
+    const cellData: ReactElement[] = [
       <CustomTypography main bold>
         {year}
       </CustomTypography>,

@@ -6,7 +6,7 @@ import TableRow from '@material-ui/core/TableRow';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import Spinner from 'lib/components/loading/Spinner';
 import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
-import CustomTable from 'components/ui/tables/CustomTable';
+import CustomTable from 'lib/components/tables/CustomTable';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 
 const AdminUsersTable = ({ users, loading }) => {

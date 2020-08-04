@@ -11,7 +11,7 @@ import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import DeleteAccount from '../containers/DeleteAccount.container';
 import { IEditAccountForm } from '../containers/EditAccount.container';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 
 interface Props {
   onChange: (e) => void;

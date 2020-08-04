@@ -8,7 +8,7 @@ import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CustomButton from 'lib/components/buttons/CustomButton';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 import CircularImage from 'components/ui/images/CircularImage';
 
 interface Props {

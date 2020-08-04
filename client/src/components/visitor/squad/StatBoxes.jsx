@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 // Components
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 export const useStyles = makeStyles((theme) => ({
   number_avatar: {

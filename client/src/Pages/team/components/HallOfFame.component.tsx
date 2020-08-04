@@ -7,13 +7,19 @@ import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import PresentationModal from 'components/ui/modals/PresentationModal';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import ModalContent from '../ModalContent';
+import ModalContent, { IModalData } from '../shared/ModalContent';
 import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
+import { IHallOfFameData } from 'shared/types';
 
-const HallOfFame = ({ hallOfFamer }) => {
-  const { name, yearInducted, yearJoined, yearLeft, description } = hallOfFamer;
-  const data = {
+interface Props {
+  hallOfFamer: IHallOfFameData;
+}
+
+const HallOfFame: React.FC<Props> = ({
+  hallOfFamer: { name, yearInducted, yearJoined, yearLeft, description },
+}) => {
+  const data: IModalData = {
     title: 'Hall of Fame',
     highlight: yearInducted,
     icon: 'landmark',

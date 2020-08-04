@@ -5,13 +5,14 @@ import { getPreviousSeasons } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Components
 import ListWrapper from 'components/ui/lists/ListWrapper';
-import PreviousSeason from './PreviousSeason';
+import PreviousSeason from '../components/PreviousSeason';
 import Spinner from 'lib/components/loading/Spinner';
 import SectionContainer from 'shared/layout/SectionContainer';
+import { IPreviousSeasonData } from 'shared/types';
 
-const PreviousSeasonsLogic = () => {
-  const [seasons, setSeasons] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default () => {
+  const [seasons, setSeasons] = useState<IPreviousSeasonData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPreviousSeasons()).then((res) => {
@@ -28,7 +29,7 @@ const PreviousSeasonsLogic = () => {
   return !loading ? (
     <SectionContainer title='Previous Seasons'>
       <ListWrapper>
-        {seasons.map((season, i) => {
+        {seasons.map((season: IPreviousSeasonData, i) => {
           return <PreviousSeason key={i} season={season} />;
         })}
       </ListWrapper>
@@ -37,5 +38,3 @@ const PreviousSeasonsLogic = () => {
     <Spinner isButton />
   );
 };
-
-export default PreviousSeasonsLogic;

@@ -10,7 +10,7 @@ import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import SectionBackground from 'shared/layout/SectionBackground';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const AdminResultsList = ({ results }) => {
   return (

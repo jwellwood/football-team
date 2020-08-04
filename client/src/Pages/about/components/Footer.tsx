@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@material-ui/core/Link';
 import { footer_data } from 'shared/data';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 import Changelog from './Changelog';
 
 const { name, date, version, link } = footer_data;

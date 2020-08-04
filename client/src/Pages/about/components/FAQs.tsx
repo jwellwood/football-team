@@ -2,7 +2,7 @@ import React from 'react';
 import { faqs } from 'shared/data/faqs';
 import CustomContainer from 'shared/layout/CustomContainer';
 import CustomExpansion from 'lib/components/expansion/CustomExpansion';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const FAQs: React.FC = () => {
   return (

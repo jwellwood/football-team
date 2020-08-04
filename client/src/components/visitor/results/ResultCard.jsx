@@ -11,7 +11,7 @@ import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import SectionBackground from 'shared/layout/SectionBackground';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const ResultCard = ({ result }) => {
   let background = null;

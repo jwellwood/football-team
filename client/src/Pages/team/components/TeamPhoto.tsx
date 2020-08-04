@@ -23,9 +23,13 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TeamPhoto = ({ image }) => {
+interface Props {
+  image: string;
+}
+
+const TeamPhoto: React.FC<Props> = ({ image }) => {
   const classes = useStyles();
-  const imageSrc = image && image !== 'default' ? image : defaultImage;
+  const imageSrc: string = image && image !== 'default' ? image : defaultImage;
   return (
     <SectionContainer title='Team Photo'>
       <Container maxWidth='sm'>

@@ -3,7 +3,7 @@ import React from 'react';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ProfileList from 'components/ui/lists/ProfileList';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 import { IUserData } from 'shared/types';
 
 interface Props {

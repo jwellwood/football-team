@@ -1,25 +1,27 @@
 import React, { Fragment } from 'react';
-// MUITODO
 import Grid from '@material-ui/core/Grid';
-// Routes
 import { visitor_routes } from 'router';
-// Components
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import TopSectionContainer from 'shared/layout/TopSectionContainer';
 import SectionBackground from 'shared/layout/SectionBackground';
+import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
-import FormIndicator from './FormIndicator';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
+import FormIndicator from '../../components/visitor/results/FormIndicator';
 
-const ResultsTotals = ({ data, showStatsButton }) => {
+interface Props {
+  data: any; // TODO
+  showStatsButton?: boolean;
+}
+
+const ResultsTotals: React.FC<Props> = ({ data, showStatsButton }) => {
   return (
     <SectionBackground placeholder>
       <TopSectionContainer>
         <CenteredGrid dir='row' just='space-evenly'>
           {data.map((item, i) => (
             <Fragment key={item.title + i}>
-              <Grid align='center'>
+              <Grid style={{ textAlign: 'center' }}>
                 <CustomTypography size='xs' div>
                   {item.title}
                 </CustomTypography>
@@ -31,6 +33,7 @@ const ResultsTotals = ({ data, showStatsButton }) => {
                   )}
                 </CustomTypography>
               </Grid>
+
               {item.divider ? <CustomDivider isVertical /> : null}
             </Fragment>
           ))}

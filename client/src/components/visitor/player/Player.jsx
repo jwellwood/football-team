@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 // Layout
 import Spinner from 'lib/components/loading/Spinner';
-import SectionTitle from 'components/ui/text/SectionTitle';
+import SectionTitle from 'lib/components/typography/SectionTitle';
 import PlayerResultsLogic from './sections/PlayerResultsLogic';
 import CustomTabs from 'lib/components/tabs/CustomTabs';
 import CustomIcon from 'lib/components/icons/CustomIcon';

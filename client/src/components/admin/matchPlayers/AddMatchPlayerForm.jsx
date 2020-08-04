@@ -14,8 +14,8 @@ import Spinner from 'lib/components/loading/Spinner';
 import FormContainer from 'shared/layout/FormContainer';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import FormHelper from 'components/ui/text/FormHelper';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import FormHelper from 'lib/components/typography/FormHelper';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const AddMatchPlayerForm = ({
   loading,

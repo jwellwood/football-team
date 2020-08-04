@@ -5,7 +5,7 @@ import SectionBackground from 'shared/layout/SectionBackground';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import GridItem from 'lib/components/grids/GridItem';
-import CustomTypography from 'components/ui/text/CustomTypography';
+import CustomTypography from 'lib/components/typography/CustomTypography';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import { home_links } from '../utils';
 

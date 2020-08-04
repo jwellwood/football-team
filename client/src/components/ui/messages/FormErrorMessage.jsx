@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomTypography from '../text/CustomTypography';
+import CustomTypography from '../../../lib/components/typography/CustomTypography';
 
 const FormErrorMessage = ({ type, error }) => {
   let message = null;

@@ -5,7 +5,7 @@ import { passwordFormHelper } from 'shared/data/formHelperText';
 import Spinner from 'lib/components/loading/Spinner';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 
 interface Props {
   loading: boolean;

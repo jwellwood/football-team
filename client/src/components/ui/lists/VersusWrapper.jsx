@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 // Internal
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomExpansion from 'lib/components/expansion/CustomExpansion';
-import CustomTypography from '../text/CustomTypography';
+import CustomTypography from '../../../lib/components/typography/CustomTypography';
 
 const VersusWrapper = ({ data }) => {
   return data.map((item, i) => (

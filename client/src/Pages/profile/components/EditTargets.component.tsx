@@ -7,7 +7,7 @@ import Spinner from 'lib/components/loading/Spinner';
 import NumberInput from 'lib/components/inputs/NumberInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import FormHelper from 'components/ui/text/FormHelper';
+import FormHelper from 'lib/components/typography/FormHelper';
 import { IEditTargetForm } from '../containers/EditTargets.container';
 
 interface Props {

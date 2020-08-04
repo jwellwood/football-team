@@ -1,15 +1,26 @@
 import React from 'react';
-// MUITODO
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 import ListItemText from '@material-ui/core/ListItemText';
-// Internal
+import { ITeamData } from 'shared/types';
 import ListWrapper from 'components/ui/lists/ListWrapper';
 import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 
-const TeamInfo = ({ team }) => {
-  const { location, league, position } = team;
-  const details = [
+interface Props {
+  team: ITeamData;
+}
+
+interface ITeamInfoData {
+  title: string;
+  icon: IconName;
+  value: string;
+}
+
+const TeamInfo: React.FC<Props> = ({
+  team: { location, league, position },
+}) => {
+  const data: ITeamInfoData[] = [
     { title: 'Location', icon: 'globe-americas', value: location },
     { title: 'League', icon: 'bookmark', value: league },
     {
@@ -20,7 +31,7 @@ const TeamInfo = ({ team }) => {
   ];
   return (
     <ListWrapper>
-      {details.map((item) => (
+      {data.map((item) => (
         <ListItemWrapper key={item.title}>
           <CustomAvatar background='secondary' isList>
             <CustomIcon icon={item.icon} size='xs' />

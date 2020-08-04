@@ -3,7 +3,7 @@ import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 // Components
-import CustomTable from 'components/ui/tables/CustomTable';
+import CustomTable from 'lib/components/tables/CustomTable';
 import DeleteAwardLogic from './DeleteAwardLogic';
 
 const AdminAwardsList = ({ season }) => {

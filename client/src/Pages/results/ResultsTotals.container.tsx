@@ -3,9 +3,11 @@ import React, { useMemo } from 'react';
 import { getResultTotals } from 'functions/results';
 // Components
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import ResultsTotals from './ResultsTotals';
+import ResultsTotals from './ResultsTotals.component';
 
-const ResultsTotalsLogic = ({ results }) => {
+//TODO make this a stateful component
+
+export default ({ results }) => {
   const resultTotals = useMemo(() => getResultTotals(results), [results]);
   const goalDifference = resultTotals.goals - resultTotals.conceded;
 
@@ -40,5 +42,3 @@ const ResultsTotalsLogic = ({ results }) => {
 
   return <ResultsTotals data={data} showStatsButton={true} />;
 };
-
-export default ResultsTotalsLogic;
