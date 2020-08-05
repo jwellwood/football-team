@@ -4,8 +4,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { IResult } from 'shared/types';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
@@ -15,15 +15,15 @@ interface Props {
 
 interface IResultAverageData {
   text: string;
-  value: string;
+  value: number | string;
   noDivider?: boolean;
 }
 
 interface IResultAverageStats {
-  avgConceded: string;
+  avgConceded: number;
   avgDiff: string;
-  avgGoals: string;
-  pointsPerGame: string;
+  avgGoals: number;
+  pointsPerGame: number;
 }
 
 const ResultAverages: React.FC<Props> = ({ results }) => {

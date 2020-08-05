@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
 import ProfileList from 'components/ui/lists/ProfileList';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
 import CustomTypography from 'lib/components/typography/CustomTypography';

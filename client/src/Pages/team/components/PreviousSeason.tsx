@@ -2,9 +2,9 @@ import React from 'react';
 // MUITODO
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import PresentationModal from 'components/ui/modals/PresentationModal';
+import PresentationModal from 'lib/components/modals/PresentationModal';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import PreviousSeasonContent from './PreviousSeason.component';
 import CustomTypography from 'lib/components/typography/CustomTypography';

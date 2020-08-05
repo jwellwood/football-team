@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import teamPhoto from 'shared/assets/images/badge.jpg';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CircularImage from 'components/ui/images/CircularImage';
+import CircularImage from 'lib/components/images/CircularImage';
 
 const useStyles = makeStyles((theme) => ({
   imageContainer: {

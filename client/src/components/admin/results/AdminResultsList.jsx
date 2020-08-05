@@ -6,8 +6,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Functions
 import { parseDate } from 'shared/utils/date';
 // Components
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import SectionBackground from 'shared/layout/SectionBackground';
 import CustomTypography from 'lib/components/typography/CustomTypography';

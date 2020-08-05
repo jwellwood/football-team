@@ -10,7 +10,7 @@ import profile_default from 'shared/assets/images/default_profile.png';
 // Components
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import StatBoxes from './StatBoxes';
 import CustomTypography from 'lib/components/typography/CustomTypography';

@@ -1,6 +1,6 @@
 import React from 'react';
 // Internal
-import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
 import AdminLink from './AdminLink';
 import { admin_routes } from 'router';
 

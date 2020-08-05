@@ -6,8 +6,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Routes
 import { admin_routes } from 'router';
 // Internal
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import DeleteTrophyLogic from './DeleteTrophyLogic';
 import SectionContainer from 'shared/layout/SectionContainer';
 

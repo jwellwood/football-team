@@ -5,9 +5,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { version, changeLog } from 'shared/data';
 // Components
 import SectionContainer from 'shared/layout/SectionContainer';
-import PresentationModal from 'components/ui/modals/PresentationModal';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import PresentationModal from 'lib/components/modals/PresentationModal';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomButton from 'lib/components/buttons/CustomButton';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 

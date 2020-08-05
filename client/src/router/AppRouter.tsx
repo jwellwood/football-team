@@ -5,7 +5,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
 // UI
-import Message from 'components/ui/messages/Message';
+import AlertMessage from 'shared/messages/AlertMessage';
 import Spinner from 'lib/components/loading/Spinner';
 import Navigation from 'lib/navigation/Navigation.container';
 import PageContainer from 'shared/layout/PageContainer';
@@ -36,7 +36,7 @@ export default () => {
         <Navigation />
         <Routes />
       </React.Suspense>
-      <Message />
+      <AlertMessage />
     </PageContainer>
   );
 };

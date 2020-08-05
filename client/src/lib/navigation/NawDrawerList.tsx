@@ -1,11 +1,12 @@
 import React from 'react';
 import { visitor_routes, admin_routes, reg_routes, user_routes } from 'router';
 import { IUserData } from 'shared/types';
-import ListItemLink from 'components/ui/link/ListLinkItem';
+import ListItemLink from 'lib/navigation/ListLinkItem';
 import LogoutButton from 'components/ui/buttons/LogoutButton';
 import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
-import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 interface Props {
   onSelect: () => void;
@@ -17,7 +18,7 @@ interface Props {
 
 interface ILinkList {
   text: string;
-  icon: string;
+  icon: IconName;
   link: string;
   guard?: boolean;
 }

@@ -4,8 +4,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 // Routes
 import { admin_routes } from 'router';
 // Components
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import SectionContainer from 'shared/layout/SectionContainer';
 
 const AdminPrevSeasonsList = ({ seasons }) => {

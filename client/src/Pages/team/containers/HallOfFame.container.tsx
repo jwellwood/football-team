@@ -1,6 +1,6 @@
 import React from 'react';
 // Internal
-import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
 import HallOfFame from '../components/HallOfFame.component';
 // TODO move this to stateful instead of props
 export default ({ team }) => {

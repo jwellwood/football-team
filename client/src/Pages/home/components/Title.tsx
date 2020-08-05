@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import badge from 'shared/assets/images/badge.jpg';
 import { ITeamData } from 'shared/types';
-import CircularImage from 'components/ui/images/CircularImage';
+import CircularImage from 'lib/components/images/CircularImage';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
 
