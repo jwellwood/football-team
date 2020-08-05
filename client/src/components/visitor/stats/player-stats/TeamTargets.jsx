@@ -8,10 +8,10 @@ import {
 // assets
 import { theme } from 'shared/theme';
 // Components
-import HorizontalBarGraph from 'components/ui/graphs/HorizontalBarGraph';
+import HorizontalBarGraph from 'lib/components/graphs/HorizontalBarGraph';
 import SectionContainer from 'shared/layout/SectionContainer';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import StatIcon from 'lib/components/icons/StatIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import { line_graph_options } from 'lib/chartjs';
 
 interface Props {
   data: ILineGraphData;
@@ -20,19 +21,7 @@ interface ILineGraphDataset {
 }
 
 const LineGraph: React.FC<Props> = ({ data }) => {
-  return (
-    <Line
-      data={data}
-      height={250}
-      options={{
-        plugins: {
-          datalabels: {
-            display: false,
-          },
-        },
-      }}
-    />
-  );
+  return <Line data={data} height={250} options={line_graph_options} />;
 };
 
 export default LineGraph;

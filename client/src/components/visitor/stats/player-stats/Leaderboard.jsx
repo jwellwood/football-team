@@ -5,11 +5,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Internal
 import SectionBackground from 'shared/layout/SectionBackground';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import StatIcon from 'lib/components/icons/StatIcon';
 import LeaderboardList from './LeaderboardList';
-import PresentationModal from 'components/ui/modals/PresentationModal';
+import PresentationModal from 'lib/components/modals/PresentationModal';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
 const Leaderboard = ({ data }) => {

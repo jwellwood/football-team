@@ -3,7 +3,7 @@ import { getResultVersus } from 'functions/results';
 import { IResult } from 'shared/types';
 import { IResultVersusData, IVersusGame } from '../shared/types';
 import VersusWrapper from 'components/ui/lists/VersusWrapper';
-import PlaceholderText from 'components/ui/text/Placeholder';
+import PlaceholderText from 'lib/components/typography/Placeholder';
 
 interface Props {
   results: IResult[];

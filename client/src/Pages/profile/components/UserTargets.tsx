@@ -3,7 +3,7 @@ import React from 'react';
 import { user_routes } from 'router';
 // Components
 import ProfileList from 'components/ui/lists/ProfileList';
-import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
 import SectionContainer from 'shared/layout/SectionContainer';
 import { IUserData } from 'shared/types';
 

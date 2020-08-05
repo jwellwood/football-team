@@ -3,7 +3,7 @@ import DateFnsUtils from '@date-io/date-fns';
 // MUI
 import { DatePicker } from '@material-ui/pickers';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import FormErrorMessage from 'components/ui/messages/FormErrorMessage';
+import FormErrorMessage from 'shared/messages/FormErrorMessage';
 
 const DateInput = ({
   inputName,

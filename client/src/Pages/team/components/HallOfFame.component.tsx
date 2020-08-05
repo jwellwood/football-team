@@ -3,9 +3,9 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import PresentationModal from 'components/ui/modals/PresentationModal';
+import PresentationModal from 'lib/components/modals/PresentationModal';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import ModalContent, { IModalData } from '../shared/ModalContent';
 import SectionContainer from 'shared/layout/SectionContainer';

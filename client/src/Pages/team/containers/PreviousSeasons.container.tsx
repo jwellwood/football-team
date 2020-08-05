@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getPreviousSeasons } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Components
-import ListWrapper from 'components/ui/lists/ListWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
 import PreviousSeason from '../components/PreviousSeason';
 import Spinner from 'lib/components/loading/Spinner';
 import SectionContainer from 'shared/layout/SectionContainer';

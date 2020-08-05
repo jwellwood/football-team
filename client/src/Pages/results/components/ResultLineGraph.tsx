@@ -3,7 +3,7 @@ import React from 'react';
 import { theme } from 'shared/theme';
 // Internal
 import LineGraph, { ILineGraphData } from 'lib/components/graphs/LineGraph';
-import PlaceholderText from 'components/ui/text/Placeholder';
+import PlaceholderText from 'lib/components/typography/Placeholder';
 import SectionContainer from 'shared/layout/SectionContainer';
 import { IResult } from 'shared/types';
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import ListItemText from '@material-ui/core/ListItemText';
 import { ITeamData } from 'shared/types';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 

@@ -4,8 +4,8 @@ import { user_routes } from 'router';
 import { parseDate } from 'shared/utils';
 import { IUserData } from 'shared/types';
 import SectionContainer from 'shared/layout/SectionContainer';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
 interface Props {

@@ -4,7 +4,7 @@ import { theme } from 'shared/theme';
 import { IResult } from 'shared/types';
 import SectionContainer from 'shared/layout/SectionContainer';
 import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';
-import PlaceholderText from 'components/ui/text/Placeholder';
+import PlaceholderText from 'lib/components/typography/Placeholder';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
 import ResultAverages from './ResultAverages';

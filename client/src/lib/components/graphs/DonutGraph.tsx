@@ -1,5 +1,6 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import { donut_graph_options } from 'lib/chartjs';
 
 export interface IDonutData {
   labels: string[];
@@ -17,26 +18,7 @@ interface Props {
 }
 
 const DonutGraph: React.FC<Props> = ({ data }) => {
-  return (
-    <Doughnut
-      data={data}
-      options={{
-        plugins: {
-          datalabels: {
-            color: '#fff',
-            backgroundColor: 'rgba(0,0,0,0.4)',
-            align: 'center',
-            anchor: 'center',
-            borderRadius: 5,
-          },
-        },
-        legend: {
-          display: true,
-          position: 'right',
-        },
-      }}
-    />
-  );
+  return <Doughnut data={data} options={donut_graph_options} />;
 };
 
 export default DonutGraph;

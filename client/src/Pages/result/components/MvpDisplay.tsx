@@ -4,8 +4,8 @@ import SectionBackground from 'shared/layout/SectionBackground';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import StatIcon from 'lib/components/icons/StatIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 
 interface Props {
   mvp: IMvpData[];
@@ -19,7 +19,6 @@ interface IMvpData {
 }
 
 const MvpDisplay: React.FC<Props> = ({ mvp }) => {
-  console.log(mvp);
   return mvp.length ? (
     <SectionBackground>
       <ListWrapper>

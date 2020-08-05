@@ -4,7 +4,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 // Internal
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from '../../../lib/components/icons/CustomIcon';
 import CustomTypography from '../../../lib/components/typography/CustomTypography';
 

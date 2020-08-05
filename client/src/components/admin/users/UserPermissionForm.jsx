@@ -17,8 +17,8 @@ import SubmitButton from 'lib/components/buttons/SubmitButton';
 // Components
 import Spinner from 'lib/components/loading/Spinner';
 import FormContainer from 'shared/layout/FormContainer';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomDivider from 'lib/components/dividers/CustomDivider';
 import CustomButton from 'lib/components/buttons/CustomButton';

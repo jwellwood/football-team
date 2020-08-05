@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { topPlayerStats } from 'functions/player';
 // Components
 import Leaderboard from './Leaderboard';
-import PlaceholderText from 'components/ui/text/Placeholder';
+import PlaceholderText from 'lib/components/typography/Placeholder';
 
 const LeaderboardLogic = ({ players, results }) => {
   const goals = useMemo(() => topPlayerStats(players, 'goals', 'total'), [

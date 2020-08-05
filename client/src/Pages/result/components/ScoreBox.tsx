@@ -11,8 +11,8 @@ import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
 import CustomTypography from 'lib/components/typography/CustomTypography';
-import ListWrapper from 'components/ui/lists/ListWrapper';
-import ListItemWrapper from 'components/ui/lists/ListItemWrapper';
+import ListWrapper from 'lib/components/lists/ListWrapper';
+import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 
 interface Props {
   result: IResult;

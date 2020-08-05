@@ -4,7 +4,9 @@ import { getAllResults } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { IResult } from 'shared/types';
 // Components
-const ResultsTotals = lazy(() => import('../components/ResultsTotalsTable'));
+const ResultsTotalsTable = lazy(() =>
+  import('../components/ResultsTotalsTable')
+);
 const ResultList = lazy(() => import('../components/ResultList'));
 
 export default () => {
@@ -23,7 +25,7 @@ export default () => {
 
   return (
     <>
-      <ResultsTotals results={results} />
+      <ResultsTotalsTable results={results} />
       <ResultList results={results} />
     </>
   );

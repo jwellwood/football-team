@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import TableRow from '@material-ui/core/TableRow';
 // Components
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import PresentationModal from 'components/ui/modals/PresentationModal';
+import PresentationModal from 'lib/components/modals/PresentationModal';
 import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
 import CustomTableCell from 'lib/components/tables/CustomTableCell';
 import Trophy from './Trophy.component';

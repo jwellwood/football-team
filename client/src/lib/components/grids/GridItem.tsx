@@ -8,6 +8,7 @@ interface Props {
   sm?: GridSize;
   md?: GridSize;
   lg?: GridSize;
+  xl?: GridSize;
 }
 const useStyles = makeStyles((theme) => ({
   item: {
@@ -24,10 +25,11 @@ const GridItem: React.FC<Props> = ({
   sm = 6,
   md = 6,
   lg = 6,
+  xl = 6,
 }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={xs} sm={sm} md={md} lg={lg} className={classes.item}>
+    <Grid item xs={xs} sm={sm} md={md} lg={lg} xl={xl} className={classes.item}>
       {children}
     </Grid>
   );

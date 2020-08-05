@@ -9,7 +9,7 @@ import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CustomButton from 'lib/components/buttons/CustomButton';
 import FormHelper from 'lib/components/typography/FormHelper';
-import CircularImage from 'components/ui/images/CircularImage';
+import CircularImage from 'lib/components/images/CircularImage';
 
 interface Props {
   onSubmit: () => void;
