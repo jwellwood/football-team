@@ -1,4 +1,5 @@
 export interface IPlayer {
+  _id: string;
   name: string;
   squadNumber: number;
   position: string;
@@ -9,6 +10,21 @@ export interface IPlayer {
   goalsTarget: number;
   assistsTarget: number;
   matchesPlayed: IPlayerMatches[];
+  isCaptain?: boolean;
+}
+
+export interface IPlayerStats {
+  apps: number;
+  assists: number;
+  conceded: number;
+  goals: number;
+  mvps: number;
+  ownGoals: number;
+  pensMissed: number;
+  pensScored: number;
+  redCards: number;
+  winPercentage: string;
+  yellowCards: number;
 }
 
 export interface IPlayerMatches {

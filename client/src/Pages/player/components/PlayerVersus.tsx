@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { getVersusStats } from 'functions/player';
 import PlaceholderText from 'lib/components/typography/Placeholder';
-import VersusWrapper from 'components/ui/lists/VersusWrapper';
+import VersusWrapper from 'lib/components/wrappers/VersusWrapper';
 import { IPlayer } from 'shared/types';
 import { IVersusGame } from 'Pages/results/shared/types';
 

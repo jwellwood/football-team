@@ -3,7 +3,7 @@ import React from 'react';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 // Internal
-import DeleteModal from 'components/ui/modals/DeleteModal';
+import DeleteModal from 'lib/components/modals/DeleteModal';
 
 const DeleteHOF = ({ loading, onDeleteHOF }) => {
   return (

@@ -6,14 +6,14 @@ const NotFoundPage = lazy(() => import('Pages/not-found/pages/NotFound.page'));
 const HomePage = lazy(() => import('Pages/home/pages/Home.page'));
 const AboutPage = lazy(() => import('Pages/about/pages/About.page'));
 const TeamPage = lazy(() => import('Pages/team/pages/Team.page'));
-const SquadPage = lazy(() => import('Pages/squad/Squad.page'));
+const SquadPage = lazy(() => import('Pages/squad/pages/Squad.page'));
 const PlayerPage = lazy(() => import('Pages/player/pages/Player.page'));
 const ResultsPage = lazy(() => import('Pages/results/pages/Results.page'));
 const ResultPage = lazy(() => import('Pages/result/pages/Result.page'));
 const ResultsStatsPage = lazy(() =>
   import('Pages/results/pages/ResultsStats.page')
 );
-const SquadStatsPage = lazy(() => import('Pages/squad/SquadStats.page'));
+const SquadStatsPage = lazy(() => import('Pages/squad/pages/SquadStats.page'));
 
 export const visitorRoutes: IRoute[] = [
   { path: routes.HOME, component: HomePage },

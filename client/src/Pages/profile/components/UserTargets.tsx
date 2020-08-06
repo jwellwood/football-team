@@ -2,7 +2,7 @@ import React from 'react';
 // Routes
 import { user_routes } from 'router';
 // Components
-import ProfileList from 'components/ui/lists/ProfileList';
+import ProfileList from 'lib/components/wrappers/ProfileList';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import SectionContainer from 'shared/layout/SectionContainer';
 import { IUserData } from 'shared/types';
