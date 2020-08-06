@@ -25,7 +25,7 @@ import DeleteResultLogic from './DeleteResultLogic';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import FormHelper from 'lib/components/typography/FormHelper';
 import { addResultHelper } from 'shared/data/adminHelperText';
-const DateInput = lazy(() => import('components/ui/inputs/DateInput'));
+const DateInput = lazy(() => import('lib/components/inputs/DateInput'));
 
 const ResultForm = ({
   input,

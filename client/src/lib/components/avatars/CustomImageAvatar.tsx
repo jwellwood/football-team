@@ -18,6 +18,7 @@ interface Props {
   bordered?: boolean;
   shadow?: string;
   isList?: boolean;
+  alt?: string;
 }
 
 const CustomImageAvatar: React.FC<Props> = ({

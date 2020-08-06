@@ -1,8 +1,14 @@
 import React from 'react';
-//MUI
 import Button from '@material-ui/core/Button';
-import { useStyles } from '../../../components/ui/buttons/styles'; // Styles
 import Spinner from '../loading/Spinner';
+import { makeStyles } from '@material-ui/core/styles';
+
+export const useStyles = makeStyles((theme) => ({
+  button: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+  },
+}));
 
 interface Props {
   children?: React.ReactNode;

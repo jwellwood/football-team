@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
@@ -31,11 +31,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  title?: string;
+  title?: string | ReactElement;
   value?: number | string;
   icon?: string;
   children: React.ReactNode;
-  valueAsComponent?: React.FC;
+  valueAsComponent?: ReactElement;
 }
 
 const CustomExpansion: React.FC<Props> = ({
@@ -47,7 +47,7 @@ const CustomExpansion: React.FC<Props> = ({
 }) => {
   const classes = useStyles();
   return (
-    <Accordion key={title} className={classes.root} elevation={0}>
+    <Accordion key={title.toString()} className={classes.root} elevation={0}>
       <SectionBackground>
         <AccordionSummary className={classes.summary}>
           <CenteredGrid dir='row' just='space-between'>

@@ -2,8 +2,8 @@ import React from 'react';
 import { IUserData } from 'shared/types';
 import TextInput from 'lib/components/inputs/TextInput';
 import { IDeleteForm } from '../containers/DeleteAccount.container';
-import DeleteModal from 'components/ui/modals/DeleteModal';
-import CustomModalText from 'components/ui/modals/CustomModalText';
+import DeleteModal from 'lib/components/modals/DeleteModal';
+import CustomModalText from 'lib/components/modals/CustomModalText';
 
 interface Props {
   user: IUserData;

@@ -4,7 +4,7 @@ import { IPlayer } from 'shared/types';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import GridItem from 'lib/components/grids/GridItem';
 import CircularImage from 'lib/components/images/CircularImage';
-import ProfileList from 'components/ui/lists/ProfileList';
+import ProfileList from 'lib/components/wrappers/ProfileList';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 

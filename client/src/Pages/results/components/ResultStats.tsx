@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, ReactElement } from 'react';
 import { IResult } from 'shared/types';
-import ToggleSwitch from 'components/ui/buttons/ToggleSwitch';
+import ToggleSwitch from 'lib/components/inputs/ToggleSwitch';
 import Spinner from 'lib/components/loading/Spinner';
 import CustomTabs from 'lib/components/tabs/CustomTabs';
 import CustomIcon from 'lib/components/icons/CustomIcon';

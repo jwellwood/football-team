@@ -2,7 +2,7 @@ import React, { useMemo, ReactElement } from 'react';
 import { getResultVersus } from 'functions/results';
 import { IResult } from 'shared/types';
 import { IResultVersusData, IVersusGame } from '../shared/types';
-import VersusWrapper from 'components/ui/lists/VersusWrapper';
+import VersusWrapper from 'lib/components/wrappers/VersusWrapper';
 import PlaceholderText from 'lib/components/typography/Placeholder';
 
 interface Props {

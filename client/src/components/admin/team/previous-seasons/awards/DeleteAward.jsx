@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
-import DeleteModal from 'components/ui/modals/DeleteModal';
-import CustomModalText from 'components/ui/modals/CustomModalText';
+import DeleteModal from 'lib/components/modals/DeleteModal';
+import CustomModalText from 'lib/components/modals/CustomModalText';
 
 const DeleteAward = ({ loading, onDeleteAward }) => {
   return (
