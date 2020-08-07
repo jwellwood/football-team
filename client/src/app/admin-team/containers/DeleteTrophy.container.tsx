@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// Functions
 import { getTeam, deleteTrophy } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'shared/utils/form-controls';
-// Routes
 import { admin_routes } from 'router';
-// Components
-import DeleteTrophy from './DeleteTrophy';
+import { ITrophy, ITeam } from 'shared/types';
+import DeleteTrophy from '../components/DeleteTrophy.component';
 
-const DeleteTrophyLogic = ({ trophy }) => {
+interface Props {
+  trophy: ITrophy;
+}
+
+export default ({ trophy }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const team = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state) => state.team.teamData);
   // State
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onDeleteTrophy = () =>
     onFormSubmit(
@@ -29,5 +31,3 @@ const DeleteTrophyLogic = ({ trophy }) => {
 
   return <DeleteTrophy loading={loading} onDeleteTrophy={onDeleteTrophy} />;
 };
-
-export default DeleteTrophyLogic;

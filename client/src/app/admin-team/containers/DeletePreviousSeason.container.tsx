@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-// Routes
 import { admin_routes } from 'router';
-// Functions
 import { deletePreviousSeason } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'shared/utils/form-controls';
-// Components
-import DeletePrevSeason from './DeletePrevSeason';
+import { IPreviousSeason } from 'shared/types';
+import DeletePrevSeason from '../components/DeletePreviousSeason.component';
 
-const DeletePrevSeasonLogic = ({ season }) => {
+interface Props {
+  season: IPreviousSeason;
+}
+
+export default ({ season }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onDeleteSeason = () =>
     onFormSubmit(
@@ -24,5 +26,3 @@ const DeletePrevSeasonLogic = ({ season }) => {
 
   return <DeletePrevSeason loading={loading} onDeleteSeason={onDeleteSeason} />;
 };
-
-export default DeletePrevSeasonLogic;

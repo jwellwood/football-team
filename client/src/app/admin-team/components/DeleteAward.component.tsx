@@ -1,9 +1,13 @@
 import React from 'react';
-// Components
 import DeleteModal from 'lib/components/modals/DeleteModal';
 import CustomModalText from 'lib/components/modals/CustomModalText';
 
-const DeleteAward = ({ loading, onDeleteAward }) => {
+interface Props {
+  loading: boolean;
+  onDeleteAward: () => void;
+}
+
+const DeleteAward: React.FC<Props> = ({ loading, onDeleteAward }) => {
   return (
     <DeleteModal title='Award' loading={loading} onDelete={onDeleteAward}>
       <CustomModalText>

@@ -1,19 +1,36 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// MUI
 import Grid from '@material-ui/core/Grid';
-// Funtions
 import { getLeaguePositionOptions } from 'shared/utils/select-options';
-// Internal
+import { ITeam } from 'shared/types';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
 import SelectInput from 'lib/components/inputs/SelectInput';
 import FormContainer from 'shared/layout/FormContainer';
 
-const EditTeamDetailsForm = ({ onSubmit, onChange, input, loading, team }) => {
+interface Props {
+  onSubmit: () => void;
+  onChange: (e) => void;
+  input: ITeam;
+  loading: boolean;
+}
+
+interface IEditTeamInput {
+  name: string;
+  label: string;
+  defaultValue: string;
+  errors?: any;
+}
+
+const EditTeamDetailsForm: React.FC<Props> = ({
+  onSubmit,
+  onChange,
+  input,
+  loading,
+}) => {
   const { register, handleSubmit, errors } = useForm();
 
-  const inputData = [
+  const inputData: IEditTeamInput[] = [
     {
       name: 'name',
       label: 'Name',

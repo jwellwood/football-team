@@ -8,10 +8,10 @@ import PresentationModal from 'lib/components/modals/PresentationModal';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import PreviousSeasonContent from './PreviousSeason.component';
 import CustomTypography from 'lib/components/typography/CustomTypography';
-import { IPreviousSeasonData } from 'shared/types';
+import { IPreviousSeason } from 'shared/types';
 
 interface Props {
-  season: IPreviousSeasonData;
+  season: IPreviousSeason;
 }
 
 const PreviousSeasons: React.FC<Props> = ({ season }) => {

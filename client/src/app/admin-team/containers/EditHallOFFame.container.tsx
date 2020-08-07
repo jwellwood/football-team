@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-// Functions
 import { useDispatch, useSelector } from 'react-redux';
 import { updateHallOfFamer, getTeam } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
-// Routes
 import { admin_routes } from 'router';
-// Internal
-import HOFForm from './HOFForm';
+import HOFForm from '../components/HallOfFameForm';
+import { ITeam, IHallOfFame } from 'shared/types';
 
-const EditHOFLogic = () => {
-  let history = useHistory();
+export default () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { id } = useParams();
-  const team = useSelector((state) => state.team.teamData);
-  const [hallOfFamer] = team.hallOfFame.filter((hof) => hof._id === id);
+  const team: ITeam = useSelector((state) => state.team.teamData);
+  const [hallOfFamer] = team.hallOfFame.filter(
+    (hof: IHallOfFame) => hof._id === id
+  );
   const { name, yearInducted, yearJoined, yearLeft, description } = hallOfFamer;
   const [input, setInput] = useState({
     name,
@@ -23,10 +23,11 @@ const EditHOFLogic = () => {
     yearLeft,
     description,
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const onChange = (e) => onInputChange(e, input, setInput);
-  const dataToSubmit = { ...input, team_id: team._id };
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onInputChange(e, input, setInput);
+  const dataToSubmit: IHallOfFame = { ...input, id: team._id };
   const onSubmit = () =>
     onFormSubmit(
       setLoading,
@@ -38,7 +39,7 @@ const EditHOFLogic = () => {
       }
     );
 
-  const disabled = name === input.name;
+  const disabled: boolean = name === input.name;
 
   return (
     <HOFForm
@@ -51,5 +52,3 @@ const EditHOFLogic = () => {
     />
   );
 };
-
-export default EditHOFLogic;

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-// Functions
 import { getPreviousSeasons } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-// Components
-import AdminPrevSeasonsList from './AdminPrevSeasonsList';
 import Spinner from 'lib/components/loading/Spinner';
+import AdminPrevSeasonsList from '../components/AdminPrevSeasonsList';
+import { IPreviousSeason } from 'shared/types';
 
-const AdminPrevListLogic = () => {
+export default () => {
   const dispatch = useDispatch();
-  const [seasons, setSeasons] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [seasons, setSeasons] = useState<IPreviousSeason[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     dispatch(getPreviousSeasons()).then((res) => {
@@ -26,5 +25,3 @@ const AdminPrevListLogic = () => {
 
   return !loading ? <AdminPrevSeasonsList seasons={seasons} /> : <Spinner />;
 };
-
-export default AdminPrevListLogic;

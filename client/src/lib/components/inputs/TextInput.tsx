@@ -6,7 +6,7 @@ import FormErrorMessage from 'shared/messages/FormErrorMessage';
 
 interface Props {
   inputName: string;
-  defaultValue?: string;
+  defaultValue?: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
   validators?; // TODO

@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from 'lib/components/typography/PageHeader';
 import { admin_routes } from 'router';
-import AddTeamToDB from '../AddTeamToDB';
+import AddTeamToDB from '../containers/AddTeamToDB.container';
 
 const AddTeamPage: React.FC = () => {
   return (

@@ -1,25 +1,32 @@
-export interface ITeamData {
+export interface ITeam {
+  _id?: string;
+  id?: string;
   name: string;
   location: string;
   position: string;
   league: string;
-  teamPhoto: {
+  teamPhoto?: {
     url: string;
     public_id: number;
   };
-  trophies: ITrophyData[];
+  trophies?: ITrophy[];
+  hallOfFame?: IHallOfFame[];
 }
 
-export interface ITrophyData {
-  _id: string;
+export interface ITrophy {
+  _id?: string;
+  id?: string; // Team ID
   name: string;
   year: string;
   isWinner: boolean;
   opponent?: string;
   description?: string;
+  isFinal?: boolean;
 }
 
-export interface IHallOfFameData {
+export interface IHallOfFame {
+  _id?: string;
+  id?: string; // Team ID
   name: string;
   yearInducted: number;
   yearJoined: number;
@@ -27,8 +34,9 @@ export interface IHallOfFameData {
   description?: string;
 }
 
-export interface IPreviousSeasonData {
-  team: string;
+export interface IPreviousSeason {
+  _id?: string;
+  team?: string;
   year: number;
   seasonName: string;
   win: number;
@@ -37,11 +45,11 @@ export interface IPreviousSeasonData {
   goalsFor: number;
   goalsAgainst: number;
   finalPosition: number;
-  awards: ISeasonAwardData[];
+  awards?: ISeasonAward[];
 }
 
-export interface ISeasonAwardData {
-  _id: string;
+export interface ISeasonAward {
+  _id?: string;
   awardName: string;
   awardWinner: string;
   awardValue: string;

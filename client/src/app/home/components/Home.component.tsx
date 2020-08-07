@@ -3,14 +3,14 @@ import React, { lazy, Suspense } from 'react';
 import CustomContainer from 'shared/layout/CustomContainer';
 import SectionBackground from 'shared/layout/SectionBackground';
 import Spinner from 'lib/components/loading/Spinner';
-import { ITeamData } from 'shared/types';
+import { ITeam } from 'shared/types';
 
 const HomeMenu = lazy(() => import('./HomeMenu'));
 const Title = lazy(() => import('./Title'));
 const LeagueInfo = lazy(() => import('./LeagueInfo'));
 
 interface Props {
-  team: ITeamData;
+  team: ITeam;
 }
 
 const Home: React.FC<Props> = ({ team }) => {

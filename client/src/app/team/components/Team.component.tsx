@@ -3,7 +3,7 @@ import React, { lazy, Suspense, ReactElement } from 'react';
 import Spinner from 'lib/components/loading/Spinner';
 import CustomTabs from 'lib/components/tabs/CustomTabs';
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import { ITeamData } from 'shared/types';
+import { ITeam } from 'shared/types';
 // Sections
 const TeamPhoto = lazy(() => import('./TeamPhoto'));
 const TrophiesList = lazy(() => import('./TrophiesList'));
@@ -13,7 +13,7 @@ const PreviousSeasonsLogic = lazy(() =>
 );
 
 interface Props {
-  team: ITeamData;
+  team: ITeam;
 }
 
 interface ITeamTabs {

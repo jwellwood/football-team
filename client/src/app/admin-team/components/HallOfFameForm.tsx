@@ -1,20 +1,43 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-//MUI
-import Grid from '@material-ui/core/Grid';
-// Components
+import Grid, { GridSize } from '@material-ui/core/Grid';
 import FormContainer from 'shared/layout/FormContainer';
+import { yearOptions } from 'shared/utils/select-options';
+import { IHallOfFame } from 'shared/types';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
-import DeleteHOFLogic from './DeleteHOFLogic';
 import SelectInput from 'lib/components/inputs/SelectInput';
-import { yearOptions } from 'shared/utils/select-options';
+import DeleteHallOfFame from '../containers/DeleteHallOfFame.container';
 
-const HOFForm = ({ onSubmit, onChange, input, loading, hof, disabled }) => {
+interface Props {
+  onSubmit: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  input?: any; // TODO
+  loading: boolean;
+  hof?: IHallOfFame;
+  disabled?: boolean;
+}
+
+interface IHallOfFameInput {
+  name: string;
+  label: string;
+  defaultValue: number;
+  errors?: any; // TODO,
+  size: GridSize;
+}
+
+const HOFForm: React.FC<Props> = ({
+  onSubmit,
+  onChange,
+  input,
+  loading,
+  hof,
+  disabled,
+}) => {
   const { register, handleSubmit, errors } = useForm();
-  const date = new Date().getFullYear();
-  const inputData = [
+  const date: number = new Date().getFullYear();
+  const inputData: IHallOfFameInput[] = [
     {
       name: 'yearInducted',
       label: 'Year Inducted',
@@ -38,7 +61,7 @@ const HOFForm = ({ onSubmit, onChange, input, loading, hof, disabled }) => {
     },
   ];
 
-  const submitText = hof ? 'Update' : 'Add';
+  const submitText: string = hof ? 'Update' : 'Add';
 
   return (
     <FormContainer>
@@ -58,7 +81,7 @@ const HOFForm = ({ onSubmit, onChange, input, loading, hof, disabled }) => {
               errors={errors.name || null}
             />
           </Grid>
-          {inputData.map((input) => (
+          {inputData.map((input: IHallOfFameInput) => (
             <Grid
               key={input.name}
               item
@@ -92,7 +115,7 @@ const HOFForm = ({ onSubmit, onChange, input, loading, hof, disabled }) => {
           {submitText}
         </SubmitButton>
 
-        {hof ? <DeleteHOFLogic hof={hof} /> : null}
+        {hof ? <DeleteHallOfFame hof={hof} /> : null}
       </form>
     </FormContainer>
   );

@@ -13,7 +13,22 @@ import FormContainer from 'shared/layout/FormContainer';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 
-const AddTrophyForm = ({ onSubmit, onChange, input, loading, onCheck }) => {
+interface Props {
+  onSubmit: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onCheck: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  input?: any; // TODO
+  loading: boolean;
+  disabled?: boolean;
+}
+
+const AddTrophyForm: React.FC<Props> = ({
+  onSubmit,
+  onChange,
+  input,
+  loading,
+  onCheck,
+}) => {
   const { register, handleSubmit, errors } = useForm();
 
   return (

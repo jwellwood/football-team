@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// Functions
 import { addPreviousAward } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
-// Routes
 import { admin_routes } from 'router';
-// Components
-import AddAwardForm from './AddAwardForm';
+import AddAwardForm from '../components/AwardForm';
+import { ISeasonAward } from 'shared/types';
+import { $initAwardFormState } from '../shared/state';
 
-const AddAwardLogic = () => {
+export default () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState({});
-  const [hasNumericValue, setHasNumericValue] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [input, setInput] = useState<ISeasonAward>({ ...$initAwardFormState });
+  const [hasNumericValue, setHasNumericValue] = useState<boolean>(false);
 
-  const onChange = (e) => onInputChange(e, input, setInput);
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onInputChange(e, input, setInput);
   const onCheck = () => setHasNumericValue(!hasNumericValue);
-  const dataToSubmit = { ...input };
+  const dataToSubmit: ISeasonAward = { ...input };
   const onSubmit = () =>
     onFormSubmit(
       setLoading,
@@ -40,5 +40,3 @@ const AddAwardLogic = () => {
     </div>
   );
 };
-
-export default AddAwardLogic;

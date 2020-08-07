@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// Functions
 import { getTeam, updateTeamDetails } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
-// Routes
 import { admin_routes } from 'router';
-// Internal
-import EditTeamDetailsForm from './EditTeamDetailsForm';
+import EditTeamDetailsForm from '../components/EditTeamDetailsForm';
+import { ITeam } from 'shared/types';
 
-const EditTeamDetailsLogic = () => {
+export default () => {
   let history = useHistory();
   const dispatch = useDispatch();
-  const team = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state) => state.team.teamData);
   const { name, location, position, league } = team;
-  const [input, setInput] = useState({ name, location, position, league });
-  const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState({
+    name,
+    location,
+    position,
+    league,
+  });
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const onChange = (e) => onInputChange(e, input, setInput);
-  const dataToSubmit = { ...input, id: team._id };
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onInputChange(e, input, setInput);
+  const dataToSubmit: ITeam = { ...input, id: team._id };
   const onSubmit = () =>
     onFormSubmit(
       setLoading,
@@ -36,9 +40,6 @@ const EditTeamDetailsLogic = () => {
       input={input}
       onSubmit={onSubmit}
       onChange={onChange}
-      team={team}
     />
   );
 };
-
-export default EditTeamDetailsLogic;

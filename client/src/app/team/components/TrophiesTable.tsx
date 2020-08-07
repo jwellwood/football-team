@@ -9,10 +9,10 @@ import CustomTableCell from 'lib/components/tables/CustomTableCell';
 import Trophy from './Trophy.component';
 import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'lib/components/typography/CustomTypography';
-import { ITrophyData } from 'shared/types';
+import { ITrophy } from 'shared/types';
 
 interface Props {
-  trophies: ITrophyData[];
+  trophies: ITrophy[];
 }
 
 const Trophies: React.FC<Props> = ({ trophies }) => {
@@ -21,7 +21,7 @@ const Trophies: React.FC<Props> = ({ trophies }) => {
     { id: 'winner', label: 'Winner' },
     { id: 'runner-up', label: 'Runner-up' },
   ];
-  const rows = trophies.map((trophy: ITrophyData) => {
+  const rows = trophies.map((trophy: ITrophy) => {
     const { _id, isWinner, year } = trophy;
     const iconModal = (
       <PresentationModal

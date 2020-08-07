@@ -2,14 +2,14 @@ import React from 'react';
 // Components
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import Trophies from './TrophiesTable';
-import { ITrophyData, ITeamData } from 'shared/types';
+import { ITrophy, ITeam } from 'shared/types';
 
 interface Props {
-  team: ITeamData;
+  team: ITeam;
 }
 
 const TrophiesList: React.FC<Props> = ({ team }) => {
-  const trophies: ITrophyData[] = team.trophies.sort((a, b) =>
+  const trophies: ITrophy[] = team.trophies.sort((a, b) =>
     a.year > b.year ? -1 : 1
   );
 

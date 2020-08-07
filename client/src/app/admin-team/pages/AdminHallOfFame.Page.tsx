@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from 'lib/components/typography/PageHeader';
 import { admin_routes } from 'router';
-import AdminHOFList from '../AdminHOFList';
+import AdminHOFList from '../components/AdminHOFList';
 
 const AdminHOFPage: React.FC = () => {
   return (

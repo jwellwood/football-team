@@ -10,10 +10,10 @@ import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';
 import SectionTitle from 'lib/components/typography/SectionTitle';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 import AwardList from './AwardList';
-import { IPreviousSeasonData } from 'shared/types';
+import { IPreviousSeason } from 'shared/types';
 
 interface Props {
-  season: IPreviousSeasonData;
+  season: IPreviousSeason;
 }
 
 interface IPreviousSeasonList {

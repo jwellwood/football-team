@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from 'lib/components/typography/PageHeader';
 import { admin_routes } from 'router';
-import AddAwardLogic from '../AddAwardLogic';
+import AddAward from '../containers/AddAward.container';
 
 const AddSeasonAwardPage: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const AddSeasonAwardPage: React.FC = () => {
         title='Add Award'
         backTo={admin_routes.ADMIN_PREVIOUS_SEASON}
       />
-      <AddAwardLogic />
+      <AddAward />
     </>
   );
 };

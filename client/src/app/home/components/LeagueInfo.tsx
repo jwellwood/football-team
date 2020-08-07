@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import { visitor_routes } from 'router';
-import { ITeamData } from 'shared/types';
+import { ITeam } from 'shared/types';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import Spinner from 'lib/components/loading/Spinner';
 
@@ -11,7 +11,7 @@ const CurrentPosition = lazy(() => import('./CurrentPosition'));
 const LatestResult = lazy(() => import('../containers/LatestResult.container'));
 
 interface Props {
-  team: ITeamData;
+  team: ITeam;
 }
 
 const LeagueInfo: React.FC<Props> = ({ team }) => {
