@@ -6,7 +6,8 @@ export interface IResult {
   opponentGoals: number;
   opponentName: string;
   isForfeit: boolean;
-  points: number;
+  isOwnForfeit?: boolean;
+  points?: number;
   isHome?: boolean;
   matchReport?: string;
   players?: IMatchPlayer[];
@@ -23,7 +24,6 @@ export interface IMatchPlayer {
   player_id: IMatchPlayerID;
   redCard: boolean;
   yellowCards: number;
-  _id: string;
 }
 
 export interface IMatchPlayerID {
@@ -37,5 +37,4 @@ export const IResultState = {
   opponentGoals: 0,
   opponentName: '',
   isForfeit: false,
-  points: 0,
 };

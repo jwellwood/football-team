@@ -6,8 +6,8 @@ import FormErrorMessage from 'shared/messages/FormErrorMessage';
 
 interface Props {
   inputName: string;
-  defaultValue?: string;
-  onChange: (date: Date) => void;
+  defaultValue?: string | Date;
+  onChange: (date: Date | string) => void; // TODO
   label: string;
   // TODO
   validators?: any;

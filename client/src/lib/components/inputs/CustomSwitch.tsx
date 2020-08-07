@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import CustomTypography from '../typography/CustomTypography';
@@ -7,7 +7,7 @@ interface Props {
   name: string;
   onCheck: (e: React.ChangeEvent<HTMLInputElement>) => void;
   defaultValue?: any;
-  label?: string;
+  label?: string | ReactElement;
   placement?: any;
   checked?: boolean;
   disabled?: boolean;
