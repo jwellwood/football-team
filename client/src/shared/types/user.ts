@@ -1,5 +1,6 @@
 export interface IUserData {
   id: string;
+  _id?: string;
   image: {
     url: string;
     public_id: number | string;
@@ -15,6 +16,8 @@ export interface IUserData {
   description: string;
   yearJoined: string;
   isCaptain: boolean;
+  isPlayer: boolean;
+  role: string;
   appsTarget: number;
   goalsTarget: number;
   assistsTarget: number;
