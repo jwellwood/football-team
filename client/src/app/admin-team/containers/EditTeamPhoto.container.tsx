@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// functions
 import {
   getTeam,
   updateTeamPhoto,
@@ -9,35 +8,35 @@ import {
   removeAdminImage,
 } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-// Routes
 import { admin_routes } from 'router';
-// Internal
-import EditTeamPhotoForm from './EditTeamPhotoForm';
+import { ITeam } from 'shared/types';
+import EditTeamPhotoForm from '../components/EditTeamPhotoForm';
 
-const EditTeamPhotoLogic = () => {
-  const team = useSelector((state) => state.team.teamData);
+export default () => {
+  const team: ITeam = useSelector((state) => state.team.teamData);
   const { teamPhoto } = team;
   const history = useHistory();
   const dispatch = useDispatch();
   // State
-  const [image, setImage] = useState(teamPhoto);
-  const [imageUrl, setImageUrl] = useState(teamPhoto.url);
-  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState<File>(null);
+  const [imageUrl, setImageUrl] = useState<string>(teamPhoto.url);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  // Funtions
-  const onFileSelect = (e) => {
-    const imageFile = e.target.files[0];
-    const reader = new FileReader();
+  // Functions
+  const onFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const imageFile: File = e.target.files[0];
+    const reader: FileReader = new FileReader();
     reader.readAsDataURL(imageFile);
     reader.onloadend = () => {
-      setImageUrl([reader.result]);
+      const newImageUrl: string = reader.result as string;
+      setImageUrl(newImageUrl);
     };
     setImage(imageFile);
   };
 
   const onDefaultSelect = () => {
     setImageUrl('default');
-    setImage({ url: 'default', public_id: 0 });
+    setImage(null);
   };
 
   const onUseDefault = () => {
@@ -58,7 +57,7 @@ const EditTeamPhotoLogic = () => {
     }
   };
 
-  const updatePhotoOnDatabase = (url, public_id) => {
+  const updatePhotoOnDatabase = (url: string, public_id: number) => {
     dispatch(updateTeamPhoto({ url, public_id, id: team._id })).then((res) => {
       const { success, message, type } = res.payload;
       if (success) {
@@ -73,9 +72,9 @@ const EditTeamPhotoLogic = () => {
     });
   };
 
-  const uploadImage = (image) => {
-    const file = image;
-    const data = new FormData();
+  const uploadImage = (image: File) => {
+    const file: File = image;
+    const data: FormData = new FormData();
     data.append('file', file);
     data.append('upload_preset', 'profile_images');
 
@@ -129,5 +128,3 @@ const EditTeamPhotoLogic = () => {
     />
   );
 };
-
-export default EditTeamPhotoLogic;

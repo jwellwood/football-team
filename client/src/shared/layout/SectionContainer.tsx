@@ -4,7 +4,7 @@ import SectionBackground from './SectionBackground';
 import SectionTitle from 'lib/components/typography/SectionTitle';
 
 interface Props {
-  title: string;
+  title?: string;
   link?: string;
   children: React.ReactNode;
   text?: string;

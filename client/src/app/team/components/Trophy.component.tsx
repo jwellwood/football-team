@@ -1,9 +1,9 @@
 import React from 'react';
 import ModalContent, { IModalData } from '../shared/ModalContent';
-import { ITrophyData } from 'shared/types';
+import { ITrophy } from 'shared/types';
 
 interface Props {
-  trophy: ITrophyData;
+  trophy: ITrophy;
 }
 
 const Trophy: React.FC<Props> = ({ trophy }) => {

@@ -1,24 +1,26 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-// MUI
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-// Routes
 import { admin_routes } from 'router';
-// Internal
+import SectionContainer from 'shared/layout/SectionContainer';
+import { ITrophy } from 'shared/types';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import DeleteTrophyLogic from './DeleteTrophyLogic';
-import SectionContainer from 'shared/layout/SectionContainer';
+import DeleteTrophy from '../containers/DeleteTrophy.container';
 
-const AdminTrophiesList = () => {
-  const trophies = useSelector((state) => state.team.teamData.trophies);
-  const displayTrophies = trophies.sort((a, b) => (a.year > b.year ? -1 : 1));
+const AdminTrophiesList: React.FC = () => {
+  const trophies: ITrophy[] = useSelector(
+    (state) => state.team.teamData.trophies
+  );
+  const displayTrophies: ITrophy[] = trophies.sort((a, b) =>
+    a.year > b.year ? -1 : 1
+  );
 
   return (
     <SectionContainer link={admin_routes.ADMIN_TROPHIES_ADD} text='Add'>
       <ListWrapper dense>
-        {displayTrophies.map((trophy) => {
+        {displayTrophies.map((trophy: ITrophy) => {
           const { name, year, opponent, isWinner, isFinal } = trophy;
           return (
             <ListItemWrapper key={name + year}>
@@ -27,7 +29,7 @@ const AdminTrophiesList = () => {
                 secondary={`${year}, ${isWinner ? 'Winner' : 'Runner-up'}`}
               />
               <ListItemSecondaryAction>
-                <DeleteTrophyLogic trophy={trophy} />
+                <DeleteTrophy trophy={trophy} />
               </ListItemSecondaryAction>
             </ListItemWrapper>
           );

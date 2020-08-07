@@ -1,23 +1,21 @@
 import React from 'react';
-// MUI
 import TextField from '@material-ui/core/TextField';
-// Internal
 import FormErrorMessage from 'shared/messages/FormErrorMessage';
 
 interface ISelectOptions {
   text: string;
-  value: string;
+  value: string | boolean;
   disabled?: boolean;
 }
 
 interface Props {
   inputName: string;
-  defaultValue?: string | boolean;
+  defaultValue?: string | boolean | number;
   onChange: (e) => void;
   label?: string;
   validators?: any; //TODO
   errors?: any; // TODO
-  options: ISelectOptions[];
+  options: any;
   data_id?: string;
 }
 

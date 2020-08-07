@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// Functions
 import { addHallOfFamer, getTeam } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
-// Routes
 import { admin_routes } from 'router';
-// Internal
-import HOFForm from './HOFForm';
+import HOFForm from '../components/HallOfFameForm';
+import { ITeam, IHallOfFame } from 'shared/types';
+import { $initHOFFormState } from '../shared/state';
 
-const AddHOFLogic = () => {
-  const team = useSelector((state) => state.team.teamData);
+export default () => {
+  const team: ITeam = useSelector((state) => state.team.teamData);
   let history = useHistory();
   const dispatch = useDispatch();
-  const [input, setInput] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState<IHallOfFame>({ ...$initHOFFormState });
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const onChange = (e) => onInputChange(e, input, setInput);
-  const dataToSubmit = { ...input, id: team._id };
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onInputChange(e, input, setInput);
+  const dataToSubmit: IHallOfFame = { ...input, id: team._id };
   const onSubmit = () =>
     onFormSubmit(
       setLoading,
@@ -38,5 +38,3 @@ const AddHOFLogic = () => {
     />
   );
 };
-
-export default AddHOFLogic;

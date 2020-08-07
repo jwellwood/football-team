@@ -1,8 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// MUI
 import Grid from '@material-ui/core/Grid';
-// Components
 import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import NumberInput from 'lib/components/inputs/NumberInput';
@@ -10,7 +8,21 @@ import SubmitButton from 'lib/components/buttons/SubmitButton';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import TextInput from 'lib/components/inputs/TextInput';
 
-const AddAwardForm = ({
+interface Props {
+  loading: boolean;
+  onSubmit: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onCheck: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  hasNumericValue: boolean;
+}
+
+interface IAwardInput {
+  name: string;
+  label: string;
+  errors?: any;
+}
+
+const AddAwardForm: React.FC<Props> = ({
   loading,
   onSubmit,
   onChange,
@@ -19,7 +31,7 @@ const AddAwardForm = ({
 }) => {
   const { register, handleSubmit, errors } = useForm();
 
-  const inputData = [
+  const inputData: IAwardInput[] = [
     { name: 'awardName', label: 'Name of Award', errors: errors.awardName },
     {
       name: 'awardWinner',
@@ -31,7 +43,7 @@ const AddAwardForm = ({
     <FormContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CenteredGrid dir='row'>
-          {inputData.map((input) => (
+          {inputData.map((input: IAwardInput) => (
             <Grid key={input.name} item xs={12} sm={6}>
               <TextInput
                 inputName={input.name}
@@ -49,6 +61,7 @@ const AddAwardForm = ({
           <Grid item xs={6}>
             {hasNumericValue ? (
               <NumberInput
+                defaultValue={0}
                 inputName='awardValue'
                 label='Numeric Value'
                 onChange={onChange}

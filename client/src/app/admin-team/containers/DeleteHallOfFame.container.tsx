@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// Functions
 import { getTeam, deleteHallOfFamer } from 'reduxStore/team/team_actions';
-// Routes
 import { admin_routes } from 'router';
-// Internal
-import DeleteHOF from './DeleteHOF';
+import { IHallOfFame, ITeam } from 'shared/types';
 import { onFormSubmit } from 'shared/utils/form-controls';
+import DeleteHOF from '../components/DeleteHallOfFame.component';
 
-const DeleteHOFLogic = ({ hof }) => {
+interface Props {
+  hof: IHallOfFame;
+}
+
+export default ({ hof }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const team = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state) => state.team.teamData);
   // State
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onDeleteHOF = () =>
     onFormSubmit(
@@ -29,5 +31,3 @@ const DeleteHOFLogic = ({ hof }) => {
 
   return <DeleteHOF loading={loading} onDeleteHOF={onDeleteHOF} />;
 };
-
-export default DeleteHOFLogic;

@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// Functions
 import {
   getPreviousSeasonById,
   updatePreviousSeason,
 } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
-// Routes
 import { admin_routes } from 'router';
-// Components
 import Spinner from 'lib/components/loading/Spinner';
-import PrevSeasonForm from './PrevSeasonForm';
+import PrevSeasonForm from '../components/PreviousSeasonForm';
+import { IPreviousSeason } from 'shared/types';
+import { $initPreviousSeasonFormState } from '../shared/state';
 
-const EditPrevSeasonLogic = () => {
+export default () => {
   let history = useHistory();
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [season, setSeason] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [input, setInput] = useState({});
+  const [season, setSeason] = useState<IPreviousSeason>({
+    ...$initPreviousSeasonFormState,
+  });
+  const [loading, setLoading] = useState<boolean>(true);
+  const [input, setInput] = useState<IPreviousSeason>({
+    ...$initPreviousSeasonFormState,
+  });
 
   useEffect(() => {
     dispatch(getPreviousSeasonById(id)).then((res) => {
@@ -51,8 +54,9 @@ const EditPrevSeasonLogic = () => {
     }
   }, [season]);
 
-  const onChange = (e) => onInputChange(e, input, setInput);
-  const dataToSubmit = { ...input };
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onInputChange(e, input, setInput);
+  const dataToSubmit: IPreviousSeason = { ...input };
   const onSubmit = () =>
     onFormSubmit(
       setLoading,
@@ -73,5 +77,3 @@ const EditPrevSeasonLogic = () => {
     <Spinner />
   );
 };
-
-export default EditPrevSeasonLogic;

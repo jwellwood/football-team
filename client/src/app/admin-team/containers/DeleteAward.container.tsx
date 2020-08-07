@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-// Routes
 import { admin_routes } from 'router';
-// Functions
 import { deletePreviousAward } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'shared/utils/form-controls';
-// Components
-import DeleteAward from './DeleteAward';
+import DeleteAward from '../components/DeleteAward.component';
 
-const DeleteAwardLogic = ({ awardId }) => {
+interface Props {
+  awardId: string;
+}
+
+export default ({ awardId }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onDeleteAward = () =>
     onFormSubmit(
@@ -25,5 +26,3 @@ const DeleteAwardLogic = ({ awardId }) => {
 
   return <DeleteAward loading={loading} onDeleteAward={onDeleteAward} />;
 };
-
-export default DeleteAwardLogic;

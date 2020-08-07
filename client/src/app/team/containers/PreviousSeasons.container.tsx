@@ -8,10 +8,10 @@ import ListWrapper from 'lib/components/lists/ListWrapper';
 import PreviousSeason from '../components/PreviousSeason';
 import Spinner from 'lib/components/loading/Spinner';
 import SectionContainer from 'shared/layout/SectionContainer';
-import { IPreviousSeasonData } from 'shared/types';
+import { IPreviousSeason } from 'shared/types';
 
 export default () => {
-  const [seasons, setSeasons] = useState<IPreviousSeasonData[]>([]);
+  const [seasons, setSeasons] = useState<IPreviousSeason[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,7 +29,7 @@ export default () => {
   return !loading ? (
     <SectionContainer title='Previous Seasons'>
       <ListWrapper>
-        {seasons.map((season: IPreviousSeasonData, i) => {
+        {seasons.map((season: IPreviousSeason, i) => {
           return <PreviousSeason key={i} season={season} />;
         })}
       </ListWrapper>

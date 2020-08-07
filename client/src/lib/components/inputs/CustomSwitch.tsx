@@ -4,7 +4,7 @@ import Switch from '@material-ui/core/Switch';
 import CustomTypography from '../typography/CustomTypography';
 
 interface Props {
-  name: string;
+  name?: string;
   onCheck: (e: React.ChangeEvent<HTMLInputElement>) => void;
   defaultValue?: any;
   label?: string | ReactElement;

@@ -8,12 +8,11 @@ import CustomIcon from 'lib/components/icons/CustomIcon';
 import PresentationModal from 'lib/components/modals/PresentationModal';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import ModalContent, { IModalData } from '../shared/ModalContent';
-import SectionContainer from 'shared/layout/SectionContainer';
 import CustomTypography from 'lib/components/typography/CustomTypography';
-import { IHallOfFameData } from 'shared/types';
+import { IHallOfFame } from 'shared/types';
 
 interface Props {
-  hallOfFamer: IHallOfFameData;
+  hallOfFamer: IHallOfFame;
 }
 
 const HallOfFame: React.FC<Props> = ({
@@ -30,29 +29,27 @@ const HallOfFame: React.FC<Props> = ({
   };
 
   return (
-    <SectionContainer title='Hall of Fame'>
-      <PresentationModal
-        buttonElement={
-          <ListItemWrapper button>
-            <CustomAvatar isList background='transparent' shadow='error'>
-              <CustomIcon icon='landmark' size='sm' color='primary' />
-            </CustomAvatar>
-            <ListItemText
-              primary={
-                <CustomTypography main bold>
-                  {name}
-                </CustomTypography>
-              }
-            />
-            <ListItemSecondaryAction>
-              <CustomTypography>{yearInducted}</CustomTypography>
-            </ListItemSecondaryAction>
-          </ListItemWrapper>
-        }
-      >
-        <ModalContent data={data} />
-      </PresentationModal>
-    </SectionContainer>
+    <PresentationModal
+      buttonElement={
+        <ListItemWrapper button>
+          <CustomAvatar isList background='transparent' shadow='error'>
+            <CustomIcon icon='landmark' size='sm' color='primary' />
+          </CustomAvatar>
+          <ListItemText
+            primary={
+              <CustomTypography main bold>
+                {name}
+              </CustomTypography>
+            }
+          />
+          <ListItemSecondaryAction>
+            <CustomTypography>{yearInducted}</CustomTypography>
+          </ListItemSecondaryAction>
+        </ListItemWrapper>
+      }
+    >
+      <ModalContent data={data} />
+    </PresentationModal>
   );
 };
 

@@ -12,7 +12,7 @@ export interface IMixedValueOptions {
   value: string | boolean;
 }
 
-export const matchTypeOptions: Array<IStringValueOptions> = [
+export const matchTypeOptions: IStringValueOptions[] = [
   { text: '', value: '' },
   { text: 'League', value: 'League' },
   { text: 'Cup', value: 'Cup' },
@@ -20,7 +20,7 @@ export const matchTypeOptions: Array<IStringValueOptions> = [
   { text: 'Friendly', value: 'Friendly' },
 ];
 
-export const positionOptions: Array<IStringValueOptions> = [
+export const positionOptions: IStringValueOptions[] = [
   { value: '', text: '' },
   { value: 'GK', text: 'Goalkeeper' },
   { value: 'DF', text: 'Defender' },
@@ -28,29 +28,27 @@ export const positionOptions: Array<IStringValueOptions> = [
   { value: 'FW', text: 'Forward' },
 ];
 
-export const getLeaguePositionOptions: Function = (): Array<
-  INumberValueOptions
-> => {
-  let options: Array<INumberValueOptions> = [{ text: 0, value: 0 }];
+export const getLeaguePositionOptions: Function = (): INumberValueOptions[] => {
+  let options: INumberValueOptions[] = [{ text: 0, value: 0 }];
   for (let i = 1; i < 21; i++) {
     options.push({ text: i, value: i });
   }
   return options;
 };
 
-export const homeOrAwayOptions: Array<IMixedValueOptions> = [
+export const homeOrAwayOptions: IMixedValueOptions[] = [
   { value: '', text: '' },
   { value: true, text: 'Home' },
   { value: false, text: 'Away' },
 ];
 
-export const forfeitOptions: Array<IMixedValueOptions> = [
+export const forfeitOptions: IMixedValueOptions[] = [
   { value: '', text: '' },
   { value: true, text: 'Forfeit by team' },
   { value: false, text: 'Forfeit by opponent' },
 ];
 
-export const trophyWinnerOptions: Array<IMixedValueOptions> = [
+export const trophyWinnerOptions: IMixedValueOptions[] = [
   { value: '', text: '' },
   { value: true, text: 'Winner' },
   { value: false, text: 'Runner-up' },
@@ -75,7 +73,7 @@ export const playerOptions: Function = (result, players) => {
 export const yearOptions: Function = (
   minYear: number = 2005,
   maxYear: number = 2050
-): Array<INumberValueOptions> => {
+): INumberValueOptions[] => {
   const years = [];
   for (let i: number = minYear; i <= maxYear; i++) {
     years.push(i);

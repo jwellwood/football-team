@@ -1,25 +1,46 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-//MUI
 import Grid from '@material-ui/core/Grid';
-// Routes
 import { admin_routes } from 'router';
-// Components
+import { yearOptions } from 'shared/utils/select-options';
+import { IPreviousSeason } from 'shared/types';
+import FormContainer from 'shared/layout/FormContainer';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
 import NumberInput from 'lib/components/inputs/NumberInput';
-import FormContainer from 'shared/layout/FormContainer';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import AdminAwardsList from './AdminAwardsList';
-import DeletePrevSeasonLogic from './DeletePrevSeasLogic';
+import DeletePrevSeason from '../containers/DeletePreviousSeason.container';
 import SelectInput from 'lib/components/inputs/SelectInput';
-import { yearOptions } from 'shared/utils/select-options';
 
-const PrevSeasonForm = ({ onSubmit, onChange, loading, input, season }) => {
+interface Props {
+  onSubmit: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  loading: boolean;
+  input?: any;
+  season?: IPreviousSeason;
+}
+
+interface IPreviousSeasonInput {
+  name: string;
+  label: string;
+  defaultValue: number;
+  min?: number;
+  max?: number;
+  errors?: any;
+}
+
+const PrevSeasonForm: React.FC<Props> = ({
+  onSubmit,
+  onChange,
+  loading,
+  input,
+  season,
+}) => {
   const { register, handleSubmit, errors } = useForm();
-  const date = new Date().getFullYear();
-  const inputs = [
+  const date: number = new Date().getFullYear();
+  const inputs: IPreviousSeasonInput[] = [
     {
       name: 'finalPosition',
       label: 'Final Position',
@@ -70,11 +91,11 @@ const PrevSeasonForm = ({ onSubmit, onChange, loading, input, season }) => {
         Add a new award
       </CustomLinkButton>
       <AdminAwardsList season={season} />
-      <DeletePrevSeasonLogic season={season} />
+      <DeletePrevSeason season={season} />
     </>
   ) : null;
 
-  const submitText = season ? 'Update season' : 'Add season';
+  const submitText: string = season ? 'Update season' : 'Add season';
 
   return (
     <FormContainer>
