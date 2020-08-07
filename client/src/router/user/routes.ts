@@ -2,21 +2,19 @@ import { lazy } from 'react';
 import { user_routes as routes } from './paths';
 import { IRoute } from 'shared/types';
 
-const ProfilePage = lazy(() => import('Pages/profile/pages/Profile.page'));
+const ProfilePage = lazy(() => import('app/profile/pages/Profile.page'));
 const EditAccountPage = lazy(() =>
-  import('Pages/profile/pages/EditAccount.page')
+  import('app/profile/pages/EditAccount.page')
 );
-const EditPlayerPage = lazy(() =>
-  import('Pages/profile/pages/EditPlayer.page')
-);
+const EditPlayerPage = lazy(() => import('app/profile/pages/EditPlayer.page'));
 const EditTargetsPage = lazy(() =>
-  import('Pages/profile/pages/EditTargets.page')
+  import('app/profile/pages/EditTargets.page')
 );
 const EditUserImagePage = lazy(() =>
-  import('Pages/profile/pages/EditUserImage.page')
+  import('app/profile/pages/EditUserImage.page')
 );
 const ChangePasswordPage = lazy(() =>
-  import('Pages/profile/pages/ChangePassword.page')
+  import('app/profile/pages/ChangePassword.page')
 );
 
 export const userRoutes: IRoute[] = [

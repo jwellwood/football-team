@@ -4,62 +4,60 @@ import { IRoute } from 'shared/types';
 
 // Results
 const AdminResultsPage = lazy(() =>
-  import('Pages/admin-result/pages/AdminResults.page')
+  import('app/admin-result/pages/AdminResults.page')
 );
 const AddResultPage = lazy(() =>
-  import('Pages/admin-result/pages/AddResult.page')
+  import('app/admin-result/pages/AddResult.page')
 );
 const EditResultPage = lazy(() =>
-  import('Pages/admin-result/pages/EditResult.page')
+  import('app/admin-result/pages/EditResult.page')
 );
 const AddMatchPlayerPage = lazy(() =>
-  import('Pages/admin-result/pages/AddMatchPlayer.page')
+  import('app/admin-result/pages/AddMatchPlayer.page')
 );
 // Team
-const EditTeamPage = lazy(() => import('Pages/admin-team/pages/EditTeam.page'));
-const AddTeamPage = lazy(() => import('Pages/admin-team/pages/AddTeam.page'));
+const EditTeamPage = lazy(() => import('app/admin-team/pages/EditTeam.page'));
+const AddTeamPage = lazy(() => import('app/admin-team/pages/AddTeam.page'));
 const EditTeamPhotoPage = lazy(() =>
-  import('Pages/admin-team/pages/EditTeamPhoto.page')
+  import('app/admin-team/pages/EditTeamPhoto.page')
 );
 // User
 const AdminUsersPage = lazy(() =>
-  import('Pages/admin-user/pages/AdminUsers.page')
+  import('app/admin-user/pages/AdminUsers.page')
 );
 const EditUserPermissionsPage = lazy(() =>
-  import('Pages/admin-user/pages/EditUserPermissions.page')
+  import('app/admin-user/pages/EditUserPermissions.page')
 );
 // Trophy
 const AdminTrophiesPage = lazy(() =>
-  import('Pages/admin-team/pages/AdminTrophies.page')
+  import('app/admin-team/pages/AdminTrophies.page')
 );
-const AddTrophyPage = lazy(() =>
-  import('Pages/admin-team/pages/AddTrophy.page')
-);
+const AddTrophyPage = lazy(() => import('app/admin-team/pages/AddTrophy.page'));
 // HOF
 const AdminHOFPage = lazy(() =>
-  import('Pages/admin-team/pages/AdminHallOfFame.Page')
+  import('app/admin-team/pages/AdminHallOfFame.Page')
 );
 const AddHOFPage = lazy(() =>
-  import('Pages/admin-team/pages/AddHallOfFame.page')
+  import('app/admin-team/pages/AddHallOfFame.page')
 );
 const EditHOFPage = lazy(() =>
-  import('Pages/admin-team/pages/EditHallOfFame.page')
+  import('app/admin-team/pages/EditHallOfFame.page')
 );
 // Season
 const AdminPreviousSeasonsPage = lazy(() =>
-  import('Pages/admin-team/pages/AdminPreviousSeasons.page')
+  import('app/admin-team/pages/AdminPreviousSeasons.page')
 );
 const AddPreviousSeasonPage = lazy(() =>
-  import('Pages/admin-team/pages/AddPreviousSeason.page')
+  import('app/admin-team/pages/AddPreviousSeason.page')
 );
 const EditPrevSeasonPage = lazy(() =>
-  import('Pages/admin-team/pages/EditPrevSeason.page')
+  import('app/admin-team/pages/EditPrevSeason.page')
 );
 const AddSeasonAwardPage = lazy(() =>
-  import('Pages/admin-team/pages/AddSeasonAward.page')
+  import('app/admin-team/pages/AddSeasonAward.page')
 );
 // ADMIN
-const AdminPage = lazy(() => import('Pages/admin-home/pages/Admin.page'));
+const AdminPage = lazy(() => import('app/admin-home/pages/Admin.page'));
 
 export const adminRoutes: IRoute[] = [
   // Users

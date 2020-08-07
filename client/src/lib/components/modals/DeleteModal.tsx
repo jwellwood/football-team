@@ -13,7 +13,7 @@ interface Props {
   title: string;
   loading: boolean;
   onDelete: () => void;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const DeleteModal: React.FC<Props> = ({

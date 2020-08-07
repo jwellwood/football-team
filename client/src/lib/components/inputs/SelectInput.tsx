@@ -12,7 +12,7 @@ interface ISelectOptions {
 
 interface Props {
   inputName: string;
-  defaultValue?: string;
+  defaultValue?: string | boolean;
   onChange: (e) => void;
   label?: string;
   validators?: any; //TODO
