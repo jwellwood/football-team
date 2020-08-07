@@ -13,7 +13,7 @@ interface Props {
 const SectionContainer: React.FC<Props> = ({ title, link, children, text }) => {
   return (
     <SectionBackground placeholder>
-      <SectionTitle link={link} title={title} text={text || null} />
+      <SectionTitle link={link} title={title} text={text} />
       <SectionBackground>{children}</SectionBackground>
     </SectionBackground>
   );

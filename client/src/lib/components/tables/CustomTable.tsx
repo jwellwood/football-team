@@ -27,7 +27,7 @@ interface Props {
 
 export interface ITableHeadCell {
   id: string;
-  label: string;
+  label: string | ReactElement;
 }
 
 const CustomTable: React.FC<Props> = ({ headCells, rows, footer, noLines }) => {

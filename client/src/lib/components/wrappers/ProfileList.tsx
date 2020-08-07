@@ -38,7 +38,6 @@ const ProfileList: React.FC<Props> = ({ details }) => (
         </ListItemSecondaryAction>
       </ListItemWrapper>
     ))}
-    ;
   </>
 );
 
