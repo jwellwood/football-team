@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPercentage } from 'functions';
+import { getPercentage } from 'utils/helpers';
 import SectionContainer from 'shared/layout/SectionContainer';
 import { IPlayerTargetsData } from '../shared/types';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';

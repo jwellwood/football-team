@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { admin_routes as routes } from './paths';
-import { IRoute } from 'shared/types';
+import { IRoute } from '../shared';
 
 // Results
 const AdminResultsPage = lazy(() =>

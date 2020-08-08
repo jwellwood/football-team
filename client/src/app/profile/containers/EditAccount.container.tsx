@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserAccount } from 'reduxStore/auth/auth_actions';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
 import EditAccount from '../components/EditAccount.component';

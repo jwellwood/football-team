@@ -1,5 +1,5 @@
 import React from 'react';
-import { generateOrdinals } from 'shared/utils/generateOrdinals';
+import { generateOrdinals } from 'utils/helpers/generateOrdinals';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 

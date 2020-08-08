@@ -4,7 +4,7 @@ import FormContainer from 'shared/layout/FormContainer';
 import {
   currentPasswordHelper,
   newPasswordHelper,
-} from 'shared/data/formHelperText';
+} from 'shared/messages/shared';
 import Spinner from 'lib/components/loading/Spinner';
 import TextInput from 'lib/components/inputs/TextInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';

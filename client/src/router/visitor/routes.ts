@@ -1,10 +1,10 @@
 import { lazy } from 'react';
-import { IRoute } from 'shared/types';
 import { visitor_routes as routes } from './paths';
+import { IRoute } from '../shared';
 
 const NotFoundPage = lazy(() => import('app/not-found/pages/NotFound.page'));
 const HomePage = lazy(() => import('app/home/pages/Home.page'));
-const AboutPage = lazy(() => import('app/about/pages/About.page'));
+const AboutPage: React.FC = lazy(() => import('app/about/pages/About.page'));
 const TeamPage = lazy(() => import('app/team/pages/Team.page'));
 const SquadPage = lazy(() => import('app/squad/pages/Squad.page'));
 const PlayerPage = lazy(() => import('app/player/pages/Player.page'));

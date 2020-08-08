@@ -2,7 +2,7 @@ import React from 'react';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import { admin_routes } from 'router';
-import { parseDate } from 'shared/utils/date';
+import { parseDate } from 'utils/helpers';
 import { IResult } from 'shared/types';
 import SectionBackground from 'shared/layout/SectionBackground';
 import ListWrapper from 'lib/components/lists/ListWrapper';

@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import { parseDate } from 'shared/utils/date';
-import { getResultsColors } from 'shared/utils';
+import { parseDate } from 'utils/helpers';
+import { getResultsColors } from 'utils';
 import badge from 'shared/assets/images/badge.jpg';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import { IResult } from 'shared/types';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';

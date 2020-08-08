@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import { getTotals, getContributions } from 'functions/player';
 import SectionContainer from 'shared/layout/SectionContainer';
 import { IPlayer, IResult } from 'shared/types';
 import { IBarGraphData } from 'lib/chartjs';
 import HorizontalBarGraph from 'lib/components/graphs/HorizontalBarGraph';
 import TargetProgress from 'lib/components/graphs/CircularGraph';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import { getContributions, getTotals } from '../functions';
 
 interface Props {
   player: IPlayer;

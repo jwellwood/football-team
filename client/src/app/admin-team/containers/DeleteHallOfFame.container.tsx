@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTeam, deleteHallOfFamer } from 'reduxStore/team/team_actions';
 import { admin_routes } from 'router';
 import { IHallOfFame, ITeam } from 'shared/types';
-import { onFormSubmit } from 'shared/utils/form-controls';
+import { onFormSubmit } from 'utils/form-controls';
 import DeleteHOF from '../components/DeleteHallOfFame.component';
 
 interface Props {

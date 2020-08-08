@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
-import { getTargetStats, targetsTotal } from 'functions/player';
 import { IPlayer } from 'shared/types';
 import Spinner from 'lib/components/loading/Spinner';
+import { getTargetStats, targetsTotal } from '../functions';
 
 const TargetsTable = lazy(() => import('../components/SquadTargetsTable'));
 
@@ -14,7 +14,7 @@ interface ISquadTargets {
   assists: ITargetData;
   goals: ITargetData;
   name: string;
-  total: string;
+  total: string | number;
 }
 
 interface ITargetData {

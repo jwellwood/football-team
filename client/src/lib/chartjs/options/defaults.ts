@@ -1,5 +1,5 @@
 import { defaults } from 'react-chartjs-2';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 
 const {
   palette: { primary, secondary },

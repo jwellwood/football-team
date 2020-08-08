@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-
 import { authReducer as auth } from './auth/auth_reducer';
 import { userReducer as user } from './user/user_reducer';
 import { appReducer as app } from './app/app_reducer';

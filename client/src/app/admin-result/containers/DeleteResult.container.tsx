@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { admin_routes } from 'router';
 import { deleteResult, getAllResults } from 'reduxStore/result/result_actions';
-import { onFormSubmit } from 'shared/utils/form-controls';
+import { onFormSubmit } from 'utils/form-controls';
 import { IResult } from 'shared/types';
 import DeleteResult from '../components/DeleteResult.component';
 

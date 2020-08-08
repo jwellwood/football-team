@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {
-  onInputChange,
-  onInputCheck,
-  onFormSubmit,
-} from 'shared/utils/form-controls';
+import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import { IUserPermissionInput, UserPermissionState } from '../shared/types';
 import {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 
 interface Props {
   children: React.ReactNode;

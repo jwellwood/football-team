@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { getPercentage } from 'functions';
-import { generateOrdinals } from 'shared/utils/generateOrdinals';
-import { theme } from 'shared/theme';
+import { getPercentage } from 'utils/helpers';
+import { generateOrdinals } from 'utils/helpers/generateOrdinals';
+import { theme } from 'lib/theme';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomAvatar from 'lib/components/avatars/CustomAvatar';
 import ResultsTotals from 'app/results/components/ResultsTotals.component';

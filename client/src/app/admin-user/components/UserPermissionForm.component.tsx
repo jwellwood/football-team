@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import { positionOptions } from 'shared/utils/select-options';
-import { setPermissionsHelper } from 'shared/data/adminHelperText';
+import { setPermissionsHelper } from 'shared/messages/shared';
 import NumberInput from 'lib/components/inputs/NumberInput';
 import SelectInput from 'lib/components/inputs/SelectInput';
 import TextInput from 'lib/components/inputs/TextInput';
@@ -20,6 +19,7 @@ import CustomButton from 'lib/components/buttons/CustomButton';
 import FormHelper from 'lib/components/typography/FormHelper';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 import { IUserData } from 'shared/types';
+import { positionOptions } from 'app/profile/utils';
 
 interface Props {
   user: IUserData;

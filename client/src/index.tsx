@@ -9,7 +9,7 @@ import { store } from 'reduxStore';
 // Styling
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import 'lib/icons';
 // Error handling
 import ErrorBoundary from 'shared/layout/ErrorBoundary';

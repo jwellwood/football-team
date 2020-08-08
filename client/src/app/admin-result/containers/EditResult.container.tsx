@@ -7,11 +7,7 @@ import {
   updateResult,
   getAllResults,
 } from 'reduxStore/result/result_actions';
-import {
-  onInputChange,
-  onInputCheck,
-  onFormSubmit,
-} from 'shared/utils/form-controls';
+import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IResult, IResultState } from 'shared/types';
 import { admin_routes } from 'router';
 import Spinner from 'lib/components/loading/Spinner';

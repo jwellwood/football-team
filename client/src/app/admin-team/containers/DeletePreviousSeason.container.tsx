@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { admin_routes } from 'router';
 import { deletePreviousSeason } from 'reduxStore/team/team_actions';
-import { onFormSubmit } from 'shared/utils/form-controls';
+import { onFormSubmit } from 'utils/form-controls';
 import { IPreviousSeason } from 'shared/types';
 import DeletePrevSeason from '../components/DeletePreviousSeason.component';
 

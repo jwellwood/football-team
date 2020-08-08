@@ -1,14 +1,9 @@
 import React, { lazy, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import Grid, { GridSize } from '@material-ui/core/Grid';
-import {
-  matchTypeOptions,
-  homeOrAwayOptions,
-  forfeitOptions,
-} from 'shared/utils/select-options';
 import { admin_routes } from 'router';
 import FormContainer from 'shared/layout/FormContainer';
-import { addResultHelper } from 'shared/data/adminHelperText';
+import { addResultHelper } from 'shared/messages/shared';
 import { IResultInput } from '../shared/types';
 import { IResult } from 'shared/types';
 import SelectInput from 'lib/components/inputs/SelectInput';
@@ -22,6 +17,8 @@ import AdminMatchPlayersList from './AdminMatchPlayersList.component';
 import DeleteResult from '../containers/DeleteResult.container';
 import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
 import FormHelper from 'lib/components/typography/FormHelper';
+import { matchTypeOptions, homeOrAwayOptions, forfeitOptions } from '../utils';
+
 const DateInput = lazy(() => import('lib/components/inputs/DateInput'));
 
 interface Props {

@@ -8,7 +8,7 @@ import {
   addMatchPlayer,
 } from 'reduxStore/result/result_actions';
 import { admin_routes } from 'router';
-import { onInputChange, onInputCheck } from 'shared/utils/form-controls';
+import { onInputChange, onInputCheck } from 'utils/form-controls';
 import { IPlayer, IResult, IMatchPlayerID } from 'shared/types';
 import AddMatchPlayerForm from '../components/AddMatchPlayerForm';
 

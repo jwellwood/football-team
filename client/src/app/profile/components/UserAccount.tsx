@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import { user_routes } from 'router';
-import { parseDate } from 'shared/utils';
+import { parseDate } from 'utils/helpers';
 import { IUserData } from 'shared/types';
 import SectionContainer from 'shared/layout/SectionContainer';
 import ListWrapper from 'lib/components/lists/ListWrapper';

@@ -1,8 +1,7 @@
 import React from 'react';
 import { visitor_routes } from 'router';
 import PageHeader from 'lib/components/typography/PageHeader';
-import FAQs from '../components/FAQs';
-import Footer from '../components/Footer';
+import { Footer, FAQs } from '../components';
 
 export default () => {
   return (

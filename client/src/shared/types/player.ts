@@ -46,6 +46,7 @@ export interface IPlayerMatchResult {
   isHome: false;
   opponentGoals: number;
   opponentName: string;
+  isForfeit?: boolean;
   points: number;
   teamGoals: number;
   type: string;

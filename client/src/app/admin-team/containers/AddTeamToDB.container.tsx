@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getTeam, addTeam } from 'reduxStore/team/team_actions';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import EditTeamDetailsForm from '../components/EditTeamDetailsForm';
 import { ITeam } from 'shared/types';

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUp } from 'reduxStore/auth/auth_actions';
 import { user_routes } from 'router';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import SignUpForm from '../components/SignUp.component';
 
 export interface ISignUpForm {

@@ -1,9 +1,0 @@
-export { getTotals } from './player/getTotals';
-export { getContributions } from './player/getContributions';
-export { getPerGameStats } from './player/getPerGameStats';
-export { getStatTotals } from './player/getStatTotals';
-export { getTargetStats } from './player/getTargetStats';
-export { getTeamTargets } from './player/getTeamTargets';
-export { getVersusStats } from './player/getVersusStats';
-export { targetsTotal } from './player/targetsTotal';
-export { topPlayerStats } from './player/topPlayerStats';

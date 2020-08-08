@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { getResultTotals } from 'functions/results';
+import { getResultTotals } from '../functions';
 import CustomIcon from 'lib/components/icons/CustomIcon';
 import ResultsTotals from './ResultsTotals.component';
 import { IResultTotalsData } from '../shared/types';

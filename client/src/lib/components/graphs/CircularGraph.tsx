@@ -4,7 +4,7 @@ import {
   buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import SectionBackground from 'shared/layout/SectionBackground';
 import GridItem from '../grids/GridItem';
 import CustomTypography from '../typography/CustomTypography';

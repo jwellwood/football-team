@@ -2,8 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import FormContainer from 'shared/layout/FormContainer';
-import { positionOptions, yearOptions } from 'shared/utils/select-options';
-import { profileDetailsHelper } from 'shared/data/formHelperText';
+import { yearOptions } from 'utils/helpers';
+import { profileDetailsHelper } from 'shared/messages/shared';
 import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
 import Spinner from 'lib/components/loading/Spinner';
@@ -15,6 +15,7 @@ import SelectInput from 'lib/components/inputs/SelectInput';
 import { IEditPlayerForm } from '../containers/EditPlayer.container';
 import EditImageButton from 'lib/components/buttons/EditImageButton';
 import FormHelper from 'lib/components/typography/FormHelper';
+import { positionOptions } from '../utils';
 
 interface Props {
   onChange: (e) => void;

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updatePlayerDetails } from 'reduxStore/user/user_actions';
 import { user_routes } from 'router';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import EditPlayer from '../components/EditPlayer.component';
 

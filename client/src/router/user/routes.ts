@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { user_routes as routes } from './paths';
-import { IRoute } from 'shared/types';
+import { IRoute } from '../shared';
 
 const ProfilePage = lazy(() => import('app/profile/pages/Profile.page'));
 const EditAccountPage = lazy(() =>

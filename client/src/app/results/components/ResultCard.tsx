@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import { IResult } from 'shared/types';
-import { parseDate, getBackground } from 'shared/utils';
+import { parseDate } from 'utils/helpers';
+import { getBackground } from 'utils';
 import { visitor_routes } from 'router';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';

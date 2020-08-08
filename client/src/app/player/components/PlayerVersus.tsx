@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { getVersusStats } from 'functions/player';
+import { getVersusStats } from '../functions';
 import PlaceholderText from 'lib/components/typography/Placeholder';
 import VersusWrapper from 'lib/components/wrappers/VersusWrapper';
 import { IPlayer } from 'shared/types';

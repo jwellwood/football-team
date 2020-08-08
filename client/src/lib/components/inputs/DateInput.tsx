@@ -2,7 +2,7 @@ import React from 'react';
 import DateFnsUtils from '@date-io/date-fns';
 import { DatePicker } from '@material-ui/pickers';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import FormErrorMessage from 'shared/messages/FormErrorMessage';
+import { FormErrorMessage } from 'shared/messages/components';
 
 interface Props {
   inputName: string;

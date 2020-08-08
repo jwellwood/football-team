@@ -2,8 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 //MUI
 import Grid from '@material-ui/core/Grid';
-// Options
-import { trophyWinnerOptions } from 'shared/utils/select-options';
 // Internal
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
@@ -12,6 +10,7 @@ import NumberInput from 'lib/components/inputs/NumberInput';
 import FormContainer from 'shared/layout/FormContainer';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import { trophyWinnerOptions } from '../utils';
 
 interface Props {
   onSubmit: () => void;

@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
-import { getTeamTargets, getStatTotals } from 'functions/player';
-import { getPercentage } from 'functions';
+import { getPercentage } from 'utils/helpers';
 import { IPlayer } from 'shared/types';
 import {
   ISquadTargets,
@@ -8,6 +7,7 @@ import {
   ISquadPercentages,
 } from '../shared/types';
 import SquadTargets from '../components/SquadTargets.component';
+import { getStatTotals, getTeamTargets } from '../functions';
 
 interface Props {
   players: IPlayer[];
