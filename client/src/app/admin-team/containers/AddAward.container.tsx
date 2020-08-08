@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addPreviousAward } from 'reduxStore/team/team_actions';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import AddAwardForm from '../components/AwardForm';
 import { ISeasonAward } from 'shared/types';

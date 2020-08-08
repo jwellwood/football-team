@@ -1,11 +1,23 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import { getResultSymbol } from 'functions/results';
-import { getResultsColors } from 'shared/utils/colors';
+import { getResultsColors } from 'utils/colors';
 
 interface Props {
   pointsArray: number[];
 }
+
+const getResultSymbol = (points) => {
+  switch (points) {
+    case 3:
+      return 'W';
+    case 1:
+      return 'D';
+    case 0:
+      return 'L';
+    default:
+      return '?';
+  }
+};
 
 const FormIndicator: React.FC<Props> = ({ pointsArray }) => (
   <>

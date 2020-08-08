@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import FormContainer from 'shared/layout/FormContainer';
 import { IUserData } from 'shared/types';
-import { targetsFormHelper } from 'shared/data/formHelperText';
+import { targetsFormHelper } from 'shared/messages/shared';
 import Spinner from 'lib/components/loading/Spinner';
 import NumberInput from 'lib/components/inputs/NumberInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';

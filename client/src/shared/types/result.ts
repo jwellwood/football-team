@@ -5,7 +5,7 @@ export interface IResult {
   teamGoals: number;
   opponentGoals: number;
   opponentName: string;
-  isForfeit: boolean;
+  isForfeit?: boolean;
   isOwnForfeit?: boolean;
   points?: number;
   isHome?: boolean;

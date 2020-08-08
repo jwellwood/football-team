@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar';
 // Internal
 import defaultImage from 'shared/assets/images/default_profile.png';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 
 export const useStyles = makeStyles((theme) => ({
   border: {

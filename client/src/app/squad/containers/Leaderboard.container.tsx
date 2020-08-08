@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { topPlayerStats } from 'functions/player';
+import { topPlayerStats } from '../functions';
 import { IPlayer, IResult } from 'shared/types';
 import { ILeaderboardStat, ILeaderboardData } from '../shared/types';
 import PlaceholderText from 'lib/components/typography/Placeholder';

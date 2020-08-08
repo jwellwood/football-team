@@ -1,8 +1,8 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import FormErrorMessage from 'shared/messages/FormErrorMessage';
+import { FormErrorMessage } from 'shared/messages/components';
 
-interface ISelectOptions {
+export interface ISelectOptions {
   text: string;
   value: string | boolean;
   disabled?: boolean;

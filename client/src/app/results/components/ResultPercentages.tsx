@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { getResultPercentages } from 'functions/results';
-import { theme } from 'shared/theme';
+import { getResultPercentages } from '../functions';
+import { theme } from 'lib/theme';
 import { IResult } from 'shared/types';
 import SectionContainer from 'shared/layout/SectionContainer';
 import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';

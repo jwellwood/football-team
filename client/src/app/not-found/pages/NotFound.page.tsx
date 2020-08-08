@@ -1,9 +1,9 @@
 import React from 'react';
 import { visitor_routes } from 'router';
 import PageHeader from 'lib/components/typography/PageHeader';
-import NotFound from '../components/NotFound.component';
+import { NotFound } from '../components';
 
-const NotFoundPage: React.FC = () => {
+export default () => {
   return (
     <>
       <PageHeader title='Not Found' backTo={visitor_routes.HOME} />
@@ -11,5 +11,3 @@ const NotFoundPage: React.FC = () => {
     </>
   );
 };
-
-export default NotFoundPage;

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { forgotPassword } from 'reduxStore/auth/auth_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-import { onInputChange } from 'shared/utils/form-controls';
+import { onInputChange } from 'utils/form-controls';
 import { reg_routes } from 'router';
 import ForgotPassword from '../components/ForgotPassword.component';
 

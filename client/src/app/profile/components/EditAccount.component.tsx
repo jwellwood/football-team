@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { user_routes } from 'router';
 import FormContainer from 'shared/layout/FormContainer';
-import { emailHelper } from 'shared/data/formHelperText';
+import { emailHelper } from 'shared/messages/shared';
 import { IUserData } from 'shared/types';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import Spinner from 'lib/components/loading/Spinner';

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 // Functions
-import { getTotals } from 'functions/player';
+import { getTotals } from '../functions';
 // Components
 import StatsOverview from '../components/PlayerStats.component';
 import { IPlayer } from 'shared/types';

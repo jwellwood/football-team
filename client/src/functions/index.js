@@ -1,9 +1,0 @@
-export { getPercentage } from './common/getPercentage';
-export { getSum } from './common/getSum';
-export { mapReduce } from './common/mapReduce';
-export { sortArr } from './common/sortArr';
-export { getAvg } from './common/getAvg';
-export { mapper } from './common/mapper';
-export { filterer } from './common/filterer';
-export { getMost } from './common/getMost';
-export { getFewest } from './common/getFewest';

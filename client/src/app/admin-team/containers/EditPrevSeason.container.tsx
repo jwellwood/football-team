@@ -6,7 +6,7 @@ import {
   updatePreviousSeason,
 } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import Spinner from 'lib/components/loading/Spinner';
 import PrevSeasonForm from '../components/PreviousSeasonForm';

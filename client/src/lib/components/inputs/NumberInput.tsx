@@ -2,7 +2,7 @@ import React from 'react';
 // MUI
 import TextField from '@material-ui/core/TextField';
 // Internal
-import FormErrorMessage from 'shared/messages/FormErrorMessage';
+import { FormErrorMessage } from 'shared/messages/components';
 
 interface Props {
   inputName: string;

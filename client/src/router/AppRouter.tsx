@@ -5,7 +5,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
 // UI
-import AlertMessage from 'shared/messages/AlertMessage';
+import { AlertMessage } from 'shared/messages/components';
 import Spinner from 'lib/components/loading/Spinner';
 import Navigation from 'lib/components/navigation/Navigation.container';
 import PageContainer from 'shared/layout/PageContainer';

@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetPassword } from 'reduxStore/auth/auth_actions';
 import { reg_routes } from 'router';
-import { onInputChange, onFormSubmit } from 'shared/utils/form-controls';
+import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import ResetPassword from '../components/ResetPassword.component';
 
 interface IResetPasswordForm {

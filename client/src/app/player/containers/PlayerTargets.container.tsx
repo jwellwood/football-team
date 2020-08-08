@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { IPlayer } from 'shared/types';
 import { IPlayerTargetsData, IPlayerStats } from '../shared/types';
-import { getTotals } from 'functions/player';
+import { getTotals } from '../functions';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 import TargetsOverview from '../components/PlayerTargets.component';
 

@@ -1,5 +1,5 @@
 import React, { useMemo, ReactElement } from 'react';
-import { getResultVersus } from 'functions/results';
+import { getResultVersus } from '../functions';
 import { IResult } from 'shared/types';
 import { IResultVersusData, IVersusGame } from '../shared/types';
 import VersusWrapper from 'lib/components/wrappers/VersusWrapper';

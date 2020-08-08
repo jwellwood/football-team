@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addResult, getAllResults } from 'reduxStore/result/result_actions';
-import {
-  onInputChange,
-  onInputCheck,
-  onFormSubmit,
-} from 'shared/utils/form-controls';
+import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IResultInput } from '../shared/types';
 import { admin_routes } from 'router';
 import ResultForm from '../components/ResultForm';

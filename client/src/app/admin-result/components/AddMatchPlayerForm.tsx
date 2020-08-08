@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
-import { assignPlayerHelper } from 'shared/data/adminHelperText';
-import { playerOptions } from 'shared/utils/select-options';
+import { assignPlayerHelper } from 'shared/messages/shared';
 import { IResult, IPlayer, IMatchPlayer } from 'shared/types';
 import SelectInput from 'lib/components/inputs/SelectInput';
 import NumberInput from 'lib/components/inputs/NumberInput';
@@ -13,6 +12,7 @@ import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import FormHelper from 'lib/components/typography/FormHelper';
 import CustomTypography from 'lib/components/typography/CustomTypography';
+import { matchPlayerOptions } from '../utils';
 
 interface Props {
   loading: boolean;
@@ -131,7 +131,7 @@ const AddMatchPlayerForm: React.FC<Props> = ({
                 onChange={onChange}
                 validators={register({ required: true })}
                 errors={errors.player_id || null}
-                options={playerOptions(result, players)}
+                options={matchPlayerOptions(result, players)}
               />
             </Grid>
             {switchesData.map((input) => (

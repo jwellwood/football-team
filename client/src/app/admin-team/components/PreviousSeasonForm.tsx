@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { admin_routes } from 'router';
-import { yearOptions } from 'shared/utils/select-options';
+import { yearOptions } from 'utils/helpers';
 import { IPreviousSeason } from 'shared/types';
 import FormContainer from 'shared/layout/FormContainer';
 import SubmitButton from 'lib/components/buttons/SubmitButton';

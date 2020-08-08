@@ -3,10 +3,10 @@ import Collapse from '@material-ui/core/Collapse';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SectionBackground from 'shared/layout/SectionBackground';
-import { IAdminLinkData } from '../shared/types';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
+import { IAdminLinkData } from '../shared';
 
 interface Props {
   item: IAdminLinkData;

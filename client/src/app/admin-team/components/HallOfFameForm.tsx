@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid, { GridSize } from '@material-ui/core/Grid';
 import FormContainer from 'shared/layout/FormContainer';
-import { yearOptions } from 'shared/utils/select-options';
+import { yearOptions } from 'utils/helpers';
 import { IHallOfFame } from 'shared/types';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import SubmitButton from 'lib/components/buttons/SubmitButton';

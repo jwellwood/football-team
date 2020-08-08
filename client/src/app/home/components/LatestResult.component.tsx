@@ -1,5 +1,6 @@
 import React from 'react';
-import { parseDate, getResultsColors } from 'shared/utils';
+import { parseDate } from 'utils/helpers';
+import { getResultsColors } from 'utils';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
 interface Props {
@@ -36,7 +37,6 @@ const LatestResult: React.FC<Props> = ({
       <CustomTypography size='md' bold main>
         {isForfeit ? 'Forfeit' : opponentName}
       </CustomTypography>
-
       <CustomTypography size='sm'>{parseDate(date)}</CustomTypography>
     </>
   );

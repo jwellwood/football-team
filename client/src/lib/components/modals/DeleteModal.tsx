@@ -4,7 +4,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import Spinner from 'lib/components/loading/Spinner';
 import CustomIcon from '../icons/CustomIcon';
 

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { getResultAverages } from 'functions/results';
+import { getResultAverages } from '../functions';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';

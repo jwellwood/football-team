@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import { Grow } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) => ({

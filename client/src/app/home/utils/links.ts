@@ -1,13 +1,13 @@
 import { visitor_routes } from 'router';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 
-interface IHomeLinks {
+export interface IHomeLink {
   icon: IconName;
   text: string;
   link: string;
 }
 
-export const home_links: IHomeLinks[] = [
+export const home_links: IHomeLink[] = [
   {
     icon: 'list-ul',
     text: 'results',

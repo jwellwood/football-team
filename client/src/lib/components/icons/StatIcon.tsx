@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import {
   IconName,
   SizeProp,

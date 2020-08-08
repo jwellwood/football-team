@@ -1,13 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
-import { getLeaguePositionOptions } from 'shared/utils/select-options';
 import { ITeam } from 'shared/types';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
 import SelectInput from 'lib/components/inputs/SelectInput';
 import FormContainer from 'shared/layout/FormContainer';
-
+import { leaguePositionOptions } from '../utils';
 interface Props {
   onSubmit: () => void;
   onChange: (e) => void;
@@ -80,7 +79,7 @@ const EditTeamDetailsForm: React.FC<Props> = ({
               onChange={onChange}
               validators={register({ required: true })}
               errors={errors.position || null}
-              options={getLeaguePositionOptions()}
+              options={leaguePositionOptions()}
             />
           </Grid>
         </Grid>

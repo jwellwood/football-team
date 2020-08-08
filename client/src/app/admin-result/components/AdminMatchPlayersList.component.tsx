@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import { IResult, IMatchPlayer } from 'shared/types';
 import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
 import DeleteMatchPlayer from '../containers/DeleteMatchPlayer.container';

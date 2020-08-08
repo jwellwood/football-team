@@ -2,7 +2,7 @@ import React, { useMemo, ReactElement } from 'react';
 // MUITODO
 import ListItemText from '@material-ui/core/ListItemText';
 // Functions
-import { getTotals } from 'functions/player';
+import { getTotals } from 'app/player/functions';
 // Routes
 import { visitor_routes } from 'router';
 // assets

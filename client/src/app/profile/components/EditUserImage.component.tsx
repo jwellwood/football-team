@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { IUserData } from 'shared/types';
-import { profilePhotoHelper } from 'shared/data/formHelperText';
+import { profilePhotoHelper } from 'shared/messages/shared';
 import Spinner from 'lib/components/loading/Spinner';
 import FileInput from 'lib/components/inputs/FileInput';
 import FormContainer from 'shared/layout/FormContainer';

@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { reg_routes as routes } from './paths';
-import { IRoute } from 'shared/types';
+import { IRoute } from '../shared';
 
 const RegistrationPage = lazy(() =>
   import('app/registration/pages/Registration.page')

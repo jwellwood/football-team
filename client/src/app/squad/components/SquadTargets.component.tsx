@@ -4,7 +4,7 @@ import {
   ListItemIcon,
   ListItemSecondaryAction,
 } from '@material-ui/core';
-import { theme } from 'shared/theme';
+import { theme } from 'lib/theme';
 import SectionContainer from 'shared/layout/SectionContainer';
 import {
   ISquadTargets,

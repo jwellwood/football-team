@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
-import { getPerGameStats } from 'functions/player';
-import { getResultAverages } from 'functions/results';
-import { theme } from 'shared/theme';
+import { getResultAverages } from 'app/results/functions';
+import { theme } from 'lib/theme';
 import { IPlayer, IPlayerMatchResult } from 'shared/types';
 import {
   IPlayerAveragesTableData,
@@ -12,6 +11,7 @@ import BarGraph from 'lib/components/graphs/BarGraph';
 import PlaceholderText from 'lib/components/typography/Placeholder';
 import AveragesList from '../components/AveragesList';
 import PlayerAverages from '../components/PlayerAverages';
+import { getPerGameStats } from '../functions';
 
 interface Props {
   player: IPlayer;

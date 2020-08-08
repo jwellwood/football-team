@@ -1,7 +1,6 @@
-import React from 'react';
-// MUI
+import React, { ReactElement } from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
-// data
+// Data
 import { version, changeLog } from 'shared/data';
 // Components
 import SectionContainer from 'shared/layout/SectionContainer';
@@ -10,18 +9,20 @@ import ListWrapper from 'lib/components/lists/ListWrapper';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomButton from 'lib/components/buttons/CustomButton';
 import CustomTypography from 'lib/components/typography/CustomTypography';
+// Types
+import { IChangeLog } from 'shared/data/changeLog';
 
 const Changelog: React.FC = () => {
-  const button = <CustomButton>View Changelog</CustomButton>;
+  const button: ReactElement = <CustomButton>View Changelog</CustomButton>;
 
   return (
     <PresentationModal buttonElement={button}>
       <>
-        {changeLog.map((change, i) => (
+        {changeLog.map((change: IChangeLog, i) => (
           <ListWrapper key={i}>
             <SectionContainer title={`v${change.version}`}>
-              {change.changes.map((text, idx) => (
-                <ListItemWrapper key={idx}>
+              {change.changes.map((text: string, i) => (
+                <ListItemWrapper key={text + i}>
                   <ListItemText primary={text} />
                 </ListItemWrapper>
               ))}
