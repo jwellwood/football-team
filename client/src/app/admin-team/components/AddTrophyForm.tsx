@@ -6,11 +6,11 @@ import Grid from '@material-ui/core/Grid';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
 import TextInput from 'lib/components/inputs/TextInput';
 import SelectInput from 'lib/components/inputs/SelectInput';
-import NumberInput from 'lib/components/inputs/NumberInput';
 import FormContainer from 'shared/layout/FormContainer';
 import CustomSwitch from 'lib/components/inputs/CustomSwitch';
 import CenteredGrid from 'lib/components/grids/CenteredGrid';
 import { trophyWinnerOptions } from '../utils';
+import { yearOptions } from 'utils/helpers';
 
 interface Props {
   onSubmit: () => void;
@@ -45,18 +45,27 @@ const AddTrophyForm: React.FC<Props> = ({
                 minLength: 2,
                 maxLength: 30,
               })}
-              errors={errors.name || null}
+              errors={errors.name}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <NumberInput
+            <SelectInput
+              inputName='year'
+              label='Year'
+              defaultValue={input.year}
+              onChange={onChange}
+              validators={register({ required: true })}
+              errors={errors.year}
+              options={yearOptions()}
+            />
+            {/* <NumberInput
               inputName='year'
               label='Year'
               defaultValue={input.year}
               onChange={onChange}
               validators={register({ required: true, min: 2000, max: 2100 })}
               errors={errors.year || null}
-            />
+            /> */}
           </Grid>
           <Grid item xs={12} sm={6}>
             <SelectInput
@@ -65,7 +74,7 @@ const AddTrophyForm: React.FC<Props> = ({
               label='Place'
               onChange={onChange}
               validators={register({ required: true })}
-              errors={errors.isWinner || null}
+              errors={errors.isWinner}
               options={trophyWinnerOptions}
             />
           </Grid>
@@ -90,7 +99,7 @@ const AddTrophyForm: React.FC<Props> = ({
                   minLength: 2,
                   maxLength: 30,
                 })}
-                errors={errors.opponent || null}
+                errors={errors.opponent}
               />
             ) : null}
           </Grid>
@@ -101,7 +110,7 @@ const AddTrophyForm: React.FC<Props> = ({
               defaultValue={input.description}
               onChange={onChange}
               validators={register({ maxLength: 999 })}
-              errors={errors.description || null}
+              errors={errors.description}
             />
           </Grid>
         </CenteredGrid>

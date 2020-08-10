@@ -8,25 +8,26 @@ import {
   getAllResults,
 } from 'reduxStore/result/result_actions';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
-import { IResult, IResultState } from 'shared/types';
+import { IResult } from 'shared/types';
 import { admin_routes } from 'router';
 import Spinner from 'lib/components/loading/Spinner';
-import ResultForm from '../components/ResultForm';
 import { IResultInput } from '../shared/types';
 import { $initResultFormState } from '../shared/state';
+import EditResultForm from '../components/EditResultForm';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const { id } = useParams();
   let history = useHistory();
-  const [result, setResult] = useState<IResult>({ ...IResultState });
+  const [result, setResult] = useState<IResult>({ ...$initResultFormState });
   const [loading, setLoading] = useState<boolean>(true);
   const [input, setInput] = useState<IResultInput>({
     ...$initResultFormState,
   });
-  const [selectedDate, setSelectedDate] = useState<string>(null);
+  const [selectedDate, setSelectedDate] = useState<string>('');
   useEffect(() => {
-    dispatch(getResultById(id)).then((res) => {
+    dispatch(getResultById(id)).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setResult(data);
@@ -48,10 +49,10 @@ export default () => {
         opponentName: result.opponentName,
         teamGoals: result.teamGoals,
         opponentGoals: result.opponentGoals,
-        matchReport: result.matchReport,
+        matchReport: result.matchReport!,
       };
       setInput({ ...initState });
-      setSelectedDate(result.date);
+      setSelectedDate(result.date!);
     }
   }, [result]);
 
@@ -72,7 +73,7 @@ export default () => {
     );
 
   return result._id ? (
-    <ResultForm
+    <EditResultForm
       input={input}
       result={result}
       loading={loading}

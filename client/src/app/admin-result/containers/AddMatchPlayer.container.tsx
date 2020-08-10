@@ -9,24 +9,13 @@ import {
 } from 'reduxStore/result/result_actions';
 import { admin_routes } from 'router';
 import { onInputChange, onInputCheck } from 'utils/form-controls';
-import { IPlayer, IResult, IMatchPlayerID } from 'shared/types';
+import { IPlayer, IResult, IResultPlayerStats } from 'shared/types';
 import AddMatchPlayerForm from '../components/AddMatchPlayerForm';
+import { $initResultData } from 'app/home/shared/initData';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
-interface IMatchPlayerInput {
-  player_id: IMatchPlayerID;
-  mvp: boolean;
-  redCard: boolean;
-  goals: number;
-  assists: number;
-  conceded: number;
-  ownGoals: number;
-  yellowCards: number;
-  pensScored: number;
-  pensMissed: number;
-}
-
-const inputFields: IMatchPlayerInput = {
-  player_id: null,
+const inputFields: IResultPlayerStats = {
+  player_id: { name: '', _id: '' },
   goals: 0,
   assists: 0,
   mvp: false,
@@ -41,14 +30,16 @@ const inputFields: IMatchPlayerInput = {
 export default () => {
   const history = useHistory();
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [players, setPlayers] = useState<IPlayer[]>([]);
-  const [input, setInput] = useState<IMatchPlayerInput>({ ...inputFields });
+  const [input, setInput] = useState<IResultPlayerStats>({
+    ...inputFields,
+  });
   const [loading, setLoading] = useState<boolean>(false);
-  const [result, setResult] = useState<IResult>(null);
+  const [result, setResult] = useState<IResult>({ ...$initResultData });
 
   useEffect(() => {
-    dispatch(getAllPlayers()).then((res) => {
+    dispatch(getAllPlayers()).then((res: any) => {
       const { success, message, type, data } = res.payload;
       if (!success) {
         dispatch(showMessage(true, message, type));
@@ -58,7 +49,7 @@ export default () => {
   }, [dispatch]);
   // Get result id to add the players to
   useEffect(() => {
-    dispatch(getResultById(id)).then((res) => {
+    dispatch(getResultById(id)).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setResult(data);
@@ -75,11 +66,11 @@ export default () => {
 
   const onSubmit = () => {
     setLoading(true);
-    dispatch(getPlayerById(input.player_id)).then((res) => {
+    dispatch(getPlayerById(input.player_id)).then((res: any) => {
       const { success, message, type } = res.payload;
       if (success) {
-        const dataToSubmit: IMatchPlayerInput = { ...input };
-        dispatch(addMatchPlayer(dataToSubmit, id)).then((res) => {
+        const dataToSubmit: IResultPlayerStats = { ...input };
+        dispatch(addMatchPlayer(dataToSubmit, id)).then((res: any) => {
           const { success, message, type } = res.payload;
           if (success) {
             setLoading(false);

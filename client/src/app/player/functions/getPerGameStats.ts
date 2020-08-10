@@ -1,9 +1,9 @@
 import { getAvg } from 'utils/helpers';
 import { getTotals } from './getTotals';
-import { IPlayer, IPlayerMatches } from 'shared/types';
+import { IPlayer, IPlayerMatchPlayed } from 'shared/types';
 
 export const getPerGameStats = (player: IPlayer) => {
-  const matches: IPlayerMatches[] = player.matchesPlayed;
+  const matches: IPlayerMatchPlayed[] = player.matchesPlayed;
   const goals: number = getTotals(player).goals;
   const assists: number = getTotals(player).assists;
   const conceded: number = getTotals(player).conceded;

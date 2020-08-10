@@ -6,8 +6,12 @@ import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 import { IAlert } from '../shared';
 
+interface IAppState {
+  app: any;
+}
+
 const AlertMessage: React.FC = () => {
-  const message: IAlert = useSelector((state) => state.app.message);
+  const message: IAlert = useSelector((state: IAppState) => state.app.message);
   const dispatch = useDispatch();
 
   const handleClose = () => {

@@ -6,6 +6,7 @@ import { onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import { ITrophy, ITeam } from 'shared/types';
 import DeleteTrophy from '../components/DeleteTrophy.component';
+import { RootState } from 'reduxStore/rootReducer';
 
 interface Props {
   trophy: ITrophy;
@@ -14,7 +15,7 @@ interface Props {
 export default ({ trophy }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   // State
   const [loading, setLoading] = useState<boolean>(false);
 

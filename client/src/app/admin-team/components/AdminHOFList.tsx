@@ -8,12 +8,12 @@ import { admin_routes } from 'router';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import SectionContainer from 'shared/layout/SectionContainer';
-import { IHallOfFame } from 'shared/types';
+import { IHallOfFame, ITeam } from 'shared/types';
+import { RootState } from 'reduxStore/rootReducer';
 
 const AdminHOFList: React.FC = () => {
-  const hallOfFame: IHallOfFame[] = useSelector(
-    (state) => state.team.teamData.hallOfFame
-  );
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const hallOfFame = team.hallOfFame;
 
   return (
     <SectionContainer text='Add' link={admin_routes.ADMIN_HOF_ADD}>

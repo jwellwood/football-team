@@ -9,10 +9,19 @@ import {
   REMOVE_USER_IMAGE,
   GET_USER_BY_ID,
   SET_PERMISSIONS,
-  RESET_IMAGE
+  RESET_IMAGE,
 } from '../types';
 
-export const userReducer = function(state = {}, action) {
+const initialState = {
+  userData: null,
+};
+
+type UserState = typeof initialState;
+
+export const userReducer = function (
+  state: UserState = { ...initialState },
+  action
+) {
   switch (action.type) {
     // Admin
     case GET_ALL_USERS:

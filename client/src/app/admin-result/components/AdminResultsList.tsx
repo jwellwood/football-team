@@ -7,7 +7,6 @@ import { IResult } from 'shared/types';
 import SectionBackground from 'shared/layout/SectionBackground';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomIcon from 'lib/components/icons/CustomIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 
 interface Props {
@@ -29,6 +28,8 @@ const AdminResultsList: React.FC<Props> = ({ results }) => {
             teamGoals,
             opponentGoals,
           }) => {
+            const noPlayerColor = players.length || isForfeit ? '' : 'error';
+
             return (
               <ListItemWrapper
                 key={_id}
@@ -41,14 +42,7 @@ const AdminResultsList: React.FC<Props> = ({ results }) => {
                 />
 
                 <ListItemSecondaryAction>
-                  {players.length || isForfeit ? null : (
-                    <CustomIcon
-                      icon='exclamation-circle'
-                      size='lg'
-                      color='primary'
-                    />
-                  )}
-                  <CustomTypography bold>
+                  <CustomTypography bold color={noPlayerColor}>
                     {teamGoals} - {opponentGoals}
                   </CustomTypography>
                 </ListItemSecondaryAction>

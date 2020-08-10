@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import ResultsTotals from 'app/results/components/ResultsTotals.component';
 import { getResultTotals } from 'app/results/functions';
 import CustomIcon from 'lib/components/icons/CustomIcon';
-import { IPlayer, IPlayerMatchResult } from 'shared/types';
+import { IPlayer, IResult } from 'shared/types';
 import { IResultTotalsData } from 'app/results/shared/types';
 
 interface Props {
@@ -20,9 +20,7 @@ interface IResultTotalsValuesData {
 }
 
 const PlayerResultsLogic: React.FC<Props> = ({ player }) => {
-  const results: IPlayerMatchResult[] = player.matchesPlayed.map(
-    (res) => res.result
-  );
+  const results: IResult[] = player.matchesPlayed.map((res) => res.result);
   const resultTotals: any = useMemo(() => getResultTotals(results), [results]);
   const goalDifference: number = resultTotals.goals - resultTotals.conceded;
 

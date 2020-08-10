@@ -6,6 +6,7 @@ import { admin_routes } from 'router';
 import { IHallOfFame, ITeam } from 'shared/types';
 import { onFormSubmit } from 'utils/form-controls';
 import DeleteHOF from '../components/DeleteHallOfFame.component';
+import { RootState } from 'reduxStore/rootReducer';
 
 interface Props {
   hof: IHallOfFame;
@@ -14,7 +15,7 @@ interface Props {
 export default ({ hof }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   // State
   const [loading, setLoading] = useState<boolean>(false);
 

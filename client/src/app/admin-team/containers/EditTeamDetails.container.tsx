@@ -6,11 +6,12 @@ import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import EditTeamDetailsForm from '../components/EditTeamDetailsForm';
 import { ITeam } from 'shared/types';
+import { RootState } from 'reduxStore/rootReducer';
 
 export default () => {
   let history = useHistory();
   const dispatch = useDispatch();
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   const { name, location, position, league } = team;
   const [input, setInput] = useState({
     name,

@@ -12,8 +12,14 @@ import { user_routes } from 'router';
 import { IUserData } from 'shared/types';
 import EditUserImage from '../components/EditUserImage.component';
 
+export interface IAuthState {
+  auth: any;
+}
+
 export default () => {
-  const user: IUserData = useSelector((state) => state.auth.userData);
+  const user: IUserData = useSelector(
+    (state: IAuthState) => state.auth.userData
+  );
   const history = useHistory();
   const dispatch = useDispatch();
   // State

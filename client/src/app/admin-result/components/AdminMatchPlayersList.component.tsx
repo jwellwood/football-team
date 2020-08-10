@@ -2,19 +2,19 @@ import React, { ReactElement } from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { theme } from 'lib/theme';
-import { IResult, IMatchPlayer } from 'shared/types';
+import { IResult, IResultPlayerStats } from 'shared/types';
 import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
 import DeleteMatchPlayer from '../containers/DeleteMatchPlayer.container';
 
 interface Props {
   result: IResult;
-  matchPlayers: IMatchPlayer[];
+  matchPlayers: IResultPlayerStats[];
 }
 
 interface IMatchPlayerTotal {
   value: number | string;
   type?: string;
-  validator?: number;
+  validator: number | string;
 }
 
 const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
@@ -34,7 +34,7 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
   ];
 
   const totals: IMatchPlayerTotal[] = [
-    { value: 'Totals' },
+    { value: 'Totals', validator: '' },
     {
       type: 'goals',
       value: matchPlayers.map((pl) => +pl.goals).reduce((a, b) => a + b, 0),
@@ -52,7 +52,7 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
     },
   ];
 
-  const rows: ReactElement[] = matchPlayers.map((pl: IMatchPlayer) => {
+  const rows: ReactElement[] = matchPlayers.map((pl: IResultPlayerStats) => {
     const data = [
       pl.player_id.name,
       pl.goals,
@@ -81,11 +81,15 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
     <TableRow>
       {totals.map((item: IMatchPlayerTotal, i) => {
         let color: string = warning.main;
-        if (item.validator < item.value) {
-          color = error.main;
-        }
-        if (item.validator === item.value) {
-          color = success.main;
+        switch (true) {
+          case item.validator < item.value:
+            color = error.main;
+            break;
+          case item.validator === item.value:
+            color = success.main;
+            break;
+          default:
+            break;
         }
         return (
           <TableCell key={i} align='center'>

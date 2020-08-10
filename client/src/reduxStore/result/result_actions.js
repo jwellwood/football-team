@@ -9,7 +9,7 @@
 // 5 / DELETE / DELETE_MATCH_PLAYER / deleteMatchPlayer
 
 import axios from 'axios';
-import { ADMIN_SERVER, PUBLIC_SERVER } from '../types/routes';
+import { ADMIN_SERVER, PUBLIC_SERVER } from 'constants/server.routes';
 import {
   // Admin
   ADD_RESULT,

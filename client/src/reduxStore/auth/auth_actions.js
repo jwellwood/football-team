@@ -9,7 +9,7 @@
 // 8 / DELETE / DELETE USER             / deleteUser
 
 import axios from 'axios';
-import { USER_SERVER, PUBLIC_SERVER } from '../types/routes';
+import { USER_SERVER, PUBLIC_SERVER } from 'constants/server.routes';
 import {
   // Auth
   GET_AUTH,

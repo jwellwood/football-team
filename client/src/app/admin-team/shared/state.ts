@@ -14,8 +14,9 @@ export const $initHOFFormState = {
 
 export const $initTrophyFormState = {
   name: '',
-  year: '',
+  year: null,
   isWinner: false,
+  isFinal: false,
 };
 
 export const $initPreviousSeasonFormState = {

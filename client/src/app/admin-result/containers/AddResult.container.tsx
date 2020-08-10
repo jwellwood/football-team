@@ -5,8 +5,8 @@ import { addResult, getAllResults } from 'reduxStore/result/result_actions';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IResultInput } from '../shared/types';
 import { admin_routes } from 'router';
-import ResultForm from '../components/ResultForm';
 import { $initResultFormState } from '../shared/state';
+import AddResultForm from '../components/AddResultForm';
 
 export default () => {
   let history = useHistory();
@@ -32,7 +32,7 @@ export default () => {
     );
 
   return (
-    <ResultForm
+    <AddResultForm
       input={input}
       loading={loading}
       onChange={onChange}

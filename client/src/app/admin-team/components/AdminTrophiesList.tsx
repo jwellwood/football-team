@@ -8,10 +8,11 @@ import { ITrophy } from 'shared/types';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import DeleteTrophy from '../containers/DeleteTrophy.container';
+import { RootState } from 'reduxStore/rootReducer';
 
 const AdminTrophiesList: React.FC = () => {
   const trophies: ITrophy[] = useSelector(
-    (state) => state.team.teamData.trophies
+    (state: RootState) => state.team.teamData.trophies
   );
   const displayTrophies: ITrophy[] = trophies.sort((a, b) =>
     a.year > b.year ? -1 : 1
