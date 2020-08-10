@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { IResult, IResultState } from 'shared/types';
+import { IResult } from 'shared/types';
 import { getLatestResult } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import Spinner from 'lib/components/loading/Spinner';
 import LatestResult from '../components/LatestResult.component';
+import { $initResultData } from '../shared/initData';
 
 export default () => {
   const dispatch = useDispatch();
-  const [result, setResult] = useState<IResult>({ ...IResultState });
+  const [result, setResult] = useState<IResult>({ ...$initResultData });
 
   useEffect(() => {
     dispatch(getLatestResult()).then((res) => {

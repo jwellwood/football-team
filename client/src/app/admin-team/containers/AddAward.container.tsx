@@ -5,7 +5,7 @@ import { addPreviousAward } from 'reduxStore/team/team_actions';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import AddAwardForm from '../components/AwardForm';
-import { ISeasonAward } from 'shared/types';
+import { IAward } from 'shared/types';
 import { $initAwardFormState } from '../shared/state';
 
 export default () => {
@@ -13,13 +13,13 @@ export default () => {
   const history = useHistory();
   const { id } = useParams();
   const [loading, setLoading] = useState<boolean>(false);
-  const [input, setInput] = useState<ISeasonAward>({ ...$initAwardFormState });
+  const [input, setInput] = useState<IAward>({ ...$initAwardFormState });
   const [hasNumericValue, setHasNumericValue] = useState<boolean>(false);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     onInputChange(e, input, setInput);
   const onCheck = () => setHasNumericValue(!hasNumericValue);
-  const dataToSubmit: ISeasonAward = { ...input };
+  const dataToSubmit: IAward = { ...input };
   const onSubmit = () =>
     onFormSubmit(
       setLoading,

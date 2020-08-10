@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { getResultAverages } from 'app/results/functions';
 import { theme } from 'lib/theme';
-import { IPlayer, IPlayerMatchResult } from 'shared/types';
+import { IPlayer, IResult } from 'shared/types';
 import {
   IPlayerAveragesTableData,
   IPlayerAveragesListData,
@@ -34,9 +34,7 @@ const PlayerAveragesLogic: React.FC<Props> = ({ player }) => {
   const { success, error } = theme.palette;
   const { matchesPlayed } = player;
 
-  const playerResults: IPlayerMatchResult[] = matchesPlayed.map(
-    (match) => match.result
-  );
+  const playerResults: IResult[] = matchesPlayed.map((match) => match.result);
   const averages: IPlayerAverages = useMemo(
     () => getResultAverages(playerResults),
     [playerResults]

@@ -6,12 +6,13 @@ import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import HOFForm from '../components/HallOfFameForm';
 import { ITeam, IHallOfFame } from 'shared/types';
+import { RootState } from 'reduxStore/rootReducer';
 
 export default () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { id } = useParams();
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   const [hallOfFamer] = team.hallOfFame.filter(
     (hof: IHallOfFame) => hof._id === id
   );

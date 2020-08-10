@@ -39,6 +39,6 @@ export const getTotals = (player) => {
     yellowCards: mapReduce(matches, 'yellowCards'),
     mvps: filterer(matches, 'mvp'),
     redCards: filterer(matches, 'redCard'),
-    winPercentage: getPercentage(wonMatches, matches.length, 0),
+    winPercentage: getPercentage(wonMatches, matches.length, 1),
   };
 };

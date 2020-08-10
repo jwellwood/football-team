@@ -14,7 +14,18 @@ import {
   VERIFY_EMAIL,
 } from '../types';
 
-export const authReducer = function (state = {}, action) {
+const initialState = {
+  isAuth: false,
+  isAdmin: false,
+  userData: null,
+};
+
+type AuthState = typeof initialState;
+
+export const authReducer = function (
+  state: AuthState = { ...initialState },
+  action
+) {
   switch (action.type) {
     // Auth
     case GET_AUTH:

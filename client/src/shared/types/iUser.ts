@@ -1,27 +1,19 @@
+import { IImage, IPlayerMatchPlayed } from '.';
+
 export interface IUserData {
-  id: string;
-  _id?: string;
-  image: {
-    url: string;
-    public_id: number | string;
-  };
   name: string;
   email: string;
-  isVerified: boolean;
-  createdAt: string;
-  updatedAt: string;
-  adminStatus: string;
   squadNumber: number;
   position: string;
   description: string;
   yearJoined: string;
+  image: IImage;
+  role: string;
   isCaptain: boolean;
   isPlayer: boolean;
-  role: string;
   appsTarget: number;
   goalsTarget: number;
   assistsTarget: number;
-  matchesPlayed: any; // TODO
   targetsPerGame: {
     apps: number;
     goals: number;
@@ -32,4 +24,12 @@ export interface IUserData {
     details: boolean;
     photo: boolean;
   };
+  matchesPlayed: IPlayerMatchPlayed[];
+  // Mongo
+  id: string;
+  _id?: string;
+  isVerified: boolean;
+  createdAt: string;
+  updatedAt: string;
+  adminStatus: string;
 }

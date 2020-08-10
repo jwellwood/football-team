@@ -11,9 +11,10 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { admin_routes } from 'router';
 import { ITeam } from 'shared/types';
 import EditTeamPhotoForm from '../components/EditTeamPhotoForm';
+import { RootState } from 'reduxStore/rootReducer';
 
 export default () => {
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   const { teamPhoto } = team;
   const history = useHistory();
   const dispatch = useDispatch();

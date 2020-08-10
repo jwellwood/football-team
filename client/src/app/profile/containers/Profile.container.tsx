@@ -14,8 +14,14 @@ interface ITabs {
   component: ReactElement;
 }
 
+export interface IAuthState {
+  auth: any;
+}
+
 export default () => {
-  const user: IUserData = useSelector((state) => state.auth.userData);
+  const user: IUserData = useSelector(
+    (state: IAuthState) => state.auth.userData
+  );
 
   const tabs: ITabs[] = [
     {

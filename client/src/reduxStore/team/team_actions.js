@@ -22,7 +22,7 @@
 // 5 / DELETE / DELETE_PREVIOUS_AWARD / deletePreviousAward
 
 import axios from 'axios';
-import { ADMIN_SERVER, PUBLIC_SERVER } from '../types/routes';
+import { ADMIN_SERVER, PUBLIC_SERVER } from 'constants/server.routes';
 import {
   GET_TEAM,
   ADD_TEAM,

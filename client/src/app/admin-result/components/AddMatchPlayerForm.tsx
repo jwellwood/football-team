@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { assignPlayerHelper } from 'shared/messages/shared';
-import { IResult, IPlayer, IMatchPlayer } from 'shared/types';
+import { IResult, IPlayer, IResultPlayerStats } from 'shared/types';
 import SelectInput from 'lib/components/inputs/SelectInput';
 import NumberInput from 'lib/components/inputs/NumberInput';
 import SubmitButton from 'lib/components/buttons/SubmitButton';
@@ -17,10 +17,10 @@ import { matchPlayerOptions } from '../utils';
 interface Props {
   loading: boolean;
   onSubmit: () => void;
-  onCheck: (e) => void;
-  onChange: (e) => void;
+  onCheck: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   result: IResult;
-  input: IMatchPlayer;
+  input: IResultPlayerStats;
   players: IPlayer[];
 }
 

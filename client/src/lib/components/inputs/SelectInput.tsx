@@ -11,7 +11,7 @@ export interface ISelectOptions {
 interface Props {
   inputName: string;
   defaultValue?: string | boolean | number;
-  onChange: (e) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
   validators?: any; //TODO
   errors?: any; // TODO

@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux';
 import Team from '../components/Team.component';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 import { ITeam } from 'shared/types';
+import { RootState } from 'reduxStore/rootReducer';
 
 export default () => {
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   return team ? (
     <Team team={team} />
   ) : (

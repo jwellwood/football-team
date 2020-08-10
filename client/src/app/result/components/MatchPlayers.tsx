@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { ListItemText, Grid } from '@material-ui/core';
-import { IResult, IMatchPlayer } from 'shared/types';
+import { IResult, IResultPlayerStats } from 'shared/types';
 import StatIcon from 'lib/components/icons/StatIcon';
 import CustomTypography from 'lib/components/typography/CustomTypography';
 import ListWrapper from 'lib/components/lists/ListWrapper';
@@ -32,7 +32,7 @@ const mapIcons = (num: number, type: string) => {
 };
 
 const MatchPlayers: React.FC<Props> = ({ result: { players, isForfeit } }) => {
-  const orderedPlayers: IMatchPlayer[] = players.sort(
+  const orderedPlayers: IResultPlayerStats[] = players.sort(
     (a, b) => b.goals + b.assists - (a.goals + a.assists)
   );
 

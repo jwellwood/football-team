@@ -10,7 +10,16 @@ import {
   GET_LATEST_RESULT,
 } from '../types';
 
-export const resultReducer = function (state = {}, action) {
+const initialState = {
+  data: null,
+};
+
+type ResultState = typeof initialState;
+
+export const resultReducer = function (
+  state: ResultState = { ...initialState },
+  action
+) {
   switch (action.type) {
     // Results
     case ADD_RESULT:

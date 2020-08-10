@@ -79,7 +79,10 @@ const SquadTargetsTable: React.FC<Props> = ({ targets }) => {
                   {stat.p}%
                 </CustomTypography>
                 <CustomTypography size='sm'>
-                  {stat.t} / {stat.tar}
+                  <CustomTypography bold main>
+                    {stat.t}
+                  </CustomTypography>{' '}
+                  / {stat.tar}
                 </CustomTypography>
               </SectionBackground>
             </GridItem>

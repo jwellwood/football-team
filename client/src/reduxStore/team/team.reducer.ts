@@ -21,7 +21,16 @@ import {
   DELETE_PREVIOUS_AWARD,
 } from '../types';
 
-export const teamReducer = function (state = {}, action) {
+const initialState = {
+  teamData: null,
+};
+
+type TeamState = typeof initialState;
+
+export const teamReducer = function (
+  state: TeamState = { ...initialState },
+  action
+) {
   switch (action.type) {
     case GET_TEAM:
       return {

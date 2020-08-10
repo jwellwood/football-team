@@ -7,9 +7,10 @@ import { admin_routes } from 'router';
 import HOFForm from '../components/HallOfFameForm';
 import { ITeam, IHallOfFame } from 'shared/types';
 import { $initHOFFormState } from '../shared/state';
+import { RootState } from 'reduxStore/rootReducer';
 
 export default () => {
-  const team: ITeam = useSelector((state) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   let history = useHistory();
   const dispatch = useDispatch();
   const [input, setInput] = useState<IHallOfFame>({ ...$initHOFFormState });

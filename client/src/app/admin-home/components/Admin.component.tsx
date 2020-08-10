@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// Components
 import Collapse from '@material-ui/core/Collapse';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -6,6 +7,7 @@ import SectionBackground from 'shared/layout/SectionBackground';
 import ListWrapper from 'lib/components/lists/ListWrapper';
 import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
 import CustomIcon from 'lib/components/icons/CustomIcon';
+// Types
 import { IAdminLinkData } from '../shared';
 
 interface Props {

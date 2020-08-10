@@ -1,9 +1,9 @@
 import { getPercentage, mapReduce } from 'utils/helpers';
 import { getTotals } from './getTotals';
-import { IPlayer, IResult, IPlayerMatches } from 'shared/types';
+import { IPlayer, IResult, IPlayerMatchPlayed } from 'shared/types';
 
 export const getContributions = (player: IPlayer, results: IResult[]) => {
-  const matches: IPlayerMatches[] = player.matchesPlayed;
+  const matches: IPlayerMatchPlayed[] = player.matchesPlayed;
   const percent = (stat) => getPercentage(stat, results.length);
   const percentageOfPlayersMatches = (stat) =>
     getPercentage(stat, matches.length);
@@ -19,6 +19,6 @@ export const getContributions = (player: IPlayer, results: IResult[]) => {
     assists: percentageOfPlayersMatches(assistedIn),
     either: percentageOfPlayersMatches(either),
     both: percentageOfPlayersMatches(both),
-    overall: getPercentage(combinedStats, totalResultGoals),
+    overall: getPercentage(combinedStats, totalResultGoals, 1),
   };
 };
