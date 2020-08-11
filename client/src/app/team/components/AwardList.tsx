@@ -2,9 +2,8 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { IAward } from 'shared/types';
-import CustomTypography from 'lib/components/typography/CustomTypography';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
+import { CustomTypography } from 'components/typography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
 
 interface Props {
   awards: IAward[];
@@ -12,18 +11,20 @@ interface Props {
 
 const AwardList: React.FC<Props> = ({ awards }) => (
   <ListWrapper dense>
-    {awards.map(({ _id, awardName, awardWinner, awardValue }: IAward, i) => (
-      <ListItemWrapper noDivider key={_id}>
-        <ListItemText primary={awardWinner} secondary={awardName} />
-        <ListItemSecondaryAction>
-          {
-            <CustomTypography main bold>
-              {awardValue}
-            </CustomTypography>
-          }
-        </ListItemSecondaryAction>
-      </ListItemWrapper>
-    ))}
+    {awards.map(
+      ({ _id, awardName, awardWinner, awardValue }: IAward, i: number) => (
+        <ListItemWrapper noDivider key={_id}>
+          <ListItemText primary={awardWinner} secondary={awardName} />
+          <ListItemSecondaryAction>
+            {
+              <CustomTypography main bold>
+                {awardValue}
+              </CustomTypography>
+            }
+          </ListItemSecondaryAction>
+        </ListItemWrapper>
+      )
+    )}
   </ListWrapper>
 );
 

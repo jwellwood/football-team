@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
 import { getResultTotals } from '../functions';
-import CustomIcon from 'lib/components/icons/CustomIcon';
+import CustomIcon from 'lib/icons/CustomIcon';
 import ResultsTotals from './ResultsTotals.component';
 import { IResultTotalsData } from '../shared/types';
 import { IResult } from 'shared/types';
+import { getRecentForm } from '../functions';
 
 interface Props {
   results: IResult[];
@@ -25,11 +26,7 @@ const ResultsTotalTable: React.FC<Props> = ({ results }) => {
     [results]
   );
   const goalDifference: number = resultTotals.goals - resultTotals.conceded;
-
-  const latestResultPoints: number[] = results
-    .slice(0, 5)
-    .map((result) => result.points)
-    .reverse();
+  const latestResultPoints: number[] = getRecentForm(results);
 
   const data: IResultTotalsData[] = [
     { title: 'Pl', value: resultTotals.played, divider: true },

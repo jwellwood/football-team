@@ -2,9 +2,8 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import { admin_routes } from 'router';
 import { IPreviousSeason } from 'shared/types';
-import SectionContainer from 'shared/layout/SectionContainer';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import ListWrapper from 'lib/components/lists/ListWrapper';
+import { SectionContainer } from 'shared/layout/containers';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
 
 interface Props {
   seasons: IPreviousSeason[];
@@ -14,7 +13,7 @@ const AdminPrevSeasonsList: React.FC<Props> = ({ seasons }) => {
   return (
     <SectionContainer link={admin_routes.ADMIN_PREVIOUS_SEASON_ADD} text='Add'>
       <ListWrapper>
-        {seasons.map((season: IPreviousSeason, i) => (
+        {seasons.map((season: IPreviousSeason, i: number) => (
           <ListItemWrapper
             key={season._id}
             button

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormContainer from 'shared/layout/FormContainer';
-import Spinner from 'lib/components/loading/Spinner';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
+import { FormContainer } from 'shared/layout/containers';
+import { Spinner } from 'components/loaders';
+import { SubmitButton } from 'components/buttons';
+import { TextInput } from 'components/inputs';
 
 interface Props {
   loading: boolean;
@@ -25,7 +25,7 @@ const ResetPassword: React.FC<Props> = ({ loading, onChange, onSubmit }) => {
             required: true,
             minLength: 6,
           })}
-          errors={errors.email || null}
+          errors={errors.email}
         />
         <SubmitButton>Reset password</SubmitButton>
       </form>

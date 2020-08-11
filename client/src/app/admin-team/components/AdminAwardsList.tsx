@@ -2,9 +2,9 @@ import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { IPreviousSeason, IAward } from 'shared/types';
-import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
+import { CustomTable, ITableHeadCell } from 'shared/layout/tables';
 import DeleteAward from '../containers/DeleteAward.container';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   season: IPreviousSeason;
@@ -28,7 +28,7 @@ const AdminAwardsList: React.FC<Props> = ({ season }) => {
     ];
     return (
       <TableRow key={_id}>
-        {data.map((item, i) => (
+        {data.map((item, i: number) => (
           <TableCell key={i} align='center'>
             {item}
           </TableCell>

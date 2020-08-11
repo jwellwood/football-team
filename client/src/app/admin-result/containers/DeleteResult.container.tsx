@@ -6,13 +6,14 @@ import { deleteResult, getAllResults } from 'reduxStore/result/result_actions';
 import { onFormSubmit } from 'utils/form-controls';
 import { IResult } from 'shared/types';
 import DeleteResult from '../components/DeleteResult.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface Props {
   result: IResult;
 }
 
 export default ({ result }: Props) => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const [loading, setLoading] = useState<boolean>(false);
 

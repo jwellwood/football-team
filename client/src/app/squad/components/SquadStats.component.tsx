@@ -1,9 +1,8 @@
-import React, { lazy, Suspense, ReactElement } from 'react';
-// Layout
-import Spinner from 'lib/components/loading/Spinner';
-import CustomTabs from 'lib/components/tabs/CustomTabs';
-import CustomIcon from 'lib/components/icons/CustomIcon';
+import React, { lazy, Suspense } from 'react';
+import { CustomTabs, ITab } from 'shared/layout/tabs';
 import { IResult, IPlayer } from 'shared/types';
+import { CustomIcon } from 'lib/icons';
+import { Spinner } from 'components/loaders';
 // Components
 const SquadTargetTable = lazy(() =>
   import('../containers/SquadTargetTable.container')
@@ -16,13 +15,8 @@ interface Props {
   players: IPlayer[];
 }
 
-interface ISquadStatsTabs {
-  label: ReactElement;
-  component: ReactElement;
-}
-
 const SquadStats: React.FC<Props> = ({ results, players }) => {
-  const tabs: ISquadStatsTabs[] = [
+  const tabs: ITab[] = [
     {
       label: <CustomIcon icon='star' />,
       component: <Leaderboard results={results} players={players} />,
@@ -38,7 +32,7 @@ const SquadStats: React.FC<Props> = ({ results, players }) => {
   ];
 
   return (
-    <Suspense fallback={<Spinner isButton />}>
+    <Suspense fallback={<Spinner isSecondary />}>
       <CustomTabs tabs={tabs} />
     </Suspense>
   );

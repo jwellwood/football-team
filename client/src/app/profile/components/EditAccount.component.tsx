@@ -1,20 +1,20 @@
 import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { user_routes } from 'router';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import { emailHelper } from 'shared/messages/shared';
 import { IUserData } from 'shared/types';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import Spinner from 'lib/components/loading/Spinner';
-import TextInput from 'lib/components/inputs/TextInput';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
+import { CenteredGrid } from 'shared/layout/grids';
+import { Spinner } from 'components/loaders';
+import { TextInput } from 'components/inputs';
+import { SubmitButton } from 'components/buttons';
+import { CustomLinkButton } from 'components/buttons';
 import DeleteAccount from '../containers/DeleteAccount.container';
 import { IEditAccountForm } from '../containers/EditAccount.container';
-import FormHelper from 'lib/components/typography/FormHelper';
+import { FormHelper } from 'components/typography';
 
 interface Props {
-  onChange: (e) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
   loading: boolean;
   input: IEditAccountForm;
@@ -43,7 +43,7 @@ const EditAccountForm: React.FC<Props> = ({
             required: true,
             pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
           })}
-          errors={errors.email || null}
+          errors={errors.email}
         />
       </CenteredGrid>
       <SubmitButton disabled={user.email === input.email} loading={loading} />

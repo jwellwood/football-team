@@ -4,10 +4,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { IResult } from 'shared/types';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   results: IResult[];

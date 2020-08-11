@@ -2,12 +2,12 @@ import React from 'react';
 // MUITODO
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import PresentationModal from 'lib/components/modals/PresentationModal';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
+import { ListItemWrapper } from 'components/lists';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { PresentationModal } from 'components/modals';
+import { CustomAvatar } from 'components/avatars';
 import PreviousSeasonContent from './PreviousSeason.component';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 import { IPreviousSeason } from 'shared/types';
 
 interface Props {

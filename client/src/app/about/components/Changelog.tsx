@@ -1,16 +1,15 @@
 import React, { ReactElement } from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 // Data
-import { version, changeLog } from 'shared/data';
+import { version, changeLog } from 'constants/data';
 // Components
-import SectionContainer from 'shared/layout/SectionContainer';
-import PresentationModal from 'lib/components/modals/PresentationModal';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomButton from 'lib/components/buttons/CustomButton';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { SectionContainer } from 'shared/layout/containers';
+import { PresentationModal } from 'components/modals';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CustomButton } from 'components/buttons';
+import { CustomTypography } from 'components/typography';
 // Types
-import { IChangeLog } from 'shared/data/changeLog';
+import { IChangeLog } from 'constants/data/changeLog';
 
 const Changelog: React.FC = () => {
   const button: ReactElement = <CustomButton>View Changelog</CustomButton>;
@@ -18,10 +17,10 @@ const Changelog: React.FC = () => {
   return (
     <PresentationModal buttonElement={button}>
       <>
-        {changeLog.map((change: IChangeLog, i) => (
+        {changeLog.map((change: IChangeLog, i: number) => (
           <ListWrapper key={i}>
             <SectionContainer title={`v${change.version}`}>
-              {change.changes.map((text: string, i) => (
+              {change.changes.map((text: string, i: number) => (
                 <ListItemWrapper key={text + i}>
                   <ListItemText primary={text} />
                 </ListItemWrapper>

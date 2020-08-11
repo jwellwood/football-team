@@ -1,7 +1,5 @@
 import React from 'react';
-// Components
-import DeleteModal from 'lib/components/modals/DeleteModal';
-import CustomModalText from 'lib/components/modals/CustomModalText';
+import { DeleteModal, CustomModalText } from 'components/modals';
 
 interface Props {
   loading: boolean;

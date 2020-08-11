@@ -1,10 +1,9 @@
 import React, { lazy, Suspense, ReactElement } from 'react';
-import SectionBackground from 'shared/layout/SectionBackground';
+import { SectionBackground } from 'shared/layout/containers';
 import { IResult } from 'shared/types';
-import Spinner from 'lib/components/loading/Spinner';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
-import SectionTitle from 'lib/components/typography/SectionTitle';
+import { Spinner } from 'components/loaders';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
+import { SectionTitle } from 'components/typography';
 
 const ScoreBox = lazy(() => import('./ScoreBox'));
 const MatchPlayers = lazy(() => import('./MatchPlayers'));
@@ -34,10 +33,10 @@ const Result: React.FC<Props> = ({ result }) => {
   return (
     <SectionBackground placeholder>
       <CenteredGrid dir='row' item='flex-start'>
-        {sections.map((section, i) => (
+        {sections.map((section, i: number) => (
           <GridItem key={section.title + i}>
             <SectionBackground>
-              <Suspense fallback={<Spinner isButton />}>
+              <Suspense fallback={<Spinner isSecondary />}>
                 <SectionTitle title={section.title} />
                 {section.component}
               </Suspense>

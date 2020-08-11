@@ -6,19 +6,20 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { getPlayerById } from 'reduxStore/squad/squad_actions';
 import { IResult } from 'shared/types';
 import { IPlayer } from 'shared/types';
-import Spinner from 'lib/components/loading/Spinner';
+import { Spinner } from 'components/loaders';
 import Player from '../components/Player.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   // State
-  const [player, setPlayer] = useState<IPlayer>(null);
+  const [player, setPlayer] = useState<IPlayer>();
   const [results, setResults] = useState<IResult[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    dispatch(getAllResults()).then((res) => {
+    dispatch(getAllResults()).then((res: any) => {
       const { success, message, type, data } = res.payload;
       if (!success) {
         dispatch(showMessage(true, message, type));
@@ -28,7 +29,7 @@ export default () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getPlayerById(id)).then((res) => {
+    dispatch(getPlayerById(id)).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setPlayer(data);
@@ -40,7 +41,7 @@ export default () => {
   }, [dispatch, id]);
 
   const resultsWithoutForfeits: IResult[] = results.filter(
-    (res) => !res.isForfeit
+    (res: any) => !res.isForfeit
   );
 
   return !loading && player && results ? (

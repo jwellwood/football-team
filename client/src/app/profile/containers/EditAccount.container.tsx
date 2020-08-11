@@ -6,6 +6,7 @@ import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
 import EditAccount from '../components/EditAccount.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export interface IEditAccountForm {
   email: string;
@@ -18,7 +19,7 @@ export default () => {
   const user: IUserData = useSelector(
     (state: IAuthState) => state.auth.userData
   );
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   // State
   const [input, setInput] = useState<IEditAccountForm>({ email: user.email });

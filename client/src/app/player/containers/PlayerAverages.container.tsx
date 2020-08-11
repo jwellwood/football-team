@@ -7,8 +7,8 @@ import {
   IPlayerAveragesListData,
 } from '../shared/types';
 import { IBarGraphData } from 'lib/chartjs';
-import BarGraph from 'lib/components/graphs/BarGraph';
-import PlaceholderText from 'lib/components/typography/Placeholder';
+import { BarGraph } from 'lib/chartjs/graphs';
+import { Placeholder } from 'components/typography';
 import AveragesList from '../components/AveragesList';
 import PlayerAverages from '../components/PlayerAverages';
 import { getPerGameStats } from '../functions';
@@ -77,7 +77,7 @@ const PlayerAveragesLogic: React.FC<Props> = ({ player }) => {
   return matchesPlayed.length ? (
     <PlayerAverages tables={tables} />
   ) : (
-    <PlaceholderText />
+    <Placeholder />
   );
 };
 

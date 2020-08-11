@@ -1,6 +1,6 @@
 import React from 'react';
 import { admin_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import AdminResultsList from '../containers/AdminResultsList.container';
 
 const AdminResultsPage: React.FC = () => {

@@ -4,16 +4,18 @@ import { useDispatch } from 'react-redux';
 import { getResultById } from 'reduxStore/result/result_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 import { IResult } from 'shared/types';
-import Spinner from 'lib/components/loading/Spinner';
+import { Spinner } from 'components/loaders';
 import Result from '../components/Result.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
+import { $initResultData } from 'app/home/shared/initData';
 
 export default () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const [result, setResult] = useState<IResult>(null);
+  const dispatch: AppDispatch = useDispatch();
+  const [result, setResult] = useState<IResult>({ ...$initResultData });
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    dispatch(getResultById(id)).then((res) => {
+    dispatch(getResultById(id)).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setResult(data);

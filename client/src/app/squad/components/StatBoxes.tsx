@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 // Components
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomTypography } from 'components/typography';
 import { IStatBoxDetails } from '../shared/types';
 
 export const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ const StatBoxes: React.FC<Props> = ({ statBoxDetails }) => {
   return (
     <Grid>
       <CenteredGrid dir='row'>
-        {statBoxDetails.map((item, i) => (
+        {statBoxDetails.map((item, i: number) => (
           <Grid item key={i}>
             <Avatar className={classes.number_avatar}>
               <CustomTypography main bold>

@@ -1,7 +1,8 @@
 import { getAvg } from 'utils/helpers';
 import { totalPoints, totalGoals, totalConceded } from './resultTotals';
+import { IResult } from 'shared/types';
 
-export const getResultAverages = (results) => {
+export const getResultAverages = (results: IResult[]) => {
   // Get points per game, goals for, goals against, goal difference
   const played: number = results.length;
   const pointsPerGame: number = getAvg(totalPoints(results), played);

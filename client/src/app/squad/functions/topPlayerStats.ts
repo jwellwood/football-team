@@ -2,11 +2,11 @@ import { sortArr } from 'utils/helpers';
 import { getTotals } from 'app/player/functions';
 import { getPerGameStats } from 'app/player/functions';
 import { getContributions } from 'app/player/functions';
-import { IPlayer, IResult } from 'shared/types';
+import { IPlayer, IResult, IPlayerStats } from 'shared/types';
 
 export const topPlayerStats = (
   players: IPlayer[],
-  stat: string,
+  stat: keyof IPlayerStats,
   type: string,
   results?: IResult[]
 ) => {

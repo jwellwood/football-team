@@ -1,4 +1,4 @@
-import { ISelectOptions } from 'lib/components/inputs/SelectInput';
+import { ISelectOptions } from 'components/inputs/SelectInput';
 
 export const positionOptions: ISelectOptions[] = [
   { value: '', text: '' },

@@ -1,12 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
-import FormContainer from 'shared/layout/FormContainer';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import NumberInput from 'lib/components/inputs/NumberInput';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import CustomSwitch from 'lib/components/inputs/CustomSwitch';
-import TextInput from 'lib/components/inputs/TextInput';
+import { FormContainer } from 'shared/layout/containers';
+import { CenteredGrid } from 'shared/layout/grids';
+import { SubmitButton } from 'components/buttons';
+import { TextInput, NumberInput, CustomSwitch } from 'components/inputs';
 
 interface Props {
   loading: boolean;
@@ -50,7 +48,7 @@ const AddAwardForm: React.FC<Props> = ({
                 label={input.label}
                 onChange={onChange}
                 validators={register({ maxLength: 30 })}
-                errors={input.errors || null}
+                errors={input.errors}
               />
             </Grid>
           ))}
@@ -66,7 +64,7 @@ const AddAwardForm: React.FC<Props> = ({
                 label='Numeric Value'
                 onChange={onChange}
                 validators={register({ required: true, min: 0, max: 999 })}
-                errors={errors.awardValue || null}
+                errors={errors.awardValue}
               />
             ) : null}
           </Grid>

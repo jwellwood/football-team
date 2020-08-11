@@ -1,15 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import { passwordFormHelper } from 'shared/messages/shared';
-import Spinner from 'lib/components/loading/Spinner';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
-import FormHelper from 'lib/components/typography/FormHelper';
+import { Spinner } from 'components/loaders';
+import { SubmitButton } from 'components/buttons';
+import { TextInput } from 'components/inputs';
+import { FormHelper } from 'components/typography';
 
 interface Props {
   loading: boolean;
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
 }
 
@@ -27,7 +27,7 @@ const ForgotPassword: React.FC<Props> = ({ loading, onChange, onSubmit }) => {
           validators={register({
             required: true,
           })}
-          errors={errors.email || null}
+          errors={errors.email}
         />
         <SubmitButton>Send</SubmitButton>
       </form>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { user_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import EditAccount from '../containers/EditAccount.container';
 
 const EditAccountPage: React.FC = () => {

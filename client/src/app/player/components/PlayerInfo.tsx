@@ -1,12 +1,11 @@
 import React from 'react';
-import SectionBackground from 'shared/layout/SectionBackground';
+import { SectionBackground } from 'shared/layout/containers';
 import { IPlayer } from 'shared/types';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
-import CircularImage from 'lib/components/images/CircularImage';
-import ProfileList from 'lib/components/wrappers/ProfileList';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
+import { CircularImage } from 'components/images';
+import ProfileList from 'shared/layout/wrappers/ProfileList';
+import { ListWrapper } from 'components/lists';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   player: IPlayer;

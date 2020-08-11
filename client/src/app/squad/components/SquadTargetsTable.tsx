@@ -1,15 +1,28 @@
 import React from 'react';
 // Internal
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import CustomExpansion from 'lib/components/expansion/CustomExpansion';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
-import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'lib/components/typography/CustomTypography';
-import SectionBackground from 'shared/layout/SectionBackground';
+import { CustomAvatar } from 'components/avatars';
+import { CustomExpansion } from 'components/lists';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
+import { SectionContainer } from 'shared/layout/containers';
+import { CustomTypography } from 'components/typography';
+import { SectionBackground } from 'shared/layout/containers';
 
 interface Props {
-  targets: any;
+  targets: ITargetData[];
+}
+
+interface ITargetData {
+  name: string;
+  apps: ITargetDataObject;
+  goals: ITargetDataObject;
+  assists: ITargetDataObject;
+  total: number;
+}
+
+interface ITargetDataObject {
+  percentage: string;
+  total: number;
+  target: number;
 }
 
 interface ITargetTableRow {
@@ -20,11 +33,11 @@ interface ITargetTableRow {
 }
 
 const SquadTargetsTable: React.FC<Props> = ({ targets }) => {
-  const rows = targets.map((player, i) => {
+  const rows = targets.map((player: ITargetData, i: number) => {
     const { name, apps, goals, assists, total } = player;
 
-    const color = (num) => {
-      if (num >= 100) {
+    const color = (num: number) => {
+      if (num >= 100 || +num >= 100) {
         return 'success';
       } else if (num > 0) {
         return 'warning';

@@ -3,9 +3,8 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CustomTypography } from 'components/typography';
 import { IPlayerAveragesListData } from '../shared/types';
 
 interface Props {

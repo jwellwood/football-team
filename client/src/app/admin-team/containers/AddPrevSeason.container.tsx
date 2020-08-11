@@ -7,12 +7,12 @@ import { admin_routes } from 'router';
 import PrevSeasonForm from '../components/PreviousSeasonForm';
 import { ITeam, IPreviousSeason } from 'shared/types';
 import { $initPreviousSeasonFormState } from '../shared/state';
-import { RootState } from 'reduxStore/rootReducer';
+import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   const team: ITeam = useSelector((state: RootState) => state.team.teamData);
-  const teamId: string = team._id;
-  const dispatch = useDispatch();
+  const teamId: string = team._id!;
+  const dispatch: AppDispatch = useDispatch();
   let history = useHistory();
   const [input, setInput] = useState<IPreviousSeason>({
     ...$initPreviousSeasonFormState,

@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { admin_routes } from 'router';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 import { ITrophy } from 'shared/types';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import DeleteTrophy from '../containers/DeleteTrophy.container';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
 import { RootState } from 'reduxStore/rootReducer';
+import DeleteTrophy from '../containers/DeleteTrophy.container';
 
 const AdminTrophiesList: React.FC = () => {
   const trophies: ITrophy[] = useSelector(

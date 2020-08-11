@@ -1,9 +1,9 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import { reg_routes } from 'router';
-import SectionBackground from 'shared/layout/SectionBackground';
-import CustomTabs, { ITab } from 'lib/components/tabs/CustomTabs';
-import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
+import { SectionBackground } from 'shared/layout/containers';
+import { CustomTabs, ITab } from 'shared/layout/tabs';
+import { CustomLinkButton } from 'components/buttons';
 import SignUpLogic from '../containers/SignUp.container';
 import SignInLogic from '../containers/SignIn.container';
 

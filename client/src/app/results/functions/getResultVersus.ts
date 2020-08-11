@@ -1,14 +1,15 @@
 import { mapper, getMost, getFewest } from 'utils/helpers';
 import { parseDate } from 'utils/helpers';
+import { IResult } from 'shared/types';
 
-export const getResultVersus = (results) => {
+export const getResultVersus = (results: IResult[]) => {
   // Get all of the stats
   const getGoals = mapper(results, 'teamGoals');
   const getConceded = mapper(results, 'opponentGoals');
-  const getWinDifference = (matches) =>
-    matches.map((res) => +res.teamGoals - +res.opponentGoals);
-  const getDefeatDifference = (matches) =>
-    matches.map((res) => +res.opponentGoals - +res.teamGoals);
+  const getWinDifference = (matches: IResult[]) =>
+    matches.map((res: any) => +res.teamGoals - +res.opponentGoals);
+  const getDefeatDifference = (matches: IResult[]) =>
+    matches.map((res: any) => +res.opponentGoals - +res.teamGoals);
 
   // DIFF
   const defeats = results.filter((result) => result.points === 0);
@@ -17,29 +18,29 @@ export const getResultVersus = (results) => {
   const getLossDiff = getDefeatDifference(defeats);
 
   // Get the biggest/smallest
-  const mostGoals = getMost(getGoals);
-  const mostConc = getMost(getConceded);
+  const mostGoals: number = getMost(getGoals);
+  const mostConc: number = getMost(getConceded);
   const fewestGoals = getFewest(getGoals);
   // DIFF
   const biggestWinDiff = getMost(getWinDiff);
   const biggestLossDiff = getMost(getLossDiff);
-  const cleanSheets = results.filter((res) => !res.opponentGoals);
+  const cleanSheets = results.filter((res: any) => !res.opponentGoals);
   // Link that to a result
-  const filterResults = (arr, most, stat) =>
-    arr.filter((elem) => most === elem[stat]);
+  const filterResults = (arr: IResult[], most: number, stat: any) =>
+    arr.filter((elem: any) => most === elem[stat]);
   const topGoalResults = filterResults(results, mostGoals, 'teamGoals');
   const topConcededResults = filterResults(results, mostConc, 'opponentGoals');
   const fewestGoalsResults = filterResults(results, fewestGoals, 'teamGoals');
   // DIFF
   const biggestWinResults = wins.filter(
-    (res) => +res.teamGoals - +res.opponentGoals === biggestWinDiff
+    (res: any) => +res.teamGoals - +res.opponentGoals === biggestWinDiff
   );
   const biggestDefeatResults = defeats.filter(
-    (res) => +res.opponentGoals - +res.teamGoals === biggestLossDiff
+    (res: any) => +res.opponentGoals - +res.teamGoals === biggestLossDiff
   );
 
   // Return opponent name, score and date
-  const oppArr = (results) =>
+  const oppArr = (results: IResult[]) =>
     results.map((opp) => {
       return {
         name: opp.opponentName,

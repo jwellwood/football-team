@@ -1,5 +1,5 @@
 import React from 'react';
-import ListWrapper from 'lib/components/lists/ListWrapper';
+import { ListWrapper } from 'components/lists';
 import AdminLink from './Admin.component';
 import { adminLinks } from '../utils';
 import { IAdminLinkData } from '../shared';

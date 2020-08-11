@@ -3,7 +3,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import defaultImage from 'shared/assets/images/default_team.png';
 import { makeStyles } from '@material-ui/core/styles';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 
 export const useStyles = makeStyles((theme) => ({
   teamContainer: {

@@ -4,7 +4,7 @@ import { IPlayer } from 'shared/types';
 
 export const getTargetStats = (
   player: IPlayer,
-  stat: string,
+  stat: any, // TODO
   targetType: number
 ) => {
   return {

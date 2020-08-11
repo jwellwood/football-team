@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Auth from './auth/Auth';
+import { AuthGuard } from './guard';
 // Routes
 import { visitorRoutes } from './visitor';
 import { registrationRoutes } from './registration';
@@ -16,7 +16,7 @@ const Routes: React.FC = () => {
           key={route.path}
           exact
           path={route.path}
-          component={Auth(route.component, true, true)}
+          component={AuthGuard(route.component, true, true)}
         />
       ))}
       {userRoutes.map((route: IRoute) => (
@@ -24,7 +24,7 @@ const Routes: React.FC = () => {
           key={route.path}
           exact
           path={route.path}
-          component={Auth(route.component, true)}
+          component={AuthGuard(route.component, true)}
         />
       ))}
 
@@ -33,7 +33,7 @@ const Routes: React.FC = () => {
           key={route.path}
           exact
           path={route.path}
-          component={Auth(route.component, false)}
+          component={AuthGuard(route.component, false)}
         />
       ))}
 

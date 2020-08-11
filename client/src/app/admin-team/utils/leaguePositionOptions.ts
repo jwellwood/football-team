@@ -1,4 +1,4 @@
-import { ISelectOptions } from 'lib/components/inputs/SelectInput';
+import { ISelectOptions } from 'components/inputs/SelectInput';
 
 export const leaguePositionOptions: Function = (): ISelectOptions[] => {
   let options: ISelectOptions[] = [{ text: '0', value: '0' }];

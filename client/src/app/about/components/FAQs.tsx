@@ -1,10 +1,8 @@
 import React from 'react';
-// Data
 import { faqs } from '../utils';
-// Components
-import CustomContainer from 'shared/layout/CustomContainer';
-import CustomExpansion from 'lib/components/expansion/CustomExpansion';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomContainer } from 'shared/layout/containers';
+import { CustomExpansion } from 'components/lists';
+import { CustomTypography } from 'components/typography';
 // Types
 import { IFaq } from '../shared';
 

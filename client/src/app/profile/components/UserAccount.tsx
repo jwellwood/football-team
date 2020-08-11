@@ -3,10 +3,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { user_routes } from 'router';
 import { parseDate } from 'utils/helpers';
 import { IUserData } from 'shared/types';
-import SectionContainer from 'shared/layout/SectionContainer';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { SectionContainer } from 'shared/layout/containers';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   user: IUserData;

@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { IPlayer } from 'shared/types';
-import Spinner from 'lib/components/loading/Spinner';
+import { Spinner } from 'components/loaders';
 import { getTargetStats, targetsTotal } from '../functions';
 
 const TargetsTable = lazy(() => import('../components/SquadTargetsTable'));
@@ -14,7 +14,7 @@ interface ISquadTargets {
   assists: ITargetData;
   goals: ITargetData;
   name: string;
-  total: string | number;
+  total: number;
 }
 
 interface ITargetData {
@@ -29,7 +29,7 @@ const TargetTableLogic: React.FC<Props> = ({ players }) => {
     const apps = getTargetStats(player, 'apps', player.appsTarget);
     const goals = getTargetStats(player, 'goals', player.goalsTarget);
     const assists = getTargetStats(player, 'assists', player.assistsTarget);
-    const total = targetsTotal(player);
+    const total: number = targetsTotal(player);
     return {
       name: player.name,
       apps,
@@ -40,7 +40,7 @@ const TargetTableLogic: React.FC<Props> = ({ players }) => {
   });
 
   return (
-    <Suspense fallback={<Spinner isButton />}>
+    <Suspense fallback={<Spinner isSecondary />}>
       <TargetsTable targets={targets} />
     </Suspense>
   );

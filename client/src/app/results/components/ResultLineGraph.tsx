@@ -2,9 +2,10 @@ import React from 'react';
 // Assets
 import { theme } from 'lib/theme';
 // Internal
-import LineGraph, { ILineGraphData } from 'lib/components/graphs/LineGraph';
-import PlaceholderText from 'lib/components/typography/Placeholder';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { LineGraph } from 'lib/chartjs/graphs';
+import { ILineGraphData } from 'lib/chartjs';
+import { Placeholder } from 'components/typography';
+import { SectionContainer } from 'shared/layout/containers';
 import { IResult } from 'shared/types';
 
 interface Props {
@@ -22,22 +23,24 @@ interface IResultLineGraphData {
 const ResultLineGraph: React.FC<Props> = ({ results }) => {
   const { success, error, secondary } = theme.palette;
   const resultData: Array<IResultLineGraphData> = [];
-  results.forEach((result, i) => {
-    const data: IResultLineGraphData = {
-      index: i + 1,
-      opponentName: result.opponentName, // TODO include this as a tooltip?
-      goalsFor: result.teamGoals,
-      goalsAgainst: result.opponentGoals,
-      points: result.points,
-    };
-    resultData.unshift(data);
-  });
+  if (results) {
+    results.forEach((result, i: number) => {
+      const data: IResultLineGraphData = {
+        index: i + 1,
+        opponentName: result.opponentName, // TODO include this as a tooltip?
+        goalsFor: result.teamGoals,
+        goalsAgainst: result.opponentGoals,
+        points: result.points!,
+      };
+      resultData.unshift(data);
+    });
+  }
 
-  const labels: number[] = resultData.map((res, i) => i + 1);
-  const goalsFor: number[] = resultData.map((res) => res.goalsFor);
-  const goalsAgainst: number[] = resultData.map((res) => res.goalsAgainst);
+  const labels: number[] = resultData.map((res, i: number) => i + 1);
+  const goalsFor: number[] = resultData.map((res: any) => res.goalsFor);
+  const goalsAgainst: number[] = resultData.map((res: any) => res.goalsAgainst);
   const goalDiff: number[] = resultData.map(
-    (res) => res.goalsFor - res.goalsAgainst
+    (res: any) => res.goalsFor - res.goalsAgainst
   );
   const data: ILineGraphData = {
     labels: [...labels],
@@ -73,7 +76,7 @@ const ResultLineGraph: React.FC<Props> = ({ results }) => {
       <LineGraph data={data} />
     </SectionContainer>
   ) : (
-    <PlaceholderText />
+    <Placeholder />
   );
 };
 

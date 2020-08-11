@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import ValidatedEmail from '../containers/ValidatedEmail.container';
 
 const ValidatedEmailPage: React.FC = () => {

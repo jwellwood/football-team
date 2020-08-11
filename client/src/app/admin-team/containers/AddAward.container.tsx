@@ -7,9 +7,10 @@ import { admin_routes } from 'router';
 import AddAwardForm from '../components/AwardForm';
 import { IAward } from 'shared/types';
 import { $initAwardFormState } from '../shared/state';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
   const [loading, setLoading] = useState<boolean>(false);

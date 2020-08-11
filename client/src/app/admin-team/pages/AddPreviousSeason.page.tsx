@@ -1,6 +1,6 @@
 import React from 'react';
 import { admin_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import AddPrevSeason from '../containers/AddPrevSeason.container';
 
 const AddPreviousSeasonPage: React.FC = () => {

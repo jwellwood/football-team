@@ -1,6 +1,6 @@
 import { mapper, getMost } from 'utils/helpers';
 import { parseDate } from 'utils/helpers';
-import { IPlayer } from 'shared/types';
+import { IPlayer, IPlayerMatchPlayed } from 'shared/types';
 
 export const getVersusStats = (player: IPlayer) => {
   const matches = player.matchesPlayed;
@@ -13,15 +13,17 @@ export const getVersusStats = (player: IPlayer) => {
   const mostAssists = getMost(getAssists);
   const mostConc = getMost(getConceded);
   // Get the corresponding result
-  const getResultsForTopStats = (most: number, stat: string) =>
-    matches.filter((elem) => most === elem[stat]);
+  const getResultsForTopStats = (
+    most: number,
+    stat: any // TODO https://stackoverflow.com/questions/57086672/element-implicitly-has-an-any-type-because-expression-of-type-string-cant-b
+  ) => matches.filter((elem: any) => most === elem[stat]);
   const topGoalResults = getResultsForTopStats(mostGoals, 'goals');
   const topAssistResults = getResultsForTopStats(mostAssists, 'assists');
   const topConcResults = getResultsForTopStats(mostConc, 'conceded');
   // Get the opponent name
-  const oppArr = (results) =>
+  const oppArr = (results: IPlayerMatchPlayed[]) =>
     results
-      .map((res) => res.result)
+      .map((res: any) => res.result)
       .map((opp) => {
         return {
           name: opp.opponentName,

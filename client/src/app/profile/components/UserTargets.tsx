@@ -2,9 +2,9 @@ import React from 'react';
 // Routes
 import { user_routes } from 'router';
 // Components
-import ProfileList from 'lib/components/wrappers/ProfileList';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import SectionContainer from 'shared/layout/SectionContainer';
+import ProfileList from 'shared/layout/wrappers/ProfileList';
+import { ListWrapper } from 'components/lists';
+import { SectionContainer } from 'shared/layout/containers';
 import { IUserData } from 'shared/types';
 
 interface Props {
@@ -25,12 +25,12 @@ const UserTargets: React.FC<Props> = ({
     {
       text: 'Goals',
       value: goalsTarget,
-      secondary: appsTarget ? `${targetsPerGame.goals}  / game` : null,
+      secondary: appsTarget ? `${targetsPerGame.goals}  / game` : '',
     },
     {
       text: 'Assists',
       value: assistsTarget,
-      secondary: appsTarget ? `${targetsPerGame.assists} / game` : null,
+      secondary: appsTarget ? `${targetsPerGame.assists} / game` : '',
     },
   ];
   return (

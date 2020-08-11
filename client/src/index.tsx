@@ -12,7 +12,7 @@ import { CssBaseline } from '@material-ui/core';
 import { theme } from 'lib/theme';
 import 'lib/icons';
 // Error handling
-import ErrorBoundary from 'shared/layout/ErrorBoundary';
+import { ErrorBoundary } from 'errors';
 // Routes
 import { AppRouter } from 'router';
 

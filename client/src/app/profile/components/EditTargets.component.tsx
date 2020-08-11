@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import { IUserData } from 'shared/types';
 import { targetsFormHelper } from 'shared/messages/shared';
-import Spinner from 'lib/components/loading/Spinner';
-import NumberInput from 'lib/components/inputs/NumberInput';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import FormHelper from 'lib/components/typography/FormHelper';
+import { Spinner } from 'components/loaders';
+import { NumberInput } from 'components/inputs';
+import { SubmitButton } from 'components/buttons';
+import { CenteredGrid } from 'shared/layout/grids';
+import { FormHelper } from 'components/typography';
 import { IEditTargetForm } from '../containers/EditTargets.container';
 
 interface Props {
@@ -72,7 +72,7 @@ const EditTargets: React.FC<Props> = ({
             onChange={onChange}
             label={input.label}
             validators={register({ required: true, min: 0, max: 99 })}
-            errors={input.errors || null}
+            errors={input.errors}
           />
         ))}
       </CenteredGrid>

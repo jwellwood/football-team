@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 // Internal
 import Team from '../components/Team.component';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 import { ITeam } from 'shared/types';
 import { RootState } from 'reduxStore/rootReducer';
 

@@ -1,8 +1,7 @@
-import React, { lazy, Suspense, ReactElement } from 'react';
-// Layout
-import Spinner from 'lib/components/loading/Spinner';
-import CustomTabs from 'lib/components/tabs/CustomTabs';
-import CustomIcon from 'lib/components/icons/CustomIcon';
+import React, { lazy, Suspense } from 'react';
+import { Spinner } from 'components/loaders';
+import { CustomTabs, ITab } from 'shared/layout/tabs';
+import { CustomIcon } from 'lib/icons';
 import { ITeam } from 'shared/types';
 // Sections
 const TeamPhoto = lazy(() => import('./TeamPhoto'));
@@ -16,13 +15,8 @@ interface Props {
   team: ITeam;
 }
 
-interface ITeamTabs {
-  label: ReactElement;
-  component: ReactElement;
-}
-
 const Team: React.FC<Props> = ({ team }) => {
-  const tabs: ITeamTabs[] = [
+  const tabs: ITab[] = [
     {
       label: <CustomIcon icon='user-friends' />,
       component: <TeamPhoto image={team.teamPhoto.url} />,

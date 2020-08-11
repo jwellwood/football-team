@@ -3,12 +3,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { ILeaderboardData, ILeaderboardStat } from '../shared/types';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import SectionBackground from 'shared/layout/SectionBackground';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import StatIcon from 'lib/components/icons/StatIcon';
-import PresentationModal from 'lib/components/modals/PresentationModal';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { SectionBackground } from 'shared/layout/containers';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import StatIcon from 'lib/icons/StatIcon';
+import { PresentationModal } from 'components/modals';
+import { CustomTypography } from 'components/typography';
 import LeaderboardList from './LeaderboardList';
 
 interface Props {
@@ -24,9 +23,9 @@ interface ILeaderboardDataAllStats {
 const Leaderboard: React.FC<Props> = ({ leaderboardData }) => {
   return (
     <ListWrapper dense>
-      {leaderboardData.map((item: ILeaderboardDataAllStats, i) => {
-        const topName = item.value.length ? item.value[0].name : null;
-        const topValue = item.value.length ? item.value[0].stat : null;
+      {leaderboardData.map((item: ILeaderboardDataAllStats, i: number) => {
+        const topName = item.value.length > 0 ? item.value[0].name : null;
+        const topValue = item.value.length > 0 ? item.value[0].stat : null;
         return (
           <PresentationModal
             key={i}

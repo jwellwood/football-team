@@ -1,18 +1,13 @@
-import React, { lazy, Suspense, ReactElement } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { IUserData } from 'shared/types';
-import Spinner from 'lib/components/loading/Spinner';
-import CustomTabs from 'lib/components/tabs/CustomTabs';
-import CustomIcon from 'lib/components/icons/CustomIcon';
+import { Spinner } from 'components/loaders';
+import { CustomTabs, ITab } from 'shared/layout/tabs';
+import CustomIcon from 'lib/icons/CustomIcon';
 
 const AccountDetails = lazy(() => import('../components/UserAccount'));
 const PlayerDetails = lazy(() => import('../components/ImageAndInfo'));
 const UserTargets = lazy(() => import('../components/UserTargets'));
-
-interface ITabs {
-  label: ReactElement;
-  component: ReactElement;
-}
 
 export interface IAuthState {
   auth: any;
@@ -23,7 +18,7 @@ export default () => {
     (state: IAuthState) => state.auth.userData
   );
 
-  const tabs: ITabs[] = [
+  const tabs: ITab[] = [
     {
       label: <CustomIcon icon='user' />,
       component: <PlayerDetails user={user} />,
@@ -39,7 +34,7 @@ export default () => {
   ];
 
   return (
-    <Suspense fallback={<Spinner isButton />}>
+    <Suspense fallback={<Spinner isSecondary />}>
       <CustomTabs tabs={tabs} />
     </Suspense>
   );

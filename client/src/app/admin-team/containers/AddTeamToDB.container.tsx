@@ -6,11 +6,13 @@ import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import EditTeamDetailsForm from '../components/EditTeamDetailsForm';
 import { ITeam } from 'shared/types';
+import { $initAddTeamFormState } from '../shared/state';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   let history = useHistory();
-  const dispatch = useDispatch();
-  const [input, setInput] = useState<ITeam>();
+  const dispatch: AppDispatch = useDispatch();
+  const [input, setInput] = useState<ITeam>({ ...$initAddTeamFormState });
   const [loading, setLoading] = useState<boolean>(false);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>

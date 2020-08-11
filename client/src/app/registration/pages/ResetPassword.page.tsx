@@ -1,6 +1,6 @@
 import React from 'react';
 import { reg_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import ResetPassword from '../containers/ResetPassword.container';
 
 const ResetPasswordPage: React.FC = () => {

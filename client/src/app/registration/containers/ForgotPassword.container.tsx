@@ -6,6 +6,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { onInputChange } from 'utils/form-controls';
 import { reg_routes } from 'router';
 import ForgotPassword from '../components/ForgotPassword.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface IForgotPasswordForm {
   email: string;
@@ -16,7 +17,7 @@ const ForgotPasswordState = {
 };
 
 export default () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const [loading, setLoading] = useState<boolean>(false);
   const [input, setInput] = useState<IForgotPasswordForm>({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { admin_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import AddMatchPlayer from 'app/admin-result/containers/AddMatchPlayer.container';
 
 const AddMatchPlayerPage: React.FC = () => {

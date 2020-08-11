@@ -3,15 +3,12 @@ import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { assignPlayerHelper } from 'shared/messages/shared';
 import { IResult, IPlayer, IResultPlayerStats } from 'shared/types';
-import SelectInput from 'lib/components/inputs/SelectInput';
-import NumberInput from 'lib/components/inputs/NumberInput';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import Spinner from 'lib/components/loading/Spinner';
-import FormContainer from 'shared/layout/FormContainer';
-import CustomSwitch from 'lib/components/inputs/CustomSwitch';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import FormHelper from 'lib/components/typography/FormHelper';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { NumberInput, SelectInput, CustomSwitch } from 'components/inputs';
+import { SubmitButton } from 'components/buttons';
+import { Spinner } from 'components/loaders';
+import { FormContainer } from 'shared/layout/containers';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomTypography, FormHelper } from 'components/typography';
 import { matchPlayerOptions } from '../utils';
 
 interface Props {
@@ -130,7 +127,7 @@ const AddMatchPlayerForm: React.FC<Props> = ({
                 label='Name'
                 onChange={onChange}
                 validators={register({ required: true })}
-                errors={errors.player_id || null}
+                errors={errors.player_id}
                 options={matchPlayerOptions(result, players)}
               />
             </Grid>
@@ -159,7 +156,7 @@ const AddMatchPlayerForm: React.FC<Props> = ({
                     min: 0,
                     max: 99,
                   })}
-                  errors={input.errors || null}
+                  errors={input.errors}
                   disabled={input.condition === false}
                 />
               </Grid>

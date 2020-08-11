@@ -6,10 +6,9 @@ import {
   updatePassword,
 } from 'reduxStore/auth/auth_actions';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
-import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
 import ChangePassword from '../components/ChangePassword.component';
-import { RootState } from 'reduxStore/rootReducer';
+import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 
 export interface IChangePasswordForm {
   currentPassword: string;
@@ -22,7 +21,7 @@ interface ICurrentPasswordData {
 }
 interface INewPasswordData {
   currentPassword: string;
-  user: IUserData;
+  user: any; // TODO
 }
 
 const ChangePasswordState = {
@@ -33,7 +32,7 @@ const ChangePasswordState = {
 
 export default () => {
   const user = useSelector((state: RootState) => state.user.userData);
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   // State
   const [input, setInput] = useState<IChangePasswordForm>({

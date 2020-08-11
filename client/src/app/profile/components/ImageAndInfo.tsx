@@ -1,10 +1,9 @@
 import React from 'react';
 import { user_routes } from 'router';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
 import ProfileImage from './ProfileImage';
 import PlayerInfo from './PlayerInfo';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 import { IUserData } from 'shared/types';
 
 interface Props {

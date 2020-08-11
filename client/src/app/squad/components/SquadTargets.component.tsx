@@ -5,18 +5,17 @@ import {
   ListItemSecondaryAction,
 } from '@material-ui/core';
 import { theme } from 'lib/theme';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 import {
   ISquadTargets,
   ISquadTotals,
   ISquadPercentages,
 } from '../shared/types';
 import { IBarGraphData } from 'lib/chartjs';
-import HorizontalBarGraph from 'lib/components/graphs/HorizontalBarGraph';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import StatIcon from 'lib/components/icons/StatIcon';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import HorizontalBarGraph from 'lib/chartjs/graphs/HorizontalBarGraph';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import StatIcon from 'lib/icons/StatIcon';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   teamTargets: ISquadTargets;
@@ -58,7 +57,7 @@ const SquadTargets: React.FC<Props> = ({
     },
     {
       title: 'OVERALL',
-      icon: null,
+      icon: '',
       total: teamTotals.totalOverall,
       target: teamTargets.targetTotal,
     },
@@ -91,7 +90,7 @@ const SquadTargets: React.FC<Props> = ({
   return (
     <SectionContainer title='Team'>
       <HorizontalBarGraph data={data} />
-      {listData.map((item: ICircleGraphData, i) => (
+      {listData.map((item: ICircleGraphData, i: number) => (
         <ListWrapper dense key={item.title}>
           <ListItemWrapper>
             {item.icon ? (
