@@ -6,6 +6,7 @@ import HorizontalBarGraph from 'lib/chartjs/graphs/HorizontalBarGraph';
 import { CircularGraph } from 'lib/circular';
 import { CenteredGrid } from 'shared/layout/grids';
 import { getContributions, getTotals } from '../functions';
+import { theme } from 'lib/theme';
 
 interface Props {
   player: IPlayer;
@@ -18,6 +19,7 @@ interface IPlayerPercentagesListData {
 }
 
 const PlayerPercentages: React.FC<Props> = ({ player, results }) => {
+  const { goal, assist, success, secondary } = theme.palette;
   const playerTotals = useMemo(() => getTotals(player), [player]);
   const contributions = useMemo(() => getContributions(player, results), [
     player,
@@ -34,6 +36,7 @@ const PlayerPercentages: React.FC<Props> = ({ player, results }) => {
           contributions.either,
           contributions.both,
         ],
+        backgroundColor: [goal.main, assist.main, secondary.main, success.main],
       },
     ],
   };

@@ -35,7 +35,7 @@ const SquadTargets: React.FC<Props> = ({
   teamTotals,
   percentages,
 }) => {
-  const { warning, success } = theme.palette;
+  const { goal, assist, warning, success } = theme.palette;
   const listData: ICircleGraphData[] = [
     {
       title: 'APPS',
@@ -63,9 +63,6 @@ const SquadTargets: React.FC<Props> = ({
     },
   ];
 
-  const backgroundColor = (value: number): string =>
-    value < 100 ? warning.main : success.main;
-
   const data: IBarGraphData = {
     labels: ['Apps', 'Goals', 'Assists', 'Overall'],
     datasets: [
@@ -76,12 +73,7 @@ const SquadTargets: React.FC<Props> = ({
           percentages.assists,
           percentages.overall,
         ],
-        backgroundColor: [
-          backgroundColor(+percentages.apps),
-          backgroundColor(+percentages.goals),
-          backgroundColor(+percentages.assists),
-          backgroundColor(+percentages.overall),
-        ],
+        backgroundColor: [success.main, goal.main, assist.main, warning.main],
         borderWidth: 1,
       },
     ],
