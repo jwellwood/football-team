@@ -1,24 +1,21 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import { yearOptions } from 'utils/helpers';
 import { profileDetailsHelper } from 'shared/messages/shared';
 import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
-import Spinner from 'lib/components/loading/Spinner';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import NumberInput from 'lib/components/inputs/NumberInput';
-import TextInput from 'lib/components/inputs/TextInput';
-import SelectInput from 'lib/components/inputs/SelectInput';
+import { Spinner } from 'components/loaders';
+import { CenteredGrid } from 'shared/layout/grids';
+import { SubmitButton, CustomLinkButton } from 'components/buttons';
+import { TextInput, NumberInput, SelectInput } from 'components/inputs';
 import { IEditPlayerForm } from '../containers/EditPlayer.container';
-import EditImageButton from 'lib/components/buttons/EditImageButton';
-import FormHelper from 'lib/components/typography/FormHelper';
+import { FormHelper } from 'components/typography';
 import { positionOptions } from '../utils';
 
 interface Props {
-  onChange: (e) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
   loading: boolean;
   input: IEditPlayerForm;
@@ -43,9 +40,13 @@ const EditPlayer: React.FC<Props> = ({
       <FormHelper>{profileDetailsHelper}</FormHelper>
       <CenteredGrid dir='row'>
         <Grid item xs={6} sm={4}>
-          <EditImageButton
+          <CustomLinkButton
+            type='contained'
+            color='primary'
             link={!canEdit.photo ? 'locked' : user_routes.EDIT_PROFILE_IMAGE}
-          />
+          >
+            edit photo
+          </CustomLinkButton>
         </Grid>
         <Grid item xs={12} sm={8}>
           <TextInput
@@ -58,7 +59,7 @@ const EditPlayer: React.FC<Props> = ({
               minLength: 2,
               maxLength: 20,
             })}
-            errors={errors.name || null}
+            errors={errors.name}
           />
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -68,7 +69,7 @@ const EditPlayer: React.FC<Props> = ({
             onChange={onChange}
             label='Squad Number'
             validators={register({ required: true, min: 1, max: 99 })}
-            errors={errors.squadNumber || null}
+            errors={errors.squadNumber}
           />
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -79,7 +80,7 @@ const EditPlayer: React.FC<Props> = ({
             onChange={onChange}
             options={positionOptions}
             validators={register({ required: true })}
-            errors={errors.position || null}
+            errors={errors.position}
           />
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -89,7 +90,7 @@ const EditPlayer: React.FC<Props> = ({
             defaultValue={input.yearJoined || ''}
             onChange={onChange}
             options={yearOptions(2008, date)}
-            errors={errors.yearJoined || null}
+            errors={errors.yearJoined}
           />
         </Grid>
         <Grid item xs={12}>
@@ -100,7 +101,7 @@ const EditPlayer: React.FC<Props> = ({
             onChange={onChange}
             label='Description'
             validators={register({ maxLength: 150 })}
-            errors={errors.description || null}
+            errors={errors.description}
           />
         </Grid>
       </CenteredGrid>

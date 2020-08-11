@@ -5,3 +5,4 @@ export * from './resultTotals';
 export * from './getResultAverages';
 export * from './getResultPercentages';
 export * from './getResultsWithoutForfeits';
+export * from './getRecentForm';

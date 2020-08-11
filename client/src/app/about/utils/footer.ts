@@ -1,4 +1,4 @@
-import { version } from 'shared/data';
+import { version } from 'constants/data';
 
 interface IFooter {
   name: string;

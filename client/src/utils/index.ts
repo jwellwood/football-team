@@ -1,1 +1,1 @@
-export { getResultsColors, getBackground } from './colors';
+export * from './colors';

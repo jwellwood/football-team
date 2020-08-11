@@ -4,8 +4,8 @@ import { IPlayer, IResult, IPlayerMatchPlayed } from 'shared/types';
 
 export const getContributions = (player: IPlayer, results: IResult[]) => {
   const matches: IPlayerMatchPlayed[] = player.matchesPlayed;
-  const percent = (stat) => getPercentage(stat, results.length);
-  const percentageOfPlayersMatches = (stat) =>
+  const percent = (stat: number) => getPercentage(stat, results.length);
+  const percentageOfPlayersMatches = (stat: number) =>
     getPercentage(stat, matches.length);
   const totalResultGoals = mapReduce(results, 'teamGoals');
   const scoredIn = matches.filter((m) => m.goals > 0).length;

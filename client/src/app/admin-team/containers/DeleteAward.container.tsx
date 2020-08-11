@@ -5,13 +5,14 @@ import { admin_routes } from 'router';
 import { deletePreviousAward } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'utils/form-controls';
 import DeleteAward from '../components/DeleteAward.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface Props {
   awardId: string;
 }
 
 export default ({ awardId }: Props) => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
   const [loading, setLoading] = useState<boolean>(false);

@@ -8,14 +8,15 @@ import {
 import { showMessage } from 'reduxStore/app/message_actions';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
-import Spinner from 'lib/components/loading/Spinner';
+import { Spinner } from 'components/loaders';
 import PrevSeasonForm from '../components/PreviousSeasonForm';
 import { IPreviousSeason } from 'shared/types';
 import { $initPreviousSeasonFormState } from '../shared/state';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   let history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const { id } = useParams();
   const [season, setSeason] = useState<IPreviousSeason>({
     ...$initPreviousSeasonFormState,
@@ -26,7 +27,7 @@ export default () => {
   });
 
   useEffect(() => {
-    dispatch(getPreviousSeasonById(id)).then((res) => {
+    dispatch(getPreviousSeasonById(id)).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setSeason(data);

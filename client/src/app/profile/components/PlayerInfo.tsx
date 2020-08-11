@@ -1,9 +1,9 @@
 import React from 'react';
 // Components
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ProfileList from 'lib/components/wrappers/ProfileList';
-import CustomDivider from 'lib/components/dividers/CustomDivider';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { ListWrapper } from 'components/lists';
+import ProfileList from 'shared/layout/wrappers/ProfileList';
+import { CustomDivider } from 'components/dividers';
+import { CustomTypography } from 'components/typography';
 import { IUserData } from 'shared/types';
 
 interface Props {

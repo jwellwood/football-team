@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { getVersusStats } from '../functions';
-import PlaceholderText from 'lib/components/typography/Placeholder';
-import VersusWrapper from 'lib/components/wrappers/VersusWrapper';
+import { Placeholder } from 'components/typography';
+import VersusWrapper from 'shared/layout/wrappers/VersusWrapper';
 import { IPlayer } from 'shared/types';
 import { IVersusGame } from 'app/results/shared/types';
 
@@ -54,7 +54,7 @@ const PlayerVersus: React.FC<Props> = ({ player }) => {
   return matchesPlayed.length ? (
     <VersusWrapper data={versusData} />
   ) : (
-    <PlaceholderText />
+    <Placeholder />
   );
 };
 

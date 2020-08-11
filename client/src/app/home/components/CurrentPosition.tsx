@@ -1,7 +1,7 @@
 import React from 'react';
 import { generateOrdinals } from 'utils/helpers/generateOrdinals';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   position: string;

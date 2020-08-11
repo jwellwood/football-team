@@ -1,3 +1,12 @@
+import { base_year, currentYear } from 'constants/data';
+
+export const $initAddTeamFormState = {
+  name: '',
+  location: '',
+  league: '',
+  position: '',
+};
+
 export const $initAwardFormState = {
   awardName: '',
   awardWinner: '',
@@ -6,26 +15,26 @@ export const $initAwardFormState = {
 
 export const $initHOFFormState = {
   name: '',
-  yearInducted: null,
-  yearJoined: null,
-  yearLeft: null,
+  yearInducted: base_year,
+  yearJoined: base_year,
+  yearLeft: base_year,
   description: '',
 };
 
 export const $initTrophyFormState = {
   name: '',
-  year: null,
+  year: currentYear,
   isWinner: false,
   isFinal: false,
 };
 
 export const $initPreviousSeasonFormState = {
-  year: null,
+  year: currentYear,
   seasonName: '',
   win: 0,
   draw: 0,
   lose: 0,
   goalsFor: 0,
   goalsAgainst: 0,
-  finalPosition: null,
+  finalPosition: 0,
 };

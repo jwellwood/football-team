@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import Admin from 'app/admin-home/components/AdminLinkList';
 import { visitor_routes } from 'router';
 

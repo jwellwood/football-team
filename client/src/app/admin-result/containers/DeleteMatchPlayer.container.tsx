@@ -5,13 +5,14 @@ import { deleteMatchPlayer } from 'reduxStore/result/result_actions';
 import { onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import DeleteMatchPlayer from '../components/DeleteMatchPlayer.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface Props {
   matchPlayerId: string;
 }
 
 export default ({ matchPlayerId }: Props) => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
   const [loading, setLoading] = useState<boolean>(false);

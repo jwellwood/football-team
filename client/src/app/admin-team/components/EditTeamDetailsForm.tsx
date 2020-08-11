@@ -2,14 +2,13 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { ITeam } from 'shared/types';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
-import SelectInput from 'lib/components/inputs/SelectInput';
-import FormContainer from 'shared/layout/FormContainer';
+import { SubmitButton } from 'components/buttons';
+import { TextInput, SelectInput } from 'components/inputs';
+import { FormContainer } from 'shared/layout/containers';
 import { leaguePositionOptions } from '../utils';
 interface Props {
   onSubmit: () => void;
-  onChange: (e) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   input: ITeam;
   loading: boolean;
 }
@@ -66,7 +65,7 @@ const EditTeamDetailsForm: React.FC<Props> = ({
                   minLength: 2,
                   maxLength: 30,
                 })}
-                errors={input.errors || null}
+                errors={input.errors}
               />
             </Grid>
           ))}
@@ -78,7 +77,7 @@ const EditTeamDetailsForm: React.FC<Props> = ({
               label='League Position'
               onChange={onChange}
               validators={register({ required: true })}
-              errors={errors.position || null}
+              errors={errors.position}
               options={leaguePositionOptions()}
             />
           </Grid>

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { topPlayerStats } from '../functions';
 import { IPlayer, IResult } from 'shared/types';
 import { ILeaderboardStat, ILeaderboardData } from '../shared/types';
-import PlaceholderText from 'lib/components/typography/Placeholder';
+import { Placeholder } from 'components/typography';
 import Leaderboard from '../components/Leaderboard.component';
 
 interface Props {
@@ -57,6 +57,6 @@ export default ({ players, results }: Props) => {
   return results ? (
     <Leaderboard leaderboardData={leaderboardData} />
   ) : (
-    <PlaceholderText />
+    <Placeholder />
   );
 };

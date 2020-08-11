@@ -2,12 +2,11 @@ import React from 'react';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 import { IPlayerStatsListData } from '../shared/types';
-import CustomTypography from 'lib/components/typography/CustomTypography';
-import StatIcon from 'lib/components/icons/StatIcon';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
+import { CustomTypography } from 'components/typography';
+import StatIcon from 'lib/icons/StatIcon';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
 
 interface Props {
   statsData: IPlayerStatsListData[];

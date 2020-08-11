@@ -6,6 +6,7 @@ import { user_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import EditPlayer from '../components/EditPlayer.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export interface IEditPlayerForm {
   name: string;
@@ -24,7 +25,7 @@ export default () => {
     (state: IAuthState) => state.auth.userData
   );
   const { name, position, squadNumber, yearJoined, description } = user;
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const [input, setInput] = useState<IEditPlayerForm>({
     name,

@@ -3,12 +3,13 @@ import Grid from '@material-ui/core/Grid';
 import { getPercentage } from 'utils/helpers';
 import { generateOrdinals } from 'utils/helpers/generateOrdinals';
 import { theme } from 'lib/theme';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { CustomAvatar } from 'components/avatars';
 import ResultsTotals from 'app/results/components/ResultsTotals.component';
-import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';
-import SectionTitle from 'lib/components/typography/SectionTitle';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { DonutGraph } from 'lib/chartjs/graphs';
+import { IDonutGraphData } from 'lib/chartjs';
+
+import { SectionTitle, CustomTypography } from 'components/typography';
 import AwardList from './AwardList';
 import { IPreviousSeason } from 'shared/types';
 
@@ -55,7 +56,7 @@ const PreviousSeasonContent: React.FC<Props> = ({
     },
   ];
 
-  const donutData: IDonutData = {
+  const donutData: IDonutGraphData = {
     labels: ['Win', 'Draw', 'Lose'],
 
     datasets: [

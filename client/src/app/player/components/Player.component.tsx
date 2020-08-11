@@ -1,9 +1,9 @@
-import React, { lazy, Suspense, ReactElement } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { IPlayer, IResult } from 'shared/types';
-import Spinner from 'lib/components/loading/Spinner';
-import SectionTitle from 'lib/components/typography/SectionTitle';
-import CustomTabs from 'lib/components/tabs/CustomTabs';
-import CustomIcon from 'lib/components/icons/CustomIcon';
+import { Spinner } from 'components/loaders';
+import { SectionTitle } from 'components/typography';
+import { CustomTabs, ITab } from 'shared/layout/tabs';
+import { CustomIcon } from 'lib/icons';
 
 const PlayerResultsLogic = lazy(() =>
   import('../containers/PlayerResults.container')
@@ -28,13 +28,8 @@ interface Props {
   results: IResult[];
 }
 
-interface IPlayerTabsData {
-  label: ReactElement;
-  component: ReactElement;
-}
-
 const Player: React.FC<Props> = ({ player, results }) => {
-  const tabs: IPlayerTabsData[] = [
+  const tabs: ITab[] = [
     {
       label: <CustomIcon icon='user' />,
       component: <PlayerInfo player={player} />,

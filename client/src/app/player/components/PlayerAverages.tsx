@@ -1,9 +1,8 @@
 import React from 'react';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 import { IPlayerAveragesTableData } from '../shared/types';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   tables: IPlayerAveragesTableData[];

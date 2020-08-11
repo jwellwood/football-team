@@ -6,18 +6,19 @@ import { getAuth } from 'reduxStore/auth/auth_actions';
 import { getTeam } from 'reduxStore/team/team_actions';
 // UI
 import { AlertMessage } from 'shared/messages/components';
-import Spinner from 'lib/components/loading/Spinner';
-import Navigation from 'lib/components/navigation/Navigation.container';
-import PageContainer from 'shared/layout/PageContainer';
+import { Spinner } from 'components/loaders';
+import Navigation from 'app/navigation/Navigation.container';
+import { PageContainer } from 'shared/layout/containers';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 const Routes = lazy(() => import('./Routes'));
 
 export default () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTeam()).then(
-      (res) => {
+      (res: any) => {
         const { success, message, type } = res.payload;
         if (!success) {
           dispatch(showMessage(true, message, type));

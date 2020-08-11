@@ -5,6 +5,7 @@ import { resetPassword } from 'reduxStore/auth/auth_actions';
 import { reg_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import ResetPassword from '../components/ResetPassword.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface IResetPasswordForm {
   password: string;
@@ -17,7 +18,7 @@ const ResetPasswordState = {
 
 export default () => {
   const { token } = useParams();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
 
   const [loading, setLoading] = useState<boolean>(false);

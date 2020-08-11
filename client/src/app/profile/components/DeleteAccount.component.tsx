@@ -1,15 +1,14 @@
 import React from 'react';
 import { IUserData } from 'shared/types';
-import TextInput from 'lib/components/inputs/TextInput';
+import { TextInput } from 'components/inputs';
 import { IDeleteForm } from '../containers/DeleteAccount.container';
-import DeleteModal from 'lib/components/modals/DeleteModal';
-import CustomModalText from 'lib/components/modals/CustomModalText';
+import { DeleteModal, CustomModalText } from 'components/modals';
 
 interface Props {
   user: IUserData;
   input: IDeleteForm;
   loading: boolean;
-  onChange: (e) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
 }
 

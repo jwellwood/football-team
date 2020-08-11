@@ -1,20 +1,19 @@
 import React, { ReactElement } from 'react';
 import { ListItemText, Grid } from '@material-ui/core';
 import { IResult, IResultPlayerStats } from 'shared/types';
-import StatIcon from 'lib/components/icons/StatIcon';
-import CustomTypography from 'lib/components/typography/CustomTypography';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import StatIcon from 'lib/icons/StatIcon';
+import { CustomTypography } from 'components/typography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CenteredGrid } from 'shared/layout/grids';
 
 interface Props {
   result: IResult;
 }
-// TODO
-// interface IIconArray {
-//   item: number | boolean;
-//   icon: string;
-// }
+
+interface IIconArray {
+  item: number | boolean;
+  icon: string;
+}
 
 const mapIcons = (num: number, type: string) => {
   const statArr: Array<ReactElement> = [];
@@ -36,9 +35,9 @@ const MatchPlayers: React.FC<Props> = ({ result: { players, isForfeit } }) => {
     (a, b) => b.goals + b.assists - (a.goals + a.assists)
   );
 
-  const forfeitText: ReactElement = isForfeit ? (
+  const forfeitText: ReactElement = (
     <CustomTypography>Match forfeited</CustomTypography>
-  ) : null;
+  );
 
   const playersList = players.length ? (
     orderedPlayers.map(
@@ -54,8 +53,8 @@ const MatchPlayers: React.FC<Props> = ({ result: { players, isForfeit } }) => {
         redCard,
       }) => {
         //TODO
-        const iconArr = [];
-        const getArray = (item, icon) => {
+        const iconArr: any = [];
+        const getArray = (item: number | boolean, icon: string) => {
           if (item) {
             iconArr.push(mapIcons(+item, icon));
           }

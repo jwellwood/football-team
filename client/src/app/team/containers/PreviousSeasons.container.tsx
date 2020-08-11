@@ -4,18 +4,19 @@ import { useDispatch } from 'react-redux';
 import { getPreviousSeasons } from 'reduxStore/team/team_actions';
 import { showMessage } from 'reduxStore/app/message_actions';
 // Components
-import ListWrapper from 'lib/components/lists/ListWrapper';
+import { ListWrapper } from 'components/lists';
 import PreviousSeason from '../components/PreviousSeason';
-import Spinner from 'lib/components/loading/Spinner';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { Spinner } from 'components/loaders';
+import { SectionContainer } from 'shared/layout/containers';
 import { IPreviousSeason } from 'shared/types';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   const [seasons, setSeasons] = useState<IPreviousSeason[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPreviousSeasons()).then((res) => {
+    dispatch(getPreviousSeasons()).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setSeasons(data);
@@ -29,12 +30,12 @@ export default () => {
   return !loading ? (
     <SectionContainer title='Previous Seasons'>
       <ListWrapper>
-        {seasons.map((season: IPreviousSeason, i) => {
+        {seasons.map((season: IPreviousSeason, i: number) => {
           return <PreviousSeason key={i} season={season} />;
         })}
       </ListWrapper>
     </SectionContainer>
   ) : (
-    <Spinner isButton />
+    <Spinner isSecondary />
   );
 };

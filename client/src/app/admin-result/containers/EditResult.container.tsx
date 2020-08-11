@@ -10,7 +10,7 @@ import {
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IResult } from 'shared/types';
 import { admin_routes } from 'router';
-import Spinner from 'lib/components/loading/Spinner';
+import { Spinner } from 'components/loaders';
 import { IResultInput } from '../shared/types';
 import { $initResultFormState } from '../shared/state';
 import EditResultForm from '../components/EditResultForm';

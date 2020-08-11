@@ -7,10 +7,11 @@ import { IResultInput } from '../shared/types';
 import { admin_routes } from 'router';
 import { $initResultFormState } from '../shared/state';
 import AddResultForm from '../components/AddResultForm';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   let history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [input, setInput] = useState<IResultInput>({ ...$initResultFormState });
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [loading, setLoading] = useState<boolean>(false);

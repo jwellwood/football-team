@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   type: string;

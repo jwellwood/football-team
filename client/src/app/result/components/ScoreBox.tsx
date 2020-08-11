@@ -2,17 +2,15 @@ import React, { ReactElement } from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { parseDate } from 'utils/helpers';
-import { getResultsColors } from 'utils';
+import { getThemeColorByNumber } from 'utils';
 import badge from 'shared/assets/images/badge.jpg';
 import { theme } from 'lib/theme';
 import { IResult } from 'shared/types';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
-import CustomTypography from 'lib/components/typography/CustomTypography';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomImageAvatar, CustomAvatar } from 'components/avatars';
+import { CustomTypography } from 'components/typography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
 
 interface Props {
   result: IResult;
@@ -65,7 +63,7 @@ const ScoreBox: React.FC<Props> = ({
       <ListItemSecondaryAction>
         <div
           style={{
-            color: getResultsColors(points),
+            color: getThemeColorByNumber(points),
             fontFamily: theme.typography.secondaryFont,
             fontWeight: 'bold',
             fontSize: '40px',

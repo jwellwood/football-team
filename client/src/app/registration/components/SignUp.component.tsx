@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
-import CustomSwitch from 'lib/components/inputs/CustomSwitch';
+import { SubmitButton } from 'components/buttons';
+import { TextInput, CustomSwitch } from 'components/inputs';
 
 interface Props {
   loading: boolean;
@@ -34,7 +33,7 @@ const SignUpForm: React.FC<Props> = ({
           minLength: 2,
           maxLength: 20,
         })}
-        errors={errors.name || null}
+        errors={errors.name}
       />
 
       <TextInput
@@ -46,7 +45,7 @@ const SignUpForm: React.FC<Props> = ({
           minLength: 2,
           pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
         })}
-        errors={errors.email || null}
+        errors={errors.email}
       />
       <TextInput
         isPassword={true}
@@ -54,7 +53,7 @@ const SignUpForm: React.FC<Props> = ({
         label='Password'
         onChange={onChange}
         validators={register({ required: true, minLength: 6 })}
-        errors={errors.password || null}
+        errors={errors.password}
       />
       <div style={{ marginLeft: '10px' }}>
         <CustomSwitch

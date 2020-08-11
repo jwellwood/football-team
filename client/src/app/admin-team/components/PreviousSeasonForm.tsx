@@ -4,15 +4,13 @@ import Grid from '@material-ui/core/Grid';
 import { admin_routes } from 'router';
 import { yearOptions } from 'utils/helpers';
 import { IPreviousSeason } from 'shared/types';
-import FormContainer from 'shared/layout/FormContainer';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
-import NumberInput from 'lib/components/inputs/NumberInput';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
+import { FormContainer } from 'shared/layout/containers';
+import { SubmitButton } from 'components/buttons';
+import { TextInput, NumberInput, SelectInput } from 'components/inputs';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomLinkButton } from 'components/buttons';
 import AdminAwardsList from './AdminAwardsList';
 import DeletePrevSeason from '../containers/DeletePreviousSeason.container';
-import SelectInput from 'lib/components/inputs/SelectInput';
 
 interface Props {
   onSubmit: () => void;
@@ -112,7 +110,7 @@ const PrevSeasonForm: React.FC<Props> = ({
                 maxLength: 30,
                 minLength: 2,
               })}
-              errors={errors.seasonName || null}
+              errors={errors.seasonName}
             />
           </Grid>
           <Grid item xs={4}>

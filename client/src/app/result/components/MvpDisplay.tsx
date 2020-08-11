@@ -1,11 +1,10 @@
 import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
-import SectionBackground from 'shared/layout/SectionBackground';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import StatIcon from 'lib/components/icons/StatIcon';
-import CustomTypography from 'lib/components/typography/CustomTypography';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
+import { SectionBackground } from 'shared/layout/containers';
+import { CustomAvatar } from 'components/avatars';
+import StatIcon from 'lib/icons/StatIcon';
+import { CustomTypography } from 'components/typography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
 
 interface Props {
   mvp: IMvpData[];
@@ -27,7 +26,7 @@ const MvpDisplay: React.FC<Props> = ({ mvp }) => {
             <StatIcon type='mvp' />
           </CustomAvatar>
           <ListItemText
-            primary={mvp.map((pl, i) => (
+            primary={mvp.map((pl, i: number) => (
               <CustomTypography bold key={pl.player_id._id} div>
                 {pl.player_id.name}
               </CustomTypography>

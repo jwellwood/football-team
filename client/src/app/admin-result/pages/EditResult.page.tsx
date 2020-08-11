@@ -1,6 +1,6 @@
 import React from 'react';
 import { admin_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import EditResult from 'app/admin-result/containers/EditResult.container';
 
 const EditResultPage: React.FC = () => {

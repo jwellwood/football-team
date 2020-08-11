@@ -1,7 +1,7 @@
 import React from 'react';
 import { parseDate } from 'utils/helpers';
-import { getResultsColors } from 'utils';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { getThemeColorByNumber } from 'utils';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   date: string;
@@ -26,7 +26,7 @@ const LatestResult: React.FC<Props> = ({
 
       <div
         style={{
-          color: getResultsColors(points),
+          color: getThemeColorByNumber(points),
           fontSize: '30px',
           fontWeight: 'bold',
         }}

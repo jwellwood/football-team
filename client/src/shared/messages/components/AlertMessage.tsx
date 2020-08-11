@@ -5,6 +5,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 import { IAlert } from '../shared';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface IAppState {
   app: any;
@@ -12,7 +13,7 @@ interface IAppState {
 
 const AlertMessage: React.FC = () => {
   const message: IAlert = useSelector((state: IAppState) => state.app.message);
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   const handleClose = () => {
     dispatch(showMessage(false, ''));

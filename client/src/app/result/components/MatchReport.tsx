@@ -1,6 +1,6 @@
 import React from 'react';
 import { IResult } from 'shared/types';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   result: IResult;

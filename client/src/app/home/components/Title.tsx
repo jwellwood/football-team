@@ -3,9 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import badge from 'shared/assets/images/badge.jpg';
 import { ITeam } from 'shared/types';
-import CircularImage from 'lib/components/images/CircularImage';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
+import { CircularImage } from 'components/images';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
 
 export const useStyles = makeStyles((theme) => ({
   main: {

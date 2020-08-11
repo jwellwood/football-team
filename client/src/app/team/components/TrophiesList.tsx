@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import ListWrapper from 'lib/components/lists/ListWrapper';
+import { ListWrapper } from 'components/lists';
 import Trophies from './TrophiesTable';
 import { ITrophy, ITeam } from 'shared/types';
 

@@ -4,20 +4,19 @@ import Grid from '@material-ui/core/Grid';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import { setPermissionsHelper } from 'shared/messages/shared';
-import NumberInput from 'lib/components/inputs/NumberInput';
-import SelectInput from 'lib/components/inputs/SelectInput';
-import TextInput from 'lib/components/inputs/TextInput';
-import CustomSwitch from 'lib/components/inputs/CustomSwitch';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import Spinner from 'lib/components/loading/Spinner';
-import FormContainer from 'shared/layout/FormContainer';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomDivider from 'lib/components/dividers/CustomDivider';
-import CustomButton from 'lib/components/buttons/CustomButton';
-import FormHelper from 'lib/components/typography/FormHelper';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import {
+  TextInput,
+  NumberInput,
+  SelectInput,
+  CustomSwitch,
+} from 'components/inputs';
+import { SubmitButton, CustomButton } from 'components/buttons';
+import { Spinner } from 'components/loaders';
+import { FormContainer } from 'shared/layout/containers';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomDivider } from 'components/dividers';
+import { CustomTypography, FormHelper } from 'components/typography';
 import { IUserData } from 'shared/types';
 import { positionOptions } from 'app/profile/utils';
 
@@ -39,7 +38,7 @@ interface IPermissionSwitch {
 
 interface IPermissionTargets {
   name: string;
-  defaultValue?: number;
+  defaultValue: number;
   label: string;
   errors?: any;
 }
@@ -118,7 +117,7 @@ const UserPermissionForm: React.FC<Props> = ({
                 minLength: 2,
                 maxLength: 20,
               })}
-              errors={errors.name || null}
+              errors={errors.name}
             />
           </Grid>
           <Grid item xs={6} sm={4}>
@@ -128,7 +127,7 @@ const UserPermissionForm: React.FC<Props> = ({
               onChange={onChange}
               label='SquadNumber'
               validators={register({ required: true, min: 0, max: 99 })}
-              errors={errors.squadNumber || null}
+              errors={errors.squadNumber}
             />
           </Grid>
           <Grid item xs={6} sm={8}>
@@ -138,7 +137,7 @@ const UserPermissionForm: React.FC<Props> = ({
               label='Position'
               onChange={onChange}
               validators={register({ required: true })}
-              errors={errors.position || null}
+              errors={errors.position}
               options={positionOptions}
             />
           </Grid>
@@ -150,14 +149,14 @@ const UserPermissionForm: React.FC<Props> = ({
                 onChange={onChange}
                 label={input.label}
                 validators={register({ required: true, min: 0, max: 99 })}
-                errors={input.errors || null}
+                errors={input.errors}
               />
             </Grid>
           ))}
         </CenteredGrid>
 
         <ListWrapper>
-          {switches.map((item, i) => (
+          {switches.map((item, i: number) => (
             <ListItemWrapper key={item.title + i}>
               <ListItemText primary={item.title} />
               <ListItemSecondaryAction>

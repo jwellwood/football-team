@@ -5,6 +5,7 @@ import { verifyEmail } from 'reduxStore/auth/auth_actions';
 import { onFormSubmit } from 'utils/form-controls';
 import { reg_routes } from 'router';
 import ValidatedEmail from '../components/ValidatedEmail.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface IValidatedEmail {
   token: string;
@@ -13,7 +14,7 @@ interface IValidatedEmail {
 export default () => {
   const { token } = useParams();
   const history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [loading, setLoading] = useState<boolean>(false);
 
   const dataToSubmit: IValidatedEmail = { token: token };

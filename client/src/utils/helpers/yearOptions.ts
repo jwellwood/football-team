@@ -1,8 +1,9 @@
-import { ISelectOptions } from 'lib/components/inputs/SelectInput';
+import { ISelectOptions } from 'components/inputs/SelectInput';
+import { base_year, max_year } from 'constants/data';
 
 export const yearOptions: Function = (
-  minYear: number = 2005,
-  maxYear: number = 2050
+  minYear: number = base_year,
+  maxYear: number = max_year
 ): ISelectOptions[] => {
   const years = [];
   for (let i: number = minYear; i <= maxYear; i++) {

@@ -2,7 +2,7 @@ import { showMessage } from 'reduxStore/app/message_actions';
 
 export const onFormSubmit = (setLoading, dispatch, snack, onSuccess) => {
   setLoading(true);
-  dispatch.then((res) => {
+  dispatch.then((res: any) => {
     const { success, message, type } = res.payload;
     setLoading(false);
     if (success) {

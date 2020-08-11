@@ -1,7 +1,7 @@
 import React from 'react';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DeleteModal from 'lib/components/modals/DeleteModal';
+import { DeleteModal } from 'components/modals';
 
 interface Props {
   loading: boolean;

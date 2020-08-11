@@ -1,5 +1,5 @@
 import React from 'react';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import { CenteredGrid } from 'shared/layout/grids';
 import RegPageImage from '../components/RegPageImage';
 import RegPageTabs from '../components/RegPageTabs';
 

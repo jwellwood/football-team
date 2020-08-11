@@ -8,12 +8,11 @@ import { visitor_routes } from 'router';
 // assets
 import profile_default from 'shared/assets/images/default_profile.png';
 // Components
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomImageAvatar from 'lib/components/avatars/CustomImageAvatar';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
+import { ListItemWrapper } from 'components/lists';
+import { CustomImageAvatar } from 'components/avatars';
 import StatBoxes from './StatBoxes';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 import { IPlayer, IPlayerStats } from 'shared/types';
 import { IStatBoxDetails } from '../shared/types';
 

@@ -4,10 +4,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { admin_routes } from 'router';
 import { parseDate } from 'utils/helpers';
 import { IResult } from 'shared/types';
-import SectionBackground from 'shared/layout/SectionBackground';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { SectionBackground } from 'shared/layout/containers';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   results: IResult[];

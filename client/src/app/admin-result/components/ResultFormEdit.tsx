@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
+import { CustomLinkButton } from 'components/buttons';
 import AdminMatchPlayersList from './AdminMatchPlayersList.component';
 import DeleteResult from '../containers/DeleteResult.container';
 // Routes

@@ -6,13 +6,14 @@ import { deletePreviousSeason } from 'reduxStore/team/team_actions';
 import { onFormSubmit } from 'utils/form-controls';
 import { IPreviousSeason } from 'shared/types';
 import DeletePrevSeason from '../components/DeletePreviousSeason.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface Props {
   season: IPreviousSeason;
 }
 
 export default ({ season }: Props) => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   const [loading, setLoading] = useState<boolean>(false);
 

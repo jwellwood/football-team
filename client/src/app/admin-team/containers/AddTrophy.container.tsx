@@ -7,12 +7,12 @@ import { admin_routes } from 'router';
 import AddTrophyForm from '../components/AddTrophyForm';
 import { ITeam, ITrophy } from 'shared/types';
 import { $initTrophyFormState } from '../shared/state';
-import { RootState } from 'reduxStore/rootReducer';
+import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   const team: ITeam = useSelector((state: RootState) => state.team.teamData);
   let history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [input, setInput] = useState<ITrophy>({ ...$initTrophyFormState });
   const [loading, setLoading] = useState<boolean>(false);
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import Spinner from 'lib/components/loading/Spinner';
-import CustomButton from 'lib/components/buttons/CustomButton';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import StatIcon from 'lib/components/icons/StatIcon';
+import { Spinner } from 'components/loaders';
+import { CustomButton } from 'components/buttons';
+import { CenteredGrid } from 'shared/layout/grids';
+import StatIcon from 'lib/icons/StatIcon';
 
 interface Props {
   onClick: () => void;
@@ -14,7 +14,7 @@ const ValidatedEmail: React.FC<Props> = ({ onClick, loading }) => {
     <CenteredGrid>
       <StatIcon type='app' size='10x' />
       {loading ? (
-        <Spinner isButton />
+        <Spinner isSecondary />
       ) : (
         <CustomButton onClick={onClick}>Confirm validation</CustomButton>
       )}

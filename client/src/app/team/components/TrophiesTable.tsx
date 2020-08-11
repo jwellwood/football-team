@@ -2,13 +2,16 @@ import React, { ReactElement } from 'react';
 // MUI
 import TableRow from '@material-ui/core/TableRow';
 // Components
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import PresentationModal from 'lib/components/modals/PresentationModal';
-import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
-import CustomTableCell from 'lib/components/tables/CustomTableCell';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { PresentationModal } from 'components/modals';
+import {
+  CustomTable,
+  CustomTableCell,
+  ITableHeadCell,
+} from 'shared/layout/tables';
 import Trophy from './Trophy.component';
-import SectionContainer from 'shared/layout/SectionContainer';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { SectionContainer } from 'shared/layout/containers';
+import { CustomTypography } from 'components/typography';
 import { ITrophy } from 'shared/types';
 
 interface Props {
@@ -46,7 +49,7 @@ const Trophies: React.FC<Props> = ({ trophies }) => {
     ];
     return (
       <TableRow key={_id}>
-        {cellData.map((cell, i) => (
+        {cellData.map((cell, i: number) => (
           <CustomTableCell key={i} noLines>
             {cell}
           </CustomTableCell>

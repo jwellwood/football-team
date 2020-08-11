@@ -1,6 +1,6 @@
 import React from 'react';
 import { user_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import EditTargets from '../containers/EditTargets.container';
 
 const EditTargetsPage: React.FC = () => {

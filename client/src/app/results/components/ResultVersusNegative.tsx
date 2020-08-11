@@ -2,8 +2,8 @@ import React, { useMemo, ReactElement } from 'react';
 import { getResultVersus } from '../functions';
 import { IResult } from 'shared/types';
 import { IResultVersusData, IVersusGame } from '../shared/types';
-import VersusWrapper from 'lib/components/wrappers/VersusWrapper';
-import PlaceholderText from 'lib/components/typography/Placeholder';
+import VersusWrapper from 'shared/layout/wrappers/VersusWrapper';
+import { Placeholder } from 'components/typography';
 
 interface Props {
   results: IResult[];
@@ -55,7 +55,7 @@ const ResultVersusNegative: React.FC<Props> = ({ results }) => {
   const dataToDisplay: ReactElement = results.length ? (
     <VersusWrapper data={data} />
   ) : (
-    <PlaceholderText />
+    <Placeholder />
   );
 
   return dataToDisplay;

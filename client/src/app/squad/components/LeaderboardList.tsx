@@ -2,10 +2,9 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { ILeaderboardStat } from '../shared/types';
-import ListWrapper from 'lib/components/lists/ListWrapper';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import { CustomAvatar } from 'components/avatars';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   leaderboardValue: any;
@@ -14,7 +13,7 @@ interface Props {
 const LeaderboardList: React.FC<Props> = ({ leaderboardValue }) => {
   return (
     <ListWrapper>
-      {leaderboardValue.map((player: ILeaderboardStat, i) => {
+      {leaderboardValue.map((player: ILeaderboardStat, i: number) => {
         let background = 'transparent';
 
         switch (i) {

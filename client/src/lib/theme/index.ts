@@ -1,7 +1,5 @@
-import { createMuiTheme, PaletteColorOptions } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeOptions } from '@material-ui/core';
-// import { PaletteColor, Palette } from '@material-ui/core/styles/createPalette';
-// import * as createPalette from '@material-ui/core/styles/createPalette';
 // colors
 import red from '@material-ui/core/colors/red';
 import green from '@material-ui/core/colors/green';

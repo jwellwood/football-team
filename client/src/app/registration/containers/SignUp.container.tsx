@@ -5,6 +5,7 @@ import { signUp } from 'reduxStore/auth/auth_actions';
 import { user_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import SignUpForm from '../components/SignUp.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export interface ISignUpForm {
   name: string;
@@ -20,7 +21,7 @@ export const SignUpState = {
 
 export default () => {
   let history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [input, setInput] = useState<ISignUpForm>({ ...SignUpState });
   const [loading, setLoading] = useState<boolean>(false);
   const [acceptTerms, setAcceptTerms] = useState<boolean>(false);

@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import { addResultHelper } from 'shared/messages/shared';
 import { IResultInput } from '../shared/types';
 import { IResult } from 'shared/types';
@@ -10,15 +10,15 @@ import {
   TextInput,
   NumberInput,
   CustomSwitch,
-} from 'lib/components/inputs';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import Spinner from 'lib/components/loading/Spinner';
-import FormHelper from 'lib/components/typography/FormHelper';
+} from 'components/inputs';
+import { SubmitButton } from 'components/buttons';
+import { CenteredGrid } from 'shared/layout/grids';
+import { Spinner } from 'components/loaders';
+import { FormHelper } from 'components/typography';
 import ResultFormEdit from './ResultFormEdit';
 import { matchTypeOptions, homeOrAwayOptions, forfeitOptions } from '../utils';
 
-const DateInput = lazy(() => import('lib/components/inputs/DateInput'));
+const DateInput = lazy(() => import('components/inputs/DateInput'));
 
 interface Props {
   input: IResultInput;

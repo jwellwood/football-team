@@ -1,8 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 // Components
-import CustomContainer from 'shared/layout/CustomContainer';
-import SectionBackground from 'shared/layout/SectionBackground';
-import Spinner from 'lib/components/loading/Spinner';
+import { CustomContainer, SectionBackground } from 'shared/layout/containers';
+import { Spinner } from 'components/loaders';
 import { ITeam } from 'shared/types';
 
 const HomeMenu = lazy(() => import('./HomeMenu'));
@@ -21,7 +20,7 @@ const Home: React.FC<Props> = ({ team }) => {
   ];
 
   return (
-    <Suspense fallback={<Spinner isButton />}>
+    <Suspense fallback={<Spinner isSecondary />}>
       <SectionBackground>
         {sections.map(({ component, id }) => (
           <SectionBackground key={id} placeholder>

@@ -1,9 +1,9 @@
-import React, { lazy, Suspense, ReactElement } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { IResult } from 'shared/types';
-import ToggleSwitch from 'lib/components/inputs/ToggleSwitch';
-import Spinner from 'lib/components/loading/Spinner';
-import CustomTabs from 'lib/components/tabs/CustomTabs';
-import CustomIcon from 'lib/components/icons/CustomIcon';
+import ToggleSwitch from 'components/inputs/ToggleSwitch';
+import { Spinner } from 'components/loaders';
+import { CustomTabs, ITab } from 'shared/layout/tabs';
+import CustomIcon from 'lib/icons/CustomIcon';
 
 const ResultPercentages = lazy(() => import('./ResultPercentages'));
 const ResultVersus = lazy(() => import('./ResultVersus'));
@@ -16,11 +16,6 @@ interface Props {
   includeForfeits: boolean;
 }
 
-interface IResultStatTab {
-  label: ReactElement | string;
-  component: ReactElement;
-}
-
 const ResultStats: React.FC<Props> = ({
   results,
   toggleForfeits,
@@ -30,7 +25,7 @@ const ResultStats: React.FC<Props> = ({
     results = results.filter((result: IResult) => !result.isForfeit);
   }
 
-  const tabs: IResultStatTab[] = [
+  const tabs: ITab[] = [
     {
       label: <CustomIcon icon='chart-pie' />,
       component: <ResultPercentages results={results} />,
@@ -58,7 +53,7 @@ const ResultStats: React.FC<Props> = ({
         onChange={toggleForfeits}
         label='Include forfeits'
       />
-      <Suspense fallback={<Spinner isButton />}>
+      <Suspense fallback={<Spinner isSecondary />}>
         <CustomTabs tabs={tabs} />
       </Suspense>
     </>

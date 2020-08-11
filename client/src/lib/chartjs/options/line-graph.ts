@@ -10,6 +10,6 @@ export const line_graph_options = {
   },
   legend: {
     display: true,
-    position: 'right',
+    position: 'top',
   },
 };

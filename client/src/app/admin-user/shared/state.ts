@@ -1,0 +1,15 @@
+export const $initUserPermissionFormState = {
+  name: '',
+  isPlayer: false,
+  isCaptain: false,
+  isAdmin: false,
+  squadNumber: 0,
+  position: '',
+  appsTarget: 0,
+  goalsTarget: 0,
+  assistsTarget: 0,
+  canEditPhoto: false,
+  canEditDetails: false,
+  canEditTargets: false,
+  isVerified: false,
+};

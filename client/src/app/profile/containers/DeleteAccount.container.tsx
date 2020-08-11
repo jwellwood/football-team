@@ -6,6 +6,7 @@ import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import { visitor_routes } from 'router';
 import DeleteAccount from '../components/DeleteAccount.component';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export interface IDeleteForm {
   name: string;
@@ -23,7 +24,7 @@ export default () => {
   const user: IUserData = useSelector(
     (state: IAuthState) => state.auth.userData
   );
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   // State
   const [input, setInput] = useState<IDeleteForm>({ ...DeleteFormState });

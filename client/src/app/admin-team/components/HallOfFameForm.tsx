@@ -1,14 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid, { GridSize } from '@material-ui/core/Grid';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import { yearOptions } from 'utils/helpers';
 import { IHallOfFame } from 'shared/types';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
-import SelectInput from 'lib/components/inputs/SelectInput';
+import { CenteredGrid } from 'shared/layout/grids';
+import { SubmitButton } from 'components/buttons';
+import { TextInput, SelectInput } from 'components/inputs';
 import DeleteHallOfFame from '../containers/DeleteHallOfFame.container';
+import { base_year } from 'constants/data';
 
 interface Props {
   onSubmit: () => void;
@@ -78,7 +78,7 @@ const HOFForm: React.FC<Props> = ({
                 minLength: 2,
                 maxLength: 30,
               })}
-              errors={errors.name || null}
+              errors={errors.name}
             />
           </Grid>
           {inputData.map((input: IHallOfFameInput) => (
@@ -93,8 +93,8 @@ const HOFForm: React.FC<Props> = ({
                 label={input.label}
                 defaultValue={input.defaultValue}
                 onChange={onChange}
-                options={yearOptions(2005, date)}
-                errors={input.errors || null}
+                options={yearOptions(base_year, date)}
+                errors={input.errors}
               />
             </Grid>
           ))}
@@ -107,7 +107,7 @@ const HOFForm: React.FC<Props> = ({
               defaultValue={input.description}
               onChange={onChange}
               validators={register({ maxLength: 999 })}
-              errors={errors.description || null}
+              errors={errors.description}
             />
           </Grid>
         </CenteredGrid>

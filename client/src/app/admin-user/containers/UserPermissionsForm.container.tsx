@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
-import { IUserPermissionInput, UserPermissionState } from '../shared/types';
+import { IUserPermissionInput } from '../shared/types';
 import {
   getUserById,
   setPermissions,
@@ -14,18 +14,21 @@ import { showMessage } from 'reduxStore/app/message_actions';
 import { getAllPlayers } from 'reduxStore/squad/squad_actions';
 import { admin_routes } from 'router';
 import UserPermissionForm from '../components/UserPermissionForm.component';
+import { $initUserPermissionFormState } from '../shared/state';
+import { Spinner } from 'components/loaders';
+import { AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
-  const [user, setUser] = useState<IUserData>(null);
+  const [user, setUser] = useState<IUserData>();
   const [input, setInput] = useState<IUserPermissionInput>({
-    ...UserPermissionState,
+    ...$initUserPermissionFormState,
   });
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    dispatch(getUserById(id)).then((res) => {
+    dispatch(getUserById(id)).then((res: any) => {
       const { success, data, message, type } = res.payload;
       if (success) {
         setUser(data);
@@ -49,9 +52,9 @@ export default () => {
         appsTarget: user.appsTarget,
         goalsTarget: user.goalsTarget,
         assistsTarget: user.assistsTarget,
-        canEditPhoto: canEdit ? canEdit.photo : null,
-        canEditDetails: canEdit ? canEdit.details : null,
-        canEditTargets: canEdit ? canEdit.targets : null,
+        canEditPhoto: canEdit ? canEdit.photo : false,
+        canEditDetails: canEdit ? canEdit.details : false,
+        canEditTargets: canEdit ? canEdit.targets : false,
         isVerified: user.isVerified,
       };
       setInput({ ...initState });
@@ -75,10 +78,10 @@ export default () => {
     );
 
   const onResetImage = () => {
-    dispatch(resetImage(id)).then((res) => {
+    dispatch(resetImage(id)).then((res: any) => {
       const { success, message, type } = res.payload;
       if (success) {
-        dispatch(removeAdminImage(user.image.public_id)).then((res) => {
+        dispatch(removeAdminImage(user!.image.public_id)).then((res: any) => {
           const { success, message, type } = res.payload;
           if (success) {
             dispatch(showMessage(true, message, type));
@@ -93,7 +96,7 @@ export default () => {
     });
   };
 
-  return (
+  return user && user._id ? (
     <UserPermissionForm
       user={user}
       input={input}
@@ -103,5 +106,7 @@ export default () => {
       onSubmit={onSubmit}
       onResetImage={onResetImage}
     />
+  ) : (
+    <Spinner />
   );
 };

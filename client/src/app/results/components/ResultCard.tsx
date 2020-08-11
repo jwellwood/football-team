@@ -1,15 +1,15 @@
 import React, { ReactElement } from 'react';
 import { IResult } from 'shared/types';
 import { parseDate } from 'utils/helpers';
-import { getBackground } from 'utils';
+import { getStringColorByNumber } from 'utils';
 import { visitor_routes } from 'router';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
-import SectionBackground from 'shared/layout/SectionBackground';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { ListItemWrapper } from 'components/lists';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { CustomAvatar } from 'components/avatars';
+import { SectionBackground } from 'shared/layout/containers';
+import { CustomTypography } from 'components/typography';
 
 interface Props {
   result: IResult;
@@ -18,6 +18,8 @@ interface Props {
 const ResultCard: React.FC<Props> = ({
   result: { _id, date, type, opponentName, teamGoals, opponentGoals, points },
 }) => {
+  const backgroundColor: string = getStringColorByNumber(points);
+
   const resultDateAndType: ReactElement = (
     <>
       <CustomTypography size='xs' color='warning' font='secondary'>
@@ -39,7 +41,7 @@ const ResultCard: React.FC<Props> = ({
         button
         linkTo={`${visitor_routes.RESULTS}/${_id}`}
       >
-        <CustomAvatar bordered background={getBackground(points)} isList>
+        <CustomAvatar bordered background={backgroundColor} isList>
           <CustomIcon icon='chevron-right' size='xs' />
         </CustomAvatar>
         <ListItemText primary={opponent} secondary={resultDateAndType} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 
 const NotFound: React.FC = () => {
   return <CustomTypography main>Page not found</CustomTypography>;

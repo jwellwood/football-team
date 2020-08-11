@@ -1,6 +1,6 @@
 import React from 'react';
 import { visitor_routes } from 'router';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import Profile from '../containers/Profile.container';
 
 const ProfilePage: React.FC = () => {

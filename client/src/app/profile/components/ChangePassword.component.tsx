@@ -1,16 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormContainer from 'shared/layout/FormContainer';
+import { FormContainer } from 'shared/layout/containers';
 import {
   currentPasswordHelper,
   newPasswordHelper,
 } from 'shared/messages/shared';
-import Spinner from 'lib/components/loading/Spinner';
-import TextInput from 'lib/components/inputs/TextInput';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import { Spinner } from 'components/loaders';
+import { TextInput } from 'components/inputs';
+import { SubmitButton } from 'components/buttons';
+import { CenteredGrid } from 'shared/layout/grids';
 import { IChangePasswordForm } from '../containers/ChangePassword.container';
-import FormHelper from 'lib/components/typography/FormHelper';
+import { FormHelper } from 'components/typography';
 
 interface Props {
   onSubmitCurrent: () => void;
@@ -41,7 +41,7 @@ const ChangePassword: React.FC<Props> = ({
           label='Current Password'
           onChange={onChange}
           validators={register({ required: true })}
-          errors={errors.currentPassword || null}
+          errors={errors.currentPassword}
         />
       </CenteredGrid>
       <SubmitButton loading={loading}>Submit</SubmitButton>
@@ -59,7 +59,7 @@ const ChangePassword: React.FC<Props> = ({
           label='New Password'
           onChange={onChange}
           validators={register({ required: true, minLength: 6 })}
-          errors={errors.newPassword || null}
+          errors={errors.newPassword}
         />
 
         <TextInput
@@ -68,7 +68,7 @@ const ChangePassword: React.FC<Props> = ({
           label='Confirm New Password'
           onChange={onChange}
           validators={register({ required: true })}
-          errors={errors.confirmPassword || null}
+          errors={errors.confirmPassword}
         />
       </CenteredGrid>
       <SubmitButton disabled={disabled} loading={loading}>

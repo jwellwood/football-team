@@ -1,11 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
+import { SubmitButton } from 'components/buttons';
+import { TextInput } from 'components/inputs';
 
 interface Props {
   loading: boolean;
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
 }
 
@@ -22,7 +22,7 @@ const SignInForm: React.FC<Props> = ({ loading, onChange, onSubmit }) => {
           required: true,
           pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
         })}
-        errors={errors.email || null}
+        errors={errors.email}
       />
       <TextInput
         isPassword={true}

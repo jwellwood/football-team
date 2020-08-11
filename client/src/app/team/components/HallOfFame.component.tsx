@@ -3,12 +3,12 @@ import React from 'react';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 // Components
-import ListItemWrapper from 'lib/components/lists/ListItemWrapper';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import PresentationModal from 'lib/components/modals/PresentationModal';
-import CustomAvatar from 'lib/components/avatars/CustomAvatar';
+import { ListItemWrapper } from 'components/lists';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { PresentationModal } from 'components/modals';
+import { CustomAvatar } from 'components/avatars';
 import ModalContent, { IModalData } from '../shared/ModalContent';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { CustomTypography } from 'components/typography';
 import { IHallOfFame } from 'shared/types';
 
 interface Props {

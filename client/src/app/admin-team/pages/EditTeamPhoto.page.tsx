@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from 'lib/components/typography/PageHeader';
+import { PageHeader } from 'components/typography';
 import { admin_routes } from 'router';
 import EditTeamPhoto from '../containers/EditTeamPhoto.container';
 

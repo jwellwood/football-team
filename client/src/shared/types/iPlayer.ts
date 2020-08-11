@@ -1,5 +1,4 @@
 import { IImage, IPlayerMatchPlayed } from '.';
-
 export interface IPlayer {
   _id: string;
   name: string;
@@ -27,4 +26,7 @@ export interface IPlayerStats {
   redCards: number;
   winPercentage: string;
   yellowCards: number;
+  overall?: number;
 }
+
+export type PlayerStatsKeys = keyof IPlayerStats;

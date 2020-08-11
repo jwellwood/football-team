@@ -1,10 +1,9 @@
 import React from 'react';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
-import SectionBackground from 'shared/layout/SectionBackground';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomIcon from 'lib/components/icons/CustomIcon';
-import GridItem from 'lib/components/grids/GridItem';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import { SectionBackground } from 'shared/layout/containers';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
+import CustomIcon from 'lib/icons/CustomIcon';
+import { CustomTypography } from 'components/typography';
 
 export interface IModalData {
   title: string;

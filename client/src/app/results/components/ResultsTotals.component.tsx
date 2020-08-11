@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { visitor_routes } from 'router';
-import TopSectionContainer from 'shared/layout/TopSectionContainer';
-import SectionBackground from 'shared/layout/SectionBackground';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import CustomDivider from 'lib/components/dividers/CustomDivider';
-import CustomLinkButton from 'lib/components/buttons/CustomLinkButton';
-import CustomTypography from 'lib/components/typography/CustomTypography';
+import {
+  SectionBackground,
+  TopSectionContainer,
+} from 'shared/layout/containers';
+import { CenteredGrid } from 'shared/layout/grids';
+import { CustomDivider } from 'components/dividers';
+import { CustomLinkButton } from 'components/buttons';
+import { CustomTypography } from 'components/typography';
 import FormIndicator from './FormIndicator';
 import { IResultTotalsData } from '../shared/types';
 
@@ -20,7 +22,7 @@ const ResultsTotals: React.FC<Props> = ({ resultsTotals, showStatsButton }) => {
     <SectionBackground placeholder>
       <TopSectionContainer>
         <CenteredGrid dir='row' just='space-evenly'>
-          {resultsTotals.map((item: IResultTotalsData, i) => (
+          {resultsTotals.map((item: IResultTotalsData, i: number) => (
             <Fragment key={i}>
               <Grid style={{ textAlign: 'center' }}>
                 <CustomTypography size='xs' div>

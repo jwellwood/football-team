@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-import SectionContainer from 'shared/layout/SectionContainer';
+import { SectionContainer } from 'shared/layout/containers';
 import { IPlayer, IResult } from 'shared/types';
 import { IBarGraphData } from 'lib/chartjs';
-import HorizontalBarGraph from 'lib/components/graphs/HorizontalBarGraph';
-import TargetProgress from 'lib/components/graphs/CircularGraph';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import HorizontalBarGraph from 'lib/chartjs/graphs/HorizontalBarGraph';
+import { CircularGraph } from 'lib/circular';
+import { CenteredGrid } from 'shared/layout/grids';
 import { getContributions, getTotals } from '../functions';
 
 interface Props {
@@ -47,8 +47,8 @@ const PlayerPercentages: React.FC<Props> = ({ player, results }) => {
   return (
     <SectionContainer title='Percentages'>
       <CenteredGrid dir='row' item='flex-start'>
-        {data.map((item: IPlayerPercentagesListData, i) => (
-          <TargetProgress key={i} percentage={item.percent} type={item.title} />
+        {data.map((item: IPlayerPercentagesListData, i: number) => (
+          <CircularGraph key={i} percentage={item.percent} type={item.title} />
         ))}
       </CenteredGrid>
       <HorizontalBarGraph data={graphData} />

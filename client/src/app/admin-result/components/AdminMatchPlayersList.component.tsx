@@ -3,7 +3,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { theme } from 'lib/theme';
 import { IResult, IResultPlayerStats } from 'shared/types';
-import CustomTable, { ITableHeadCell } from 'lib/components/tables/CustomTable';
+import { CustomTable, ITableHeadCell } from 'shared/layout/tables';
 import DeleteMatchPlayer from '../containers/DeleteMatchPlayer.container';
 
 interface Props {
@@ -68,7 +68,7 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
     ];
     return (
       <TableRow key={pl.player_id._id}>
-        {data.map((item, i) => (
+        {data.map((item, i: number) => (
           <TableCell key={i} align='center'>
             {item}
           </TableCell>
@@ -79,7 +79,7 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
 
   const footer: ReactElement = (
     <TableRow>
-      {totals.map((item: IMatchPlayerTotal, i) => {
+      {totals.map((item: IMatchPlayerTotal, i: number) => {
         let color: string = warning.main;
         switch (true) {
           case item.validator < item.value:

@@ -2,14 +2,13 @@ import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { IUserData } from 'shared/types';
 import { profilePhotoHelper } from 'shared/messages/shared';
-import Spinner from 'lib/components/loading/Spinner';
-import FileInput from 'lib/components/inputs/FileInput';
-import FormContainer from 'shared/layout/FormContainer';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import CustomButton from 'lib/components/buttons/CustomButton';
-import FormHelper from 'lib/components/typography/FormHelper';
-import CircularImage from 'lib/components/images/CircularImage';
+import { Spinner } from 'components/loaders';
+import FileInput from 'components/inputs/FileInput';
+import { FormContainer } from 'shared/layout/containers';
+import { CenteredGrid } from 'shared/layout/grids';
+import { SubmitButton, CustomButton } from 'components/buttons';
+import { FormHelper } from 'components/typography';
+import { CircularImage } from 'components/images';
 
 interface Props {
   onSubmit: () => void;

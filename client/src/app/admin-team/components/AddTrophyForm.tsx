@@ -3,12 +3,10 @@ import { useForm } from 'react-hook-form';
 //MUI
 import Grid from '@material-ui/core/Grid';
 // Internal
-import SubmitButton from 'lib/components/buttons/SubmitButton';
-import TextInput from 'lib/components/inputs/TextInput';
-import SelectInput from 'lib/components/inputs/SelectInput';
-import FormContainer from 'shared/layout/FormContainer';
-import CustomSwitch from 'lib/components/inputs/CustomSwitch';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
+import { SubmitButton } from 'components/buttons';
+import { TextInput, SelectInput, CustomSwitch } from 'components/inputs';
+import { FormContainer } from 'shared/layout/containers';
+import { CenteredGrid } from 'shared/layout/grids';
 import { trophyWinnerOptions } from '../utils';
 import { yearOptions } from 'utils/helpers';
 
@@ -64,7 +62,7 @@ const AddTrophyForm: React.FC<Props> = ({
               defaultValue={input.year}
               onChange={onChange}
               validators={register({ required: true, min: 2000, max: 2100 })}
-              errors={errors.year || null}
+              errors={errors.year}
             /> */}
           </Grid>
           <Grid item xs={12} sm={6}>

@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import CircularImage from 'lib/components/images/CircularImage';
+import { CircularImage } from 'components/images';
 
 interface Props {
   image: {

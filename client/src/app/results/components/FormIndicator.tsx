@@ -1,12 +1,12 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import { getResultsColors } from 'utils/colors';
+import { getThemeColorByNumber } from 'utils';
 
 interface Props {
   pointsArray: number[];
 }
 
-const getResultSymbol = (points) => {
+const getResultSymbol = (points: number) => {
   switch (points) {
     case 3:
       return 'W';
@@ -21,12 +21,12 @@ const getResultSymbol = (points) => {
 
 const FormIndicator: React.FC<Props> = ({ pointsArray }) => (
   <>
-    {pointsArray.map((res, i) => (
+    {pointsArray.map((res, i: number) => (
       <Typography
         key={i}
         component='span'
         style={{
-          color: getResultsColors(res),
+          color: getThemeColorByNumber(res),
           fontWeight: 'bold',
           margin: '2px',
         }}

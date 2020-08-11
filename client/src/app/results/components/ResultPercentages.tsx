@@ -2,11 +2,11 @@ import React, { useMemo } from 'react';
 import { getResultPercentages } from '../functions';
 import { theme } from 'lib/theme';
 import { IResult } from 'shared/types';
-import SectionContainer from 'shared/layout/SectionContainer';
-import DonutGraph, { IDonutData } from 'lib/components/graphs/DonutGraph';
-import PlaceholderText from 'lib/components/typography/Placeholder';
-import CenteredGrid from 'lib/components/grids/CenteredGrid';
-import GridItem from 'lib/components/grids/GridItem';
+import { SectionContainer } from 'shared/layout/containers';
+import { DonutGraph } from 'lib/chartjs/graphs';
+import { IDonutGraphData } from 'lib/chartjs';
+import { Placeholder } from 'components/typography';
+import { CenteredGrid, GridItem } from 'shared/layout/grids';
 import ResultAverages from './ResultAverages';
 
 interface Props {
@@ -26,7 +26,7 @@ const ResultPercentages: React.FC<Props> = ({ results }) => {
     [results]
   );
 
-  const data: IDonutData = {
+  const data: IDonutGraphData = {
     labels: ['Win', 'Draw', 'Lose'],
     datasets: [
       {
@@ -55,7 +55,7 @@ const ResultPercentages: React.FC<Props> = ({ results }) => {
       </GridItem>
     </CenteredGrid>
   ) : (
-    <PlaceholderText />
+    <Placeholder />
   );
 };
 
