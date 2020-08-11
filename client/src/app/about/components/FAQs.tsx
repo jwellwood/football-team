@@ -14,7 +14,6 @@ const FAQs: React.FC = () => {
           <CustomTypography>{text}</CustomTypography>
         </CustomExpansion>
       ))}
-      ;
     </CustomContainer>
   );
 };
