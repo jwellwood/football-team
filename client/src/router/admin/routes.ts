@@ -34,9 +34,7 @@ const AdminTrophiesPage = lazy(() =>
 );
 const AddTrophyPage = lazy(() => import('app/admin-team/pages/AddTrophy.page'));
 // HOF
-const AdminHOFPage = lazy(() =>
-  import('app/admin-team/pages/AdminHallOfFame.page')
-);
+const AdminHOFPage = lazy(() => import('app/admin-team/pages/AdminHOF.page'));
 const AddHOFPage = lazy(() =>
   import('app/admin-team/pages/AddHallOfFame.page')
 );
