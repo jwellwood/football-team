@@ -7,7 +7,7 @@ import { IResult } from 'shared/types';
 import { Spinner } from 'components/loaders';
 import Result from '../components/Result.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
-import { $initResultData } from 'app/home/shared/initData';
+import { $initResultData } from 'app/result/shared/initResultData';
 
 export default () => {
   const { id } = useParams();
