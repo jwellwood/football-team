@@ -2,9 +2,18 @@
 
 A general overview of changes made between versions
 
+##### v0.1.3
+
+- Removed latest result from homepage, added season details
+
+##### v0.1.2
+
+- Minor fixes for graph display and color
+- Fix typo in About page
+
 ##### v0.1.1
 
-- Refactor
+- Refactor of 'everything'. Changes to folder structure and move everything to Typescript
 
 ##### v0.1.0
 

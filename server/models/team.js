@@ -31,6 +31,9 @@ const teamSchema = mongoose.Schema({
   position: {
     type: String,
   },
+  currentSeason: {
+    type: String,
+  },
   trophies: [
     {
       name: {

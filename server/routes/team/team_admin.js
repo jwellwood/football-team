@@ -50,7 +50,7 @@ router.post(`${ADMIN}/add_team`, auth, admin, (req, res) => {
 router.put(`${ADMIN}/update_team_details`, auth, admin, (req, res) => {
   const notifyError = errorMessage(updateTeam.error);
   const notifySuccess = successMessage(updateTeam.success);
-  const { id, name, location, league, position } = req.body;
+  const { id, name, location, league, position, currentSeason } = req.body;
   Team.findOneAndUpdate(
     { _id: id },
     {
@@ -58,6 +58,7 @@ router.put(`${ADMIN}/update_team_details`, auth, admin, (req, res) => {
       location,
       league,
       position,
+      currentSeason,
     },
     { new: true, runValidators: true },
     (err) => {
