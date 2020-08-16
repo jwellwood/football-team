@@ -5,8 +5,11 @@ export interface IChangeLog {
 
 export const changeLog: Array<IChangeLog> = [
   {
-    version: '0.1.3',
-    changes: ['Added team season info to home page'],
+    version: '0.1.4',
+    changes: [
+      'Added team season info to home page',
+      'Improved ui on squad list page',
+    ],
   },
   {
     version: '0.1.1',

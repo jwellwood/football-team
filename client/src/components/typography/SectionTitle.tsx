@@ -8,9 +8,15 @@ interface Props {
   title: string;
   link?: string;
   text?: string;
+  main?: boolean;
 }
 
-const SectionTitle: React.FC<Props> = ({ title, link, text = 'edit' }) => {
+const SectionTitle: React.FC<Props> = ({
+  title,
+  link,
+  text = 'edit',
+  main = false,
+}) => {
   const editLink = link ? (
     <Button
       variant='contained'
@@ -26,7 +32,7 @@ const SectionTitle: React.FC<Props> = ({ title, link, text = 'edit' }) => {
   return (
     <Grid container direction='row' justify='space-between'>
       <div style={{ marginBottom: '10px' }}>
-        <CustomTypography main bold>
+        <CustomTypography bold main={main}>
           {title}
         </CustomTypography>
       </div>
