@@ -5,6 +5,7 @@ export const $initAddTeamFormState = {
   location: '',
   league: '',
   position: '',
+  currentSeason: '',
 };
 
 export const $initAwardFormState = {

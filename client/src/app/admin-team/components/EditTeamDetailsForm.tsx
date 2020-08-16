@@ -47,6 +47,12 @@ const EditTeamDetailsForm: React.FC<Props> = ({
       defaultValue: input.league,
       errors: errors.league,
     },
+    {
+      name: 'currentSeason',
+      label: 'Current Season',
+      defaultValue: input.currentSeason,
+      errors: errors.currentSeason,
+    },
   ];
 
   return (

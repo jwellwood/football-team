@@ -15,7 +15,7 @@ const HomeMenu: React.FC = () => {
         <GridItem key={item.text + i} xs={6}>
           <Link underline='none' component={RouterLink} to={item.link}>
             <SectionBackground>
-              <CustomAvatar bordered centered>
+              <CustomAvatar centered bordered>
                 <CustomIcon icon={item.icon} color='primary' size='xs' />
               </CustomAvatar>
               <CustomTypography size='sm'>{item.text}</CustomTypography>
