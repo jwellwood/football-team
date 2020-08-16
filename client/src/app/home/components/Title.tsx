@@ -27,6 +27,7 @@ const Title: React.FC<Props> = ({ team }) => {
       <Typography variant='h1' className={classes.main}>
         {first}
       </Typography>
+
       <Typography
         variant='h4'
         color='primary'

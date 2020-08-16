@@ -1,39 +1,50 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import { visitor_routes } from 'router';
 import { ITeam } from 'shared/types';
-import { CenteredGrid } from 'shared/layout/grids';
-import { Spinner } from 'components/loaders';
-
-const CurrentPosition = lazy(() => import('./CurrentPosition'));
-const LatestResult = lazy(() => import('../containers/LatestResult.container'));
+import { generateOrdinals } from 'utils/helpers/generateOrdinals';
+import { CustomTypography } from 'components/typography';
+import { ListWrapper, ListItemWrapper } from 'components/lists';
+import {
+  ListItemText,
+  ListItemSecondaryAction,
+  Container,
+} from '@material-ui/core';
+import { CustomAvatar } from 'components/avatars';
 
 interface Props {
   team: ITeam;
 }
 
 const LeagueInfo: React.FC<Props> = ({ team }) => {
-  const { position, league } = team || {};
-
-  const latestResult = <LatestResult />;
+  const { position, league, currentSeason } = team || {};
 
   return (
-    <Suspense fallback={<Spinner isSecondary />}>
-      <Link underline='none' component={RouterLink} to={visitor_routes.RESULTS}>
-        <CenteredGrid dir='row'>
-          <Grid item xs={6}>
-            <CenteredGrid>{latestResult}</CenteredGrid>
-          </Grid>
-          <Grid item xs={6}>
-            <CenteredGrid>
-              <CurrentPosition position={position} league={league} />
-            </CenteredGrid>
-          </Grid>
-        </CenteredGrid>
-      </Link>
-    </Suspense>
+    <Link underline='none' component={RouterLink} to={visitor_routes.RESULTS}>
+      <Container maxWidth='xs'>
+        <ListWrapper>
+          <ListItemWrapper>
+            <ListItemText
+              primary={<CustomTypography bold>{league}</CustomTypography>}
+              secondary={
+                <CustomTypography main bold>
+                  {currentSeason}
+                </CustomTypography>
+              }
+            />
+            <ListItemSecondaryAction>
+              <CustomAvatar shadow='success'>
+                <CustomTypography main bold>
+                  {position}
+                  {generateOrdinals(+position)}
+                </CustomTypography>
+              </CustomAvatar>
+            </ListItemSecondaryAction>
+          </ListItemWrapper>
+        </ListWrapper>
+      </Container>
+    </Link>
   );
 };
 

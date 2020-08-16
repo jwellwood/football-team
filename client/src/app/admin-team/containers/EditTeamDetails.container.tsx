@@ -12,12 +12,13 @@ export default () => {
   let history = useHistory();
   const dispatch: AppDispatch = useDispatch();
   const team: ITeam = useSelector((state: RootState) => state.team.teamData);
-  const { name, location, position, league } = team;
+  const { name, location, position, league, currentSeason } = team;
   const [input, setInput] = useState({
     name,
     location,
     position,
     league,
+    currentSeason,
   });
   const [loading, setLoading] = useState<boolean>(false);
 
