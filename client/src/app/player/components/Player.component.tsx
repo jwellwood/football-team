@@ -64,7 +64,7 @@ const Player: React.FC<Props> = ({ player, results }) => {
 
   return (
     <>
-      <SectionTitle title={player.name} />
+      <SectionTitle title={player.name} main={true} />
       <Suspense fallback={<Spinner />}>
         <CustomTabs tabs={tabs} centered />
       </Suspense>

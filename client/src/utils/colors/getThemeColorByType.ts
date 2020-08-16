@@ -1,7 +1,7 @@
 import { theme } from 'lib/theme';
 
 const {
-  palette: { secondary, success, warning, error },
+  palette: { secondary, success, warning, error, goal, conceded, assist },
 } = theme;
 
 export const getThemeColorByType: Function = (background: string): string => {
@@ -27,6 +27,15 @@ export const getThemeColorByType: Function = (background: string): string => {
       break;
     case 'error':
       backgroundColor = error.main;
+      break;
+    case 'goal':
+      backgroundColor = goal.main;
+      break;
+    case 'assist':
+      backgroundColor = assist.main;
+      break;
+    case 'conceded':
+      backgroundColor = conceded.main;
       break;
     default:
       break;

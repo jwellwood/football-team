@@ -1,39 +1,27 @@
 import React from 'react';
 // MUI
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Avatar from '@material-ui/core/Avatar';
 // Components
 import { CenteredGrid } from 'shared/layout/grids';
 import { CustomTypography } from 'components/typography';
 import { IStatBoxDetails } from '../shared/types';
-
-export const useStyles = makeStyles((theme) => ({
-  number_avatar: {
-    width: 30,
-    height: 30,
-    fontSize: '0.8rem',
-    fontWeight: 'bold',
-    background: theme.palette.secondary.dark,
-  },
-}));
+import { CustomAvatar } from 'components/avatars';
 
 interface Props {
   statBoxDetails: IStatBoxDetails[];
 }
 
 const StatBoxes: React.FC<Props> = ({ statBoxDetails }) => {
-  const classes = useStyles();
   return (
     <Grid>
       <CenteredGrid dir='row'>
         {statBoxDetails.map((item, i: number) => (
-          <Grid item key={i}>
-            <Avatar className={classes.number_avatar}>
+          <Grid item style={{ textAlign: 'center' }} key={i}>
+            <CustomAvatar background={item.color || 'secondary'} small>
               <CustomTypography main bold>
                 {item.value}
               </CustomTypography>
-            </Avatar>
+            </CustomAvatar>
             <CustomTypography size='xs'>{item.text}</CustomTypography>
           </Grid>
         ))}

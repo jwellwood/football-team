@@ -3,6 +3,7 @@ import { IPlayer } from 'shared/types';
 export interface IStatBoxDetails {
   text: string;
   value: number | string;
+  color?: string;
 }
 
 export interface IPlayerByPosition {

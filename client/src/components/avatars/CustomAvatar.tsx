@@ -30,6 +30,7 @@ interface Props {
   shadow?: string;
   background?: string;
   centered?: boolean;
+  small?: boolean;
 }
 
 export default ({
@@ -40,6 +41,7 @@ export default ({
   shadow,
   background,
   centered,
+  small,
 }: Props): ReactElement => {
   const classes = useStyles();
 
@@ -51,7 +53,10 @@ export default ({
       onClick={onClick}
       className={bordered ? classes.border : null}
       style={{
+        width: small ? 30 : '',
+        height: small ? 30 : '',
         fontWeight: 'bold',
+        fontSize: small ? '0.8rem' : '',
         fontFamily: secondaryFont,
         boxShadow,
         backgroundColor,
