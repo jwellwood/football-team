@@ -2,6 +2,10 @@
 
 A general overview of changes made between versions
 
+##### v0.1.5
+
+- Refactored reducers and actions
+
 ##### v0.1.4
 
 - Improved ui on squad page, converting grid to list and adding colors
