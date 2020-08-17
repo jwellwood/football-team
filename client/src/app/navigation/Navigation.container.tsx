@@ -1,8 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { showMessage } from 'reduxStore/app/message_actions';
-import { getAuth, signOut } from 'reduxStore/auth/auth_actions';
+import { showAlert } from 'reduxStore/alert';
+import { getAuth, signOut } from 'reduxStore/auth';
 import { visitor_routes } from 'router';
 import NavDrawer from './NavDrawer';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
@@ -23,12 +23,12 @@ export default (): React.ReactElement => {
     dispatch(signOut()).then((res: any) => {
       const { success, message, type } = res.payload;
       if (success) {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
         setOpen(false);
         dispatch(getAuth()); // To reset the auth status
         history.push(visitor_routes.HOME);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
     });
   };

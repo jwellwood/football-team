@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getResultById } from 'reduxStore/result/result_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { getResultById } from 'reduxStore/result';
+import { showAlert } from 'reduxStore/alert';
 import { IResult } from 'shared/types';
 import { Spinner } from 'components/loaders';
 import Result from '../components/Result.component';
@@ -20,7 +20,7 @@ export default () => {
       if (success) {
         setResult(data);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setLoading(false);
     });

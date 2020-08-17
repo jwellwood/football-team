@@ -258,7 +258,7 @@ router.post(`${PUBLIC}/verify_email`, (req, res) => {
   let date = new Date();
   const timestamp = date.getTime();
   User.findOne(
-    { validateToken: req.body.token, validateTokenExp: { $gte: timestamp } },
+    { validateToken: req.body, validateTokenExp: { $gte: timestamp } },
     (err, user) => {
       if (err || !user) return res.json({ ...notifyError });
       if (user) {

@@ -1,22 +1,22 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { showAlert } from 'reduxStore/alert';
 // MUI
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 import { IAlert } from '../shared';
 import { AppDispatch } from 'reduxStore/rootReducer';
 
-interface IAppState {
-  app: any;
+interface IAlertState {
+  alert: any;
 }
 
 const AlertMessage: React.FC = () => {
-  const message: IAlert = useSelector((state: IAppState) => state.app.message);
+  const message: IAlert = useSelector((state: IAlertState) => state.alert);
   const dispatch: AppDispatch = useDispatch();
 
   const handleClose = () => {
-    dispatch(showMessage(false, ''));
+    dispatch(showAlert(false, '', 'warning'));
   };
 
   return message ? (

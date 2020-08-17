@@ -1,28 +1,32 @@
-import { GET_ALL_PLAYERS, GET_PLAYER_BY_ID } from '../types';
+import { actionIds } from '../../constants/actionIds';
 
 const initialState = {
   squadData: null,
+  data: null,
+  success: false,
+  matchesPlayed: [],
 };
 
 type SquadState = typeof initialState;
 
-export const squadReducer = function (
+export const squadReducer = (
   state: SquadState = { ...initialState },
   action
-) {
-  switch (action.type) {
-    case GET_ALL_PLAYERS:
+): SquadState => {
+  const { type, payload } = action;
+  switch (type) {
+    case actionIds.GET_ALL_PLAYERS:
       return {
         ...state,
-        success: action.payload.success,
-        squadData: action.payload.data,
+        success: payload.success,
+        squadData: payload.data,
       };
-    case GET_PLAYER_BY_ID:
+    case actionIds.GET_PLAYER_BY_ID:
       return {
         ...state,
-        success: action.payload.success,
-        data: action.payload.data,
-        matchesPlayed: action.payload.data.matchesPlayed,
+        success: payload.success,
+        data: payload.data,
+        matchesPlayed: payload.data.matchesPlayed,
       };
     default:
       return state;

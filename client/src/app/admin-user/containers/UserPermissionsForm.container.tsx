@@ -4,14 +4,10 @@ import { useDispatch } from 'react-redux';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import { IUserPermissionInput } from '../shared/types';
-import {
-  getUserById,
-  setPermissions,
-  resetImage,
-} from 'reduxStore/user/user_admin_actions';
-import { removeAdminImage } from 'reduxStore/team/team_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
-import { getAllPlayers } from 'reduxStore/squad/squad_actions';
+import { getUserById, setPermissions, resetImage } from 'reduxStore/user';
+import { removeAdminImage } from 'reduxStore/team';
+import { showAlert } from 'reduxStore/alert';
+import { getAllPlayers } from 'reduxStore/squad';
 import { admin_routes } from 'router';
 import UserPermissionForm from '../components/UserPermissionForm.component';
 import { $initUserPermissionFormState } from '../shared/state';
@@ -34,7 +30,7 @@ export default () => {
         setUser(data);
         setLoading(false);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
     });
   }, [dispatch, id]);
@@ -84,14 +80,14 @@ export default () => {
         dispatch(removeAdminImage(user!.image.public_id)).then((res: any) => {
           const { success, message, type } = res.payload;
           if (success) {
-            dispatch(showMessage(true, message, type));
+            dispatch(showAlert(true, message, type));
             history.push(admin_routes.ADMIN_USERS);
           } else {
-            dispatch(showMessage(true, message, type));
+            dispatch(showAlert(true, message, type));
           }
         });
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
     });
   };

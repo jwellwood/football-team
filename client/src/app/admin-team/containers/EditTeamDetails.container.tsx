@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTeam, updateTeamDetails } from 'reduxStore/team/team_actions';
+import { getTeam, updateTeamDetails } from 'reduxStore/team/';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import EditTeamDetailsForm from '../components/EditTeamDetailsForm';

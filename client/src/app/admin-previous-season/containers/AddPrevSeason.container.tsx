@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { addPreviousSeason } from 'reduxStore/team/team_actions';
+import { addPreviousSeason } from 'reduxStore/season';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import PrevSeasonForm from '../components/PreviousSeasonForm';

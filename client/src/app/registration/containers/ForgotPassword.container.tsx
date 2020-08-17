@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { forgotPassword } from 'reduxStore/auth/auth_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { forgotPassword } from 'reduxStore/auth';
+import { showAlert } from 'reduxStore/alert';
 import { onInputChange } from 'utils/form-controls';
 import { reg_routes } from 'router';
 import ForgotPassword from '../components/ForgotPassword.component';
@@ -32,7 +32,7 @@ export default () => {
     const dataToSubmit: IForgotPasswordForm = { ...input };
     dispatch(forgotPassword(dataToSubmit)).then(() => {
       dispatch(
-        showMessage(
+        showAlert(
           true,
           'Password reset email sent. Check your email and follow the instructions',
           'success'

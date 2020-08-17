@@ -1,16 +1,12 @@
 // In this file
 // 1 POST   / ADD_TEAM                / addTeam
-// 2 PUT    / UDPATE_TEAM_DETAILS     / updateTeamDetails
-// 3 PUT    / UDPATE_TEAM_PHOTO       / updateTeamPhoto
+// 2 PUT    / UPDATE_TEAM_DETAILS     / updateTeamDetails
+// 3 PUT    / UPDATE_TEAM_PHOTO       / updateTeamPhoto
 // 4 POST   / ADD_HALL_OF_FAMER       / addHallOfFamer
 // 5 PUT    / UPDATE_HALL_OF_FAMER    / updateHallOfFamer
 // 6 DELETE / DElETE_HALL_OF_FAMER    / deleteHallOfFamer
 // 7 POST   / ADD_NEW_TROPHY          / addNewTrophy
 // 8 DELETE / DELETE_TROPHY           / deleteTrophy
-
-// 1 POST   / ADD_PREVIOUS_SEASON     / addPreviousSeason
-// 2 PUT    / UPDATE_PREVIOUS_SEASON  / updatePreviousSeason
-// 3 DELETE / DELETE_PREVIOUS_SEASON  / deletePreviousSeason
 
 const express = require('express');
 const router = express.Router();
@@ -45,7 +41,7 @@ router.post(`${ADMIN}/add_team`, auth, admin, (req, res) => {
   });
 });
 
-// 2 PUT / UDPATE_TEAM_DETAILS / updateTeamDetails
+// 2 PUT / UPDATE_TEAM_DETAILS / updateTeamDetails
 // Body: id, name, location, league, position,
 router.put(`${ADMIN}/update_team_details`, auth, admin, (req, res) => {
   const notifyError = errorMessage(updateTeam.error);

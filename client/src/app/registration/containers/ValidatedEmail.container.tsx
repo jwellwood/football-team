@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { verifyEmail } from 'reduxStore/auth/auth_actions';
+import { verifyEmail } from 'reduxStore/auth';
 import { onFormSubmit } from 'utils/form-controls';
 import { reg_routes } from 'router';
 import ValidatedEmail from '../components/ValidatedEmail.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
-
-interface IValidatedEmail {
-  token: string;
-}
 
 export default () => {
   const { token } = useParams();
@@ -17,7 +13,7 @@ export default () => {
   const dispatch: AppDispatch = useDispatch();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const dataToSubmit: IValidatedEmail = { token: token };
+  const dataToSubmit: string = token;
   const onClick = () =>
     onFormSubmit(
       setLoading,

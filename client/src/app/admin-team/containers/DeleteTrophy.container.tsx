@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTeam, deleteTrophy } from 'reduxStore/team/team_actions';
+import { getTeam, deleteTrophy } from 'reduxStore/team';
 import { onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import { ITrophy, ITeam } from 'shared/types';

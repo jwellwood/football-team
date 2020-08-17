@@ -1,4 +1,4 @@
-import { showMessage } from 'reduxStore/app/message_actions';
+import { showAlert } from 'reduxStore/alert';
 
 export const onFormSubmit = (setLoading, dispatch, snack, onSuccess) => {
   setLoading(true);
@@ -7,12 +7,12 @@ export const onFormSubmit = (setLoading, dispatch, snack, onSuccess) => {
     setLoading(false);
     if (success) {
       if (snack) {
-        snack(showMessage(true, message, type));
+        snack(showAlert(true, message, type));
       }
       onSuccess();
       // route.push(routeTo);
     } else {
-      snack(showMessage(true, message, type));
+      snack(showAlert(true, message, type));
     }
   });
 };

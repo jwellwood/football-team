@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { showMessage } from 'reduxStore/app/message_actions';
-import {
-  getResultById,
-  updateResult,
-  getAllResults,
-} from 'reduxStore/result/result_actions';
+import { showAlert } from 'reduxStore/alert';
+import { getResultById, updateResult, getAllResults } from 'reduxStore/result';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IResult } from 'shared/types';
 import { admin_routes } from 'router';
@@ -33,7 +29,7 @@ export default () => {
         setResult(data);
         setLoading(false);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
         setLoading(false);
       }
     });

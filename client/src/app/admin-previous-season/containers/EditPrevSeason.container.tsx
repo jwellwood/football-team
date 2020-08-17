@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {
-  getPreviousSeasonById,
-  updatePreviousSeason,
-} from 'reduxStore/team/team_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { getPreviousSeasonById, updatePreviousSeason } from 'reduxStore/season';
+import { showAlert } from 'reduxStore/alert';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import { Spinner } from 'components/loaders';
@@ -33,7 +30,7 @@ export default () => {
         setSeason(data);
         setLoading(false);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setLoading(false);
     });

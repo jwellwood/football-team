@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getAllResults } from 'reduxStore/result/result_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
-import { getPlayerById } from 'reduxStore/squad/squad_actions';
+import { getAllResults } from 'reduxStore/result';
+import { showAlert } from 'reduxStore/alert';
+import { getPlayerById } from 'reduxStore/squad';
 import { IResult } from 'shared/types';
 import { IPlayer } from 'shared/types';
 import { Spinner } from 'components/loaders';
@@ -22,7 +22,7 @@ export default () => {
     dispatch(getAllResults()).then((res: any) => {
       const { success, message, type, data } = res.payload;
       if (!success) {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setResults(data);
     });
@@ -34,7 +34,7 @@ export default () => {
       if (success) {
         setPlayer(data);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setLoading(false);
     });

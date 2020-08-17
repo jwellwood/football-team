@@ -1,47 +1,35 @@
-import {
-  // Admin
-  ADD_RESULT,
-  UPDATE_RESULT,
-  DELETE_RESULT,
-  ADD_MATCH_PLAYER,
-  DELETE_MATCH_PLAYER,
-  GET_ALL_RESULTS,
-  GET_RESULT_BY_ID,
-  GET_LATEST_RESULT,
-} from '../types';
+import { actionIds } from 'constants/actionIds';
 
 const initialState = {
   data: null,
+  success: false,
 };
 
 type ResultState = typeof initialState;
 
-export const resultReducer = function (
+export const resultReducer = (
   state: ResultState = { ...initialState },
   action
-) {
-  switch (action.type) {
+): ResultState => {
+  const { type, payload } = action;
+  switch (type) {
     // Results
-    case ADD_RESULT:
-      return { ...state, message: action.payload };
-    case UPDATE_RESULT:
-      return { ...state, message: action.payload };
-    case DELETE_RESULT:
-      return { ...state, message: action.payload };
-    case ADD_MATCH_PLAYER:
-      return { ...state, message: action.payload };
-    case DELETE_MATCH_PLAYER:
-      return { ...state, message: action.payload };
-    case GET_ALL_RESULTS:
-      return {
-        ...state,
-        success: action.payload.success,
-        data: action.payload.data,
-      };
-    case GET_RESULT_BY_ID:
-      return { ...state, success: action.payload };
-    case GET_LATEST_RESULT:
-      return { ...state, success: action.payload };
+    case actionIds.ADD_RESULT:
+      return { ...state, ...payload };
+    case actionIds.UPDATE_RESULT:
+      return { ...state, ...payload };
+    case actionIds.DELETE_RESULT:
+      return { ...state, ...payload };
+    case actionIds.ADD_MATCH_PLAYER:
+      return { ...state, ...payload };
+    case actionIds.DELETE_MATCH_PLAYER:
+      return { ...state, ...payload };
+    case actionIds.GET_ALL_RESULTS:
+      return { ...state, ...payload };
+    case actionIds.GET_RESULT_BY_ID:
+      return { ...state, ...payload };
+    case actionIds.GET_LATEST_RESULT:
+      return { ...state, ...payload };
     default:
       return state;
   }

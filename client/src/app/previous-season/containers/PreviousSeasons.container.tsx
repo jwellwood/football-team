@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 // Functions
-import { getPreviousSeasons } from 'reduxStore/team/team_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { getPreviousSeasons } from 'reduxStore/season';
+import { showAlert } from 'reduxStore/alert';
 // Components
 import { ListWrapper } from 'components/lists';
 import PreviousSeason from '../components/PreviousSeason';
@@ -17,11 +17,12 @@ export default () => {
   const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
     dispatch(getPreviousSeasons()).then((res: any) => {
+      console.log(res);
       const { success, data, message, type } = res.payload;
       if (success) {
         setSeasons(data);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setLoading(false);
     });

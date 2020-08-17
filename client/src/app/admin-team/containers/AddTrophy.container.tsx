@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewTrophy, getTeam } from 'reduxStore/team/team_actions';
+import { addNewTrophy, getTeam } from 'reduxStore/team';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import AddTrophyForm from '../components/AddTrophyForm';
