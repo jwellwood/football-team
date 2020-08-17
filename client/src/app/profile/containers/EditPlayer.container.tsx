@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { updatePlayerDetails } from 'reduxStore/user/user_actions';
+import { updatePlayerDetails } from 'reduxStore/user';
 import { user_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';

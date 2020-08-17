@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { deleteMatchPlayer } from 'reduxStore/result/result_actions';
+import { deleteMatchPlayer } from 'reduxStore/result';
 import { onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import DeleteMatchPlayer from '../components/DeleteMatchPlayer.component';

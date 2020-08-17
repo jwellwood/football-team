@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { admin_routes } from 'router';
-import { deletePreviousAward } from 'reduxStore/team/team_actions';
+import { deletePreviousAward } from 'reduxStore/season';
 import { onFormSubmit } from 'utils/form-controls';
 import DeleteAward from '../components/DeleteAward.component';
 import { AppDispatch } from 'reduxStore/rootReducer';

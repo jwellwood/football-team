@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateHallOfFamer, getTeam } from 'reduxStore/team/team_actions';
+import { updateHallOfFamer, getTeam } from 'reduxStore/team/';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import HOFForm from '../components/HallOfFameForm';

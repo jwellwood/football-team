@@ -1,6 +1,5 @@
 // App Actions
-export const SHOW_MESSAGE = 'SHOW_MESSAGE';
-
+export const SHOW_ALERT = 'SHOW_ALERT';
 // *******************USER********************
 // Auth
 export const GET_AUTH = 'GET_AUTH';

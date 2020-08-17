@@ -43,16 +43,16 @@ const EditHOFPage = lazy(() =>
 );
 // Season
 const AdminPreviousSeasonsPage = lazy(() =>
-  import('app/admin-team/pages/AdminPreviousSeasons.page')
+  import('app/admin-previous-season/pages/AdminPreviousSeasons.page')
 );
 const AddPreviousSeasonPage = lazy(() =>
-  import('app/admin-team/pages/AddPreviousSeason.page')
+  import('app/admin-previous-season/pages/AddPreviousSeason.page')
 );
 const EditPrevSeasonPage = lazy(() =>
-  import('app/admin-team/pages/EditPrevSeason.page')
+  import('app/admin-previous-season/pages/EditPrevSeason.page')
 );
 const AddSeasonAwardPage = lazy(() =>
-  import('app/admin-team/pages/AddSeasonAward.page')
+  import('app/admin-previous-season/pages/AddSeasonAward.page')
 );
 // ADMIN
 const AdminPage = lazy(() => import('app/admin-home/pages/Admin.page'));

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { signUp } from 'reduxStore/auth/auth_actions';
+import { signUp } from 'reduxStore/auth';
 import { user_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import SignUpForm from '../components/SignUp.component';

@@ -2,6 +2,10 @@
 
 A general overview of changes made between versions
 
+##### v0.1.4
+
+- Improved ui on squad page, converting grid to list and adding colors
+
 ##### v0.1.3
 
 - Removed latest result from homepage, added season details

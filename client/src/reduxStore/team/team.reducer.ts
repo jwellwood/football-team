@@ -1,82 +1,56 @@
-import {
-  GET_TEAM,
-  // ADMIN
-  ADD_TEAM,
-  UPDATE_TEAM_DETAILS,
-  UPDATE_TEAM_PHOTO,
-  ADD_NEW_TROPHY,
-  DELETE_TROPHY,
-  ADD_HALL_OF_FAMER,
-  UPDATE_HALL_OF_FAMER,
-  DELETE_HALL_OF_FAMER,
-  UPLOAD_TEAM_PHOTO,
-  REMOVE_ADMIN_IMAGE,
-  // Prev seasons
-  GET_PREVIOUS_SEASONS,
-  GET_PREVIOUS_SEASON_BY_ID,
-  ADD_PREVIOUS_SEASON,
-  UPDATE_PREVIOUS_SEASON,
-  DELETE_PREVIOUS_SEASON,
-  ADD_PREVIOUS_AWARD,
-  DELETE_PREVIOUS_AWARD,
-} from '../types';
+import { actionIds } from '../../constants/actionIds';
 
 const initialState = {
   teamData: null,
+  success: false,
 };
 
 type TeamState = typeof initialState;
 
-export const teamReducer = function (
+interface Action {
+  type: string;
+  payload: {
+    data: any; // TODO
+    success: boolean;
+  };
+}
+
+export const teamReducer = (
   state: TeamState = { ...initialState },
-  action
-) {
-  switch (action.type) {
-    case GET_TEAM:
+  action: Action
+): TeamState => {
+  const { type, payload } = action;
+  switch (type) {
+    case actionIds.GET_TEAM:
       return {
         ...state,
-        success: action.payload.success,
-        teamData: action.payload.data,
+        success: payload.success,
+        teamData: payload.data,
       };
     // Admin
-    case ADD_TEAM:
-      return { ...state, message: action.payload };
-    case UPDATE_TEAM_DETAILS:
-      return { ...state, message: action.payload };
-    case UPDATE_TEAM_PHOTO:
-      return { ...state, message: action.payload };
+    case actionIds.ADD_TEAM:
+      return { ...state, ...payload };
+    case actionIds.UPDATE_TEAM_DETAILS:
+      return { ...state, ...payload };
+    case actionIds.UPDATE_TEAM_PHOTO:
+      return { ...state, ...payload };
     // Trophy
-    case ADD_NEW_TROPHY:
-      return { ...state, message: action.payload };
-    case DELETE_TROPHY:
-      return { ...state, message: action.payload };
+    case actionIds.ADD_NEW_TROPHY:
+      return { ...state, ...payload };
+    case actionIds.DELETE_TROPHY:
+      return { ...state, ...payload };
     // HOF
-    case ADD_HALL_OF_FAMER:
-      return { ...state, message: action.payload };
-    case UPDATE_HALL_OF_FAMER:
-      return { ...state, message: action.payload };
-    case DELETE_HALL_OF_FAMER:
-      return { ...state, message: action.payload };
+    case actionIds.ADD_HALL_OF_FAMER:
+      return { ...state, ...payload };
+    case actionIds.UPDATE_HALL_OF_FAMER:
+      return { ...state, ...payload };
+    case actionIds.DELETE_HALL_OF_FAMER:
+      return { ...state, ...payload };
     // IMAGES
-    case UPLOAD_TEAM_PHOTO:
-      return { ...state, message: action.payload };
-    case REMOVE_ADMIN_IMAGE:
-      return { ...state, message: action.payload };
-    // PREVIOUS SEASONS
-    case GET_PREVIOUS_SEASONS:
-      return { ...state, message: action.payload };
-    case GET_PREVIOUS_SEASON_BY_ID:
-      return { ...state, message: action.payload };
-    case ADD_PREVIOUS_SEASON:
-      return { ...state, message: action.payload };
-    case UPDATE_PREVIOUS_SEASON:
-      return { ...state, message: action.payload };
-    case DELETE_PREVIOUS_SEASON:
-      return { ...state, message: action.payload };
-    case ADD_PREVIOUS_AWARD:
-      return { ...state, message: action.payload };
-    case DELETE_PREVIOUS_AWARD:
-      return { ...state, message: action.payload };
+    case actionIds.UPLOAD_TEAM_PHOTO:
+      return { ...state, ...payload };
+    case actionIds.REMOVE_ADMIN_IMAGE:
+      return { ...state, ...payload };
     default:
       return state;
   }

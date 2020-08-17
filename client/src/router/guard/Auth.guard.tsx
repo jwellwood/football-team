@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Internal
 import { Spinner } from 'components/loaders';
-import { getAuth } from 'reduxStore/auth/auth_actions';
+import { getAuth } from 'reduxStore/auth';
 import { reg_routes, user_routes } from 'router';
 import { AppDispatch } from 'reduxStore/rootReducer';
 

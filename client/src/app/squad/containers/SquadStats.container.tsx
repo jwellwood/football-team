@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllPlayers } from 'reduxStore/squad/squad_actions';
-import { getAllResults } from 'reduxStore/result/result_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { getAllPlayers } from 'reduxStore/squad';
+import { getAllResults } from 'reduxStore/result';
+import { showAlert } from 'reduxStore/alert';
 import { IPlayer, IResult } from 'shared/types';
 import { Spinner } from 'components/loaders';
 import SquadStats from '../components/SquadStats.component';
@@ -16,7 +16,7 @@ export default () => {
     dispatch(getAllPlayers()).then((res: any) => {
       const { success, message, type, data } = res.payload;
       if (!success) {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setPlayers(data);
     });
@@ -26,7 +26,7 @@ export default () => {
     dispatch(getAllResults()).then((res: any) => {
       const { success, message, type, data } = res.payload;
       if (!success) {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setResults(data);
     });

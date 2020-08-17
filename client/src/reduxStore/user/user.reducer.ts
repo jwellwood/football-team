@@ -1,48 +1,35 @@
-import {
-  // Admin
-  GET_ALL_USERS,
-  // User
-  UPDATE_PLAYER_DETAILS,
-  UPDATE_PLAYER_TARGETS,
-  UPDATE_USER_IMAGE,
-  UPLOAD_USER_IMAGE,
-  REMOVE_USER_IMAGE,
-  GET_USER_BY_ID,
-  SET_PERMISSIONS,
-  RESET_IMAGE,
-} from '../types';
+import { actionIds } from '../../constants/actionIds';
 
 const initialState = {
   userData: null,
+  success: false,
 };
 
 type UserState = typeof initialState;
 
-export const userReducer = function (
-  state: UserState = { ...initialState },
-  action
-) {
-  switch (action.type) {
+export const userReducer = (state: UserState = { ...initialState }, action) => {
+  const { type, payload } = action;
+  switch (type) {
     // Admin
-    case GET_ALL_USERS:
-      return { ...state, message: action.payload };
-    case GET_USER_BY_ID:
-      return { ...state, message: action.payload };
-    case SET_PERMISSIONS:
-      return { ...state, message: action.payload };
-    case RESET_IMAGE:
-      return { ...state, message: action.payload };
+    case actionIds.GET_ALL_USERS:
+      return { ...state, ...payload };
+    case actionIds.GET_USER_BY_ID:
+      return { ...state, ...payload };
+    case actionIds.SET_PERMISSIONS:
+      return { ...state, ...payload };
+    case actionIds.RESET_IMAGE:
+      return { ...state, ...payload };
     // User
-    case UPDATE_PLAYER_DETAILS:
-      return { ...state, success: action.payload };
-    case UPDATE_PLAYER_TARGETS:
-      return { ...state, success: action.payload };
-    case UPLOAD_USER_IMAGE:
-      return { ...state, success: action.payload };
-    case UPDATE_USER_IMAGE:
-      return { ...state, success: action.payload };
-    case REMOVE_USER_IMAGE:
-      return { ...state, success: action.payload };
+    case actionIds.UPDATE_PLAYER_DETAILS:
+      return { ...state, ...payload };
+    case actionIds.UPDATE_PLAYER_TARGETS:
+      return { ...state, ...payload };
+    case actionIds.UPLOAD_USER_IMAGE:
+      return { ...state, ...payload };
+    case actionIds.UPDATE_USER_IMAGE:
+      return { ...state, ...payload };
+    case actionIds.REMOVE_USER_IMAGE:
+      return { ...state, ...payload };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { resetPassword } from 'reduxStore/auth/auth_actions';
+import { resetPassword } from 'reduxStore/auth';
 import { reg_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import ResetPassword from '../components/ResetPassword.component';

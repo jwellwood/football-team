@@ -5,9 +5,9 @@ import {
   updateUserImage,
   removeUserImage,
   uploadUserImage,
-} from 'reduxStore/user/user_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
-import { getAllPlayers } from 'reduxStore/squad/squad_actions';
+} from 'reduxStore/user';
+import { showAlert } from 'reduxStore/alert';
+import { getAllPlayers } from 'reduxStore/squad';
 import { user_routes } from 'router';
 import { IUserData } from 'shared/types';
 import EditUserImage from '../components/EditUserImage.component';
@@ -54,18 +54,18 @@ export default () => {
       const { success, message, type } = res.payload;
       if (success) {
         setLoading(false);
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
         history.push(user_routes.PROFILE);
       } else {
         setLoading(false);
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
     });
   };
 
   const onUseDefault = () => {
     if (user.image.url === 'default') {
-      dispatch(showMessage(true, 'Default image selected', 'info'));
+      dispatch(showAlert(true, 'Default image selected', 'info'));
       history.push(user_routes.PROFILE);
     } else {
       dispatch(removeUserImage(user.image.public_id)).then((res: any) => {
@@ -74,7 +74,7 @@ export default () => {
           updatePhotoOnDatabase('default', 0);
         } else {
           setLoading(false);
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
         }
       });
     }
@@ -96,12 +96,12 @@ export default () => {
             if (success) {
               updatePhotoOnDatabase(url, public_id);
             } else {
-              dispatch(showMessage(true, message, type));
+              dispatch(showAlert(true, message, type));
             }
           });
         } else {
           setLoading(false);
-          dispatch(showMessage(true, type, message));
+          dispatch(showAlert(true, type, message));
         }
       });
     } else {
@@ -110,7 +110,7 @@ export default () => {
         if (success) {
           updatePhotoOnDatabase(url, public_id);
         } else {
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
         }
       });
     }

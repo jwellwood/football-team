@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  checkCurrentPassword,
-  updatePassword,
-} from 'reduxStore/auth/auth_actions';
+import { checkCurrentPassword, updatePassword } from 'reduxStore/auth';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { user_routes } from 'router';
 import ChangePassword from '../components/ChangePassword.component';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
+import { IUserData } from 'shared/types';
 
 export interface IChangePasswordForm {
   currentPassword: string;
@@ -21,7 +19,8 @@ interface ICurrentPasswordData {
 }
 interface INewPasswordData {
   currentPassword: string;
-  user: any; // TODO
+  newPassword: string;
+  user: IUserData;
 }
 
 const ChangePasswordState = {

@@ -6,8 +6,8 @@ import {
   updateTeamPhoto,
   uploadTeamPhoto,
   removeAdminImage,
-} from 'reduxStore/team/team_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+} from 'reduxStore/team';
+import { showAlert } from 'reduxStore/alert';
 import { admin_routes } from 'router';
 import { ITeam } from 'shared/types';
 import EditTeamPhotoForm from '../components/EditTeamPhotoForm';
@@ -45,7 +45,7 @@ export default () => {
 
   const onUseDefault = () => {
     if (teamPhoto!.url === 'default') {
-      dispatch(showMessage(true, 'Default image selected', 'info'));
+      dispatch(showAlert(true, 'Default image selected', 'info'));
       getTeam();
       history.push(admin_routes.ADMIN);
     } else {
@@ -55,7 +55,7 @@ export default () => {
           updatePhotoOnDatabase('default', 0);
         } else {
           setLoading(false);
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
         }
       });
     }
@@ -67,12 +67,12 @@ export default () => {
         const { success, message, type } = res.payload;
         if (success) {
           setLoading(false);
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
           getTeam();
           history.push(admin_routes.ADMIN);
         } else {
           setLoading(false);
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
         }
       }
     );
@@ -94,12 +94,12 @@ export default () => {
             if (success) {
               updatePhotoOnDatabase(url, public_id);
             } else {
-              dispatch(showMessage(true, message, type));
+              dispatch(showAlert(true, message, type));
             }
           });
         } else {
           setLoading(false);
-          dispatch(showMessage(true, type, message));
+          dispatch(showAlert(true, type, message));
         }
       });
     } else {
@@ -108,7 +108,7 @@ export default () => {
         if (success) {
           updatePhotoOnDatabase(url, public_id);
         } else {
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
         }
       });
     }

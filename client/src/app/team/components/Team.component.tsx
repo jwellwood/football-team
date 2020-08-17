@@ -8,7 +8,7 @@ const TeamPhoto = lazy(() => import('./TeamPhoto'));
 const TrophiesList = lazy(() => import('./TrophiesList'));
 const HallOfFame = lazy(() => import('../containers/HallOfFame.container'));
 const PreviousSeasonsLogic = lazy(() =>
-  import('../containers/PreviousSeasons.container')
+  import('../../previous-season/containers/PreviousSeasons.container')
 );
 
 interface Props {

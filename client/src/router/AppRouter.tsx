@@ -1,9 +1,9 @@
 import React, { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 // Functions
-import { showMessage } from 'reduxStore/app/message_actions';
-import { getAuth } from 'reduxStore/auth/auth_actions';
-import { getTeam } from 'reduxStore/team/team_actions';
+import { showAlert } from 'reduxStore/alert';
+import { getAuth } from 'reduxStore/auth';
+import { getTeam } from 'reduxStore/team';
 // UI
 import { AlertMessage } from 'shared/messages/components';
 import { Spinner } from 'components/loaders';
@@ -21,7 +21,7 @@ export default () => {
       (res: any) => {
         const { success, message, type } = res.payload;
         if (!success) {
-          dispatch(showMessage(true, message, type));
+          dispatch(showAlert(true, message, type));
         }
       },
       [dispatch]
@@ -32,7 +32,7 @@ export default () => {
   }, [dispatch]);
 
   return (
-    <PageContainer admin={false}>
+    <PageContainer>
       <React.Suspense fallback={<Spinner />}>
         <Navigation />
         <Routes />

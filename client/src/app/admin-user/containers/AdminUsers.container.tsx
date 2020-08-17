@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllUsers } from 'reduxStore/user/user_admin_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { getAllUsers } from 'reduxStore/user';
+import { showAlert } from 'reduxStore/alert';
 import AdminUsers from '../components/AdminUsers.component';
 import { IUserData } from 'shared/types';
 import { AppDispatch } from 'reduxStore/rootReducer';
@@ -17,7 +17,7 @@ export default () => {
       if (success) {
         setUsers(res.payload.data);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setLoading(false);
     });

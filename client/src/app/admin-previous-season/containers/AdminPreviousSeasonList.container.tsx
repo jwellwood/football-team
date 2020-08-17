@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPreviousSeasons } from 'reduxStore/team/team_actions';
-import { showMessage } from 'reduxStore/app/message_actions';
+import { getPreviousSeasons } from 'reduxStore/season';
+import { showAlert } from 'reduxStore/alert';
 import { Spinner } from 'components/loaders';
 import AdminPrevSeasonsList from '../components/AdminPrevSeasonsList';
 import { IPreviousSeason } from 'shared/types';
@@ -18,7 +18,7 @@ export default () => {
       if (success) {
         setSeasons(data);
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setLoading(false);
     });

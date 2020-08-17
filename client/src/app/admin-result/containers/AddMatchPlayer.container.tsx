@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { showMessage } from 'reduxStore/app/message_actions';
-import { getPlayerById, getAllPlayers } from 'reduxStore/squad/squad_actions';
-import {
-  getResultById,
-  addMatchPlayer,
-} from 'reduxStore/result/result_actions';
+import { showAlert } from 'reduxStore/alert';
+import { getPlayerById, getAllPlayers } from 'reduxStore/squad';
+import { getResultById, addMatchPlayer } from 'reduxStore/result';
 import { admin_routes } from 'router';
 import { onInputChange, onInputCheck } from 'utils/form-controls';
 import { IPlayer, IResult, IResultPlayerStats } from 'shared/types';
@@ -42,7 +39,7 @@ export default () => {
     dispatch(getAllPlayers()).then((res: any) => {
       const { success, message, type, data } = res.payload;
       if (!success) {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
       }
       setPlayers(data);
     });
@@ -54,7 +51,7 @@ export default () => {
       if (success) {
         setResult(data);
       } else {
-        showMessage(true, message, type);
+        showAlert(true, message, type);
       }
     });
   }, [dispatch, id]);
@@ -66,7 +63,7 @@ export default () => {
 
   const onSubmit = () => {
     setLoading(true);
-    dispatch(getPlayerById(input.player_id)).then((res: any) => {
+    dispatch(getPlayerById(input.player_id._id)).then((res: any) => {
       const { success, message, type } = res.payload;
       if (success) {
         const dataToSubmit: IResultPlayerStats = { ...input };
@@ -74,15 +71,15 @@ export default () => {
           const { success, message, type } = res.payload;
           if (success) {
             setLoading(false);
-            dispatch(showMessage(true, message, type));
+            dispatch(showAlert(true, message, type));
             history.push(`${admin_routes.ADMIN_RESULTS}/edit/${id}`);
           } else {
-            dispatch(showMessage(true, message, type));
+            dispatch(showAlert(true, message, type));
             setLoading(false);
           }
         });
       } else {
-        dispatch(showMessage(true, message, type));
+        dispatch(showAlert(true, message, type));
         setLoading(false);
       }
     });
