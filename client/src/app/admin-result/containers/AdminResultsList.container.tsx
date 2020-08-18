@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllResults } from 'reduxStore/result';
+import { getAllResults } from 'reduxStore/results';
 import { showAlert } from 'reduxStore/alert';
 import AdminResultsList from '../components/AdminResultsList';
 import { IResult } from 'shared/types';

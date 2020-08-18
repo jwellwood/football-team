@@ -6,7 +6,7 @@ import { CustomTabs, ITab } from 'shared/layout/tabs';
 import CustomIcon from 'lib/icons/CustomIcon';
 
 const AccountDetails = lazy(() => import('../components/UserAccount'));
-const PlayerDetails = lazy(() => import('../components/ImageAndInfo'));
+const ImageAndInfo = lazy(() => import('../components/ImageAndInfo'));
 const UserTargets = lazy(() => import('../components/UserTargets'));
 
 export interface IAuthState {
@@ -14,14 +14,12 @@ export interface IAuthState {
 }
 
 export default () => {
-  const user: IUserData = useSelector(
-    (state: IAuthState) => state.auth.userData
-  );
+  const user: IUserData = useSelector((state: IAuthState) => state.auth.user);
 
   const tabs: ITab[] = [
     {
       label: <CustomIcon icon='user' />,
-      component: <PlayerDetails user={user} />,
+      component: <ImageAndInfo user={user} />,
     },
     {
       label: <CustomIcon icon='bullseye' />,

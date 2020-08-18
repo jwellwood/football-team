@@ -1,36 +1,44 @@
-import { actionIds } from '../../constants/actionIds';
+import { actionIds } from 'constants/actionIds';
+import { initUserState } from './initUserState';
 
-const initialState = {
-  userData: null,
-  success: false,
-};
+const initialState = { ...initUserState };
 
 type UserState = typeof initialState;
 
-export const userReducer = (state: UserState = { ...initialState }, action) => {
+interface Action {
+  type: string;
+  payload: UserState;
+}
+export const userReducer = (
+  state: UserState = { ...initialState },
+  action: Action
+) => {
   const { type, payload } = action;
   switch (type) {
-    // Admin
     case actionIds.GET_ALL_USERS:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.GET_USER_BY_ID:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.SET_PERMISSIONS:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.RESET_IMAGE:
-      return { ...state, ...payload };
-    // User
+      return handleUserAction(state, payload);
     case actionIds.UPDATE_PLAYER_DETAILS:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.UPDATE_PLAYER_TARGETS:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.UPLOAD_USER_IMAGE:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.UPDATE_USER_IMAGE:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     case actionIds.REMOVE_USER_IMAGE:
-      return { ...state, ...payload };
+      return handleUserAction(state, payload);
     default:
       return state;
   }
 };
+
+const handleUserAction = (state: UserState, payload: UserState) => ({
+  ...state,
+  ...payload,
+});

@@ -19,9 +19,7 @@ export interface IAuthState {
 }
 
 export default () => {
-  const user: IUserData = useSelector(
-    (state: IAuthState) => state.auth.userData
-  );
+  const user: IUserData = useSelector((state: IAuthState) => state.auth.user);
   const { appsTarget, goalsTarget, assistsTarget } = user;
   const dispatch: AppDispatch = useDispatch();
   const history = useHistory();

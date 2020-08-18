@@ -40,12 +40,12 @@ const Trophies: React.FC<Props> = ({ trophies }) => {
       </PresentationModal>
     );
 
-    const cellData: ReactElement[] = [
+    const cellData: Array<ReactElement | string> = [
       <CustomTypography main bold>
         {year}
       </CustomTypography>,
-      trophy.isWinner ? iconModal : null,
-      !trophy.isWinner ? iconModal : null,
+      trophy.isWinner ? iconModal : '',
+      !trophy.isWinner ? iconModal : '',
     ];
     return (
       <TableRow key={_id}>

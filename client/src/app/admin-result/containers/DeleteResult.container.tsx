@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { admin_routes } from 'router';
-import { deleteResult, getAllResults } from 'reduxStore/result';
+import { deleteResult } from 'reduxStore/result';
+import { getAllResults } from 'reduxStore/results';
 import { onFormSubmit } from 'utils/form-controls';
 import { IResult } from 'shared/types';
 import DeleteResult from '../components/DeleteResult.component';
@@ -20,7 +21,7 @@ export default ({ result }: Props) => {
   const onDeleteResult = () =>
     onFormSubmit(
       setLoading,
-      dispatch(deleteResult(result._id)),
+      dispatch(deleteResult(result._id!)),
       dispatch,
       () => {
         dispatch(getAllResults());

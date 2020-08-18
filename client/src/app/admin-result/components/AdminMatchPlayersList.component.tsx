@@ -52,7 +52,7 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
     },
   ];
 
-  const rows: ReactElement[] = matchPlayers.map((pl: IResultPlayerStats) => {
+  const rows: ReactElement[] = matchPlayers.map((pl: IResultPlayerStats, i) => {
     const data = [
       pl.player_id.name,
       pl.goals,
@@ -67,7 +67,7 @@ const AdminMatchPlayersList: React.FC<Props> = ({ matchPlayers, result }) => {
       <DeleteMatchPlayer matchPlayerId={pl.player_id._id} />,
     ];
     return (
-      <TableRow key={pl.player_id._id}>
+      <TableRow key={i}>
         {data.map((item, i: number) => (
           <TableCell key={i} align='center'>
             {item}

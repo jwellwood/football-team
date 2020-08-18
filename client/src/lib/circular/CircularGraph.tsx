@@ -22,7 +22,7 @@ const TargetProgress: React.FC<Props> = ({
   target,
   type,
 }) => {
-  const totalText: ReactElement =
+  const totalText: ReactElement | null =
     total || target ? (
       <>
         <CustomTypography main>{total}</CustomTypography>
@@ -30,7 +30,7 @@ const TargetProgress: React.FC<Props> = ({
       </>
     ) : null;
 
-  const typeText: ReactElement = type ? (
+  const typeText: ReactElement | null = type ? (
     <CustomTypography size='sm' div>
       {type}
     </CustomTypography>

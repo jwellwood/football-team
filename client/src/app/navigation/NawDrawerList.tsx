@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { visitor_routes, admin_routes, reg_routes, user_routes } from 'router';
-import { IUserData } from 'shared/types';
 import ListItemLink from 'app/navigation/ListLinkItem';
 import { LogoutButton } from 'components/buttons';
 import { CustomImageAvatar } from 'components/avatars';
 import { CustomDivider } from 'components/dividers';
 import { ListWrapper } from 'components/lists';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
+import { INavUserData } from './shared/types';
 
 interface Props {
   onSelect: () => void;
   onLogout: (e: any) => void;
   auth: boolean;
   admin: boolean;
-  user: IUserData;
+  user: INavUserData;
 }
 
 interface ILinkList {
@@ -63,11 +63,11 @@ const NavDrawerList: React.FC<Props> = ({
     },
   ];
 
-  const userDetails =
+  const userDetails: ReactElement | null =
     user && auth ? (
       <>
         <ListItemLink
-          avatar={<CustomImageAvatar imageUrl={user.image.url} />}
+          avatar={<CustomImageAvatar imageUrl={user.image} />}
           text={user.name}
           secondary={user.email}
           to={user_routes.PROFILE}

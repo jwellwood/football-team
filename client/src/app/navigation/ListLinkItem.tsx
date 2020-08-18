@@ -39,7 +39,7 @@ const ListItemLink: React.FC<Props> = ({
 
   const listAvatar = avatar ? <ListItemAvatar>{avatar}</ListItemAvatar> : null;
 
-  const listIcon = icon ? (
+  const listIcon: ReactElement | null = icon ? (
     <ListItemIcon>
       <CustomIcon color={color || 'secondary'} icon={icon} />
     </ListItemIcon>

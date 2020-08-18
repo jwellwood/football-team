@@ -1,6 +1,6 @@
 export interface IResultPlayerStats {
   _id?: string;
-  player_id: IResultPlayerId;
+  player_id: any; // TODO
   goals: number;
   assists: number;
   mvp: boolean;

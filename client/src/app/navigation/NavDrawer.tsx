@@ -4,7 +4,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Fab from '@material-ui/core/Fab';
 import NavDrawerList from './NawDrawerList';
 import CustomIcon from 'lib/icons/CustomIcon';
-import { IUserData } from 'shared/types';
+import { INavUserData } from './shared/types';
 
 export const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +30,7 @@ export const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  user: IUserData;
+  user: INavUserData;
   auth: boolean;
   toggleDrawer: () => void;
   open: boolean;

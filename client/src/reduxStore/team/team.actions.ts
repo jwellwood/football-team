@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { actionIds } from '../../constants/actionIds';
-import { teamAPIRoutes as api } from 'constants/routes';
+import { teamAPIRoutes as api } from 'constants/api';
 import { ITrophy, IHallOfFame, ITeam } from 'shared/types';
 
 // 1  GET    / GET_TEAM              / getTeam

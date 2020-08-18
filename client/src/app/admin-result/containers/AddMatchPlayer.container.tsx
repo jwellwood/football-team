@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { showAlert } from 'reduxStore/alert';
-import { getPlayerById, getAllPlayers } from 'reduxStore/squad';
+import { getAllPlayers } from 'reduxStore/squad';
+import { getPlayerById } from 'reduxStore/player';
 import { getResultById, addMatchPlayer } from 'reduxStore/result';
 import { admin_routes } from 'router';
 import { onInputChange, onInputCheck } from 'utils/form-controls';
@@ -12,7 +13,7 @@ import { $initResultData } from 'app/result/shared/initResultData';
 import { AppDispatch } from 'reduxStore/rootReducer';
 
 const inputFields: IResultPlayerStats = {
-  player_id: { name: '', _id: '' },
+  player_id: '',
   goals: 0,
   assists: 0,
   mvp: false,
@@ -63,7 +64,7 @@ export default () => {
 
   const onSubmit = () => {
     setLoading(true);
-    dispatch(getPlayerById(input.player_id._id)).then((res: any) => {
+    dispatch(getPlayerById(input.player_id)).then((res: any) => {
       const { success, message, type } = res.payload;
       if (success) {
         const dataToSubmit: IResultPlayerStats = { ...input };

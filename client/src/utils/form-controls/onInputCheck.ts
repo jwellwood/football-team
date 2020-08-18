@@ -1,7 +1,7 @@
 export const onInputCheck = (
   e: React.ChangeEvent<HTMLInputElement>,
-  input,
-  setInput
+  input: any, // TODO
+  setInput: any
 ) => {
   setInput({
     ...input,

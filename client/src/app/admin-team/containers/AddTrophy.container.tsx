@@ -5,12 +5,12 @@ import { addNewTrophy, getTeam } from 'reduxStore/team';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import AddTrophyForm from '../components/AddTrophyForm';
-import { ITeam, ITrophy } from 'shared/types';
+import { ITrophy } from 'shared/types';
 import { $initTrophyFormState } from '../shared/state';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
-  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const team = useSelector((state: RootState) => state.team.data);
   let history = useHistory();
   const dispatch: AppDispatch = useDispatch();
   const [input, setInput] = useState<ITrophy>({ ...$initTrophyFormState });

@@ -11,7 +11,7 @@ import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 export default () => {
   let history = useHistory();
   const dispatch: AppDispatch = useDispatch();
-  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.data);
   const { name, location, position, league, currentSeason } = team;
   const [input, setInput] = useState({
     name,

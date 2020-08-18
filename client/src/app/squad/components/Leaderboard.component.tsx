@@ -23,7 +23,7 @@ interface ILeaderboardDataAllStats {
 const Leaderboard: React.FC<Props> = ({ leaderboardData }) => {
   return (
     <ListWrapper dense>
-      {leaderboardData.map((item: ILeaderboardDataAllStats, i: number) => {
+      {leaderboardData.map((item: any, i: number) => {
         const topName = item.value.length > 0 ? item.value[0].name : null;
         const topValue = item.value.length > 0 ? item.value[0].stat : null;
         return (

@@ -8,7 +8,7 @@ import DeleteMatchPlayer from '../components/DeleteMatchPlayer.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
 
 interface Props {
-  matchPlayerId: string;
+  matchPlayerId: any;
 }
 
 export default ({ matchPlayerId }: Props) => {

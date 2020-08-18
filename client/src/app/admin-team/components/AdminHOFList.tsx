@@ -7,11 +7,11 @@ import { admin_routes } from 'router';
 // Internal
 import { ListWrapper, ListItemWrapper } from 'components/lists';
 import { SectionContainer } from 'shared/layout/containers';
-import { IHallOfFame, ITeam } from 'shared/types';
+import { IHallOfFame } from 'shared/types';
 import { RootState } from 'reduxStore/rootReducer';
 
 const AdminHOFList: React.FC = () => {
-  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const team = useSelector((state: RootState) => state.team.data);
   const hallOfFame = team.hallOfFame || [];
 
   return (

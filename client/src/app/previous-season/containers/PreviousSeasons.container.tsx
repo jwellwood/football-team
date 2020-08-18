@@ -17,7 +17,6 @@ export default () => {
   const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
     dispatch(getPreviousSeasons()).then((res: any) => {
-      console.log(res);
       const { success, data, message, type } = res.payload;
       if (success) {
         setSeasons(data);

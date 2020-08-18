@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { actionIds } from 'constants/actionIds';
-import { authAPIRoutes as api } from 'constants/routes';
-import { IUserData } from 'shared/types';
+import { authAPIRoutes as api } from 'constants/api';
 // 1 / GET    / GET_AUTH                / getAuth
 // 2 / POST   / SIGN_UP                 / signUp
 // 3 / POST   / SIGN_IN                 / signIn
@@ -66,7 +65,7 @@ export const checkCurrentPassword = (dataToSubmit: {
 export const updatePassword = (dataToSubmit: {
   currentPassword: string;
   newPassword: string;
-  user: IUserData;
+  id: string;
 }) => {
   const request = axios
     .put(api.UPDATE_PASSWORD_ROUTE, dataToSubmit)

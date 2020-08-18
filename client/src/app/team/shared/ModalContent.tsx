@@ -12,7 +12,7 @@ export interface IModalData {
   iconColor: string;
   main: string;
   extra: string;
-  description: string;
+  description?: string;
 }
 
 interface Props {

@@ -1,16 +1,18 @@
 import { actionIds } from 'constants/actionIds';
+import { initAlertState } from './initAlertState';
 
-const initialState = {
-  open: false,
-  text: '',
-  type: '',
-};
+const initialState = { ...initAlertState };
 
 export type AlertState = typeof initialState;
 
+interface Action {
+  type: string;
+  payload: AlertState;
+}
+
 export const alertReducer = (
   state: AlertState = { ...initialState },
-  action
+  action: Action
 ): AlertState => {
   const { payload, type } = action;
   switch (type) {

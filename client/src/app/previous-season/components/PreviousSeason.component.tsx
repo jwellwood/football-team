@@ -8,7 +8,6 @@ import { CustomAvatar } from 'components/avatars';
 import ResultsTotals from 'app/results/components/ResultsTotals.component';
 import { DonutGraph } from 'lib/chartjs/graphs';
 import { IDonutGraphData } from 'lib/chartjs';
-
 import { SectionTitle, CustomTypography } from 'components/typography';
 import AwardList from './AwardList';
 import { IPreviousSeason } from 'shared/types';
@@ -31,7 +30,7 @@ const PreviousSeasonContent: React.FC<Props> = ({
     lose,
     goalsFor,
     goalsAgainst,
-    awards,
+    awards = [],
     finalPosition,
   },
 }) => {

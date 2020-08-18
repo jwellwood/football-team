@@ -1,49 +1,53 @@
 import { actionIds } from 'constants/actionIds';
+import { initAuthUserState } from './initAuthUserState';
 
-const initialState = {
-  isAuth: false,
-  isAdmin: false,
-  userData: null,
-};
+const initialState = { ...initAuthUserState };
 
 type AuthState = typeof initialState;
 
+interface Action {
+  type: string;
+  payload: AuthState;
+}
+
 export const authReducer = (
   state: AuthState = { ...initialState },
-  action
+  action: Action
 ): AuthState => {
   const { type, payload } = action;
   switch (type) {
-    // Auth
     case actionIds.GET_AUTH:
-      return {
-        ...state,
-        isAuth: payload.isAuth,
-        isAdmin: payload.isAdmin,
-        userData: payload.user,
-      };
-    // User
+      return handleAuthAction(state, payload);
     case actionIds.SIGN_UP:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.SIGN_IN:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.SIGN_OUT:
-      return { ...state, ...payload };
+      return handleSignOutAction(state);
     case actionIds.UPDATE_USER_ACCOUNT:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.CHECK_CURRENT_PASSWORD:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.UPDATE_PASSWORD:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.DELETE_USER:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.FORGOT_PASSWORD:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.RESET_PASSWORD:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     case actionIds.VERIFY_EMAIL:
-      return { ...state, ...payload };
+      return handleAuthAction(state, payload);
     default:
       return state;
   }
 };
+
+const handleAuthAction = (state: AuthState, payload: AuthState): AuthState => ({
+  ...state,
+  ...payload,
+});
+const handleSignOutAction = (state: AuthState): AuthState => ({
+  ...state,
+  ...initAuthUserState,
+});

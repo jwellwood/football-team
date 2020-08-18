@@ -26,7 +26,7 @@ export default ({ imageUrl, bordered, shadow, isList }: Props) => {
   const avatar = (
     <Avatar
       src={imageSrc}
-      className={bordered ? classes.border : null}
+      className={bordered ? classes.border : ''}
       style={{ boxShadow, margin: 'inherit' }}
     />
   );
