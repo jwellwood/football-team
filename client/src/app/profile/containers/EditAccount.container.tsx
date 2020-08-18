@@ -5,8 +5,8 @@ import { updateUserAccount } from 'reduxStore/auth';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
-import EditAccount from '../components/EditAccount.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import EditAccount from '../forms/EditAccount.component';
 
 export interface IEditAccountForm {
   email: string;

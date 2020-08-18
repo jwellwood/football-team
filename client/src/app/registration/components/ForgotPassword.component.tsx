@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FormContainer } from 'shared/layout/containers';
-import { passwordFormHelper } from 'shared/messages/shared';
+import { passwordFormHelper } from 'constants/text';
 import { Spinner } from 'components/loaders';
 import { SubmitButton } from 'components/buttons';
 import { TextInput } from 'components/inputs';

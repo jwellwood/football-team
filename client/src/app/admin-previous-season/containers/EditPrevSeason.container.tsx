@@ -6,7 +6,7 @@ import { showAlert } from 'reduxStore/alert';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import { Spinner } from 'components/loaders';
-import PrevSeasonForm from '../components/PreviousSeasonForm';
+import PrevSeasonForm from '../forms/PreviousSeasonForm';
 import { IPreviousSeason } from 'shared/types';
 import { $initPreviousSeasonFormState } from '../shared/state';
 import { AppDispatch } from 'reduxStore/rootReducer';

@@ -33,7 +33,7 @@ const FileInput: React.FC<Props> = ({
         inputRef={validators}
       />
 
-      {errors ? <FormErrorMessage type={label} error={errors} /> : null}
+      {errors ? <FormErrorMessage error={errors} /> : null}
     </>
   );
 };

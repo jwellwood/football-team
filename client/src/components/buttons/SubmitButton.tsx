@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Spinner } from 'components/loaders';
 import { makeStyles } from '@material-ui/core/styles';
+import { button_text } from 'constants/text';
 
 export const useStyles = makeStyles((theme) => ({
   button: {
@@ -27,7 +28,7 @@ const SubmitButton: React.FC<Props> = ({ children, disabled, loading }) => {
       className={classes.button}
       disabled={disabled}
     >
-      {children || 'Submit'}
+      {children || button_text.SUBMIT}
     </Button>
   ) : (
     <Spinner isSecondary />

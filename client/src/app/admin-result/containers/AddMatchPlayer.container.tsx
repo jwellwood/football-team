@@ -8,9 +8,9 @@ import { getResultById, addMatchPlayer } from 'reduxStore/result';
 import { admin_routes } from 'router';
 import { onInputChange, onInputCheck } from 'utils/form-controls';
 import { IPlayer, IResult, IResultPlayerStats } from 'shared/types';
-import AddMatchPlayerForm from '../components/AddMatchPlayerForm';
 import { $initResultData } from 'app/result/shared/initResultData';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import AddMatchPlayerForm from '../forms/AddMatchPlayerForm';
 
 const inputFields: IResultPlayerStats = {
   player_id: '',

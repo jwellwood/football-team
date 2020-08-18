@@ -1,10 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FormContainer } from 'shared/layout/containers';
-import {
-  currentPasswordHelper,
-  newPasswordHelper,
-} from 'shared/messages/shared';
+import { currentPasswordHelper, newPasswordHelper } from 'constants/text';
 import { Spinner } from 'components/loaders';
 import { TextInput } from 'components/inputs';
 import { SubmitButton } from 'components/buttons';
@@ -44,7 +41,7 @@ const ChangePassword: React.FC<Props> = ({
           errors={errors.currentPassword}
         />
       </CenteredGrid>
-      <SubmitButton loading={loading}>Submit</SubmitButton>
+      <SubmitButton loading={loading} />
     </form>
   );
 

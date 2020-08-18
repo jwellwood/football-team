@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkCurrentPassword, updatePassword } from 'reduxStore/auth';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { user_routes } from 'router';
-import ChangePassword from '../components/ChangePassword.component';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
+import ChangePassword from '../forms/ChangePassword.component';
 
 export interface IChangePasswordForm {
   currentPassword: string;

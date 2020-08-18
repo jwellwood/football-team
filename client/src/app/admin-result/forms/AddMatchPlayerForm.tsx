@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
-import { assignPlayerHelper } from 'shared/messages/shared';
+import { assignPlayerHelper, button_text } from 'constants/text';
 import { IResult, IPlayer, IResultPlayerStats } from 'shared/types';
 import { NumberInput, SelectInput, CustomSwitch } from 'components/inputs';
 import { SubmitButton } from 'components/buttons';
@@ -162,7 +162,7 @@ const AddMatchPlayerForm: React.FC<Props> = ({
               </Grid>
             ))}
           </CenteredGrid>
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton>{button_text.ADD}</SubmitButton>
         </form>
       ) : (
         <Spinner />

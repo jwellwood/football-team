@@ -5,8 +5,8 @@ import { updatePlayerTargets } from 'reduxStore/user';
 import { user_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
-import EditTargets from '../components/EditTargets.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import EditTargets from '../forms/EditTargets.component';
 
 export interface IEditTargetForm {
   appsTarget: number;

@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { addPreviousSeason } from 'reduxStore/season';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
-import PrevSeasonForm from '../components/PreviousSeasonForm';
+import PrevSeasonForm from '../forms/PreviousSeasonForm';
 import { IPreviousSeason } from 'shared/types';
 import { $initPreviousSeasonFormState } from '../shared/state';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';

@@ -7,6 +7,7 @@ import { SubmitButton, CustomButton } from 'components/buttons';
 import { FormContainer } from 'shared/layout/containers';
 import { CenteredGrid } from 'shared/layout/grids';
 import { ITeam } from 'shared/types';
+import { button_text } from 'constants/text';
 
 interface Props {
   loading: boolean;
@@ -43,7 +44,7 @@ const EditTeamPhotoForm: React.FC<Props> = ({
             disabled={loading || imageUrl === 'default'}
             onClick={onUseDefault}
           >
-            Use Default
+            {button_text.DEFAULT}
           </CustomButton>
         </CenteredGrid>
         <SubmitButton disabled={disabled} />

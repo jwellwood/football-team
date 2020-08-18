@@ -5,6 +5,7 @@ A general overview of changes made between versions
 ##### v0.1.5
 
 - Refactored reducers and actions
+- Move text to constants for easier editing
 
 ##### v0.1.4
 

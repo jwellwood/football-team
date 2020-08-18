@@ -9,8 +9,9 @@ import { SubmitButton } from 'components/buttons';
 import { TextInput, NumberInput, SelectInput } from 'components/inputs';
 import { CenteredGrid } from 'shared/layout/grids';
 import { CustomLinkButton } from 'components/buttons';
-import AdminAwardsList from './AdminAwardsList';
+import AdminAwardsList from '../components/AdminAwardsList';
 import DeletePrevSeason from '../containers/DeletePreviousSeason.container';
+import { button_text } from 'constants/text';
 
 interface Props {
   onSubmit: () => void;
@@ -93,7 +94,7 @@ const PrevSeasonForm: React.FC<Props> = ({
     </>
   ) : null;
 
-  const submitText: string = season ? 'Update season' : 'Add season';
+  const submitText: string = season ? button_text.UPDATE : button_text.ADD;
 
   return (
     <FormContainer>

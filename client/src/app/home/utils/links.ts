@@ -1,5 +1,6 @@
 import { visitor_routes } from 'router';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
+import { link_text } from 'constants/text';
 
 export interface IHomeLink {
   icon: IconName;
@@ -10,32 +11,32 @@ export interface IHomeLink {
 export const home_links: IHomeLink[] = [
   {
     icon: 'list-ul',
-    text: 'results',
+    text: link_text.results,
     link: visitor_routes.RESULTS,
   },
   {
     icon: 'chart-pie',
-    text: 'results stats',
+    text: link_text.results_stats,
     link: visitor_routes.RESULTS_STATS,
   },
   {
     icon: 'user-friends',
-    text: 'squad',
+    text: link_text.squad,
     link: visitor_routes.SQUAD,
   },
   {
     icon: 'chart-line',
-    text: 'player stats',
+    text: link_text.squad_stats,
     link: visitor_routes.PLAYERS_STATS,
   },
   {
     icon: 'shield-alt',
-    text: 'team',
+    text: link_text.team,
     link: visitor_routes.TEAM,
   },
   {
     icon: 'question-circle',
-    text: 'about',
+    text: link_text.about,
     link: visitor_routes.ABOUT,
   },
 ];

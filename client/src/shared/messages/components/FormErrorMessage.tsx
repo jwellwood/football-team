@@ -1,38 +1,38 @@
 import React from 'react';
 import { CustomTypography } from 'components/typography';
+import { form_error_text as errText } from 'constants/text';
 
 interface Props {
-  type: string;
   error: any; // TODO
 }
 
-const FormErrorMessage: React.FC<Props> = ({ type, error }) => {
-  let message = null;
+const FormErrorMessage: React.FC<Props> = ({ error }) => {
+  let message = errText.default;
   switch (error.type) {
     case 'required':
-      message = 'required';
+      message = errText.required;
       break;
     case 'minLength':
-      message = 'is too short';
+      message = errText.short;
       break;
     case 'maxLength':
-      message = 'is too long';
+      message = errText.long;
       break;
     case 'max':
-      message = 'is too high';
+      message = errText.high;
       break;
     case 'min':
-      message = 'is too low';
+      message = errText.low;
       break;
     case 'pattern':
-      message = "doesn't match the pattern";
+      message = errText.pattern;
       break;
     default:
-      return message;
+      break;
   }
   return (
     <CustomTypography size='xs' color='error'>
-      {`${type} is ${message}`}
+      {message}
     </CustomTypography>
   );
 };

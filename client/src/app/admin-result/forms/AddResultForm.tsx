@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { FormContainer } from 'shared/layout/containers';
-import { addResultHelper } from 'shared/messages/shared';
+import { addResultHelper, button_text } from 'constants/text';
 import { IResultInput } from '../shared/types';
 import { IResult } from 'shared/types';
 import {
@@ -139,7 +139,7 @@ const AddResultForm: React.FC<Props> = ({
             />
           </Grid>
         </CenteredGrid>
-        <SubmitButton loading={loading}>Add Result</SubmitButton>
+        <SubmitButton loading={loading}>{button_text.ADD}</SubmitButton>
       </form>
     </FormContainer>
   ) : (

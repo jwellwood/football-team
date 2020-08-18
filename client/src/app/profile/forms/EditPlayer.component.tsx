@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { FormContainer } from 'shared/layout/containers';
 import { yearOptions } from 'utils/helpers';
-import { profileDetailsHelper } from 'shared/messages/shared';
+import { profileDetailsHelper } from 'constants/text';
 import { IUserData } from 'shared/types';
 import { user_routes } from 'router';
 import { Spinner } from 'components/loaders';

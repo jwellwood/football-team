@@ -9,6 +9,7 @@ import { SubmitButton } from 'components/buttons';
 import { TextInput, SelectInput } from 'components/inputs';
 import DeleteHallOfFame from '../containers/DeleteHallOfFame.container';
 import { base_year } from 'constants/data';
+import { button_text } from 'constants/text';
 
 interface Props {
   onSubmit: () => void;
@@ -61,7 +62,7 @@ const HOFForm: React.FC<Props> = ({
     },
   ];
 
-  const submitText: string = hof ? 'Update' : 'Add';
+  const submitText: string = hof ? button_text.UPDATE : button_text.ADD;
 
   return (
     <FormContainer>

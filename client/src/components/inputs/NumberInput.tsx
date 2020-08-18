@@ -38,7 +38,7 @@ const NumberInput: React.FC<Props> = ({
         inputRef={validators}
         disabled={disabled}
       />
-      {errors ? <FormErrorMessage type={label} error={errors} /> : null}
+      {errors ? <FormErrorMessage error={errors} /> : null}
     </>
   );
 };
