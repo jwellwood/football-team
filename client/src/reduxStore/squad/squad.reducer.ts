@@ -1,34 +1,29 @@
 import { actionIds } from '../../constants/actionIds';
+import { initSquadState } from './initSquadState';
 
-const initialState = {
-  squadData: null,
-  data: null,
-  success: false,
-  matchesPlayed: [],
-};
+const initialState = { ...initSquadState };
 
 type SquadState = typeof initialState;
 
+interface IAction {
+  type: string;
+  payload: SquadState;
+}
+
 export const squadReducer = (
   state: SquadState = { ...initialState },
-  action
+  action: IAction
 ): SquadState => {
   const { type, payload } = action;
   switch (type) {
     case actionIds.GET_ALL_PLAYERS:
-      return {
-        ...state,
-        success: payload.success,
-        squadData: payload.data,
-      };
-    case actionIds.GET_PLAYER_BY_ID:
-      return {
-        ...state,
-        success: payload.success,
-        data: payload.data,
-        matchesPlayed: payload.data.matchesPlayed,
-      };
+      return handleSquadAction(state, payload);
     default:
       return state;
   }
 };
+
+const handleSquadAction = (state: SquadState, payload: SquadState) => ({
+  ...state,
+  ...payload,
+});

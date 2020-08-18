@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { actionIds } from '../../constants/actionIds';
-import { seasonAPIRoutes as api } from 'constants/routes';
+import { actionIds } from 'constants/actionIds';
+import { seasonAPIRoutes as api } from 'constants/api';
 import { IPreviousSeason, IAward } from 'shared/types';
 // 1 / GET    / GET_PREVIOUS_SEASONS / getPreviousSeasons
 // 2 / GET    / GET_PREVIOUS_SEASON_BY_ID / getPreviousSeasonById

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getAllResults } from 'reduxStore/result';
+import { getAllResults } from 'reduxStore/results';
 import { showAlert } from 'reduxStore/alert';
-import { getPlayerById } from 'reduxStore/squad';
+import { getPlayerById } from 'reduxStore/player';
 import { IResult } from 'shared/types';
 import { IPlayer } from 'shared/types';
 import { Spinner } from 'components/loaders';

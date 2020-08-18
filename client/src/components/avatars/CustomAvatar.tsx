@@ -51,7 +51,7 @@ export default ({
   const avatar = (
     <Avatar
       onClick={onClick}
-      className={bordered ? classes.border : null}
+      className={bordered ? classes.border : ''}
       style={{
         width: small ? 30 : '',
         height: small ? 30 : '',

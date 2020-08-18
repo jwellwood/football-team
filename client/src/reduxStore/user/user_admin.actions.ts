@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { actionIds } from '../../constants/actionIds';
-import { userAPIRoutes as api } from 'constants/routes';
+import { userAPIRoutes as api } from 'constants/api';
 import { IUserPermissionInput } from 'app/admin-user/shared/types';
 
 // 1 / GET / GET_ALL_USERS  / getAllUsers

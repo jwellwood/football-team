@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllResults } from 'reduxStore/result';
+import { getAllResults } from 'reduxStore/results';
 import { showAlert } from 'reduxStore/alert';
 import { IResult } from 'shared/types';
 import { AppDispatch } from 'reduxStore/rootReducer';

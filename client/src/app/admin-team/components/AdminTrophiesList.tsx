@@ -11,7 +11,7 @@ import DeleteTrophy from '../containers/DeleteTrophy.container';
 
 const AdminTrophiesList: React.FC = () => {
   const trophies: ITrophy[] = useSelector(
-    (state: RootState) => state.team.teamData.trophies
+    (state: RootState) => state.team.data.trophies
   );
   const displayTrophies: ITrophy[] = trophies.sort((a, b) =>
     a.year > b.year ? -1 : 1

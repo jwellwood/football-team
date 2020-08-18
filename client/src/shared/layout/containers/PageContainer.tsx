@@ -29,7 +29,7 @@ const PageContainer: React.FC<Props> = ({ children, admin }) => {
   const classes = useStyles();
   return (
     <div className={classes.background}>
-      <Container maxWidth='lg' className={admin ? classes.admin : null}>
+      <Container maxWidth='lg' className={admin ? classes.admin : ''}>
         <div className={classes.top}></div>
         <div>{children}</div>
         <div className={classes.offset}></div>

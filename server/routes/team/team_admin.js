@@ -35,9 +35,9 @@ router.post(`${ADMIN}/add_team`, auth, admin, (req, res) => {
   const notifyError = errorMessage(addTeam.error);
   const notifySuccess = successMessage(addTeam.success);
   const team = new Team(req.body);
-  team.save((err, doc) => {
+  team.save((err, data) => {
     if (err) return res.json({ ...notifyError, err: err.message });
-    res.status(200).json({ ...notifySuccess, teamData: doc });
+    res.status(200).json({ ...notifySuccess, data });
   });
 });
 

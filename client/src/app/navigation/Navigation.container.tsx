@@ -4,16 +4,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { showAlert } from 'reduxStore/alert';
 import { getAuth, signOut } from 'reduxStore/auth';
 import { visitor_routes } from 'router';
-import NavDrawer from './NavDrawer';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
+import { INavUserData } from './shared/types';
+import NavDrawer from './NavDrawer';
 
 export default (): React.ReactElement => {
   const dispatch: AppDispatch = useDispatch();
   let history = useHistory();
   // State
-  const { isAuth, isAdmin, userData } = useSelector(
+  const { isAuth, isAdmin, user } = useSelector(
     (state: RootState) => state.auth
   );
+
   const [open, setOpen] = React.useState<boolean>(false);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -32,6 +34,14 @@ export default (): React.ReactElement => {
       }
     });
   };
+
+  const userData: INavUserData = user
+    ? {
+        name: user.name,
+        email: user.email,
+        image: user.image.url,
+      }
+    : { name: '', email: '', image: '' };
 
   return (
     <NavDrawer

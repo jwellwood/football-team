@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllPlayers } from 'reduxStore/squad';
-import { getAllResults } from 'reduxStore/result';
+import { getAllResults } from 'reduxStore/results';
 import { showAlert } from 'reduxStore/alert';
 import { IPlayer, IResult } from 'shared/types';
 import { Spinner } from 'components/loaders';

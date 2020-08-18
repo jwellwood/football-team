@@ -34,7 +34,7 @@ const CustomTable: React.FC<Props> = ({ headCells, rows, footer, noLines }) => {
 
   return (
     <TableContainer>
-      <Table size='small' className={noLines ? classes.root : null}>
+      <Table size='small' className={noLines ? classes.root : ''}>
         <TableHead className={classes.header}>
           <TableRow>
             {headCells.map((headCell: ITableHeadCell, i: number) => (

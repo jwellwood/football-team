@@ -5,14 +5,14 @@ import { updateHallOfFamer, getTeam } from 'reduxStore/team/';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
 import HOFForm from '../components/HallOfFameForm';
-import { ITeam, IHallOfFame } from 'shared/types';
+import { IHallOfFame } from 'shared/types';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 
 export default () => {
   const history = useHistory();
   const dispatch: AppDispatch = useDispatch();
   const { id } = useParams();
-  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const team = useSelector((state: RootState) => state.team.data);
   const [hallOfFamer] = team.hallOfFame
     ? team.hallOfFame.filter((hof: IHallOfFame) => hof._id === id)
     : [];

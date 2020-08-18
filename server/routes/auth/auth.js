@@ -171,7 +171,7 @@ router.post(`${USER}/check_current_password`, auth, (req, res) => {
 router.put(`${USER}/update_password`, auth, (req, res) => {
   const notifyError = errorMessage(updatePassword.error);
   const notifySuccess = successMessage(updatePassword.success);
-  const id = req.user._id;
+  const id = req.id;
   User.findById(id, 'password', (err, user) => {
     if (err) return res.json({ ...notifyError, err: err.message });
     user.password = req.body.newPassword;

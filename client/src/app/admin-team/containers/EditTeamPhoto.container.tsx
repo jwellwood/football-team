@@ -15,7 +15,7 @@ import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 import { base_file } from '../utils/base_file';
 
 export default () => {
-  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.data);
   const { teamPhoto } = team;
   const history = useHistory();
   const dispatch: AppDispatch = useDispatch();
@@ -62,7 +62,7 @@ export default () => {
   };
 
   const updatePhotoOnDatabase = (url: string, public_id: number) => {
-    dispatch(updateTeamPhoto({ url, public_id, id: team._id })).then(
+    dispatch(updateTeamPhoto({ url, public_id, id: team._id! })).then(
       (res: any) => {
         const { success, message, type } = res.payload;
         if (success) {

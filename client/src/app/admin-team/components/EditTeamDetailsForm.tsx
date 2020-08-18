@@ -28,29 +28,31 @@ const EditTeamDetailsForm: React.FC<Props> = ({
 }) => {
   const { register, handleSubmit, errors } = useForm();
 
+  const { name, location, league, position, currentSeason } = input;
+
   const inputData: IEditTeamInput[] = [
     {
       name: 'name',
       label: 'Name',
-      defaultValue: input.name,
+      defaultValue: name,
       errors: errors.name,
     },
     {
       name: 'location',
       label: 'Location',
-      defaultValue: input.location,
+      defaultValue: location,
       errors: errors.location,
     },
     {
       name: 'league',
       label: 'League Name',
-      defaultValue: input.league,
+      defaultValue: league,
       errors: errors.league,
     },
     {
       name: 'currentSeason',
       label: 'Current Season',
-      defaultValue: input.currentSeason,
+      defaultValue: currentSeason,
       errors: errors.currentSeason,
     },
   ];
@@ -59,19 +61,19 @@ const EditTeamDetailsForm: React.FC<Props> = ({
     <FormContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
-          {inputData.map((input) => (
+          {inputData.map(({ name, label, defaultValue, errors }) => (
             <Grid key={input.name} item xs={12} sm={6}>
               <TextInput
-                inputName={input.name}
-                label={input.label}
-                defaultValue={input.defaultValue}
+                inputName={name}
+                label={label}
+                defaultValue={defaultValue}
                 onChange={onChange}
                 validators={register({
                   required: true,
                   minLength: 2,
                   maxLength: 30,
                 })}
-                errors={input.errors}
+                errors={errors}
               />
             </Grid>
           ))}
@@ -79,7 +81,7 @@ const EditTeamDetailsForm: React.FC<Props> = ({
           <Grid item xs={12} sm={6}>
             <SelectInput
               inputName='position'
-              defaultValue={input.position}
+              defaultValue={position}
               label='League Position'
               onChange={onChange}
               validators={register({ required: true })}

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { actionIds } from '../../constants/actionIds';
-import { userAPIRoutes as api } from 'constants/routes';
+import { userAPIRoutes as api } from 'constants/api';
 
 // 1 / PUT      / UPDATE_PLAYER_DETAILS  / updatePlayerDetails
 // 2 / PUT      / UPDATE_PLAYER_TARGETS  / updatePlayerTargets

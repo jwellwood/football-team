@@ -20,7 +20,7 @@ export default ({ season }: Props) => {
   const onDeleteSeason = () =>
     onFormSubmit(
       setLoading,
-      dispatch(deletePreviousSeason(season._id)),
+      dispatch(deletePreviousSeason(season._id!)),
       dispatch,
       () => history.push(admin_routes.ADMIN_PREVIOUS_SEASON)
     );

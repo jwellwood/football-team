@@ -13,7 +13,7 @@ const CustomTableCell: React.FC<Props> = ({
   align = 'center',
 }) => {
   return (
-    <TableCell style={noLines ? { borderBottom: 'none' } : null} align={align}>
+    <TableCell style={noLines ? { borderBottom: 'none' } : {}} align={align}>
       {children}
     </TableCell>
   );

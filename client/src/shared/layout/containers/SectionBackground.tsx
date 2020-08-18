@@ -28,7 +28,9 @@ const SectionBackground: React.FC<Props> = ({
     <Paper
       className={classes.container}
       style={
-        bordered ? { border: `1px solid ${theme.palette.primary.dark}` } : null
+        bordered
+          ? { border: `1px solid ${theme.palette.primary.dark}` }
+          : { border: '0px' }
       }
     >
       {children}

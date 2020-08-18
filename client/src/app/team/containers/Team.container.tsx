@@ -7,6 +7,6 @@ import { RootState } from 'reduxStore/rootReducer';
 import { Spinner } from 'components/loaders';
 
 export default () => {
-  const team: ITeam = useSelector((state: RootState) => state.team.teamData);
+  const team: ITeam = useSelector((state: RootState) => state.team.data);
   return team ? <Team team={team} /> : <Spinner />;
 };

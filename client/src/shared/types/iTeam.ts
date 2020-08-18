@@ -11,5 +11,5 @@ export interface ITeam {
   position: string;
   trophies?: ITrophy[];
   hallOfFame?: IHallOfFame[];
-  currentSeason?: string;
+  currentSeason: string;
 }

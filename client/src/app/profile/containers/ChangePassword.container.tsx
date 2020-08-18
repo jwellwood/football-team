@@ -6,7 +6,6 @@ import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { user_routes } from 'router';
 import ChangePassword from '../components/ChangePassword.component';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
-import { IUserData } from 'shared/types';
 
 export interface IChangePasswordForm {
   currentPassword: string;
@@ -20,7 +19,7 @@ interface ICurrentPasswordData {
 interface INewPasswordData {
   currentPassword: string;
   newPassword: string;
-  user: IUserData;
+  id: string;
 }
 
 const ChangePasswordState = {
@@ -30,7 +29,7 @@ const ChangePasswordState = {
 };
 
 export default () => {
-  const user = useSelector((state: RootState) => state.user.userData);
+  const user = useSelector((state: RootState) => state.auth.user);
   const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
   // State
@@ -52,7 +51,7 @@ export default () => {
       () => setOpen(true)
     );
 
-  const newData: INewPasswordData = { ...input, user };
+  const newData: INewPasswordData = { ...input, id: user._id };
   const onSubmitNew = () =>
     onFormSubmit(setLoading, dispatch(updatePassword(newData)), dispatch, () =>
       history.push(user_routes.PROFILE)
