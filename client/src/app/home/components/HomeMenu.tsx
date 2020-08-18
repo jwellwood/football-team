@@ -18,7 +18,9 @@ const HomeMenu: React.FC = () => {
               <CustomAvatar centered bordered>
                 <CustomIcon icon={item.icon} color='primary' size='xs' />
               </CustomAvatar>
-              <CustomTypography size='sm'>{item.text}</CustomTypography>
+              <CustomTypography size='sm'>
+                {item.text.toLocaleLowerCase()}
+              </CustomTypography>
             </SectionBackground>
           </Link>
         </GridItem>

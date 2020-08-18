@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import { FormContainer } from 'shared/layout/containers';
-import { addResultHelper } from 'shared/messages/shared';
+import { addResultHelper, button_text } from 'constants/text';
 import { IResultInput } from '../shared/types';
 import { IResult } from 'shared/types';
 import {
@@ -15,7 +15,7 @@ import { SubmitButton } from 'components/buttons';
 import { CenteredGrid } from 'shared/layout/grids';
 import { Spinner } from 'components/loaders';
 import { FormHelper } from 'components/typography';
-import ResultFormEdit from './ResultFormEdit';
+import ResultFormEdit from '../components/ResultFormEdit';
 import { matchTypeOptions, homeOrAwayOptions, forfeitOptions } from '../utils';
 
 const DateInput = lazy(() => import('components/inputs/DateInput'));
@@ -147,7 +147,7 @@ const EditResultForm: React.FC<Props> = ({
             />
           </Grid>
         </CenteredGrid>
-        <SubmitButton loading={loading}>Update Result</SubmitButton>
+        <SubmitButton loading={loading}>{button_text.UPDATE}</SubmitButton>
       </form>
       {result ? <ResultFormEdit input={input} result={result} /> : null}
     </FormContainer>

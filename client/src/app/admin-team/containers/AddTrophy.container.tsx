@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addNewTrophy, getTeam } from 'reduxStore/team';
 import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
-import AddTrophyForm from '../components/AddTrophyForm';
 import { ITrophy } from 'shared/types';
 import { $initTrophyFormState } from '../shared/state';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
+import AddTrophyForm from '../forms/AddTrophyForm';
 
 export default () => {
   const team = useSelector((state: RootState) => state.team.data);

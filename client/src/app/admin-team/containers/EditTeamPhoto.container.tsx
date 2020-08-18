@@ -10,9 +10,9 @@ import {
 import { showAlert } from 'reduxStore/alert';
 import { admin_routes } from 'router';
 import { ITeam } from 'shared/types';
-import EditTeamPhotoForm from '../components/EditTeamPhotoForm';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
 import { base_file } from '../utils/base_file';
+import EditTeamPhotoForm from '../forms/EditTeamPhotoForm';
 
 export default () => {
   const team: ITeam = useSelector((state: RootState) => state.team.data);

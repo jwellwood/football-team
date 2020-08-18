@@ -1,49 +1,62 @@
 import { admin_routes } from 'router';
 import { IAdminLinkData } from '../shared/types';
+import { link_text } from 'constants/text';
 
 export const adminLinks: IAdminLinkData[] = [
   {
-    text: 'Results',
+    text: link_text.results,
     icon: 'list-ul',
     links: [
       {
-        text: 'Add Result',
+        text: link_text.add_result,
         icon: 'plus',
         link: admin_routes.ADMIN_RESULTS_ADD,
       },
-      { text: 'Edit Results', icon: 'pen', link: admin_routes.ADMIN_RESULTS },
+      {
+        text: link_text.edit_result,
+        icon: 'pen',
+        link: admin_routes.ADMIN_RESULTS,
+      },
     ],
   },
   {
-    text: 'Users',
+    text: link_text.users,
     icon: 'user-friends',
     links: [
       {
-        text: 'Set permissions',
+        text: link_text.set_permissions,
         icon: 'cog',
         link: admin_routes.ADMIN_USERS,
       },
     ],
   },
   {
-    text: 'Team',
+    text: link_text.team,
     icon: 'shield-alt',
     links: [
       // { text: 'Add', icon: 'plus', link: ADMIN_TEAM_ADD },
-      { text: 'Details', icon: 'pen', link: admin_routes.ADMIN_TEAM_EDIT },
       {
-        text: 'Photo',
+        text: link_text.team_details,
+        icon: 'pen',
+        link: admin_routes.ADMIN_TEAM_EDIT,
+      },
+      {
+        text: link_text.team_photo,
         icon: 'camera',
         link: admin_routes.ADMIN_TEAM_EDIT_PHOTO,
       },
-      { text: 'Trophies', icon: 'trophy', link: admin_routes.ADMIN_TROPHIES },
       {
-        text: 'Hall of Fame',
+        text: link_text.trophies,
+        icon: 'trophy',
+        link: admin_routes.ADMIN_TROPHIES,
+      },
+      {
+        text: link_text.hall_of_fame,
         icon: 'landmark',
         link: admin_routes.ADMIN_HOF,
       },
       {
-        text: 'Previous Seasons',
+        text: link_text.previous_seasons,
         icon: 'monument',
         link: admin_routes.ADMIN_PREVIOUS_SEASON,
       },

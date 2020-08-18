@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateHallOfFamer, getTeam } from 'reduxStore/team/';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
-import HOFForm from '../components/HallOfFameForm';
 import { IHallOfFame } from 'shared/types';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
+import HOFForm from '../forms/HallOfFameForm';
 
 export default () => {
   const history = useHistory();

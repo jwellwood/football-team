@@ -10,8 +10,8 @@ import { admin_routes } from 'router';
 import { Spinner } from 'components/loaders';
 import { IResultInput } from '../shared/types';
 import { $initResultFormState } from '../shared/state';
-import EditResultForm from '../components/EditResultForm';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import EditResultForm from '../forms/EditResultForm';
 
 export default () => {
   const dispatch: AppDispatch = useDispatch();

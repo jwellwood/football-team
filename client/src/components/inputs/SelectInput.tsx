@@ -57,7 +57,7 @@ const SelectInput: React.FC<Props> = ({
           </option>
         ))}
       </TextField>
-      {errors ? <FormErrorMessage type={label} error={errors} /> : null}
+      {errors ? <FormErrorMessage error={errors} /> : null}
     </>
   );
 };

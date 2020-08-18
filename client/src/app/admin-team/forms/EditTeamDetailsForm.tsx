@@ -6,6 +6,7 @@ import { SubmitButton } from 'components/buttons';
 import { TextInput, SelectInput } from 'components/inputs';
 import { FormContainer } from 'shared/layout/containers';
 import { leaguePositionOptions } from '../utils';
+import { button_text } from 'constants/text';
 interface Props {
   onSubmit: () => void;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -62,7 +63,7 @@ const EditTeamDetailsForm: React.FC<Props> = ({
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
           {inputData.map(({ name, label, defaultValue, errors }) => (
-            <Grid key={input.name} item xs={12} sm={6}>
+            <Grid key={name} item xs={12} sm={6}>
               <TextInput
                 inputName={name}
                 label={label}
@@ -90,7 +91,7 @@ const EditTeamDetailsForm: React.FC<Props> = ({
             />
           </Grid>
         </Grid>
-        <SubmitButton loading={loading}>Update team</SubmitButton>
+        <SubmitButton loading={loading}>{button_text.UPDATE}</SubmitButton>
       </form>
     </FormContainer>
   );

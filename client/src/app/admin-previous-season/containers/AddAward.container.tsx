@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addPreviousAward } from 'reduxStore/season';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
-import AddAwardForm from '../components/AwardForm';
+import AddAwardForm from '../forms/AwardForm';
 import { IAward } from 'shared/types';
 import { $initAwardFormState } from '../shared/state';
 import { AppDispatch } from 'reduxStore/rootReducer';

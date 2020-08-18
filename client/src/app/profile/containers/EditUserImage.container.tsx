@@ -10,7 +10,7 @@ import { showAlert } from 'reduxStore/alert';
 import { getAllPlayers } from 'reduxStore/squad';
 import { user_routes } from 'router';
 import { IUserData } from 'shared/types';
-import EditUserImage from '../components/EditUserImage.component';
+import EditUserImage from '../forms/EditUserImage.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
 import { base_file } from 'app/admin-team/utils/base_file';
 

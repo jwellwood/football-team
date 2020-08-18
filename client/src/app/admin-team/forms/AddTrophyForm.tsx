@@ -9,6 +9,7 @@ import { FormContainer } from 'shared/layout/containers';
 import { CenteredGrid } from 'shared/layout/grids';
 import { trophyWinnerOptions } from '../utils';
 import { yearOptions } from 'utils/helpers';
+import { button_text } from 'constants/text';
 
 interface Props {
   onSubmit: () => void;
@@ -56,14 +57,6 @@ const AddTrophyForm: React.FC<Props> = ({
               errors={errors.year}
               options={yearOptions()}
             />
-            {/* <NumberInput
-              inputName='year'
-              label='Year'
-              defaultValue={input.year}
-              onChange={onChange}
-              validators={register({ required: true, min: 2000, max: 2100 })}
-              errors={errors.year}
-            /> */}
           </Grid>
           <Grid item xs={12} sm={6}>
             <SelectInput
@@ -112,7 +105,7 @@ const AddTrophyForm: React.FC<Props> = ({
             />
           </Grid>
         </CenteredGrid>
-        <SubmitButton loading={loading}>Add trophy</SubmitButton>
+        <SubmitButton loading={loading}>{button_text.ADD}</SubmitButton>
       </form>
     </FormContainer>
   );

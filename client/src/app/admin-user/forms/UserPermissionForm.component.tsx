@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import { setPermissionsHelper } from 'shared/messages/shared';
+import { setPermissionsHelper, button_text } from 'constants/text';
 import {
   TextInput,
   NumberInput,
@@ -176,7 +176,7 @@ const UserPermissionForm: React.FC<Props> = ({
         >
           Reset image
         </CustomButton>
-        <SubmitButton loading={loading}>Update</SubmitButton>
+        <SubmitButton loading={loading}>{button_text.UPDATE}</SubmitButton>
       </form>
     </FormContainer>
   ) : (

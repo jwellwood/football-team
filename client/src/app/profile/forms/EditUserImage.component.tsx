@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { IUserData } from 'shared/types';
-import { profilePhotoHelper } from 'shared/messages/shared';
+import { profilePhotoHelper, button_text } from 'constants/text';
 import { Spinner } from 'components/loaders';
 import FileInput from 'components/inputs/FileInput';
 import { FormContainer } from 'shared/layout/containers';
@@ -46,7 +46,7 @@ const EditUserImage: React.FC<Props> = ({
           disabled={defaultDisabled}
           onClick={onUseDefault}
         >
-          Use Default
+          {button_text.DEFAULT}
         </CustomButton>
       </CenteredGrid>
       <SubmitButton disabled={submitDisabled} loading={loading} />

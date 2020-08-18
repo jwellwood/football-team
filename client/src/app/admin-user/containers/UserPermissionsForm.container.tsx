@@ -9,10 +9,10 @@ import { removeAdminImage } from 'reduxStore/team';
 import { showAlert } from 'reduxStore/alert';
 import { getAllPlayers } from 'reduxStore/squad';
 import { admin_routes } from 'router';
-import UserPermissionForm from '../components/UserPermissionForm.component';
 import { $initUserPermissionFormState } from '../shared/state';
 import { Spinner } from 'components/loaders';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import UserPermissionForm from '../forms/UserPermissionForm.component';
 
 export default () => {
   const { id } = useParams();

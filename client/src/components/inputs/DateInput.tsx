@@ -41,7 +41,7 @@ const DateInput: React.FC<Props> = ({
           inputRef={validators}
         />
       </MuiPickersUtilsProvider>
-      {errors ? <FormErrorMessage type={label} error={errors} /> : null}
+      {errors ? <FormErrorMessage error={errors} /> : null}
     </>
   );
 };

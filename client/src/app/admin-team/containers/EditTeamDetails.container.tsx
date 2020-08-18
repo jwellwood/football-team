@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTeam, updateTeamDetails } from 'reduxStore/team/';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { admin_routes } from 'router';
-import EditTeamDetailsForm from '../components/EditTeamDetailsForm';
 import { ITeam } from 'shared/types';
 import { RootState, AppDispatch } from 'reduxStore/rootReducer';
+import EditTeamDetailsForm from '../forms/EditTeamDetailsForm';
 
 export default () => {
   let history = useHistory();

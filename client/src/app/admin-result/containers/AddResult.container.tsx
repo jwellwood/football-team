@@ -7,8 +7,8 @@ import { onInputChange, onInputCheck, onFormSubmit } from 'utils/form-controls';
 import { IResultInput } from '../shared/types';
 import { admin_routes } from 'router';
 import { $initResultFormState } from '../shared/state';
-import AddResultForm from '../components/AddResultForm';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import AddResultForm from '../forms/AddResultForm';
 
 export default () => {
   let history = useHistory();

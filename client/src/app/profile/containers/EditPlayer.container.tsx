@@ -5,8 +5,8 @@ import { updatePlayerDetails } from 'reduxStore/user';
 import { user_routes } from 'router';
 import { onInputChange, onFormSubmit } from 'utils/form-controls';
 import { IUserData } from 'shared/types';
-import EditPlayer from '../components/EditPlayer.component';
 import { AppDispatch } from 'reduxStore/rootReducer';
+import EditPlayer from '../forms/EditPlayer.component';
 
 export interface IEditPlayerForm {
   name: string;

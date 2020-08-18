@@ -5,6 +5,7 @@ import { FormContainer } from 'shared/layout/containers';
 import { CenteredGrid } from 'shared/layout/grids';
 import { SubmitButton } from 'components/buttons';
 import { TextInput, NumberInput, CustomSwitch } from 'components/inputs';
+import { button_text } from 'constants/text';
 
 interface Props {
   loading: boolean;
@@ -68,7 +69,7 @@ const AddAwardForm: React.FC<Props> = ({
               />
             ) : null}
           </Grid>
-          <SubmitButton loading={loading}>Add Award</SubmitButton>
+          <SubmitButton loading={loading}>{button_text.ADD}</SubmitButton>
         </CenteredGrid>
       </form>
     </FormContainer>

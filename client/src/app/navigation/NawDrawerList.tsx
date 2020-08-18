@@ -7,6 +7,7 @@ import { CustomDivider } from 'components/dividers';
 import { ListWrapper } from 'components/lists';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { INavUserData } from './shared/types';
+import { link_text } from 'constants/text';
 
 interface Props {
   onSelect: () => void;
@@ -31,32 +32,36 @@ const NavDrawerList: React.FC<Props> = ({
   user,
 }) => {
   const nav_items: ILinkList[] = [
-    { text: 'Home', icon: 'home', link: visitor_routes.HOME },
-    { text: 'Results', icon: 'list-ul', link: visitor_routes.RESULTS },
-    { text: 'Squad', icon: 'user-friends', link: visitor_routes.SQUAD },
-    { text: 'Team', icon: 'shield-alt', link: visitor_routes.TEAM },
+    { text: link_text.home, icon: 'home', link: visitor_routes.HOME },
+    { text: link_text.results, icon: 'list-ul', link: visitor_routes.RESULTS },
+    { text: link_text.squad, icon: 'user-friends', link: visitor_routes.SQUAD },
+    { text: link_text.team, icon: 'shield-alt', link: visitor_routes.TEAM },
     {
-      text: 'Result Stats',
+      text: link_text.results_stats,
       icon: 'chart-pie',
       link: visitor_routes.RESULTS_STATS,
     },
     {
-      text: 'Player Stats',
+      text: link_text.squad_stats,
       icon: 'chart-line',
       link: visitor_routes.PLAYERS_STATS,
     },
-    { text: 'About', icon: 'question-circle', link: visitor_routes.ABOUT },
+    {
+      text: link_text.about,
+      icon: 'question-circle',
+      link: visitor_routes.ABOUT,
+    },
   ];
 
   const auth_items: ILinkList[] = [
     {
-      text: 'Sign In',
+      text: link_text.sign_in,
       icon: 'sign-in-alt',
       link: reg_routes.SIGN_IN,
       guard: !auth,
     },
     {
-      text: 'Admin',
+      text: link_text.admin,
       icon: 'user-cog',
       link: admin_routes.ADMIN,
       guard: auth && admin,
