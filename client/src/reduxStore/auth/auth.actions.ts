@@ -86,10 +86,14 @@ export const updateUserAccount = (dataToSubmit: { email: string }) => {
   };
 };
 
-export const deleteUser = (data) => {
-  // TODO
+export const deleteUser = (data: string) => {
+  const config = {
+    data: {
+      id: data,
+    },
+  };
   const request = axios
-    .delete(api.DELETE_USER_ROUTE, data)
+    .delete(api.DELETE_USER_ROUTE, config)
     .then((res) => res.data);
   return {
     type: actionIds.DELETE_USER,

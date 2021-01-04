@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 
 interface Props {
   children: React.ReactNode;
-  button?: true;
+  button?: any;
   linkTo?: string;
   onClick?: () => void;
   noDivider?: boolean;

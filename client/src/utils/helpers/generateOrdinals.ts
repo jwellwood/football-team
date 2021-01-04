@@ -1,4 +1,5 @@
 export const generateOrdinals: Function = (num: number): string => {
+  if (typeof num !== 'number') num = Number(num);
   if (num < 50 && num > 0) {
     switch (num) {
       case 1:

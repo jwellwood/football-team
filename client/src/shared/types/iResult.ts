@@ -16,3 +16,5 @@ export interface IResult {
   createdAt?: string;
   updatedAt?: string;
 }
+
+export type ResultStatsKeys = keyof IResult;

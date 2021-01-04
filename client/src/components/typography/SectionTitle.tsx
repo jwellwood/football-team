@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import CustomTypography from './CustomTypography';
 
 interface Props {
-  title: string;
+  title?: string;
   link?: string;
   text?: string;
   main?: boolean;

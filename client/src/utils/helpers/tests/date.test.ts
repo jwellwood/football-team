@@ -1,8 +1,12 @@
 import { parseDate } from '../parseDate';
-
-test('returns a formatted date', () => {
-  const date = new Date();
-  expect(parseDate('2020-07-14T21:51:41.056Z')).toBe('Jul 14 2020');
-  expect(parseDate('2020-01-01T00:00:00.000Z')).toBe('Jan 01 2020');
-  expect(parseDate(date)).toBeDefined();
+describe('Date formatter tests', () => {
+  test('returns a formatted date', () => {
+    expect(parseDate('2020-07-14T21:51:41.056Z')).toBe('Jul 14 2020');
+    expect(parseDate('2020-01-01T00:00:00.000Z')).toBe('Jan 01 2020');
+  });
+  test('should work with a new date', () => {
+    const date = new Date();
+    expect(parseDate(date)).toBeDefined();
+    expect(parseDate(date)).toHaveLength(11);
+  });
 });

@@ -10,3 +10,4 @@ export * from './mapReduce';
 export * from './parseDate';
 export * from './sortArr';
 export * from './yearOptions';
+export * from './shortenString';

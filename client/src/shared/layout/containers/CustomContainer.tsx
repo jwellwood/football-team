@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Container from '@material-ui/core/Container';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const CustomContainer: React.FC<Props> = ({ children }) => {

@@ -1,2 +1,6 @@
-export const mapper: Function = (arr: Array<{}>, stat: string) =>
-  arr.map((elem) => elem[stat]);
+import { PlayerStatsKeys, ResultStatsKeys } from 'shared/types';
+
+export const mapper: Function = (
+  arr: Array<{}>,
+  stat: PlayerStatsKeys | ResultStatsKeys
+) => arr.map((elem: any) => elem[stat]);
